@@ -1,0 +1,51 @@
+﻿Organism,Code_Org
+Acinetobacter baumannii,"aba, aca, alw, abx, apt, ano"
+Acinetobacter spp.,"aan, aby, aha, ajo, aju, alw, apa, aro, asd, aug, ac-"
+Aeromonas hydrophila,aeh
+Burkholderia cepacia complex,"bam, bah, bnc, pce, bcx, bdo, bmu, bpy, btb, bub, bvt"
+Burkholderia mallei,bma
+Burkholderia pseudomallei,ppm
+Citrobacter freundii,cfr
+Enterobacter cloacae,ecl
+Enterobacter spp.,"eag, eam, ea1, ea2, eas, ecg, edi, egg, hal, ehm, ein, enp, esa, en-, ecg"
+Escherichia coli,"eco, ead, k99, 1k1, 103, 111, 145, 149, of4, 157, o1k, 2k2, o26, o2k, 788, o78, eaa, eeh, eei, eep, eet"
+Haemophilus influenzae,"hin, hxt, hxb, hib"
+Klebsiella aerogenes,eae
+Klebsiella oxytoca,kox
+Klebsiella pneumoniae ,"kpn, koz, krn"
+Klebsiella spp.,"eae, kor, cgr, eae, kor, kox, koz, kpl, krn, kl-, kte, kpl"
+Moraxella catarrhalis,bca
+Morganella morganii,"mmo, msb"
+Neisseria meningitidis,"nme, nmo, nma, nmb, nmc, 135, nmy"
+Proteus mirabilis,pmi
+Proteus vulgaris,pvu
+Providencia rettgeri,pre
+Providencia stuartii,"pst, psu"
+Providencia spp.,"pal, phe, prg, prv"
+Pseudomonas aeruginosa ,pae
+"Salmonella,Typhoidal","sat, saa, sab, sac"
+Salmonella spp.,"aov, sag, ams, sla, sav, sba, sbl, sbg, bon, sbm, sbr, sbn, brd, cer, hes, sch, cop, drb, sdu, emk, ari, sdi, sec, sht, sii, ssl, sen, sfa, sga, sgi, gol, g51, g52, g53, g54, g55, g56, g57, g58, g59, g60, g61, g62, g63, g64, g65, g66, g67, gra, grb, grc, gc1, gc2, gc3, gc4, grd, gd1, gd2, gd3, gre, ge1, ge2, ge3, ge4, grf, grg, gg1, gg2, grh, gri, grj, grk, grl, grm, grn, gro, grp, grq, grr, grs, grt, gru, grv, grw, grx, gry, grz, shr, shg, sac, ind, inf, isa, jav, sjv, ska, skd, ske, sko, skr, lar, slx, sli, slv, lom, slo, smh, smb, smo, smn, smr, sna, sne, soh, sor, soi, sou, spm, pty, saa, sab, sac, spo, pot, sga, sre, sri, pau, ssd, sab, ssw, sse, sal, sro, sun, ssy, sec, ssl, ari, sdi, sht, sbg, sii, sbt, tns, thm, sat, sam, 104, svc, sts, sun, svr, svg, swd, swe, swy, swo, sno, snt, xtp"
+Serratia marcescens,sma
+Shigella spp.,"shc, b01, b10, b11, b12, b13, b14, b15, b16, b17, b18, b02, b03, b04, b05, b06, b07, b08, b09, bxx, sha, d01, d10, d11, d12, d13, d14, d15, d02, d03, d04, d05, d06, d07, d08, d09, sd1, dxx, sn1, shb, f01, f1a, f1b, f02, f2a, f2b, f03, f3a, f3b, f04, f4a, f4b, f4c, f05, f5a, f5b, f06, fxx, 479, fvx, fvy, shd, s01, s02, shi, snd"
+Stenotrophomonas maltophilia,pma
+Vibrio cholerae ,"vic, vel, vx1, vo1, vhi, vin, vog, 139"
+Vibrio cholerae O1,"vo1, vhi, vin, vog"
+"Vibrio cholerae non O1, non O139",vx1
+Vibrio parahaemolyticus,vip
+Vibrio spp.,"val, vca, vci, pdm, cfe, vfl, vfu, vho, vme, vmi, vi-, moi, vvu"
+Enterococcus faecalis,efa
+Enterococcus faecium,efm
+Enterococcus spp.,"enb, eve, ean, eav, eca, ecc, ecb, eds, edu, efv, ega, egv, enh, ema, emn, epa, evi, eps, era, esh, ese, eso, ent, esu, evi"
+Staphylococcus aureus,"sau, sc+"
+"Staphylococcus, coagulase negative","sep, sae, sai, sca, sca, sur, scp, scu, scl, scg, slc, stc, stc, sul, sde, sep, seq, sfe, sgl, shl, sho, sho, snb, shy, sit, skl, sle, slu, sms, stt, sps, psd, spv, pps, sap, ssb, sap, slc, ssf, ssr, sle, ssr, ssi, sta, spv, swa, sxy, scn
+"
+Streptococcus agalactiae,"sgc, bsb"
+"Streptococcus, beta-hemolytic not Group A,B,D","sdy, bsc, bse, bsf, bsg, bs-, sqm, squ, szo, san, sct, sxa"
+Streptococcus pyogenes,"bsa, spy"
+Streptococcus suis,sui
+Streptococcuss spp. Viridans Group,"sad, san, sct, scc, src, sdo, squ, sfr, sin, smc, smt, smu, sol, spp, srt, ssa, ssn, ss1, ss2, sub, svi, sgm, dxe, sso"
+Streptococcus pneumoniae,spn
+,
+,
+,
+,
