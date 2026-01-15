@@ -1,0 +1,34 @@
+﻿Antibiotic,Code,FULL NAME
+penicillin,PEN,PENICILLIN
+ampicillin,AMP,AMPICILLIN
+amoxicillin/clavulanic acid,AMC,AMOXICILLIN/CLAVULANIC ACID
+ampicillin/sulbactam,SAM,AMPICILLIN/SULBACTAM
+piperacillin/tazobactam,TZP,PIPERACILLIN/TAZOBACTAM
+cefazolin,CZO,CEFAZOLIN
+cefuroxime,CXM,CEFUROXIME
+cefoperazone/sulbactam,CSL,CEFOPERAZONE/SULBACTAM
+cefotaxime,CTX,CEFOTAXIME
+ceftazidime,CAZ,CEFTAZIDIME
+ceftriaxone ,CRO,CEFTRIAXONE 
+cefepime,FEP,CEFEPIME
+oxacillin,OXA,OXACILLIN
+cefoxitin,FOX,CEFOXITIN
+ertapenem,ETP,ERTAPENEM
+imipenem,IPM,IMIPENEM
+meropenem,MEM,MEROPENEM
+colistin,COL,COLISTIN
+ciprofloxacin,CIP,CIPROFLOXACIN
+levofloxacin,LVX,LEVOFLOXACIN
+norfloxacin,NOR,NORFLOXACIN
+amikacin,AMK,AMIKACIN
+gentamicin,GEN,GENTAMICIN
+gentamicin 120 µg,GEH,GENTAMICIN High
+vancomycin,VAN,VANCOMYCIN
+teicoplanin,TEC,TEICOPLANIN
+fosfomycin,FOS,FOSFOMYCIN
+clindamycin,CLI,CLINDAMYCIN
+erythromycin,ERY,ERYTHROMYCIN
+nitrofurantoin,NIT,NITROFURANTOIN
+chloramphenicol,CHL,CHLORAMPHENICOL
+trimethoprim/sulfamethoxazole,SXT,Trimethoprim/Sulfamethoxazole
+tetracycline,TCY,TETRACYCLINE
