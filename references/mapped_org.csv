@@ -1,0 +1,494 @@
+﻿Organism,Code_Org
+Acinetobacter baumannii,aba
+Acinetobacter baumannii,aca
+Acinetobacter baumannii,alw
+Acinetobacter baumannii,abx
+Acinetobacter baumannii,apt
+Acinetobacter baumannii,ano
+Acinetobacter spp.,aan
+Acinetobacter spp.,aby
+Acinetobacter spp.,aha
+Acinetobacter spp.,ajo
+Acinetobacter spp.,aju
+Acinetobacter spp.,alw
+Acinetobacter spp.,apa
+Acinetobacter spp.,aro
+Acinetobacter spp.,asd
+Acinetobacter spp.,aug
+Acinetobacter spp.,ac-
+Aeromonas hydrophila,aeh
+Burkholderia cepacia complex,bam
+Burkholderia cepacia complex,bah
+Burkholderia cepacia complex,bnc
+Burkholderia cepacia complex,pce
+Burkholderia cepacia complex,bcx
+Burkholderia cepacia complex,bdo
+Burkholderia cepacia complex,bmu
+Burkholderia cepacia complex,bpy
+Burkholderia cepacia complex,btb
+Burkholderia cepacia complex,bub
+Burkholderia cepacia complex,bvt
+Burkholderia mallei,bma
+Burkholderia pseudomallei,ppm
+Citrobacter freundii,cfr
+Enterobacter cloacae,ecl
+Enterobacter spp.,eag
+Enterobacter spp.,eam
+Enterobacter spp.,ea1
+Enterobacter spp.,ea2
+Enterobacter spp.,eas
+Enterobacter spp.,ecg
+Enterobacter spp.,edi
+Enterobacter spp.,egg
+Enterobacter spp.,hal
+Enterobacter spp.,ehm
+Enterobacter spp.,ein
+Enterobacter spp.,enp
+Enterobacter spp.,esa
+Enterobacter spp.,en-
+Enterobacter spp.,ecg
+Escherichia coli,eco
+Escherichia coli,ead
+Escherichia coli,k99
+Escherichia coli,1k1
+Escherichia coli,103
+Escherichia coli,111
+Escherichia coli,145
+Escherichia coli,149
+Escherichia coli,of4
+Escherichia coli,157
+Escherichia coli,o1k
+Escherichia coli,2k2
+Escherichia coli,o26
+Escherichia coli,o2k
+Escherichia coli,788
+Escherichia coli,o78
+Escherichia coli,eaa
+Escherichia coli,eeh
+Escherichia coli,eei
+Escherichia coli,eep
+Escherichia coli,eet
+Haemophilus influenzae,hin
+Haemophilus influenzae,hxt
+Haemophilus influenzae,hxb
+Haemophilus influenzae,hib
+Klebsiella aerogenes,eae
+Klebsiella oxytoca,kox
+Klebsiella pneumoniae ,kpn
+Klebsiella pneumoniae ,koz
+Klebsiella pneumoniae ,krn
+Klebsiella spp.,eae
+Klebsiella spp.,kor
+Klebsiella spp.,cgr
+Klebsiella spp.,eae
+Klebsiella spp.,kor
+Klebsiella spp.,kox
+Klebsiella spp.,koz
+Klebsiella spp.,kpl
+Klebsiella spp.,krn
+Klebsiella spp.,kl-
+Klebsiella spp.,kte
+Klebsiella spp.,kpl
+Moraxella catarrhalis,bca
+Morganella morganii,mmo
+Morganella morganii,msb
+Neisseria meningitidis,nme
+Neisseria meningitidis,nmo
+Neisseria meningitidis,nma
+Neisseria meningitidis,nmb
+Neisseria meningitidis,nmc
+Neisseria meningitidis,135
+Neisseria meningitidis,nmy
+Proteus mirabilis,pmi
+Proteus vulgaris,pvu
+Providencia rettgeri,pre
+Providencia stuartii,pst
+Providencia stuartii,psu
+Providencia spp.,pal
+Providencia spp.,phe
+Providencia spp.,prg
+Providencia spp.,prv
+Pseudomonas aeruginosa ,pae
+"Salmonella,Typhoidal",sat
+"Salmonella,Typhoidal",saa
+"Salmonella,Typhoidal",sab
+"Salmonella,Typhoidal",sac
+Salmonella spp.,aov
+Salmonella spp.,sag
+Salmonella spp.,ams
+Salmonella spp.,sla
+Salmonella spp.,sav
+Salmonella spp.,sba
+Salmonella spp.,sbl
+Salmonella spp.,sbg
+Salmonella spp.,bon
+Salmonella spp.,sbm
+Salmonella spp.,sbr
+Salmonella spp.,sbn
+Salmonella spp.,brd
+Salmonella spp.,cer
+Salmonella spp.,hes
+Salmonella spp.,sch
+Salmonella spp.,cop
+Salmonella spp.,drb
+Salmonella spp.,sdu
+Salmonella spp.,emk
+Salmonella spp.,ari
+Salmonella spp.,sdi
+Salmonella spp.,sec
+Salmonella spp.,sht
+Salmonella spp.,sii
+Salmonella spp.,ssl
+Salmonella spp.,sen
+Salmonella spp.,sfa
+Salmonella spp.,sga
+Salmonella spp.,sgi
+Salmonella spp.,gol
+Salmonella spp.,g51
+Salmonella spp.,g52
+Salmonella spp.,g53
+Salmonella spp.,g54
+Salmonella spp.,g55
+Salmonella spp.,g56
+Salmonella spp.,g57
+Salmonella spp.,g58
+Salmonella spp.,g59
+Salmonella spp.,g60
+Salmonella spp.,g61
+Salmonella spp.,g62
+Salmonella spp.,g63
+Salmonella spp.,g64
+Salmonella spp.,g65
+Salmonella spp.,g66
+Salmonella spp.,g67
+Salmonella spp.,gra
+Salmonella spp.,grb
+Salmonella spp.,grc
+Salmonella spp.,gc1
+Salmonella spp.,gc2
+Salmonella spp.,gc3
+Salmonella spp.,gc4
+Salmonella spp.,grd
+Salmonella spp.,gd1
+Salmonella spp.,gd2
+Salmonella spp.,gd3
+Salmonella spp.,gre
+Salmonella spp.,ge1
+Salmonella spp.,ge2
+Salmonella spp.,ge3
+Salmonella spp.,ge4
+Salmonella spp.,grf
+Salmonella spp.,grg
+Salmonella spp.,gg1
+Salmonella spp.,gg2
+Salmonella spp.,grh
+Salmonella spp.,gri
+Salmonella spp.,grj
+Salmonella spp.,grk
+Salmonella spp.,grl
+Salmonella spp.,grm
+Salmonella spp.,grn
+Salmonella spp.,gro
+Salmonella spp.,grp
+Salmonella spp.,grq
+Salmonella spp.,grr
+Salmonella spp.,grs
+Salmonella spp.,grt
+Salmonella spp.,gru
+Salmonella spp.,grv
+Salmonella spp.,grw
+Salmonella spp.,grx
+Salmonella spp.,gry
+Salmonella spp.,grz
+Salmonella spp.,shr
+Salmonella spp.,shg
+Salmonella spp.,sac
+Salmonella spp.,ind
+Salmonella spp.,inf
+Salmonella spp.,isa
+Salmonella spp.,jav
+Salmonella spp.,sjv
+Salmonella spp.,ska
+Salmonella spp.,skd
+Salmonella spp.,ske
+Salmonella spp.,sko
+Salmonella spp.,skr
+Salmonella spp.,lar
+Salmonella spp.,slx
+Salmonella spp.,sli
+Salmonella spp.,slv
+Salmonella spp.,lom
+Salmonella spp.,slo
+Salmonella spp.,smh
+Salmonella spp.,smb
+Salmonella spp.,smo
+Salmonella spp.,smn
+Salmonella spp.,smr
+Salmonella spp.,sna
+Salmonella spp.,sne
+Salmonella spp.,soh
+Salmonella spp.,sor
+Salmonella spp.,soi
+Salmonella spp.,sou
+Salmonella spp.,spm
+Salmonella spp.,pty
+Salmonella spp.,saa
+Salmonella spp.,sab
+Salmonella spp.,sac
+Salmonella spp.,spo
+Salmonella spp.,pot
+Salmonella spp.,sga
+Salmonella spp.,sre
+Salmonella spp.,sri
+Salmonella spp.,pau
+Salmonella spp.,ssd
+Salmonella spp.,sab
+Salmonella spp.,ssw
+Salmonella spp.,sse
+Salmonella spp.,sal
+Salmonella spp.,sro
+Salmonella spp.,sun
+Salmonella spp.,ssy
+Salmonella spp.,sec
+Salmonella spp.,ssl
+Salmonella spp.,ari
+Salmonella spp.,sdi
+Salmonella spp.,sht
+Salmonella spp.,sbg
+Salmonella spp.,sii
+Salmonella spp.,sbt
+Salmonella spp.,tns
+Salmonella spp.,thm
+Salmonella spp.,sat
+Salmonella spp.,sam
+Salmonella spp.,104
+Salmonella spp.,svc
+Salmonella spp.,sts
+Salmonella spp.,sun
+Salmonella spp.,svr
+Salmonella spp.,svg
+Salmonella spp.,swd
+Salmonella spp.,swe
+Salmonella spp.,swy
+Salmonella spp.,swo
+Salmonella spp.,sno
+Salmonella spp.,snt
+Salmonella spp.,xtp
+Serratia marcescens,sma
+Shigella spp.,shc
+Shigella spp.,b01
+Shigella spp.,b10
+Shigella spp.,b11
+Shigella spp.,b12
+Shigella spp.,b13
+Shigella spp.,b14
+Shigella spp.,b15
+Shigella spp.,b16
+Shigella spp.,b17
+Shigella spp.,b18
+Shigella spp.,b02
+Shigella spp.,b03
+Shigella spp.,b04
+Shigella spp.,b05
+Shigella spp.,b06
+Shigella spp.,b07
+Shigella spp.,b08
+Shigella spp.,b09
+Shigella spp.,bxx
+Shigella spp.,sha
+Shigella spp.,d01
+Shigella spp.,d10
+Shigella spp.,d11
+Shigella spp.,d12
+Shigella spp.,d13
+Shigella spp.,d14
+Shigella spp.,d15
+Shigella spp.,d02
+Shigella spp.,d03
+Shigella spp.,d04
+Shigella spp.,d05
+Shigella spp.,d06
+Shigella spp.,d07
+Shigella spp.,d08
+Shigella spp.,d09
+Shigella spp.,sd1
+Shigella spp.,dxx
+Shigella spp.,sn1
+Shigella spp.,shb
+Shigella spp.,f01
+Shigella spp.,f1a
+Shigella spp.,f1b
+Shigella spp.,f02
+Shigella spp.,f2a
+Shigella spp.,f2b
+Shigella spp.,f03
+Shigella spp.,f3a
+Shigella spp.,f3b
+Shigella spp.,f04
+Shigella spp.,f4a
+Shigella spp.,f4b
+Shigella spp.,f4c
+Shigella spp.,f05
+Shigella spp.,f5a
+Shigella spp.,f5b
+Shigella spp.,f06
+Shigella spp.,fxx
+Shigella spp.,479
+Shigella spp.,fvx
+Shigella spp.,fvy
+Shigella spp.,shd
+Shigella spp.,s01
+Shigella spp.,s02
+Shigella spp.,shi
+Shigella spp.,snd
+Stenotrophomonas maltophilia,pma
+Vibrio cholerae ,vic
+Vibrio cholerae ,vel
+Vibrio cholerae ,vx1
+Vibrio cholerae ,vo1
+Vibrio cholerae ,vhi
+Vibrio cholerae ,vin
+Vibrio cholerae ,vog
+Vibrio cholerae ,139
+Vibrio cholerae O1,vo1
+Vibrio cholerae O1,vhi
+Vibrio cholerae O1,vin
+Vibrio cholerae O1,vog
+"Vibrio cholerae non O1, non O139",vx1
+Vibrio parahaemolyticus,vip
+Vibrio spp.,val
+Vibrio spp.,vca
+Vibrio spp.,vci
+Vibrio spp.,pdm
+Vibrio spp.,cfe
+Vibrio spp.,vfl
+Vibrio spp.,vfu
+Vibrio spp.,vho
+Vibrio spp.,vme
+Vibrio spp.,vmi
+Vibrio spp.,vi-
+Vibrio spp.,moi
+Vibrio spp.,vvu
+Enterococcus faecalis,efa
+Enterococcus faecium,efm
+Enterococcus spp.,enb
+Enterococcus spp.,eve
+Enterococcus spp.,ean
+Enterococcus spp.,eav
+Enterococcus spp.,eca
+Enterococcus spp.,ecc
+Enterococcus spp.,ecb
+Enterococcus spp.,eds
+Enterococcus spp.,edu
+Enterococcus spp.,efv
+Enterococcus spp.,ega
+Enterococcus spp.,egv
+Enterococcus spp.,enh
+Enterococcus spp.,ema
+Enterococcus spp.,emn
+Enterococcus spp.,epa
+Enterococcus spp.,evi
+Enterococcus spp.,eps
+Enterococcus spp.,era
+Enterococcus spp.,esh
+Enterococcus spp.,ese
+Enterococcus spp.,eso
+Enterococcus spp.,ent
+Enterococcus spp.,esu
+Enterococcus spp.,evi
+Staphylococcus aureus,sau
+Staphylococcus aureus,sc+
+"Staphylococcus, coagulase negative",sep
+"Staphylococcus, coagulase negative",sae
+"Staphylococcus, coagulase negative",sai
+"Staphylococcus, coagulase negative",sca
+"Staphylococcus, coagulase negative",sca
+"Staphylococcus, coagulase negative",sur
+"Staphylococcus, coagulase negative",scp
+"Staphylococcus, coagulase negative",scu
+"Staphylococcus, coagulase negative",scl
+"Staphylococcus, coagulase negative",scg
+"Staphylococcus, coagulase negative",slc
+"Staphylococcus, coagulase negative",stc
+"Staphylococcus, coagulase negative",stc
+"Staphylococcus, coagulase negative",sul
+"Staphylococcus, coagulase negative",sde
+"Staphylococcus, coagulase negative",sep
+"Staphylococcus, coagulase negative",seq
+"Staphylococcus, coagulase negative",sfe
+"Staphylococcus, coagulase negative",sgl
+"Staphylococcus, coagulase negative",shl
+"Staphylococcus, coagulase negative",sho
+"Staphylococcus, coagulase negative",sho
+"Staphylococcus, coagulase negative",snb
+"Staphylococcus, coagulase negative",shy
+"Staphylococcus, coagulase negative",sit
+"Staphylococcus, coagulase negative",skl
+"Staphylococcus, coagulase negative",sle
+"Staphylococcus, coagulase negative",slu
+"Staphylococcus, coagulase negative",sms
+"Staphylococcus, coagulase negative",stt
+"Staphylococcus, coagulase negative",sps
+"Staphylococcus, coagulase negative",psd
+"Staphylococcus, coagulase negative",spv
+"Staphylococcus, coagulase negative",pps
+"Staphylococcus, coagulase negative",sap
+"Staphylococcus, coagulase negative",ssb
+"Staphylococcus, coagulase negative",sap
+"Staphylococcus, coagulase negative",slc
+"Staphylococcus, coagulase negative",ssf
+"Staphylococcus, coagulase negative",ssr
+"Staphylococcus, coagulase negative",sle
+"Staphylococcus, coagulase negative",ssr
+"Staphylococcus, coagulase negative",ssi
+"Staphylococcus, coagulase negative",sta
+"Staphylococcus, coagulase negative",spv
+"Staphylococcus, coagulase negative",swa
+"Staphylococcus, coagulase negative",sxy
+"Staphylococcus, coagulase negative",scn
+Streptococcus agalactiae,sgc
+Streptococcus agalactiae,bsb
+"Streptococcus, beta-hemolytic not Group A,B,D",sdy
+"Streptococcus, beta-hemolytic not Group A,B,D",bsc
+"Streptococcus, beta-hemolytic not Group A,B,D",bse
+"Streptococcus, beta-hemolytic not Group A,B,D",bsf
+"Streptococcus, beta-hemolytic not Group A,B,D",bsg
+"Streptococcus, beta-hemolytic not Group A,B,D",bs-
+"Streptococcus, beta-hemolytic not Group A,B,D",sqm
+"Streptococcus, beta-hemolytic not Group A,B,D",squ
+"Streptococcus, beta-hemolytic not Group A,B,D",szo
+"Streptococcus, beta-hemolytic not Group A,B,D",san
+"Streptococcus, beta-hemolytic not Group A,B,D",sct
+"Streptococcus, beta-hemolytic not Group A,B,D",sxa
+Streptococcus pyogenes,bsa
+Streptococcus pyogenes,spy
+Streptococcus suis,sui
+Streptococcuss spp. Viridans Group,sad
+Streptococcuss spp. Viridans Group,san
+Streptococcuss spp. Viridans Group,sct
+Streptococcuss spp. Viridans Group,scc
+Streptococcuss spp. Viridans Group,src
+Streptococcuss spp. Viridans Group,sdo
+Streptococcuss spp. Viridans Group,squ
+Streptococcuss spp. Viridans Group,sfr
+Streptococcuss spp. Viridans Group,sin
+Streptococcuss spp. Viridans Group,smc
+Streptococcuss spp. Viridans Group,smt
+Streptococcuss spp. Viridans Group,smu
+Streptococcuss spp. Viridans Group,sol
+Streptococcuss spp. Viridans Group,spp
+Streptococcuss spp. Viridans Group,srt
+Streptococcuss spp. Viridans Group,ssa
+Streptococcuss spp. Viridans Group,ssn
+Streptococcuss spp. Viridans Group,ss1
+Streptococcuss spp. Viridans Group,ss2
+Streptococcuss spp. Viridans Group,sub
+Streptococcuss spp. Viridans Group,svi
+Streptococcuss spp. Viridans Group,sgm
+Streptococcuss spp. Viridans Group,dxe
+Streptococcuss spp. Viridans Group,sso
+Streptococcus pneumoniae,spn
+,nan
+,nan
+,nan
+,nan
