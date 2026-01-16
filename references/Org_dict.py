@@ -1,60 +1,25 @@
-from pathlib import Path
 import pandas as pd
+# กำหนดชื่อไฟล์ CSV
+input_file = 'references/org_to_map.csv'       # ชื่อไฟล์ต้นทาง
+output_file = 'mapped_org.csv' # ชื่อไฟล์ปลายทางที่จะบันทึก
 
-# ใช้ openpyxl สำหรับอ่าน/เขียน Excel
-from openpyxl import load_workbook
-from openpyxl.utils.dataframe import dataframe_to_rows
+# 1. อ่านไฟล์ CSV
+df = pd.read_csv(input_file, encoding='utf-8')
 
-# CONFIG 
-xlsx_path = Path("references/Org_Map-15-Jan.xlsx")      # <-- ใส่ชื่อไฟล์ของคุณ
-source_sheet = "Organism"                # <-- ชื่อชีตที่มีตารางต้นฉบับ
-new_sheet_name = "Organism_Mapping"    # <-- ชื่อชีตใหม่ที่จะบันทึก
+# 2. จัดการข้อมูล
+# แปลงข้อความที่มี ',' คั่น ให้เป็น List
+df['Code_Org'] = df['Code_Org'].astype(str).str.split(',')
 
-# อ่านข้อมูลจากชีตต้นทาง
-df = pd.read_excel(xlsx_path, sheet_name=source_sheet, dtype=str)
+# ระเบิด (Explode) ข้อมูลลงมาเป็นบรรทัดใหม่
+df_exploded = df.explode('Code_Org')
 
-# คาดหวังคอลัมน์ชื่อ "Organism" และ "Code_Org"
-required_cols = {"Organism", "Code_Org"}
-missing = required_cols - set(df.columns)
-if missing:
-    raise ValueError(f"Missing required columns: {missing}. Found columns: {list(df.columns)}")
+# ลบช่องว่างหน้า-หลัง (Trim) ที่อาจติดมาหลังเครื่องหมายคอมมา
+df_exploded['Code_Org'] = df_exploded['Code_Org'].str.strip()
 
-# ทำความสะอาด + แตก Code_Org เป็นหลายแถว (long format)
-df2 = df.copy()
-df2["Organism"] = df2["Organism"].astype(str).str.strip()
-df2["Code_Org"] = df2["Code_Org"].astype(str).fillna("").str.strip()
+# 3. บันทึกไฟล์ CSV ใหม่
+# encoding='utf-8-sig' เพื่อให้เปิดใน Excel แล้วอ่านภาษาไทยรู้เรื่อง
+df_exploded.to_csv(output_file, index=False, encoding='utf-8-sig')
 
-# แยกด้วย comma แล้ว trim ช่องว่าง
-df2["Alias_List"] = df2["Code_Org"].apply(
-    lambda s: [x.strip() for x in s.split(",") if x.strip()]
-)
-
-mapping_long = (
-    df2[["Organism", "Alias_List"]]
-    .explode("Alias_List", ignore_index=True)
-    .rename(columns={"Alias_List": "Alias_Code"})
-)
-
-mapping_long = mapping_long[mapping_long["Alias_Code"].notna() & (mapping_long["Alias_Code"] != "")]
-
-# เขียนกลับเข้าไฟล์เดิมเป็น worksheet ใหม่
-wb = load_workbook(xlsx_path)
-
-# ถ้าชีตชื่อซ้ำอยู่แล้ว ให้ลบทิ้งก่อน (เพื่อรันซ้ำได้)
-if new_sheet_name in wb.sheetnames:
-    ws_old = wb[new_sheet_name]
-    wb.remove(ws_old)
-
-ws = wb.create_sheet(title=new_sheet_name)
-
-# ใส่ header + data
-for r in dataframe_to_rows(mapping_long, index=False, header=True):
-    ws.append(r)
-
-# ปรับความกว้างคอลัมน์ให้อ่านง่าย
-ws.column_dimensions["A"].width = 35  # Organism
-ws.column_dimensions["B"].width = 18  # Alias_Code
-
-wb.save(xlsx_path)
-
-print(f"Done! Wrote {len(mapping_long):,} rows to sheet '{new_sheet_name}' in: {xlsx_path}")
+print(f"เสร็จเรียบร้อย! ข้อมูลถูกบันทึกที่ไฟล์: {output_file}")
+print("ตัวอย่างข้อมูล:")
+print(df_exploded.head())
