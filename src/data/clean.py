@@ -63,10 +63,8 @@ def rename_drug_columns(columns: list[str], drug_full_by_whonet5: Dict[str, str]
 
 def clean_listing_df(
     df: pd.DataFrame,
-    hos_name_by_lab_code: Dict[str, str],
     drug_full_by_whonet5: Dict[str, str],
     organism_clean_by_org: Dict[str, str],
-    col_laboratory: str = "LABORATORY",
     col_ward_type: str = "WARD_TYPE",
     col_age: str = "AGE",
     col_organism: str = "ORGANISM",
@@ -82,15 +80,11 @@ def clean_listing_df(
     if col_age in df.columns:
         df["AGE_GROUP"] = df[col_age].apply(assign_age_group)
 
-    # Hospital name mapping: LABORATORY -> X_HOS_NAME
-    if col_laboratory in df.columns:
-        df["X_HOS_NAME"] = df[col_laboratory].map(hos_name_by_lab_code)
-
     # Rename drug columns
     df = df.rename(columns=rename_drug_columns(list(df.columns), drug_full_by_whonet5))
 
     # Organism mapping
     if col_organism in df.columns:
-        df["ORGANISM_DASH"] = df[col_organism].map(organism_clean_by_org)
+        df["ORGANISM_FULL"] = df[col_organism].map(organism_clean_by_org)
 
     return df
