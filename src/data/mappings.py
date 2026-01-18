@@ -11,15 +11,13 @@ def _norm_text(x) -> str:
 
     s = str(x).strip()
 
-    # ลบคำว่า 'โรงพยาบาล'
+    # ลบคำว่า โรงพยาบาล
     s = s.replace("โรงพยาบาล", "")
 
     # collapse whitespace
     s = " ".join(s.split())
 
     return s
-
-
 
 @dataclass(frozen=True)
 class Mappings:
@@ -30,20 +28,17 @@ class Mappings:
     drug_full_by_whonet5: dict
     organism_clean_by_org: dict
 
-
 def load_mappings(
-    hospital_csv: Path,
+    hospital_xlsx: Path,
     drug_xlsx: Path,
     org_xlsx: Path,
 ) -> Mappings:
     """Load mapping reference tables from reference files."""
 
     # ---------- Hospital reference (CSV) ----------
-    hos_map = pd.read_csv(hospital_csv, dtype=str)
+    hos_map = pd.read_csv(hospital_xlsx, dtype=str)
 
-    # คาดหวังคอลัมน์อย่างน้อย:
     # เขตสุขภาพ, จังหวัด, โรงพยาบาล, Code
-    # (ชื่อคอลัมน์ไทย ใช้ตรงตามไฟล์จริงของแปม)
 
     # 1) LABORATORY code -> hospital name
     hos_name_by_lab_code = dict(
@@ -70,13 +65,13 @@ def load_mappings(
     )
 
     # ---------- Drug reference ----------
-    drug_map_df = pd.read_excel(drug_xlsx)
+    drug_map_df = pd.read_csv(drug_xlsx)
     drug_full_by_whonet5 = dict(
         zip(drug_map_df["Code"], drug_map_df["Antibiotic"])
     )
 
     # ---------- Organism reference ----------
-    org_map = pd.read_excel(org_xlsx)
+    org_map = pd.read_csv(org_xlsx)
     organism_clean_by_org = dict(
         zip(org_map["Code_Org"], org_map["Organism"])
     )

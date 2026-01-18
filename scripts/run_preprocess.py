@@ -5,9 +5,9 @@ from src.config import (
     RAW_DIR, PROCESSED_DIR,
     YEARS, LISTING_CSV_PATTERN,
     HOSPITAL_MAP_XLSX, DRUG_MAP_XLSX, ORG_MAP_XLSX,
-    COL_LAB, COL_WARD_TYPE, COL_AGE, COL_ORGANISM,
+    COL_LAB,
 )
-from src.data.extract import read_listing_csv, drop_all_null_columns
+from src.data.extract import read_listing_csv
 from src.data.mappings import load_mappings
 from src.data.clean import clean_listing_df
 from src.data.dataset import write_year_output, combine_years
@@ -15,9 +15,9 @@ from src.data.dataset import write_year_output, combine_years
 
 def main():
     # Load mapping references once
-    # NOTE: ใน config ของแปมเป็น .csv แม้ตัวแปรจะชื่อ *_XLSX ก็ใช้ได้
+
     mappings = load_mappings(
-        hospital_xlsx=HOSPITAL_MAP_XLSX,  # <- ชี้ไปที่ Hos_Code-15-Jan.csv
+        hospital_xlsx=HOSPITAL_MAP_XLSX,  # <- Hos_Code-15-Jan.csv
         drug_xlsx=DRUG_MAP_XLSX,          # <- Drug_dict.csv
         org_xlsx=ORG_MAP_XLSX,            # <- mapped_org.csv
     )
@@ -30,21 +30,15 @@ def main():
 
         print(f"\n=== Preprocess year {year} ===")
         df = read_listing_csv(in_path)
-        df = drop_all_null_columns(df)
 
         # ---------- Core cleaning (เดิมของแปม) ----------
         df = clean_listing_df(
             df,
-            hos_name_by_lab_code = mappings.hos_name_by_hos_code,
             drug_full_by_whonet5 = mappings.drug_full_by_whonet5,
             organism_clean_by_org = mappings.organism_clean_by_org,
-            col_laboratory=COL_LAB,
-            col_ward_type=COL_WARD_TYPE,
-            col_age=COL_AGE,
-            col_organism=COL_ORGANISM,
         )
 
-        # ---------- ✅ Hospital mapping เติม NaN ตาม QA ----------
+        # ---------- Hospital mapping เติม NaN ----------
         # 1) เติม X_HOS_NAME จาก LABORATORY (ถ้ายังว่าง)
         if "X_HOS_NAME" in df.columns and COL_LAB in df.columns:
             m1 = df["X_HOS_NAME"].isna() & df[COL_LAB].notna()
@@ -78,6 +72,11 @@ def main():
     # Combine into a single file for handoff (amr_2015-2024 / AllYears)
     try:
         combined = combine_years(PROCESSED_DIR, list(YEARS), fmt="parquet")
+        # export CSV สำรองจากไฟล์รวม (อ่าน parquet แล้วเขียน csv)
+        df_all = pd.read_parquet(combined)
+        csv_out = PROCESSED_DIR / "AMR_2015-2024.csv"
+        df_all.to_csv(csv_out, index=False)
+        print(f"✅ CSV backup: {csv_out}")
         print(f"\n✅ Combined dataset: {combined}")
     except FileNotFoundError as e:
         print(f"⚠️ Combine skipped: {e}")

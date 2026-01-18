@@ -23,8 +23,8 @@ def combine_years(processed_dir: Path, years: list[int], fmt: str = "parquet") -
     """Combine per-year outputs into a single file (for modeling convenience)."""
     dfs = []
     for y in years:
-        p_parq = processed_dir / f"Dash_{y}.parquet"
-        p_csv = processed_dir / f"Dash_{y}.csv"
+        p_parq = processed_dir / f"processed_{y}.parquet"
+        p_csv = processed_dir / f"processed_{y}.csv"
         if p_parq.exists():
             dfs.append(pd.read_parquet(p_parq))
         elif p_csv.exists():
@@ -39,10 +39,10 @@ def combine_years(processed_dir: Path, years: list[int], fmt: str = "parquet") -
 
     ensure_dir(processed_dir)
     if fmt == "csv":
-        out = processed_dir / "AllYears_Dash.csv"
+        out = processed_dir / "AllYears_processed.csv"
         df_all.to_csv(out, index=False)
         return out
     else:
-        out = processed_dir / "AllYears_Dash.parquet"
+        out = processed_dir / "AllYears_processed.parquet"
         df_all.to_parquet(out, index=False)
         return out

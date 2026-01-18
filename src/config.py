@@ -17,14 +17,14 @@ YEARS = list(range(2015, 2025))
 LISTING_CSV_PATTERN = "{year}_listing.csv"
 
 # Reference mapping files (place these in /references)
-HOSPITAL_MAP_XLSX = REF_DIR / "Hos_Code-15-Jan.csv"        # sheet: Hos_THA
-DRUG_MAP_XLSX     = REF_DIR / "Drug_dict.csv"           # sheet: Map Drug
-ORG_MAP_XLSX      = REF_DIR / "mapped_org.csv"       # sheet: ORGLIST
+HOSPITAL_MAP_XLSX = REF_DIR / "Hos_Code-15-Jan.csv"
+DRUG_MAP_XLSX     = REF_DIR / "Drug_dict.csv"
+ORG_MAP_XLSX      = REF_DIR / "mapped_org.csv"
 
 # Common output naming
-DASH_CSV_PATTERN = "Data_{year}.csv"
-DASH_PARQUET_PATTERN = "Data_{year}.parquet"
-COMBINED_PARQUET_NAME = "AllYears_Data.parquet"
+DASH_CSV_PATTERN = "processed_{year}.csv"
+DASH_PARQUET_PATTERN = "processed_{year}.parquet"
+COMBINED_PARQUET_NAME = "AllYears_processed.parquet"
 
 # Columns expected in listing (adjust if needed)
 COL_LAB = "LABORATORY"
