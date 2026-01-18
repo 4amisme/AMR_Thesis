@@ -23,18 +23,16 @@ def main():
         try:
             df = load_year_file(year)
 
-            # แสดงผลบนหน้าจอ (Top 25)
             print_nan_report(year, df, top_n=25)
 
-            # เซฟรายงานเต็มทุกคอลัมน์
             out_path = save_nan_report(year, df, out_dir=out_dir)
             print(f"✅ Saved: {out_path}")
 
         except Exception as e:
             print(f"⚠️ Year {year} error: {e}")
 
-    print("\n✅ เสร็จสิ้นการตรวจ QA")
-    print(f"ดูผลได้ที่: {out_dir}")
+    print("\n✅ QA")
+    print(f"ดูที่: {out_dir}")
 
 
 if __name__ == "__main__":
