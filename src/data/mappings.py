@@ -35,17 +35,14 @@ def load_mappings(
 ) -> Mappings:
     """Load mapping reference tables from reference files."""
 
-    # ---------- Hospital reference (CSV) ----------
     hos_map = pd.read_csv(hospital_xlsx, dtype=str)
 
-    # เขตสุขภาพ, จังหวัด, โรงพยาบาล, Code
-
-    # 1) LABORATORY code -> hospital name
+    # LABORATORY code -> hospital name
     hos_name_by_lab_code = dict(
         zip(hos_map["Code"], hos_map["โรงพยาบาล"])
     )
 
-    # 2) hospital name -> hospital code (แก้ X_HOS_CODE NA)
+    # hospital name -> hospital code (แก้ X_HOS_CODE NA)
     hos_code_by_hos_name = (
         hos_map
         .dropna(subset=["โรงพยาบาล", "Code"])
@@ -55,7 +52,7 @@ def load_mappings(
         .to_dict()
     )
 
-    # 3) hospital code -> hospital name
+    # hospital code -> hospital name
     hos_name_by_hos_code = (
         hos_map
         .dropna(subset=["Code", "โรงพยาบาล"])

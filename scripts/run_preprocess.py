@@ -7,11 +7,11 @@ from src.config import (
     HOSPITAL_MAP_XLSX, DRUG_MAP_XLSX, ORG_MAP_XLSX,
     COL_LAB,
 )
-from src.data.extract import read_listing_csv
+
+from src.data.extract import read_listing_csv, drop_all_null_columns
 from src.data.mappings import load_mappings
 from src.data.clean import clean_listing_df
 from src.data.dataset import write_year_output, combine_years
-
 
 def main():
     # Load mapping references once
@@ -30,8 +30,9 @@ def main():
 
         print(f"\n=== Preprocess year {year} ===")
         df = read_listing_csv(in_path)
+        df = drop_all_null_columns(df)
 
-        # ---------- Core cleaning (เดิมของแปม) ----------
+        # ---------- Core cleaning ----------
         df = clean_listing_df(
             df,
             drug_full_by_whonet5 = mappings.drug_full_by_whonet5,
@@ -39,18 +40,16 @@ def main():
         )
 
         # ---------- Hospital mapping เติม NaN ----------
-        # 1) เติม X_HOS_NAME จาก LABORATORY (ถ้ายังว่าง)
+        # เติม X_HOS_NAME จาก LABORATORY (ถ้ายังว่าง)
         if "X_HOS_NAME" in df.columns and COL_LAB in df.columns:
             m1 = df["X_HOS_NAME"].isna() & df[COL_LAB].notna()
             if m1.any():
                 df.loc[m1, "X_HOS_NAME"] = df.loc[m1, COL_LAB].map(mappings.hos_name_by_lab_code)
 
-        # 2) เติม X_HOS_CODE จาก X_HOS_NAME (แก้ปี 2016–2019 ที่ code หายเยอะ)
-        # ใช้คีย์ที่ normalize แบบเดียวกับ mapping.py (ใน mappings.hos_code_by_hos_name)
+        # เติม X_HOS_CODE จาก X_HOS_NAME
         if "X_HOS_CODE" in df.columns and "X_HOS_NAME" in df.columns:
             m2 = df["X_HOS_CODE"].isna() & df["X_HOS_NAME"].notna()
             if m2.any():
-                # normalize แบบง่าย (ให้สอดคล้องกับ _norm_text ที่ตัด "โรงพยาบาล" และจัดช่องว่าง)
                 hos_key = (
                     df["X_HOS_NAME"]
                     .astype(str)
@@ -60,23 +59,18 @@ def main():
                 )
                 df.loc[m2, "X_HOS_CODE"] = hos_key.loc[m2].map(mappings.hos_code_by_hos_name)
 
-        # 3) (optional) เติม X_HOS_NAME ย้อนกลับจาก X_HOS_CODE ถ้าชื่อว่างแต่มี code
+        # เติม X_HOS_NAME ย้อนกลับจาก X_HOS_CODE ถ้าชื่อว่างแต่มี code
         if "X_HOS_NAME" in df.columns and "X_HOS_CODE" in df.columns:
             m3 = df["X_HOS_NAME"].isna() & df["X_HOS_CODE"].notna()
             if m3.any():
                 df.loc[m3, "X_HOS_NAME"] = df.loc[m3, "X_HOS_CODE"].map(mappings.hos_name_by_hos_code)
 
-        out_path = write_year_output(df, PROCESSED_DIR, year, fmt="parquet")
+        out_path = write_year_output(df, PROCESSED_DIR, year, fmt="csv")
         print(f"✅ Wrote: {out_path}")
 
-    # Combine into a single file for handoff (amr_2015-2024 / AllYears)
+    # Combine into a single file for handoff
     try:
-        combined = combine_years(PROCESSED_DIR, list(YEARS), fmt="parquet")
-        # export CSV สำรองจากไฟล์รวม (อ่าน parquet แล้วเขียน csv)
-        df_all = pd.read_parquet(combined)
-        csv_out = PROCESSED_DIR / "AMR_2015-2024.csv"
-        df_all.to_csv(csv_out, index=False)
-        print(f"✅ CSV backup: {csv_out}")
+        combined = combine_years(PROCESSED_DIR, list(YEARS), fmt="csv")
         print(f"\n✅ Combined dataset: {combined}")
     except FileNotFoundError as e:
         print(f"⚠️ Combine skipped: {e}")

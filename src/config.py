@@ -4,7 +4,7 @@ from pathlib import Path
 # Project paths
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = PROJECT_ROOT / "data"
-RAW_DIR = DATA_DIR / "raw_sqlite"                # WHONET-exported listing CSVs (per year)
+RAW_DIR = DATA_DIR / "raw_sqlite"               
 PROCESSED_DIR = DATA_DIR / "processed"    # cleaned outputs (per year + combined)
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
 REF_DIR = PROJECT_ROOT / "references"     # mapping reference files (tracked in git)

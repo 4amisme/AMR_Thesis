@@ -9,11 +9,11 @@ def write_year_output(df: pd.DataFrame, out_dir: Path, year: int, fmt: str = "pa
     """Write cleaned single-year dataset to processed folder."""
     ensure_dir(out_dir)
     if fmt == "csv":
-        out_path = out_dir / f"Dash_{year}.csv"
+        out_path = out_dir / f"processed_{year}.csv"
         df.to_csv(out_path, index=False)
         return out_path
     elif fmt == "parquet":
-        out_path = out_dir / f"Dash_{year}.parquet"
+        out_path = out_dir / f"processed_{year}.parquet"
         df.to_parquet(out_path, index=False)
         return out_path
     else:
