@@ -88,3 +88,27 @@ def clean_listing_df(
         df["ORGANISM_FULL"] = df[col_organism].map(organism_clean_by_org)
 
     return df
+
+def clean_basic_fields_only(
+    df: pd.DataFrame,
+    organism_clean_by_org: Dict[str, str],
+    col_ward_type: str = "WARD_TYPE",
+    col_age: str = "AGE",
+    col_organism: str = "ORGANISM",
+) -> pd.DataFrame:
+    """Clean a single-year listing dataframe."""
+    df = df.copy()
+
+    # Normalize ward type
+    if col_ward_type in df.columns:
+        df[col_ward_type] = normalize_ward_type(df[col_ward_type])
+
+    # Age group
+    if col_age in df.columns:
+        df["AGE_GROUP"] = df[col_age].apply(assign_age_group)
+
+    # Organism mapping
+    if col_organism in df.columns:
+        df["ORGANISM_FULL"] = df[col_organism].map(organism_clean_by_org)
+
+    return df

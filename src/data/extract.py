@@ -5,3 +5,8 @@ import pandas as pd
 def read_listing_csv(path: Path) -> pd.DataFrame:
     """Read a WHONET-exported listing CSV for a single year."""
     return pd.read_csv(path, low_memory=False, dtype=str)
+
+def drop_all_null_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """Drop columns that are entirely missing."""
+    cols_all_missing = df.columns[df.isna().all()]
+    return df.drop(columns=list(cols_all_missing))
