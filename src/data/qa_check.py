@@ -4,11 +4,7 @@ import pandas as pd
 
 
 def build_nan_report(df: pd.DataFrame, year: int) -> pd.DataFrame:
-    """
-    สร้างรายงาน NaN ของทุกคอลัมน์:
-    - nan_count: จำนวน NaN
-    - nan_pct: เปอร์เซ็นต์ NaN
-    """
+
     total_rows = len(df)
     nan_count = df.isna().sum().sort_values(ascending=False)
 
@@ -28,9 +24,7 @@ def build_nan_report(df: pd.DataFrame, year: int) -> pd.DataFrame:
 
 
 def print_nan_report(year: int, df: pd.DataFrame, top_n: int = 25) -> None:
-    """
-    พิมพ์รายงานคอลัมน์ที่มี NaN เยอะสุด (top_n) เพื่อดูเร็วบนหน้าจอ
-    """
+
     rpt = build_nan_report(df, year)
     rpt_nonzero = rpt[rpt["nan_count"] > 0]
 
@@ -45,9 +39,7 @@ def print_nan_report(year: int, df: pd.DataFrame, top_n: int = 25) -> None:
 
 
 def save_nan_report(year: int, df: pd.DataFrame, out_dir: Path) -> Path:
-    """
-    เซฟรายงานเป็น CSV: artifacts/quality/nan_report_{year}.csv
-    """
+
     out_dir.mkdir(parents=True, exist_ok=True)
     rpt = build_nan_report(df, year)
 
