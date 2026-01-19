@@ -91,13 +91,24 @@ def clean_listing_df(
 
 def clean_basic_fields_only(
     df: pd.DataFrame,
+    hos_name_by_lab_code: Dict[str, str],
     organism_clean_by_org: Dict[str, str],
+    col_laboratory: str = "LABORATORY",
     col_ward_type: str = "WARD_TYPE",
     col_age: str = "AGE",
     col_organism: str = "ORGANISM",
 ) -> pd.DataFrame:
-    """Clean a single-year listing dataframe."""
+    """
+    Clean เฉพาะ fields พื้นฐาน + เติมชื่อ รพ. จาก LAB
+    ❌ ไม่ rename drug columns
+    """
     df = df.copy()
+
+    # เติมชื่อ รพ. จาก LABORATORY → X_HOS_NAME (ถ้าว่าง)
+    if col_laboratory in df.columns and "X_HOS_NAME" in df.columns:
+        m = df["X_HOS_NAME"].isna() & df[col_laboratory].notna()
+        if m.any():
+            df.loc[m, "X_HOS_NAME"] = df.loc[m, col_laboratory].map(hos_name_by_lab_code)
 
     # Normalize ward type
     if col_ward_type in df.columns:
