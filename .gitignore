@@ -6,3 +6,4 @@ data/
 __pycache__/
 .ipynb_checkpoints/
 MDR/data_for_model/AllYears_MDR_Final.csv
+MDR/data_for_model/AllYears_processed.csv
