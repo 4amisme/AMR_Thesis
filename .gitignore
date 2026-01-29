@@ -7,6 +7,13 @@ __pycache__/
 .ipynb_checkpoints/
 MDR/data_for_model/AllYears_MDR_Final.csv
 MDR/data_for_model/AllYears_processed.csv
+<<<<<<< HEAD
 MDR/DrugClass/AllYears_Standard_Checked_Selected.csv
 MDR/DrugClass/AllYears_Checked_Classes.csv
 MDR/DrugClass/AllYears_Standard_Checked_All.csv
+=======
+MDR/data_some_isolate/AllYears_Checked_Classes.csv
+MDR/DrugClass/AllYears_Standard_Checked_Selected.csv
+MDR/DrugClass/AllYears_Standard_Checked_All.csv
+MDR/DrugClass/AllYears_Checked_Classes.csv
+>>>>>>> Pammy
