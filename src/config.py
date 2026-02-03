@@ -8,6 +8,8 @@ RAW_DIR = DATA_DIR / "raw_sqlite"
 PROCESSED_DIR = DATA_DIR / "processed"    # cleaned outputs (per year + combined)
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
 REF_DIR = PROJECT_ROOT / "references"     # mapping reference files (tracked in git)
+MDR_DIR = DATA_DIR / "MDR"    # cleaned outputs (per year + combined)
+
 
 # Years (edit as needed)
 YEARS = list(range(2015, 2025))
