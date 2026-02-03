@@ -8,7 +8,7 @@ def load_data():
     source_path = r"C:\Users\ucwsh\Downloads\Drug_class_for_MDR_new.csv"
     
     # ไฟล์ปลายทาง (Intermediate file) ที่จะส่งต่อให้ขั้นตอนถัดไป
-    destination_file = os.path.join("MDR", "data_some_isolate", "Drug_class_for_MDR_new.csv")
+    destination_file = os.path.join("MDR", "DrugClass", "Drug_class_for_MDR_new.csv")
 
     print(f"[Step 1] กำลังอ่านข้อมูลจาก: {source_path}")
 
