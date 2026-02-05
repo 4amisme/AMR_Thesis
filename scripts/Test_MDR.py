@@ -26,14 +26,12 @@ TARGET_ORGANISMS: list[str] = [
     "Serratia marcescens",
 ]
 
-
 def _slugify(name: str) -> str:
     s = str(name).strip().lower()
     s = s.replace(" ", "_")
     s = re.sub(r"[^a-z0-9_\-\.]+", "", s)
     s = re.sub(r"_+", "_", s)
     return s or "unknown"
-
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     required_cols = {"organism_full", "std_status", "std_missing_list"}
