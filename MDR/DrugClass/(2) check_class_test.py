@@ -6,10 +6,10 @@ def add_tested_class_info():
     # 1. ตั้งค่าไฟล์
     # ==========================================
     input_file = os.path.join("MDR", "data", "AllYears_processed.csv")
-    mapping_file = os.path.join("MDR", "data_some_isolate", "Drug_class_for_MDR.csv")
+    mapping_file = os.path.join("MDR", "DrugClass", "Drug_class_for_MDR.csv")
     
     # ไฟล์ผลลัพธ์ที่จะบันทึกใน path MDR/data_some_isolate
-    output_path = os.path.join("MDR", "data_some_isolate")
+    output_path = os.path.join("MDR", "DrugClass")
     output_filename = "AllYears_Checked_Classes.csv"
     output_file = os.path.join(output_path, output_filename)
 
