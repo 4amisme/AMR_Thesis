@@ -1,0 +1,465 @@
+x_year,organism_full,Resistant_Drug_Classes,Count,Total_MDR,Percentage,MDR_id
+2015,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1225,5602,21.87,M6-006
+2015,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1147,5602,20.47,M5-021
+2015,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",440,5602,7.85,M5-011
+2015,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",395,5602,7.05,M4-031
+2015,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",319,5602,5.69,M3-032
+2015,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",232,5602,4.14,M7-001
+2015,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",149,5602,2.66,M5-013
+2015,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",149,5602,2.66,M3-031
+2015,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",147,5602,2.62,M3-029
+2015,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",144,5602,2.57,M4-014
+2015,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",141,5602,2.52,M4-034
+2015,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",127,5602,2.27,M4-033
+2015,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",125,5602,2.23,M5-014
+2015,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",111,5602,1.98,M3-008
+2015,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",111,5602,1.98,M3-027
+2015,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",93,5602,1.66,M4-012
+2015,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",88,5602,1.57,M6-007
+2015,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",77,5602,1.37,M4-017
+2015,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",77,5602,1.37,M4-035
+2015,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",47,5602,0.84,M3-041
+2015,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",46,5602,0.82,M3-039
+2015,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",42,5602,0.75,M3-013
+2015,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",38,5602,0.68,M4-016
+2015,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",29,5602,0.52,M3-011
+2015,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",21,5602,0.37,M5-015
+2015,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",19,5602,0.34,M6-003
+2015,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",15,5602,0.27,M4-019
+2015,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",10,5602,0.18,M3-015
+2015,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",9,5602,0.16,M5-018
+2015,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",5,5602,0.09,M5-019
+2015,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",5,5602,0.09,M4-026
+2015,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",4,5602,0.07,M5-016
+2015,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",3,5602,0.05,M4-022
+2015,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",2,5602,0.04,M5-004
+2015,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,5602,0.04,M6-004
+2015,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,5602,0.04,M4-020
+2015,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,5602,0.02,M4-003
+2015,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",1,5602,0.02,M5-006
+2015,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,5602,0.02,M5-009
+2015,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,5602,0.02,M4-027
+2015,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins",1,5602,0.02,M3-021
+2015,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",1,5602,0.02,M3-025
+2016,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1722,7445,23.13,M6-006
+2016,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1394,7445,18.72,M5-021
+2016,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",529,7445,7.11,M4-031
+2016,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",475,7445,6.38,M5-011
+2016,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",467,7445,6.27,M7-001
+2016,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",324,7445,4.35,M6-007
+2016,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",303,7445,4.07,M3-032
+2016,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",194,7445,2.61,M3-031
+2016,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",192,7445,2.58,M4-034
+2016,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",190,7445,2.55,M3-029
+2016,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",172,7445,2.31,M3-027
+2016,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",165,7445,2.22,M5-014
+2016,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",158,7445,2.12,M5-013
+2016,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",140,7445,1.88,M4-014
+2016,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",134,7445,1.8,M4-033
+2016,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",130,7445,1.75,M3-008
+2016,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",106,7445,1.42,M4-012
+2016,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",92,7445,1.24,M4-035
+2016,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",71,7445,0.95,M4-017
+2016,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",64,7445,0.86,M3-039
+2016,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",64,7445,0.86,M3-041
+2016,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",59,7445,0.79,M4-016
+2016,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",52,7445,0.7,M6-003
+2016,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",49,7445,0.66,M3-013
+2016,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",38,7445,0.51,M5-015
+2016,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",26,7445,0.35,M3-011
+2016,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",25,7445,0.34,M3-015
+2016,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",24,7445,0.32,M5-018
+2016,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",16,7445,0.21,M5-019
+2016,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",14,7445,0.19,M4-026
+2016,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",13,7445,0.17,M6-004
+2016,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",13,7445,0.17,M4-019
+2016,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",12,7445,0.16,M4-020
+2016,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",3,7445,0.04,M5-006
+2016,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",3,7445,0.04,M3-025
+2016,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",2,7445,0.03,M6-001
+2016,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",2,7445,0.03,M5-002
+2016,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",2,7445,0.03,M5-016
+2016,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,7445,0.01,M5-009
+2016,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,7445,0.01,M4-022
+2016,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,7445,0.01,M4-024
+2016,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",1,7445,0.01,M3-018
+2016,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,7445,0.01,M5-020
+2016,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,7445,0.01,M4-029
+2017,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2559,14942,17.13,M5-021
+2017,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2500,14942,16.73,M6-006
+2017,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1588,14942,10.63,M4-031
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1521,14942,10.18,M7-001
+2017,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1023,14942,6.85,M5-011
+2017,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",829,14942,5.55,M6-007
+2017,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",555,14942,3.71,M3-032
+2017,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",524,14942,3.51,M3-029
+2017,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",448,14942,3.0,M4-034
+2017,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",379,14942,2.54,M3-031
+2017,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",317,14942,2.12,M4-014
+2017,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",296,14942,1.98,M3-027
+2017,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",284,14942,1.9,M4-033
+2017,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",276,14942,1.85,M5-013
+2017,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",239,14942,1.6,M5-014
+2017,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",208,14942,1.39,M3-008
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",172,14942,1.15,M6-003
+2017,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",163,14942,1.09,M4-012
+2017,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",155,14942,1.04,M4-035
+2017,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",138,14942,0.92,M4-017
+2017,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",130,14942,0.87,M5-018
+2017,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",119,14942,0.8,M3-041
+2017,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",101,14942,0.68,M3-039
+2017,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",87,14942,0.58,M3-013
+2017,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",73,14942,0.49,M4-016
+2017,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",56,14942,0.37,M5-015
+2017,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",40,14942,0.27,M3-011
+2017,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",28,14942,0.19,M4-026
+2017,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",27,14942,0.18,M5-019
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",25,14942,0.17,M6-004
+2017,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",18,14942,0.12,M4-019
+2017,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",15,14942,0.1,M4-020
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",12,14942,0.08,M5-006
+2017,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",11,14942,0.07,M3-015
+2017,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",7,14942,0.05,M5-016
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",6,14942,0.04,M6-001
+2017,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",3,14942,0.02,M4-024
+2017,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",2,14942,0.01,M4-029
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,14942,0.01,M5-002
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,14942,0.01,M5-004
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,14942,0.01,M4-003
+2017,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,14942,0.01,M6-005
+2017,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",1,14942,0.01,M3-018
+2017,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,14942,0.01,M4-027
+2017,Klebsiella pneumoniae,"Carbapenems, Folate pathway antagonists, Penicillins",1,14942,0.01,M3-023
+2017,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",1,14942,0.01,M3-025
+2018,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2287,13837,16.53,M6-006
+2018,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2212,13837,15.99,M5-021
+2018,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1826,13837,13.2,M7-001
+2018,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",951,13837,6.87,M6-007
+2018,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",886,13837,6.4,M4-031
+2018,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",734,13837,5.3,M5-011
+2018,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",551,13837,3.98,M3-029
+2018,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",451,13837,3.26,M3-032
+2018,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",434,13837,3.14,M3-031
+2018,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",378,13837,2.73,M4-034
+2018,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",318,13837,2.3,M4-014
+2018,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",302,13837,2.18,M5-014
+2018,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",292,13837,2.11,M4-033
+2018,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",271,13837,1.96,M3-027
+2018,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",243,13837,1.76,M5-013
+2018,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",219,13837,1.58,M6-003
+2018,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",211,13837,1.52,M3-008
+2018,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",160,13837,1.16,M4-017
+2018,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",156,13837,1.13,M4-012
+2018,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",135,13837,0.98,M5-018
+2018,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",128,13837,0.93,M4-035
+2018,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",115,13837,0.83,M3-039
+2018,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",97,13837,0.7,M3-041
+2018,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",96,13837,0.69,M4-016
+2018,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",89,13837,0.64,M3-013
+2018,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",51,13837,0.37,M3-015
+2018,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",50,13837,0.36,M5-015
+2018,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",48,13837,0.35,M3-011
+2018,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",27,13837,0.2,M4-019
+2018,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",27,13837,0.2,M4-026
+2018,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",25,13837,0.18,M6-004
+2018,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",18,13837,0.13,M5-019
+2018,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",15,13837,0.11,M5-006
+2018,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",14,13837,0.1,M4-020
+2018,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,13837,0.02,M5-016
+2018,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",3,13837,0.02,M3-018
+2018,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",3,13837,0.02,M3-025
+2018,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",2,13837,0.01,M6-001
+2018,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,13837,0.01,M6-005
+2018,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",2,13837,0.01,M4-022
+2018,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",2,13837,0.01,M4-029
+2018,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,13837,0.01,M5-004
+2018,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,13837,0.01,M5-009
+2018,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,13837,0.01,M5-020
+2019,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2821,16243,17.37,M5-021
+2019,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2057,16243,12.66,M6-006
+2019,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1970,16243,12.13,M7-001
+2019,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1552,16243,9.55,M4-031
+2019,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1496,16243,9.21,M6-007
+2019,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",883,16243,5.44,M5-011
+2019,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",778,16243,4.79,M3-029
+2019,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",514,16243,3.16,M3-032
+2019,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",500,16243,3.08,M4-034
+2019,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",453,16243,2.79,M3-031
+2019,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",370,16243,2.28,M3-027
+2019,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",362,16243,2.23,M4-014
+2019,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",301,16243,1.85,M4-033
+2019,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",281,16243,1.73,M5-014
+2019,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",237,16243,1.46,M5-018
+2019,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",218,16243,1.34,M5-013
+2019,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",213,16243,1.31,M3-008
+2019,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",201,16243,1.24,M6-003
+2019,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",143,16243,0.88,M4-012
+2019,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",130,16243,0.8,M4-017
+2019,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",129,16243,0.79,M4-035
+2019,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",110,16243,0.68,M3-041
+2019,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",79,16243,0.49,M4-016
+2019,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",65,16243,0.4,M3-039
+2019,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",61,16243,0.38,M3-013
+2019,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",57,16243,0.35,M4-026
+2019,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",49,16243,0.3,M5-015
+2019,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",46,16243,0.28,M5-019
+2019,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",41,16243,0.25,M3-011
+2019,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",28,16243,0.17,M6-004
+2019,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",25,16243,0.15,M4-019
+2019,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",17,16243,0.1,M5-006
+2019,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",14,16243,0.09,M4-020
+2019,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",9,16243,0.06,M3-025
+2019,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",7,16243,0.04,M5-016
+2019,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",4,16243,0.02,M6-001
+2019,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",4,16243,0.02,M5-002
+2019,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",4,16243,0.02,M3-018
+2019,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",3,16243,0.02,M3-015
+2019,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",3,16243,0.02,M4-029
+2019,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",2,16243,0.01,M5-009
+2019,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,16243,0.01,M5-020
+2019,Klebsiella pneumoniae,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,16243,0.01,M4-030
+2019,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,16243,0.01,M6-005
+2019,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,16243,0.01,M4-022
+2020,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2680,14753,18.17,M7-001
+2020,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2182,14753,14.79,M5-021
+2020,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1563,14753,10.59,M6-006
+2020,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1402,14753,9.5,M6-007
+2020,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1091,14753,7.4,M4-031
+2020,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",699,14753,4.74,M5-011
+2020,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",573,14753,3.88,M3-029
+2020,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",555,14753,3.76,M3-032
+2020,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",471,14753,3.19,M3-027
+2020,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",441,14753,2.99,M3-031
+2020,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",377,14753,2.56,M4-034
+2020,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",319,14753,2.16,M4-033
+2020,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",316,14753,2.14,M5-018
+2020,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",204,14753,1.38,M4-014
+2020,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",203,14753,1.38,M4-012
+2020,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",199,14753,1.35,M6-003
+2020,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",199,14753,1.35,M5-013
+2020,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",169,14753,1.15,M3-008
+2020,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",159,14753,1.08,M5-014
+2020,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",131,14753,0.89,M4-017
+2020,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",114,14753,0.77,M4-035
+2020,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",99,14753,0.67,M3-041
+2020,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",93,14753,0.63,M3-039
+2020,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",66,14753,0.45,M4-026
+2020,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",63,14753,0.43,M4-016
+2020,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",61,14753,0.41,M3-013
+2020,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",56,14753,0.38,M5-019
+2020,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",54,14753,0.37,M3-011
+2020,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",47,14753,0.32,M5-015
+2020,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",39,14753,0.26,M6-001
+2020,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",24,14753,0.16,M6-004
+2020,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",21,14753,0.14,M4-019
+2020,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",19,14753,0.13,M5-006
+2020,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",12,14753,0.08,M3-018
+2020,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",9,14753,0.06,M3-015
+2020,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",7,14753,0.05,M4-020
+2020,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",6,14753,0.04,M5-016
+2020,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins",6,14753,0.04,M3-021
+2020,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",5,14753,0.03,M5-020
+2020,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",5,14753,0.03,M4-029
+2020,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",5,14753,0.03,M3-025
+2020,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",3,14753,0.02,M4-022
+2020,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",2,14753,0.01,M4-003
+2020,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,14753,0.01,M5-002
+2020,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,14753,0.01,M6-005
+2020,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,14753,0.01,M4-027
+2020,Klebsiella pneumoniae,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,14753,0.01,M4-030
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",3104,16179,19.19,M7-001
+2021,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2637,16179,16.3,M5-021
+2021,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2124,16179,13.13,M6-007
+2021,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1377,16179,8.51,M6-006
+2021,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1069,16179,6.61,M4-031
+2021,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",690,16179,4.26,M5-011
+2021,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",536,16179,3.31,M3-027
+2021,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",508,16179,3.14,M3-032
+2021,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",482,16179,2.98,M3-031
+2021,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",478,16179,2.95,M3-029
+2021,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",373,16179,2.31,M4-034
+2021,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",366,16179,2.26,M4-033
+2021,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",326,16179,2.01,M5-018
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",303,16179,1.87,M6-003
+2021,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",242,16179,1.5,M4-012
+2021,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",167,16179,1.03,M4-014
+2021,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",165,16179,1.02,M5-013
+2021,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",142,16179,0.88,M5-014
+2021,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",138,16179,0.85,M3-008
+2021,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",101,16179,0.62,M4-017
+2021,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",87,16179,0.54,M4-026
+2021,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",87,16179,0.54,M4-035
+2021,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",83,16179,0.51,M3-041
+2021,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",77,16179,0.48,M4-016
+2021,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",72,16179,0.45,M3-039
+2021,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",63,16179,0.39,M3-013
+2021,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",55,16179,0.34,M5-019
+2021,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",48,16179,0.3,M5-015
+2021,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",46,16179,0.28,M3-011
+2021,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",36,16179,0.22,M3-018
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",26,16179,0.16,M6-004
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",24,16179,0.15,M5-006
+2021,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",18,16179,0.11,M3-025
+2021,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",17,16179,0.11,M5-016
+2021,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",15,16179,0.09,M4-019
+2021,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",15,16179,0.09,M4-029
+2021,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",12,16179,0.07,M4-020
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",11,16179,0.07,M6-001
+2021,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",10,16179,0.06,M4-022
+2021,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",9,16179,0.06,M3-015
+2021,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",9,16179,0.06,M4-024
+2021,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",8,16179,0.05,M5-020
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",7,16179,0.04,M5-002
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",6,16179,0.04,M4-003
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",3,16179,0.02,M5-004
+2021,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins",3,16179,0.02,M3-021
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,16179,0.01,M5-007
+2021,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,16179,0.01,M6-005
+2021,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,16179,0.01,M4-027
+2021,Klebsiella pneumoniae,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,16179,0.01,M4-030
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2579,9635,26.77,M7-001
+2022,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1466,9635,15.22,M5-021
+2022,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1413,9635,14.67,M6-007
+2022,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",690,9635,7.16,M6-006
+2022,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",517,9635,5.37,M4-031
+2022,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",330,9635,3.43,M3-029
+2022,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",288,9635,2.99,M3-031
+2022,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",261,9635,2.71,M5-011
+2022,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",246,9635,2.55,M3-032
+2022,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",237,9635,2.46,M4-034
+2022,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",184,9635,1.91,M5-018
+2022,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",177,9635,1.84,M3-027
+2022,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",171,9635,1.77,M4-033
+2022,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",115,9635,1.19,M5-014
+2022,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",101,9635,1.05,M4-014
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",94,9635,0.98,M6-003
+2022,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",76,9635,0.79,M4-035
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",70,9635,0.73,M6-001
+2022,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",70,9635,0.73,M3-008
+2022,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",67,9635,0.7,M5-013
+2022,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",63,9635,0.65,M4-012
+2022,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",56,9635,0.58,M4-017
+2022,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",51,9635,0.53,M3-039
+2022,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",41,9635,0.43,M3-013
+2022,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",37,9635,0.38,M3-041
+2022,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",33,9635,0.34,M4-016
+2022,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",33,9635,0.34,M4-026
+2022,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",26,9635,0.27,M5-019
+2022,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",20,9635,0.21,M5-015
+2022,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",16,9635,0.17,M3-011
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",15,9635,0.16,M6-004
+2022,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",13,9635,0.13,M3-018
+2022,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",12,9635,0.12,M4-019
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",11,9635,0.11,M5-006
+2022,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",9,9635,0.09,M3-015
+2022,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",8,9635,0.08,M4-024
+2022,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",7,9635,0.07,M4-020
+2022,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",6,9635,0.06,M3-025
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",5,9635,0.05,M5-002
+2022,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",4,9635,0.04,M4-022
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",3,9635,0.03,M5-004
+2022,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,9635,0.03,M5-016
+2022,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",3,9635,0.03,M5-020
+2022,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",3,9635,0.03,M4-029
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,9635,0.01,M4-003
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,9635,0.01,M5-010
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Penicillins",1,9635,0.01,M3-004
+2022,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Penicillins, β-lactam combination agents",1,9635,0.01,M4-010
+2022,Klebsiella pneumoniae,"Carbapenems, Folate pathway antagonists, Penicillins",1,9635,0.01,M3-023
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2899,11922,24.32,M7-001
+2023,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1723,11922,14.45,M6-007
+2023,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1681,11922,14.1,M5-021
+2023,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",938,11922,7.87,M6-006
+2023,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",578,11922,4.85,M3-029
+2023,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",573,11922,4.81,M4-031
+2023,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",396,11922,3.32,M4-034
+2023,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",385,11922,3.23,M3-031
+2023,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",320,11922,2.68,M5-011
+2023,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",306,11922,2.57,M3-032
+2023,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",261,11922,2.19,M4-033
+2023,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",257,11922,2.16,M5-018
+2023,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",191,11922,1.6,M3-027
+2023,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",171,11922,1.43,M5-014
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",162,11922,1.36,M6-003
+2023,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",140,11922,1.17,M4-014
+2023,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",107,11922,0.9,M4-035
+2023,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",104,11922,0.87,M5-019
+2023,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",85,11922,0.71,M3-008
+2023,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",73,11922,0.61,M4-017
+2023,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",71,11922,0.6,M4-012
+2023,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",67,11922,0.56,M5-013
+2023,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",56,11922,0.47,M3-039
+2023,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",51,11922,0.43,M3-041
+2023,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",45,11922,0.38,M3-013
+2023,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",44,11922,0.37,M4-026
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",41,11922,0.34,M6-004
+2023,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",35,11922,0.29,M4-016
+2023,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",29,11922,0.24,M5-015
+2023,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",22,11922,0.18,M3-011
+2023,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",15,11922,0.13,M4-019
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",14,11922,0.12,M6-001
+2023,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",14,11922,0.12,M3-018
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",13,11922,0.11,M5-006
+2023,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",11,11922,0.09,M4-020
+2023,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",8,11922,0.07,M3-015
+2023,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",6,11922,0.05,M5-020
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",5,11922,0.04,M4-003
+2023,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",5,11922,0.04,M5-016
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",4,11922,0.03,M5-004
+2023,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",4,11922,0.03,M4-022
+2023,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",4,11922,0.03,M3-025
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",3,11922,0.03,M5-002
+2023,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",2,11922,0.02,M4-024
+2023,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Penicillins",1,11922,0.01,M3-004
+2023,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,11922,0.01,M4-029
+2023,Klebsiella pneumoniae,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,11922,0.01,M4-030
+2024,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2400,12629,19.0,M6-007
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2203,12629,17.44,M7-001
+2024,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1708,12629,13.52,M5-021
+2024,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",927,12629,7.34,M6-006
+2024,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",913,12629,7.23,M4-031
+2024,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins",546,12629,4.32,M3-029
+2024,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",494,12629,3.91,M5-011
+2024,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins",397,12629,3.14,M3-027
+2024,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins",390,12629,3.09,M3-032
+2024,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",320,12629,2.53,M5-018
+2024,Klebsiella pneumoniae,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",310,12629,2.45,M4-033
+2024,Klebsiella pneumoniae,"Cephalosporins, Penicillins, β-lactam combination agents",302,12629,2.39,M3-031
+2024,Klebsiella pneumoniae,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",255,12629,2.02,M4-034
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",156,12629,1.24,M6-003
+2024,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",133,12629,1.05,M4-012
+2024,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",122,12629,0.97,M5-019
+2024,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",116,12629,0.92,M4-014
+2024,Klebsiella pneumoniae,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",114,12629,0.9,M4-035
+2024,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins",113,12629,0.89,M3-008
+2024,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",107,12629,0.85,M5-014
+2024,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",101,12629,0.8,M4-017
+2024,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",88,12629,0.7,M5-013
+2024,Klebsiella pneumoniae,"Folate pathway antagonists, Penicillins, β-lactam combination agents",59,12629,0.47,M3-041
+2024,Klebsiella pneumoniae,"Fluoroquinolones, Penicillins, β-lactam combination agents",54,12629,0.43,M3-039
+2024,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",53,12629,0.42,M4-026
+2024,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins",52,12629,0.41,M3-013
+2024,Klebsiella pneumoniae,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",40,12629,0.32,M4-016
+2024,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins",27,12629,0.21,M3-011
+2024,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",23,12629,0.18,M5-015
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",12,12629,0.1,M6-001
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",12,12629,0.1,M6-004
+2024,Klebsiella pneumoniae,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",10,12629,0.08,M4-019
+2024,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",10,12629,0.08,M5-020
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",8,12629,0.06,M5-006
+2024,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Penicillins",8,12629,0.06,M3-018
+2024,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",7,12629,0.06,M5-016
+2024,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",7,12629,0.06,M4-029
+2024,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",6,12629,0.05,M4-022
+2024,Klebsiella pneumoniae,"Carbapenems, Penicillins, β-lactam combination agents",6,12629,0.05,M3-025
+2024,Klebsiella pneumoniae,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",4,12629,0.03,M4-020
+2024,Klebsiella pneumoniae,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",3,12629,0.02,M4-024
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",2,12629,0.02,M5-002
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,12629,0.02,M6-005
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",2,12629,0.02,M5-009
+2024,Klebsiella pneumoniae,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",2,12629,0.02,M4-027
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,12629,0.01,M4-003
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,12629,0.01,M5-010
+2024,Klebsiella pneumoniae,"Aminoglycosides, Carbapenems, Penicillins, β-lactam combination agents",1,12629,0.01,M4-010
+2024,Klebsiella pneumoniae,"Aminoglycosides, Penicillins, β-lactam combination agents",1,12629,0.01,M3-015
+2024,Klebsiella pneumoniae,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,12629,0.01,M4-030
