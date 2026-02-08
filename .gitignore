@@ -11,3 +11,7 @@ MDR/data_some_isolate/AllYears_Checked_Classes.csv
 MDR/DrugClass/AllYears_Standard_Checked_Selected.csv
 MDR/DrugClass/AllYears_Standard_Checked_All.csv
 MDR/DrugClass/AllYears_Checked_Classes.csv
+MDR/DrugClass2/pseudomonas_aeruginosa.csv
+MDR/DrugClass2/klebsiella_pneumoniae.csv
+MDR/DrugClass2/escherichia_coli.csv
+MDR/DrugClass2/acinetobacter_baumannii.csv
