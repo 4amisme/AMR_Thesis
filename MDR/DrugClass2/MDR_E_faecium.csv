@@ -1,0 +1,103 @@
+x_year,organism_full,Resistant_Drug_Classes,Count,Total_MDR,Percentage,MDR_id
+2015,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",81,108,75.0,M4-038
+2015,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",9,108,8.33,M3-035
+2015,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",7,108,6.48,M3-044
+2015,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",6,108,5.56,M5-022
+2015,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",3,108,2.78,M3-038
+2015,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",2,108,1.85,M4-037
+2016,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",67,96,69.79,M4-038
+2016,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",11,96,11.46,M5-022
+2016,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",8,96,8.33,M3-044
+2016,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",5,96,5.21,M4-037
+2016,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Tetracyclines",1,96,1.04,M4-036
+2016,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",1,96,1.04,M3-037
+2016,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",1,96,1.04,M3-035
+2016,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",1,96,1.04,M3-038
+2016,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins",1,96,1.04,M3-043
+2017,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",156,204,76.47,M4-038
+2017,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",14,204,6.86,M5-022
+2017,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",13,204,6.37,M3-035
+2017,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",8,204,3.92,M3-044
+2017,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",6,204,2.94,M3-037
+2017,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",3,204,1.47,M4-037
+2017,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",3,204,1.47,M3-038
+2017,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins, Tetracyclines",1,204,0.49,M4-040
+2018,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",526,649,81.05,M4-038
+2018,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",42,649,6.47,M5-022
+2018,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",28,649,4.31,M3-044
+2018,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",20,649,3.08,M3-037
+2018,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",11,649,1.69,M3-038
+2018,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",10,649,1.54,M4-037
+2018,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",9,649,1.39,M3-035
+2018,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins, Tetracyclines",2,649,0.31,M4-040
+2018,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins",1,649,0.15,M3-043
+2019,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",606,787,77.0,M4-038
+2019,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",107,787,13.6,M5-022
+2019,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",32,787,4.07,M3-037
+2019,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",12,787,1.52,M3-044
+2019,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",11,787,1.4,M3-038
+2019,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",8,787,1.02,M3-035
+2019,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",5,787,0.64,M4-037
+2019,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins, Tetracyclines",3,787,0.38,M4-040
+2019,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Tetracyclines",1,787,0.13,M4-036
+2019,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins",1,787,0.13,M3-036
+2019,Enterococcus faecium,"Glycopeptides, Macrolides, Tetracyclines",1,787,0.13,M3-042
+2020,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",1717,2146,80.01,M4-038
+2020,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",132,2146,6.15,M3-037
+2020,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",128,2146,5.96,M5-022
+2020,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",51,2146,2.38,M3-038
+2020,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",50,2146,2.33,M3-044
+2020,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",32,2146,1.49,M4-037
+2020,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",31,2146,1.44,M3-035
+2020,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins, Tetracyclines",2,2146,0.09,M4-040
+2020,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides",1,2146,0.05,M3-034
+2020,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins, Tetracyclines",1,2146,0.05,M4-039
+2020,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins",1,2146,0.05,M3-043
+2021,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",2801,3511,79.78,M4-038
+2021,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",262,3511,7.46,M5-022
+2021,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",180,3511,5.13,M3-037
+2021,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",87,3511,2.48,M3-044
+2021,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",68,3511,1.94,M4-037
+2021,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",59,3511,1.68,M3-038
+2021,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",47,3511,1.34,M3-035
+2021,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins",2,3511,0.06,M3-036
+2021,Enterococcus faecium,"Glycopeptides, Penicillins, Tetracyclines",2,3511,0.06,M3-045
+2021,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Tetracyclines",1,3511,0.03,M4-036
+2021,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins, Tetracyclines",1,3511,0.03,M4-039
+2021,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins, Tetracyclines",1,3511,0.03,M4-040
+2022,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",1765,2249,78.48,M4-038
+2022,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",201,2249,8.94,M5-022
+2022,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",155,2249,6.89,M4-037
+2022,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",94,2249,4.18,M3-037
+2022,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",17,2249,0.76,M3-038
+2022,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",7,2249,0.31,M3-044
+2022,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",6,2249,0.27,M3-035
+2022,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins, Tetracyclines",2,2249,0.09,M4-039
+2022,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins",1,2249,0.04,M3-036
+2022,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins, Tetracyclines",1,2249,0.04,M4-040
+2023,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",1840,2756,66.76,M4-038
+2023,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",385,2756,13.97,M4-037
+2023,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",298,2756,10.81,M5-022
+2023,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",171,2756,6.2,M3-037
+2023,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",23,2756,0.83,M3-038
+2023,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",16,2756,0.58,M3-044
+2023,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",11,2756,0.4,M3-035
+2023,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins, Tetracyclines",4,2756,0.15,M4-040
+2023,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides",2,2756,0.07,M3-034
+2023,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Tetracyclines",2,2756,0.07,M4-036
+2023,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins",2,2756,0.07,M3-043
+2023,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins",1,2756,0.04,M3-036
+2023,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins, Tetracyclines",1,2756,0.04,M4-039
+2024,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins, Tetracyclines",2666,3830,69.61,M4-038
+2024,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins",477,3830,12.45,M4-037
+2024,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Macrolides, Penicillins, Tetracyclines",249,3830,6.5,M5-022
+2024,Enterococcus faecium,"Fluoroquinolones, Macrolides, Penicillins",243,3830,6.34,M3-037
+2024,Enterococcus faecium,"Fluoroquinolones, Penicillins, Tetracyclines",85,3830,2.22,M3-038
+2024,Enterococcus faecium,"Macrolides, Penicillins, Tetracyclines",71,3830,1.85,M3-044
+2024,Enterococcus faecium,"Fluoroquinolones, Macrolides, Tetracyclines",19,3830,0.5,M3-035
+2024,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins",10,3830,0.26,M3-036
+2024,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Penicillins, Tetracyclines",4,3830,0.1,M4-039
+2024,Enterococcus faecium,"Fluoroquinolones, Glycopeptides, Tetracyclines",3,3830,0.08,M3-040
+2024,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins",1,3830,0.03,M3-043
+2024,Enterococcus faecium,"Glycopeptides, Macrolides, Penicillins, Tetracyclines",1,3830,0.03,M4-040
+2024,Enterococcus faecium,"Glycopeptides, Penicillins, Tetracyclines",1,3830,0.03,M3-045
