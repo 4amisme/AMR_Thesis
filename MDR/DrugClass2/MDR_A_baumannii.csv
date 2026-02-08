@@ -1,0 +1,404 @@
+x_year,organism_full,Resistant_Drug_Classes,Count,Total_MDR,Percentage,MDR_id
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",6825,9702,70.35,M6-002
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1455,9702,15.0,M5-003
+2015,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",468,9702,4.82,M5-017
+2015,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",377,9702,3.89,M4-023
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",79,9702,0.81,M5-005
+2015,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",70,9702,0.72,M4-011
+2015,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",46,9702,0.47,M3-007
+2015,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",45,9702,0.46,M5-012
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",33,9702,0.34,M4-004
+2015,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",33,9702,0.34,M3-026
+2015,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",28,9702,0.29,M4-025
+2015,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",24,9702,0.25,M3-019
+2015,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",22,9702,0.23,M4-013
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",19,9702,0.2,M5-001
+2015,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",19,9702,0.2,M4-015
+2015,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",18,9702,0.19,M3-017
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",15,9702,0.15,M5-008
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",12,9702,0.12,M3-001
+2015,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",12,9702,0.12,M3-009
+2015,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",12,9702,0.12,M3-028
+2015,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",10,9702,0.1,M4-032
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",9,9702,0.09,M3-005
+2015,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",9,9702,0.09,M3-006
+2015,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",9,9702,0.09,M4-028
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",8,9702,0.08,M4-002
+2015,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",8,9702,0.08,M3-030
+2015,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",6,9702,0.06,M3-010
+2015,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",5,9702,0.05,M4-021
+2015,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",5,9702,0.05,M3-024
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",4,9702,0.04,M4-001
+2015,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",4,9702,0.04,M4-007
+2015,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",4,9702,0.04,M3-016
+2015,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",3,9702,0.03,M3-022
+2015,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,9702,0.02,M4-018
+2015,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,9702,0.02,M3-033
+2015,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",1,9702,0.01,M3-014
+2015,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",1,9702,0.01,M3-020
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",8509,12994,65.48,M6-002
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2078,12994,15.99,M5-003
+2016,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",794,12994,6.11,M5-017
+2016,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",707,12994,5.44,M4-023
+2016,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",98,12994,0.75,M3-007
+2016,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",82,12994,0.63,M3-028
+2016,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",78,12994,0.6,M4-025
+2016,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",61,12994,0.47,M4-011
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",55,12994,0.42,M5-005
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",55,12994,0.42,M4-004
+2016,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",48,12994,0.37,M3-026
+2016,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",47,12994,0.36,M3-019
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",44,12994,0.34,M5-001
+2016,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",39,12994,0.3,M5-012
+2016,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",39,12994,0.3,M3-017
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",27,12994,0.21,M5-008
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",22,12994,0.17,M3-001
+2016,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",21,12994,0.16,M4-021
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",20,12994,0.15,M4-001
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",20,12994,0.15,M4-002
+2016,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",19,12994,0.15,M3-010
+2016,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",16,12994,0.12,M3-006
+2016,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",16,12994,0.12,M4-015
+2016,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",16,12994,0.12,M3-022
+2016,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",13,12994,0.1,M4-013
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",11,12994,0.08,M4-005
+2016,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",11,12994,0.08,M3-030
+2016,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",10,12994,0.08,M4-032
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",8,12994,0.06,M3-005
+2016,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",8,12994,0.06,M3-016
+2016,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",5,12994,0.04,M3-009
+2016,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",4,12994,0.03,M3-024
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",3,12994,0.02,M4-007
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",3,12994,0.02,M3-003
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",2,12994,0.02,M3-002
+2016,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",2,12994,0.02,M4-009
+2016,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",1,12994,0.01,M3-012
+2016,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",1,12994,0.01,M3-014
+2016,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,12994,0.01,M4-028
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",9950,15885,62.64,M6-002
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2814,15885,17.71,M5-003
+2017,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1006,15885,6.33,M4-023
+2017,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",740,15885,4.66,M5-017
+2017,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",113,15885,0.71,M3-007
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",107,15885,0.67,M5-005
+2017,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",100,15885,0.63,M4-013
+2017,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",95,15885,0.6,M4-025
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",87,15885,0.55,M4-004
+2017,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",84,15885,0.53,M3-028
+2017,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",74,15885,0.47,M3-026
+2017,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",73,15885,0.46,M5-012
+2017,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",66,15885,0.42,M4-011
+2017,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",61,15885,0.38,M3-019
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",57,15885,0.36,M4-002
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",56,15885,0.35,M5-008
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",44,15885,0.28,M5-001
+2017,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",44,15885,0.28,M3-006
+2017,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",42,15885,0.26,M3-017
+2017,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",38,15885,0.24,M4-015
+2017,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",25,15885,0.16,M3-024
+2017,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",23,15885,0.14,M4-032
+2017,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",22,15885,0.14,M3-010
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",21,15885,0.13,M3-005
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",20,15885,0.13,M3-001
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",16,15885,0.1,M4-001
+2017,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",16,15885,0.1,M4-021
+2017,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",13,15885,0.08,M3-030
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",12,15885,0.08,M4-007
+2017,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",12,15885,0.08,M3-016
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",11,15885,0.07,M3-003
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",9,15885,0.06,M4-009
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",7,15885,0.04,M4-005
+2017,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",7,15885,0.04,M3-022
+2017,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",6,15885,0.04,M4-028
+2017,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",4,15885,0.03,M3-012
+2017,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",3,15885,0.02,M3-009
+2017,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",3,15885,0.02,M3-020
+2017,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,15885,0.01,M3-033
+2017,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",1,15885,0.01,M3-002
+2017,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",1,15885,0.01,M3-014
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",10604,17102,62.0,M6-002
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2670,17102,15.61,M5-003
+2018,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1266,17102,7.4,M4-023
+2018,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",864,17102,5.05,M5-017
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",180,17102,1.05,M4-004
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",157,17102,0.92,M5-005
+2018,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",134,17102,0.78,M3-007
+2018,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",127,17102,0.74,M4-013
+2018,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",107,17102,0.63,M4-025
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",96,17102,0.56,M5-001
+2018,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",93,17102,0.54,M3-028
+2018,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",73,17102,0.43,M3-019
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",70,17102,0.41,M4-002
+2018,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",63,17102,0.37,M3-017
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",61,17102,0.36,M5-008
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",58,17102,0.34,M4-009
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",47,17102,0.27,M3-005
+2018,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",47,17102,0.27,M3-026
+2018,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",45,17102,0.26,M3-006
+2018,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",45,17102,0.26,M4-011
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",35,17102,0.2,M3-001
+2018,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",34,17102,0.2,M5-012
+2018,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",33,17102,0.19,M4-021
+2018,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",22,17102,0.13,M4-015
+2018,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",21,17102,0.12,M4-032
+2018,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",19,17102,0.11,M3-024
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",16,17102,0.09,M4-001
+2018,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",14,17102,0.08,M3-010
+2018,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",12,17102,0.07,M3-016
+2018,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",12,17102,0.07,M3-022
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",11,17102,0.06,M4-007
+2018,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",11,17102,0.06,M3-030
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",10,17102,0.06,M3-003
+2018,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",10,17102,0.06,M3-009
+2018,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",10,17102,0.06,M4-028
+2018,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",6,17102,0.04,M3-014
+2018,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",6,17102,0.04,M3-020
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",5,17102,0.03,M4-005
+2018,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",4,17102,0.02,M3-033
+2018,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",3,17102,0.02,M4-018
+2018,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",1,17102,0.01,M3-002
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",15025,23653,63.52,M6-002
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",3333,23653,14.09,M5-003
+2019,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1789,23653,7.56,M4-023
+2019,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1370,23653,5.79,M5-017
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",301,23653,1.27,M4-004
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",220,23653,0.93,M5-005
+2019,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",203,23653,0.86,M3-019
+2019,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",158,23653,0.67,M4-025
+2019,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",150,23653,0.63,M3-007
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",135,23653,0.57,M4-009
+2019,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",131,23653,0.55,M3-017
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",99,23653,0.42,M5-001
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",78,23653,0.33,M5-008
+2019,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",73,23653,0.31,M4-013
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",71,23653,0.3,M4-002
+2019,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",62,23653,0.26,M3-026
+2019,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",52,23653,0.22,M3-028
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",51,23653,0.22,M3-001
+2019,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",46,23653,0.19,M3-006
+2019,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",39,23653,0.16,M4-011
+2019,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",39,23653,0.16,M4-021
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",29,23653,0.12,M4-001
+2019,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",25,23653,0.11,M3-016
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",19,23653,0.08,M3-005
+2019,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",18,23653,0.08,M4-015
+2019,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",15,23653,0.06,M3-030
+2019,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",14,23653,0.06,M3-009
+2019,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",14,23653,0.06,M3-020
+2019,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",14,23653,0.06,M4-032
+2019,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",13,23653,0.05,M3-010
+2019,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",11,23653,0.05,M3-024
+2019,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",10,23653,0.04,M5-012
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",9,23653,0.04,M3-003
+2019,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",8,23653,0.03,M3-022
+2019,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",7,23653,0.03,M4-028
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",6,23653,0.03,M3-002
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",5,23653,0.02,M4-005
+2019,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",3,23653,0.01,M4-007
+2019,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",3,23653,0.01,M3-014
+2019,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",3,23653,0.01,M3-033
+2019,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,23653,0.0,M4-018
+2019,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",1,23653,0.0,M3-012
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",13569,21201,64.0,M6-002
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2927,21201,13.81,M5-003
+2020,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1487,21201,7.01,M5-017
+2020,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1417,21201,6.68,M4-023
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",364,21201,1.72,M4-004
+2020,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",193,21201,0.91,M3-019
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",168,21201,0.79,M5-005
+2020,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",162,21201,0.76,M4-025
+2020,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",116,21201,0.55,M3-017
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",96,21201,0.45,M4-002
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",82,21201,0.39,M5-001
+2020,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",69,21201,0.33,M3-007
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",64,21201,0.3,M4-009
+2020,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",55,21201,0.26,M3-020
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",45,21201,0.21,M5-008
+2020,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",45,21201,0.21,M4-021
+2020,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",32,21201,0.15,M3-026
+2020,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",31,21201,0.15,M4-013
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",30,21201,0.14,M3-001
+2020,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",26,21201,0.12,M3-024
+2020,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",24,21201,0.11,M3-016
+2020,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",23,21201,0.11,M3-028
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",20,21201,0.09,M4-001
+2020,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",17,21201,0.08,M3-006
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",16,21201,0.08,M4-005
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",13,21201,0.06,M3-002
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",13,21201,0.06,M3-005
+2020,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",13,21201,0.06,M4-011
+2020,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",13,21201,0.06,M3-030
+2020,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",12,21201,0.06,M4-028
+2020,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",11,21201,0.05,M4-032
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",10,21201,0.05,M3-003
+2020,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",10,21201,0.05,M3-010
+2020,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",9,21201,0.04,M5-012
+2020,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",7,21201,0.03,M4-007
+2020,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",4,21201,0.02,M3-022
+2020,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",2,21201,0.01,M4-015
+2020,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",2,21201,0.01,M3-009
+2020,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",2,21201,0.01,M3-012
+2020,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,21201,0.0,M4-018
+2020,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,21201,0.0,M3-033
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",15215,23173,65.66,M6-002
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",3613,23173,15.59,M5-003
+2021,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1539,23173,6.64,M5-017
+2021,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1212,23173,5.23,M4-023
+2021,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",194,23173,0.84,M3-019
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",186,23173,0.8,M5-005
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",181,23173,0.78,M4-004
+2021,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",167,23173,0.72,M4-025
+2021,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",137,23173,0.59,M3-017
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",131,23173,0.57,M4-002
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",96,23173,0.41,M5-001
+2021,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",55,23173,0.24,M4-021
+2021,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",51,23173,0.22,M3-020
+2021,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",37,23173,0.16,M3-024
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",32,23173,0.14,M4-001
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",30,23173,0.13,M3-001
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",30,23173,0.13,M4-009
+2021,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",30,23173,0.13,M3-016
+2021,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",29,23173,0.13,M3-007
+2021,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",24,23173,0.1,M3-026
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",23,23173,0.1,M5-008
+2021,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",21,23173,0.09,M3-028
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",17,23173,0.07,M3-002
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",14,23173,0.06,M3-005
+2021,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",13,23173,0.06,M4-028
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",11,23173,0.05,M4-005
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",10,23173,0.04,M3-003
+2021,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",10,23173,0.04,M4-011
+2021,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",10,23173,0.04,M3-010
+2021,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",9,23173,0.04,M3-006
+2021,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",9,23173,0.04,M3-022
+2021,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",8,23173,0.03,M5-012
+2021,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",7,23173,0.03,M4-032
+2021,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",6,23173,0.03,M4-007
+2021,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",6,23173,0.03,M3-030
+2021,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",3,23173,0.01,M4-015
+2021,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2,23173,0.01,M4-013
+2021,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",2,23173,0.01,M3-014
+2021,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",1,23173,0.0,M3-009
+2021,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",1,23173,0.0,M3-012
+2021,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,23173,0.0,M3-033
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",10089,15039,67.09,M6-002
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1790,15039,11.9,M5-003
+2022,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1052,15039,7.0,M5-017
+2022,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",727,15039,4.83,M4-023
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",275,15039,1.83,M5-001
+2022,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",149,15039,0.99,M4-025
+2022,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",149,15039,0.99,M3-020
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",136,15039,0.9,M5-005
+2022,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",86,15039,0.57,M3-019
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",82,15039,0.55,M4-001
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",74,15039,0.49,M4-004
+2022,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",64,15039,0.43,M3-017
+2022,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",47,15039,0.31,M3-016
+2022,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",42,15039,0.28,M4-021
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",41,15039,0.27,M4-002
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",34,15039,0.23,M4-009
+2022,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",34,15039,0.23,M3-024
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",21,15039,0.14,M4-005
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",21,15039,0.14,M5-008
+2022,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",18,15039,0.12,M4-028
+2022,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",15,15039,0.1,M3-026
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",10,15039,0.07,M3-005
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",9,15039,0.06,M3-001
+2022,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",9,15039,0.06,M3-007
+2022,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",9,15039,0.06,M3-022
+2022,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",8,15039,0.05,M4-011
+2022,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",6,15039,0.04,M5-012
+2022,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",6,15039,0.04,M4-013
+2022,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",6,15039,0.04,M4-032
+2022,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",5,15039,0.03,M3-006
+2022,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",4,15039,0.03,M3-010
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",3,15039,0.02,M3-003
+2022,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",3,15039,0.02,M3-028
+2022,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",3,15039,0.02,M3-030
+2022,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",3,15039,0.02,M3-033
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",2,15039,0.01,M3-002
+2022,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",2,15039,0.01,M4-015
+2022,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",2,15039,0.01,M3-012
+2022,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",2,15039,0.01,M3-014
+2022,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",1,15039,0.01,M4-007
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",20026,27029,74.09,M6-002
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2626,27029,9.72,M5-003
+2023,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1756,27029,6.5,M5-017
+2023,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",828,27029,3.06,M4-023
+2023,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",437,27029,1.62,M4-025
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",249,27029,0.92,M5-005
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",148,27029,0.55,M5-001
+2023,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",148,27029,0.55,M3-017
+2023,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",143,27029,0.53,M3-019
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",88,27029,0.33,M4-004
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",86,27029,0.32,M4-009
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",77,27029,0.28,M4-002
+2023,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",46,27029,0.17,M4-021
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",41,27029,0.15,M4-001
+2023,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",41,27029,0.15,M3-024
+2023,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",38,27029,0.14,M3-007
+2023,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",26,27029,0.1,M3-016
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",23,27029,0.09,M5-008
+2023,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",19,27029,0.07,M3-026
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",18,27029,0.07,M3-001
+2023,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",16,27029,0.06,M4-011
+2023,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",16,27029,0.06,M4-028
+2023,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",16,27029,0.06,M4-032
+2023,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",15,27029,0.06,M3-010
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",11,27029,0.04,M3-005
+2023,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",11,27029,0.04,M3-030
+2023,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",10,27029,0.04,M3-020
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",8,27029,0.03,M3-003
+2023,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",7,27029,0.03,M3-006
+2023,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",7,27029,0.03,M5-012
+2023,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",7,27029,0.03,M4-015
+2023,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",7,27029,0.03,M3-022
+2023,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",6,27029,0.02,M3-009
+2023,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",6,27029,0.02,M3-028
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",5,27029,0.02,M4-007
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",4,27029,0.01,M4-005
+2023,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",4,27029,0.01,M4-013
+2023,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",4,27029,0.01,M3-033
+2023,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",3,27029,0.01,M3-002
+2023,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",2,27029,0.01,M3-014
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",18983,25468,74.54,M6-002
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2126,25468,8.35,M5-003
+2024,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1707,25468,6.7,M5-017
+2024,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",675,25468,2.65,M4-023
+2024,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",599,25468,2.35,M4-025
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",272,25468,1.07,M5-005
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",203,25468,0.8,M4-004
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",151,25468,0.59,M5-001
+2024,Acinetobacter baumannii,"Carbapenems, Cephalosporins, β-lactam combination agents",138,25468,0.54,M3-019
+2024,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Folate pathway antagonists",107,25468,0.42,M3-017
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",81,25468,0.32,M4-002
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",53,25468,0.21,M4-001
+2024,Acinetobacter baumannii,"Carbapenems, Folate pathway antagonists, β-lactam combination agents",46,25468,0.18,M3-024
+2024,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",41,25468,0.16,M3-007
+2024,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",37,25468,0.15,M4-021
+2024,Acinetobacter baumannii,"Carbapenems, Cephalosporins, Fluoroquinolones",26,25468,0.1,M3-016
+2024,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",22,25468,0.09,M3-026
+2024,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",21,25468,0.08,M3-020
+2024,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, β-lactam combination agents",17,25468,0.07,M3-022
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Cephalosporins",16,25468,0.06,M3-001
+2024,Acinetobacter baumannii,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",14,25468,0.05,M4-028
+2024,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",14,25468,0.05,M3-028
+2024,Acinetobacter baumannii,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",14,25468,0.05,M3-030
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",13,25468,0.05,M5-008
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists",11,25468,0.04,M4-005
+2024,Acinetobacter baumannii,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",11,25468,0.04,M4-032
+2024,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",8,25468,0.03,M4-011
+2024,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",7,25468,0.03,M4-013
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",6,25468,0.02,M4-007
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists, β-lactam combination agents",6,25468,0.02,M4-009
+2024,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones",6,25468,0.02,M3-006
+2024,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",6,25468,0.02,M5-012
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Fluoroquinolones",5,25468,0.02,M3-002
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, Folate pathway antagonists",5,25468,0.02,M3-003
+2024,Acinetobacter baumannii,"Aminoglycosides, Carbapenems, β-lactam combination agents",5,25468,0.02,M3-005
+2024,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, β-lactam combination agents",5,25468,0.02,M3-009
+2024,Acinetobacter baumannii,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",4,25468,0.02,M3-033
+2024,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",3,25468,0.01,M3-010
+2024,Acinetobacter baumannii,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",2,25468,0.01,M4-015
+2024,Acinetobacter baumannii,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",1,25468,0.0,M3-012
+2024,Acinetobacter baumannii,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",1,25468,0.0,M3-014
