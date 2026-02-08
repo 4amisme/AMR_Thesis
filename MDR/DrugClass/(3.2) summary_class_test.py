@@ -5,8 +5,8 @@ def summarize_tested_patterns_by_organism():
     # ==========================================
     # 1. ตั้งค่าไฟล์
     # ==========================================
-    input_file = os.path.join("MDR", "data_some_isolate", "AllYears_Checked_Classes.csv")
-    output_file = os.path.join("MDR", "data_some_isolate", "Tested_Classes_Summary_By_Organism.csv")
+    input_file = os.path.join("MDR", "DrugClass", "AllYears_Checked_Classes.csv")
+    output_file = os.path.join("MDR", "DrugClass", "Tested_Classes_Summary_By_Organism.csv")
 
     print(f"🚀 กำลังสรุปรูปแบบการตรวจยาแยกตามเชื้อ (Grouping Patterns by Organism)...")
     print(f"📂 อ่านไฟล์: {input_file}")
