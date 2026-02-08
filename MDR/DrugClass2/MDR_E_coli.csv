@@ -1,0 +1,671 @@
+x_year,organism_full,Resistant_Drug_Classes,Count,Total_MDR,Percentage,MDR_id
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1922,13498,14.24,M5-011
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1662,13498,12.31,M6-006
+2015,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1547,13498,11.46,M4-031
+2015,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",1073,13498,7.95,M3-032
+2015,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",763,13498,5.65,M5-021
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",760,13498,5.63,M4-012
+2015,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",724,13498,5.36,M4-017
+2015,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",721,13498,5.34,M3-027
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",506,13498,3.75,M4-014
+2015,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",506,13498,3.75,M3-013
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",437,13498,3.24,M5-013
+2015,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",371,13498,2.75,M3-029
+2015,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",350,13498,2.59,M4-033
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",300,13498,2.22,M3-008
+2015,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",295,13498,2.19,M3-041
+2015,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",285,13498,2.11,M3-011
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",211,13498,1.56,M5-014
+2015,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",146,13498,1.08,M4-034
+2015,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",142,13498,1.05,M3-031
+2015,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",136,13498,1.01,M4-035
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",106,13498,0.79,M7-001
+2015,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",101,13498,0.75,M3-039
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",100,13498,0.74,M4-016
+2015,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",92,13498,0.68,M5-015
+2015,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",49,13498,0.36,M4-020
+2015,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",43,13498,0.32,M4-019
+2015,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",38,13498,0.28,M6-007
+2015,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",24,13498,0.18,M3-015
+2015,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",20,13498,0.15,M3-010
+2015,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",11,13498,0.08,M4-026
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",6,13498,0.04,M6-003
+2015,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",6,13498,0.04,M3-025
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",5,13498,0.04,M4-011
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,13498,0.02,M6-001
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",3,13498,0.02,M6-004
+2015,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",3,13498,0.02,M5-018
+2015,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins",3,13498,0.02,M3-023
+2015,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",3,13498,0.02,M3-033
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",2,13498,0.01,M5-002
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,13498,0.01,M5-012
+2015,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",2,13498,0.01,M4-022
+2015,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",2,13498,0.01,M4-027
+2015,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",2,13498,0.01,M3-026
+2015,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",2,13498,0.01,M3-028
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,13498,0.01,M5-004
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,13498,0.01,M4-003
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",1,13498,0.01,M5-006
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,13498,0.01,M6-005
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,13498,0.01,M5-009
+2015,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,13498,0.01,M5-010
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",1,13498,0.01,M3-006
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",1,13498,0.01,M4-015
+2015,Escherichia coli,"Aminoglycosides, Cephalosporins, β-lactam combination agents",1,13498,0.01,M3-009
+2015,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",1,13498,0.01,M4-021
+2015,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,13498,0.01,M5-019
+2015,Escherichia coli,"Carbapenems, Fluoroquinolones, β-lactam combination agents",1,13498,0.01,M3-022
+2015,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,13498,0.01,M4-030
+2016,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",2168,15502,13.99,M4-031
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",2123,15502,13.7,M5-011
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1940,15502,12.51,M6-006
+2016,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",1007,15502,6.5,M3-032
+2016,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",938,15502,6.05,M3-027
+2016,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",858,15502,5.53,M5-021
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",768,15502,4.95,M4-012
+2016,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",762,15502,4.92,M4-017
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",686,15502,4.43,M4-014
+2016,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",542,15502,3.5,M3-013
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",514,15502,3.32,M5-013
+2016,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",461,15502,2.97,M3-029
+2016,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",371,15502,2.39,M4-033
+2016,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",324,15502,2.09,M3-041
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",284,15502,1.83,M3-008
+2016,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",255,15502,1.64,M3-011
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",239,15502,1.54,M7-001
+2016,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",183,15502,1.18,M4-034
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",151,15502,0.97,M5-014
+2016,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",130,15502,0.84,M3-031
+2016,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",124,15502,0.8,M4-035
+2016,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",117,15502,0.75,M5-015
+2016,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",95,15502,0.61,M6-007
+2016,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",89,15502,0.57,M3-039
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",88,15502,0.57,M4-016
+2016,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",58,15502,0.37,M4-020
+2016,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",50,15502,0.32,M4-019
+2016,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",27,15502,0.17,M3-015
+2016,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",16,15502,0.1,M3-010
+2016,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",15,15502,0.1,M5-018
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",13,15502,0.08,M6-003
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",13,15502,0.08,M6-004
+2016,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",11,15502,0.07,M4-026
+2016,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",10,15502,0.06,M5-019
+2016,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",8,15502,0.05,M3-025
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",7,15502,0.05,M4-011
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",7,15502,0.05,M3-007
+2016,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",6,15502,0.04,M3-026
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",5,15502,0.03,M5-007
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",4,15502,0.03,M6-001
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",3,15502,0.02,M5-006
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",3,15502,0.02,M5-012
+2016,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,15502,0.02,M5-016
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",2,15502,0.01,M5-002
+2016,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",2,15502,0.01,M3-006
+2016,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",2,15502,0.01,M4-029
+2016,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,15502,0.01,M4-030
+2016,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,15502,0.01,M4-032
+2016,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",2,15502,0.01,M3-028
+2016,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,15502,0.01,M3-033
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",1,15502,0.01,M4-001
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",1,15502,0.01,M5-001
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,15502,0.01,M5-003
+2016,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists",1,15502,0.01,M3-003
+2016,Escherichia coli,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",1,15502,0.01,M3-012
+2016,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",1,15502,0.01,M3-014
+2016,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,15502,0.01,M4-022
+2016,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,15502,0.01,M4-024
+2016,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,15502,0.01,M4-027
+2016,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,15502,0.01,M5-020
+2016,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins",1,15502,0.01,M3-023
+2016,Escherichia coli,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",1,15502,0.01,M3-030
+2017,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3649,27063,13.48,M4-031
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3461,27063,12.79,M5-011
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2531,27063,9.35,M6-006
+2017,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",1928,27063,7.12,M3-032
+2017,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",1756,27063,6.49,M4-017
+2017,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",1666,27063,6.16,M3-027
+2017,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1383,27063,5.11,M5-021
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",1346,27063,4.97,M4-012
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",1321,27063,4.88,M4-014
+2017,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",1207,27063,4.46,M3-013
+2017,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",954,27063,3.53,M3-029
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",753,27063,2.78,M5-013
+2017,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",662,27063,2.45,M3-011
+2017,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",662,27063,2.45,M4-033
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",606,27063,2.24,M7-001
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",491,27063,1.81,M3-008
+2017,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",488,27063,1.8,M3-041
+2017,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",296,27063,1.09,M4-034
+2017,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",277,27063,1.02,M3-031
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",250,27063,0.92,M5-014
+2017,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",245,27063,0.91,M4-035
+2017,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",227,27063,0.84,M3-039
+2017,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",211,27063,0.78,M5-015
+2017,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",144,27063,0.53,M6-007
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",113,27063,0.42,M4-016
+2017,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",99,27063,0.37,M4-020
+2017,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",83,27063,0.31,M4-019
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",31,27063,0.11,M6-003
+2017,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",31,27063,0.11,M3-010
+2017,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",31,27063,0.11,M3-015
+2017,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",20,27063,0.07,M5-018
+2017,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",19,27063,0.07,M4-026
+2017,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",16,27063,0.06,M3-025
+2017,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",13,27063,0.05,M5-019
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",11,27063,0.04,M6-004
+2017,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",9,27063,0.03,M3-026
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",8,27063,0.03,M6-001
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",6,27063,0.02,M4-011
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",5,27063,0.02,M5-006
+2017,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",5,27063,0.02,M4-024
+2017,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",5,27063,0.02,M4-030
+2017,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",4,27063,0.01,M4-032
+2017,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",4,27063,0.01,M3-028
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",3,27063,0.01,M5-004
+2017,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,27063,0.01,M5-016
+2017,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,27063,0.01,M4-027
+2017,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",3,27063,0.01,M4-029
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",2,27063,0.01,M3-006
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,27063,0.01,M5-012
+2017,Escherichia coli,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",2,27063,0.01,M3-012
+2017,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",2,27063,0.01,M4-022
+2017,Escherichia coli,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",2,27063,0.01,M3-030
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",1,27063,0.0,M4-001
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,27063,0.0,M5-002
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,27063,0.0,M4-003
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",1,27063,0.0,M4-004
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,27063,0.0,M5-007
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Penicillins",1,27063,0.0,M3-004
+2017,Escherichia coli,"Aminoglycosides, Carbapenems, Penicillins, β-lactam combination agents",1,27063,0.0,M4-010
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,27063,0.0,M4-013
+2017,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",1,27063,0.0,M3-007
+2017,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",1,27063,0.0,M3-014
+2017,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins",1,27063,0.0,M3-018
+2017,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,27063,0.0,M5-020
+2017,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins",1,27063,0.0,M3-023
+2017,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,27063,0.0,M3-033
+2018,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3236,25000,12.94,M4-031
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3201,25000,12.8,M5-011
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2173,25000,8.69,M6-006
+2018,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",1872,25000,7.49,M4-017
+2018,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",1868,25000,7.47,M3-032
+2018,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",1696,25000,6.78,M3-027
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",1248,25000,4.99,M4-012
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",1226,25000,4.9,M4-014
+2018,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",1129,25000,4.52,M3-013
+2018,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1023,25000,4.09,M5-021
+2018,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",932,25000,3.73,M3-029
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",708,25000,2.83,M7-001
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",706,25000,2.82,M5-013
+2018,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",659,25000,2.64,M3-011
+2018,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",505,25000,2.02,M4-033
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",469,25000,1.88,M3-008
+2018,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",378,25000,1.51,M3-041
+2018,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",257,25000,1.03,M4-034
+2018,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",240,25000,0.96,M3-031
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",223,25000,0.89,M5-014
+2018,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",201,25000,0.8,M6-007
+2018,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",186,25000,0.74,M4-035
+2018,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",174,25000,0.7,M5-015
+2018,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",146,25000,0.58,M3-039
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",112,25000,0.45,M4-016
+2018,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",85,25000,0.34,M4-020
+2018,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",82,25000,0.33,M4-019
+2018,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",44,25000,0.18,M3-015
+2018,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",42,25000,0.17,M3-010
+2018,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",24,25000,0.1,M5-018
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",21,25000,0.08,M6-003
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",18,25000,0.07,M6-004
+2018,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",14,25000,0.06,M3-026
+2018,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",10,25000,0.04,M3-025
+2018,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",9,25000,0.04,M4-026
+2018,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",8,25000,0.03,M5-016
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",7,25000,0.03,M6-001
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",7,25000,0.03,M5-012
+2018,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",7,25000,0.03,M5-019
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",4,25000,0.02,M3-006
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",4,25000,0.02,M4-011
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",3,25000,0.01,M5-006
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,25000,0.01,M5-007
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",3,25000,0.01,M3-007
+2018,Escherichia coli,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",3,25000,0.01,M3-012
+2018,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins",3,25000,0.01,M3-018
+2018,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",3,25000,0.01,M4-032
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,25000,0.01,M6-002
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,25000,0.01,M6-005
+2018,Escherichia coli,"Carbapenems, Cephalosporins, β-lactam combination agents",2,25000,0.01,M3-019
+2018,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,25000,0.01,M5-020
+2018,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins",2,25000,0.01,M3-021
+2018,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",2,25000,0.01,M4-029
+2018,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,25000,0.01,M3-033
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,25000,0.0,M5-002
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,25000,0.0,M5-004
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins",1,25000,0.0,M4-006
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,25000,0.0,M5-009
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Penicillins",1,25000,0.0,M3-004
+2018,Escherichia coli,"Aminoglycosides, Carbapenems, Penicillins, β-lactam combination agents",1,25000,0.0,M4-010
+2018,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",1,25000,0.0,M4-015
+2018,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,25000,0.0,M4-018
+2018,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",1,25000,0.0,M4-021
+2018,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,25000,0.0,M4-022
+2018,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",1,25000,0.0,M3-020
+2018,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins",1,25000,0.0,M3-023
+2018,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,25000,0.0,M4-030
+2018,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,25000,0.0,M3-028
+2019,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",4181,28430,14.71,M4-031
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3288,28430,11.57,M5-011
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2213,28430,7.78,M6-006
+2019,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",2151,28430,7.57,M3-032
+2019,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",2052,28430,7.22,M3-027
+2019,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",1914,28430,6.73,M4-017
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",1385,28430,4.87,M4-014
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",1370,28430,4.82,M4-012
+2019,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",1273,28430,4.48,M3-013
+2019,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1251,28430,4.4,M5-021
+2019,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",1158,28430,4.07,M3-029
+2019,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",872,28430,3.07,M3-011
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",846,28430,2.98,M7-001
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",727,28430,2.56,M5-013
+2019,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",607,28430,2.14,M4-033
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",516,28430,1.81,M3-008
+2019,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",402,28430,1.41,M6-007
+2019,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",392,28430,1.38,M3-041
+2019,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",264,28430,0.93,M4-034
+2019,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",260,28430,0.91,M3-031
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",204,28430,0.72,M5-014
+2019,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",197,28430,0.69,M4-035
+2019,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",175,28430,0.62,M5-015
+2019,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",168,28430,0.59,M3-039
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",95,28430,0.33,M4-016
+2019,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",77,28430,0.27,M4-019
+2019,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",68,28430,0.24,M4-020
+2019,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",56,28430,0.2,M5-018
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",48,28430,0.17,M6-003
+2019,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",30,28430,0.11,M3-010
+2019,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",25,28430,0.09,M5-019
+2019,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",24,28430,0.08,M4-026
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",21,28430,0.07,M6-004
+2019,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",19,28430,0.07,M3-015
+2019,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",15,28430,0.05,M3-025
+2019,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",10,28430,0.04,M3-026
+2019,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",8,28430,0.03,M5-016
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",7,28430,0.02,M4-011
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",5,28430,0.02,M5-006
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",5,28430,0.02,M5-012
+2019,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",5,28430,0.02,M3-033
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",4,28430,0.01,M6-001
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",4,28430,0.01,M3-006
+2019,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",4,28430,0.01,M4-032
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",3,28430,0.01,M6-005
+2019,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins",3,28430,0.01,M3-023
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",2,28430,0.01,M5-004
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins",2,28430,0.01,M4-006
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",2,28430,0.01,M3-007
+2019,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",2,28430,0.01,M3-014
+2019,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",2,28430,0.01,M4-024
+2019,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",2,28430,0.01,M4-027
+2019,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",2,28430,0.01,M4-029
+2019,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,28430,0.01,M4-030
+2019,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",2,28430,0.01,M3-028
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",1,28430,0.0,M4-001
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,28430,0.0,M5-002
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",1,28430,0.0,M4-002
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,28430,0.0,M4-003
+2019,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",1,28430,0.0,M4-004
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,28430,0.0,M4-013
+2019,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",1,28430,0.0,M4-015
+2019,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,28430,0.0,M4-022
+2019,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,28430,0.0,M5-020
+2019,Escherichia coli,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",1,28430,0.0,M3-030
+2020,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",4414,29751,14.84,M4-031
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3123,29751,10.5,M5-011
+2020,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",2527,29751,8.49,M3-032
+2020,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",2224,29751,7.48,M3-027
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2059,29751,6.92,M6-006
+2020,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",1951,29751,6.56,M4-017
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",1410,29751,4.74,M4-014
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",1406,29751,4.73,M4-012
+2020,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",1313,29751,4.41,M3-013
+2020,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1255,29751,4.22,M5-021
+2020,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",1070,29751,3.6,M3-029
+2020,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",927,29751,3.12,M3-011
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",877,29751,2.95,M7-001
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",708,29751,2.38,M5-013
+2020,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",689,29751,2.32,M4-033
+2020,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",473,29751,1.59,M3-041
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",470,29751,1.58,M3-008
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",400,29751,1.34,M6-007
+2020,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",322,29751,1.08,M4-035
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",290,29751,0.97,M6-002
+2020,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",290,29751,0.97,M3-031
+2020,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",256,29751,0.86,M4-034
+2020,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",234,29751,0.79,M3-039
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",199,29751,0.67,M5-014
+2020,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",190,29751,0.64,M5-015
+2020,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",101,29751,0.34,M4-020
+2020,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",100,29751,0.34,M4-019
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",84,29751,0.28,M4-016
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",59,29751,0.2,M5-018
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",43,29751,0.14,M6-003
+2020,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",39,29751,0.13,M3-010
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",29,29751,0.1,M5-019
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",29,29751,0.1,M4-026
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",22,29751,0.07,M6-004
+2020,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",18,29751,0.06,M3-015
+2020,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",18,29751,0.06,M3-025
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",13,29751,0.04,M5-006
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",12,29751,0.04,M5-001
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",10,29751,0.03,M6-001
+2020,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",10,29751,0.03,M3-026
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",7,29751,0.02,M5-002
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",6,29751,0.02,M4-022
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",5,29751,0.02,M5-004
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",5,29751,0.02,M4-011
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",5,29751,0.02,M5-016
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",4,29751,0.01,M4-003
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",4,29751,0.01,M5-012
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",4,29751,0.01,M4-021
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins",4,29751,0.01,M3-018
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",3,29751,0.01,M3-006
+2020,Escherichia coli,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",3,29751,0.01,M3-012
+2020,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",3,29751,0.01,M5-020
+2020,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins",3,29751,0.01,M3-023
+2020,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",3,29751,0.01,M3-028
+2020,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",3,29751,0.01,M3-033
+2020,Escherichia coli,"Carbapenems, Cephalosporins, β-lactam combination agents",2,29751,0.01,M3-019
+2020,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",2,29751,0.01,M4-029
+2020,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,29751,0.01,M4-032
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins",1,29751,0.0,M3-001
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",1,29751,0.0,M4-001
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,29751,0.0,M5-007
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,29751,0.0,M6-005
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins",1,29751,0.0,M4-006
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,29751,0.0,M5-009
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins",1,29751,0.0,M4-008
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,29751,0.0,M5-010
+2020,Escherichia coli,"Aminoglycosides, Carbapenems, Penicillins",1,29751,0.0,M3-004
+2020,Escherichia coli,"Aminoglycosides, Cephalosporins, β-lactam combination agents",1,29751,0.0,M3-009
+2020,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,29751,0.0,M4-018
+2020,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",1,29751,0.0,M3-014
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,29751,0.0,M5-017
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,29751,0.0,M4-023
+2020,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",1,29751,0.0,M4-025
+2020,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,29751,0.0,M4-027
+2020,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins",1,29751,0.0,M3-021
+2020,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,29751,0.0,M4-030
+2020,Escherichia coli,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",1,29751,0.0,M3-030
+2021,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",4039,26017,15.52,M4-031
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",2692,26017,10.35,M5-011
+2021,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",2235,26017,8.59,M3-032
+2021,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",2134,26017,8.2,M3-027
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1771,26017,6.81,M6-006
+2021,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",1584,26017,6.09,M4-017
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",1189,26017,4.57,M4-012
+2021,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",1165,26017,4.48,M3-013
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",1152,26017,4.43,M4-014
+2021,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1111,26017,4.27,M5-021
+2021,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",949,26017,3.65,M3-029
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",859,26017,3.3,M7-001
+2021,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",838,26017,3.22,M3-011
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",562,26017,2.16,M5-013
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",545,26017,2.09,M6-007
+2021,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",528,26017,2.03,M4-033
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",411,26017,1.58,M3-008
+2021,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",337,26017,1.3,M3-041
+2021,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",278,26017,1.07,M3-031
+2021,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",259,26017,1.0,M4-035
+2021,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",229,26017,0.88,M4-034
+2021,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",176,26017,0.68,M3-039
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",147,26017,0.57,M5-014
+2021,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",147,26017,0.57,M5-015
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",81,26017,0.31,M6-003
+2021,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",76,26017,0.29,M4-020
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",75,26017,0.29,M4-016
+2021,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",58,26017,0.22,M4-019
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",47,26017,0.18,M5-018
+2021,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",39,26017,0.15,M3-010
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",39,26017,0.15,M4-026
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",35,26017,0.13,M5-019
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",27,26017,0.1,M6-004
+2021,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",23,26017,0.09,M3-015
+2021,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",17,26017,0.07,M3-026
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",14,26017,0.05,M5-016
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",13,26017,0.05,M6-001
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",12,26017,0.05,M5-006
+2021,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",10,26017,0.04,M3-025
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",9,26017,0.03,M4-022
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",8,26017,0.03,M5-002
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",7,26017,0.03,M3-006
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",6,26017,0.02,M4-011
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins",6,26017,0.02,M3-018
+2021,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins",6,26017,0.02,M3-023
+2021,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",5,26017,0.02,M5-020
+2021,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",5,26017,0.02,M4-032
+2021,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins",4,26017,0.02,M3-021
+2021,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",4,26017,0.02,M4-029
+2021,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",4,26017,0.02,M4-030
+2021,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",4,26017,0.02,M3-028
+2021,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",4,26017,0.02,M3-033
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",3,26017,0.01,M5-004
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,26017,0.01,M5-007
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",3,26017,0.01,M4-013
+2021,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",3,26017,0.01,M4-018
+2021,Escherichia coli,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",3,26017,0.01,M3-012
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",3,26017,0.01,M4-024
+2021,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,26017,0.01,M4-027
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,26017,0.01,M5-010
+2021,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",2,26017,0.01,M3-014
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",2,26017,0.01,M4-021
+2021,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists",2,26017,0.01,M3-017
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",1,26017,0.0,M4-001
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,26017,0.0,M6-002
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",1,26017,0.0,M4-002
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,26017,0.0,M4-003
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones",1,26017,0.0,M3-002
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,26017,0.0,M6-005
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,26017,0.0,M5-008
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,26017,0.0,M5-009
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins",1,26017,0.0,M4-008
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, Penicillins",1,26017,0.0,M3-004
+2021,Escherichia coli,"Aminoglycosides, Carbapenems, β-lactam combination agents",1,26017,0.0,M3-005
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,26017,0.0,M5-012
+2021,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",1,26017,0.0,M3-007
+2022,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",2269,14787,15.34,M4-031
+2022,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",1289,14787,8.72,M3-032
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1131,14787,7.65,M5-011
+2022,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",1117,14787,7.55,M3-027
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",961,14787,6.5,M6-006
+2022,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",790,14787,5.34,M4-017
+2022,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",707,14787,4.78,M3-013
+2022,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",700,14787,4.73,M5-021
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",644,14787,4.36,M4-014
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",565,14787,3.82,M7-001
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",565,14787,3.82,M4-012
+2022,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",536,14787,3.62,M3-029
+2022,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",455,14787,3.08,M3-011
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",375,14787,2.54,M6-007
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",367,14787,2.48,M6-002
+2022,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",348,14787,2.35,M4-033
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",345,14787,2.33,M5-013
+2022,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",213,14787,1.44,M3-041
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",191,14787,1.29,M3-008
+2022,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",168,14787,1.14,M4-034
+2022,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",149,14787,1.01,M3-031
+2022,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",145,14787,0.98,M4-035
+2022,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",125,14787,0.85,M3-039
+2022,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",111,14787,0.75,M5-015
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",98,14787,0.66,M5-014
+2022,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",59,14787,0.4,M4-020
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",46,14787,0.31,M5-018
+2022,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",43,14787,0.29,M4-019
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",42,14787,0.28,M4-016
+2022,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",37,14787,0.25,M3-010
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",36,14787,0.24,M6-003
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",19,14787,0.13,M4-026
+2022,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",14,14787,0.09,M3-015
+2022,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",13,14787,0.09,M3-026
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",12,14787,0.08,M6-004
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",11,14787,0.07,M5-001
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",10,14787,0.07,M5-019
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",9,14787,0.06,M5-016
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",7,14787,0.05,M6-001
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",7,14787,0.05,M4-011
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",6,14787,0.04,M5-006
+2022,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",6,14787,0.04,M3-025
+2022,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",5,14787,0.03,M4-018
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",5,14787,0.03,M4-022
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",4,14787,0.03,M3-006
+2022,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",4,14787,0.03,M4-027
+2022,Escherichia coli,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",3,14787,0.02,M3-012
+2022,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",3,14787,0.02,M5-020
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",2,14787,0.01,M5-004
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Penicillins",2,14787,0.01,M3-004
+2022,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,14787,0.01,M4-030
+2022,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",2,14787,0.01,M3-028
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",1,14787,0.01,M4-001
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,14787,0.01,M5-002
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,14787,0.01,M5-003
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists",1,14787,0.01,M4-002
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins",1,14787,0.01,M4-003
+2022,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins",1,14787,0.01,M4-008
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,14787,0.01,M5-012
+2022,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",1,14787,0.01,M3-007
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",1,14787,0.01,M4-021
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,14787,0.01,M4-024
+2022,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins",1,14787,0.01,M3-018
+2022,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists",1,14787,0.01,M3-020
+2022,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,14787,0.01,M4-029
+2022,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,14787,0.01,M3-033
+2023,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3526,22267,15.84,M4-031
+2023,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",1925,22267,8.65,M3-032
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1711,22267,7.68,M5-011
+2023,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",1581,22267,7.1,M3-027
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1272,22267,5.71,M6-006
+2023,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",1243,22267,5.58,M4-017
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",1227,22267,5.51,M4-014
+2023,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1145,22267,5.14,M5-021
+2023,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",1115,22267,5.01,M3-013
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",922,22267,4.14,M4-012
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",912,22267,4.1,M7-001
+2023,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",888,22267,3.99,M3-029
+2023,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",802,22267,3.6,M3-011
+2023,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",539,22267,2.42,M4-033
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",477,22267,2.14,M6-007
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",462,22267,2.07,M5-013
+2023,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",325,22267,1.46,M3-031
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",318,22267,1.43,M3-008
+2023,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",314,22267,1.41,M4-034
+2023,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",302,22267,1.36,M3-041
+2023,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",259,22267,1.16,M4-035
+2023,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",177,22267,0.79,M3-039
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",149,22267,0.67,M5-014
+2023,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",115,22267,0.52,M5-015
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",104,22267,0.47,M5-018
+2023,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",79,22267,0.35,M4-020
+2023,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",74,22267,0.33,M4-019
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",58,22267,0.26,M4-016
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",39,22267,0.18,M6-003
+2023,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",38,22267,0.17,M3-010
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",24,22267,0.11,M4-026
+2023,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",18,22267,0.08,M3-015
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",17,22267,0.08,M6-004
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",16,22267,0.07,M5-019
+2023,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",15,22267,0.07,M3-026
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",8,22267,0.04,M5-006
+2023,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",8,22267,0.04,M3-033
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",7,22267,0.03,M5-016
+2023,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",7,22267,0.03,M3-025
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",4,22267,0.02,M6-001
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",4,22267,0.02,M3-006
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",4,22267,0.02,M3-007
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",3,22267,0.01,M5-007
+2023,Escherichia coli,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",3,22267,0.01,M3-012
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",3,22267,0.01,M4-022
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",2,22267,0.01,M4-011
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,22267,0.01,M5-012
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, β-lactam combination agents",2,22267,0.01,M4-015
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",2,22267,0.01,M4-021
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2,22267,0.01,M4-023
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",2,22267,0.01,M4-024
+2023,Escherichia coli,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",2,22267,0.01,M3-030
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins",1,22267,0.0,M3-001
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,22267,0.0,M6-002
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",1,22267,0.0,M5-002
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,22267,0.0,M5-003
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,22267,0.0,M5-004
+2023,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,22267,0.0,M5-010
+2023,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,22267,0.0,M4-013
+2023,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,22267,0.0,M4-018
+2023,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, β-lactam combination agents",1,22267,0.0,M3-014
+2023,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins",1,22267,0.0,M3-018
+2023,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,22267,0.0,M4-027
+2023,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,22267,0.0,M5-020
+2023,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins, β-lactam combination agents",1,22267,0.0,M4-030
+2023,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,22267,0.0,M3-028
+2024,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",3491,21496,16.24,M4-031
+2024,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins",1812,21496,8.43,M3-032
+2024,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins",1717,21496,7.99,M3-027
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",1690,21496,7.86,M5-011
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins",1177,21496,5.48,M4-014
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1091,21496,5.08,M6-006
+2024,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",1078,21496,5.01,M5-021
+2024,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins",1017,21496,4.73,M4-017
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins",963,21496,4.48,M4-012
+2024,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins",897,21496,4.17,M3-029
+2024,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins",888,21496,4.13,M3-013
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",835,21496,3.88,M7-001
+2024,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins",720,21496,3.35,M3-011
+2024,Escherichia coli,"Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",599,21496,2.79,M4-033
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",550,21496,2.56,M6-007
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",444,21496,2.07,M5-013
+2024,Escherichia coli,"Cephalosporins, Penicillins, β-lactam combination agents",352,21496,1.64,M3-031
+2024,Escherichia coli,"Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",331,21496,1.54,M4-034
+2024,Escherichia coli,"Folate pathway antagonists, Penicillins, β-lactam combination agents",302,21496,1.4,M3-041
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins",291,21496,1.35,M3-008
+2024,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",270,21496,1.26,M4-035
+2024,Escherichia coli,"Fluoroquinolones, Penicillins, β-lactam combination agents",202,21496,0.94,M3-039
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",111,21496,0.52,M5-018
+2024,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",98,21496,0.46,M5-015
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",95,21496,0.44,M5-014
+2024,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Penicillins, β-lactam combination agents",64,21496,0.3,M4-019
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Penicillins, β-lactam combination agents",59,21496,0.27,M4-016
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins, β-lactam combination agents",50,21496,0.23,M6-003
+2024,Escherichia coli,"Aminoglycosides, Folate pathway antagonists, Penicillins, β-lactam combination agents",47,21496,0.22,M4-020
+2024,Escherichia coli,"Aminoglycosides, Fluoroquinolones, Folate pathway antagonists",37,21496,0.17,M3-010
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",27,21496,0.13,M4-026
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",26,21496,0.12,M5-019
+2024,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists",22,21496,0.1,M3-026
+2024,Escherichia coli,"Aminoglycosides, Penicillins, β-lactam combination agents",20,21496,0.09,M3-015
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins, β-lactam combination agents",14,21496,0.07,M6-004
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Penicillins, β-lactam combination agents",10,21496,0.05,M5-006
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones",8,21496,0.04,M3-006
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",8,21496,0.04,M4-022
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",7,21496,0.03,M6-001
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, Penicillins",6,21496,0.03,M5-016
+2024,Escherichia coli,"Carbapenems, Penicillins, β-lactam combination agents",6,21496,0.03,M3-025
+2024,Escherichia coli,"Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",6,21496,0.03,M4-032
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",5,21496,0.02,M4-011
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Folate pathway antagonists",5,21496,0.02,M3-007
+2024,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",4,21496,0.02,M5-020
+2024,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins",4,21496,0.02,M3-021
+2024,Escherichia coli,"Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",4,21496,0.02,M3-033
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Penicillins",3,21496,0.01,M5-002
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Penicillins",3,21496,0.01,M3-018
+2024,Escherichia coli,"Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",3,21496,0.01,M4-029
+2024,Escherichia coli,"Carbapenems, Folate pathway antagonists, Penicillins",3,21496,0.01,M3-023
+2024,Escherichia coli,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",3,21496,0.01,M3-028
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,21496,0.01,M6-002
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins, β-lactam combination agents",2,21496,0.01,M6-005
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones",2,21496,0.01,M3-016
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists",2,21496,0.01,M4-021
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",2,21496,0.01,M5-017
+2024,Escherichia coli,"Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",2,21496,0.01,M4-027
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,21496,0.0,M5-004
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Folate pathway antagonists, Penicillins",1,21496,0.0,M5-007
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Fluoroquinolones, Penicillins, β-lactam combination agents",1,21496,0.0,M5-009
+2024,Escherichia coli,"Aminoglycosides, Carbapenems, Folate pathway antagonists, Penicillins",1,21496,0.0,M4-008
+2024,Escherichia coli,"Aminoglycosides, Cephalosporins, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",1,21496,0.0,M5-012
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1,21496,0.0,M4-023
+2024,Escherichia coli,"Carbapenems, Cephalosporins, Folate pathway antagonists, Penicillins",1,21496,0.0,M4-024
+2024,Escherichia coli,"Carbapenems, Cephalosporins, β-lactam combination agents",1,21496,0.0,M3-019
+2024,Escherichia coli,"Cephalosporins, Folate pathway antagonists, β-lactam combination agents",1,21496,0.0,M3-030
