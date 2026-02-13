@@ -1,0 +1,92 @@
+ORGANISM_WHO,Class,Antibiotic
+Acinetobacter baumannii,β-LACTAM COMBINATION AGENTS,ampicillin/sulbactam
+Acinetobacter baumannii,β-LACTAM COMBINATION AGENTS,piperacillin/tazobactam
+Acinetobacter baumannii,CEPHEMS,cefepime
+Acinetobacter baumannii,CEPHEMS,cefotaxime
+Acinetobacter baumannii,CEPHEMS,ceftazidime
+Acinetobacter baumannii,CEPHEMS,ceftriaxone
+Acinetobacter baumannii,CARBAPENEMS,imipenem
+Acinetobacter baumannii,CARBAPENEMS,meropenem
+Acinetobacter baumannii,AMINOGLYCOSIDES,amikacin
+Acinetobacter baumannii,AMINOGLYCOSIDES,gentamicin
+Acinetobacter baumannii,FLUOROQUINOLONES,ciprofloxacin
+Acinetobacter baumannii,FLUOROQUINOLONES,levofloxacin
+Acinetobacter baumannii,FOLATE PATHWAY ANTAGONISTS,trimethoprim/sulfamethoxazole
+Escherichia coli,PENICILLINS,ampicillin
+Escherichia coli,β-LACTAM COMBINATION AGENTS,amoxicillin/clavulanic acid
+Escherichia coli,β-LACTAM COMBINATION AGENTS,ampicillin/sulbactam
+Escherichia coli,β-LACTAM COMBINATION AGENTS,piperacillin/tazobactam
+Escherichia coli,CEPHEMS ,cefepime
+Escherichia coli,CEPHEMS ,ceftazidime
+Escherichia coli,CEPHEMS ,ceftriaxone
+Escherichia coli,CEPHEMS ,cefuroxime
+Escherichia coli,CARBAPENEMS,ertapenem
+Escherichia coli,CARBAPENEMS,imipenem
+Escherichia coli,CARBAPENEMS,meropenem
+Escherichia coli,AMINOGLYCOSIDES,gentamicin
+Escherichia coli,AMINOGLYCOSIDES,amikacin
+Escherichia coli,FLUOROQUINOLONES,ciprofloxacin
+Escherichia coli,FLUOROQUINOLONES,levofloxacin
+Escherichia coli,FLUOROQUINOLONES,norfloxacin
+Escherichia coli,FOLATE PATHWAY ANTAGONISTS,trimethoprim/sulfamethoxazole
+Klebsiella pneumoniae,PENICILLINS,ampicillin
+Klebsiella pneumoniae,β-LACTAM COMBINATION AGENTS,amoxicillin/clavulanic acid
+Klebsiella pneumoniae,β-LACTAM COMBINATION AGENTS,ampicillin/sulbactam
+Klebsiella pneumoniae,β-LACTAM COMBINATION AGENTS,piperacillin/tazobactam
+Klebsiella pneumoniae,CEPHEMS ,cefepime
+Klebsiella pneumoniae,CEPHEMS ,ceftazidime
+Klebsiella pneumoniae,CEPHEMS ,ceftriaxone
+Klebsiella pneumoniae,CEPHEMS ,cefuroxime
+Klebsiella pneumoniae,CARBAPENEMS,ertapenem
+Klebsiella pneumoniae,CARBAPENEMS,imipenem
+Klebsiella pneumoniae,CARBAPENEMS,meropenem
+Klebsiella pneumoniae,AMINOGLYCOSIDES,gentamicin
+Klebsiella pneumoniae,AMINOGLYCOSIDES,amikacin
+Klebsiella pneumoniae,FLUOROQUINOLONES,ciprofloxacin
+Klebsiella pneumoniae,FLUOROQUINOLONES,levofloxacin
+Klebsiella pneumoniae,FLUOROQUINOLONES,norfloxacin
+Klebsiella pneumoniae,FOLATE PATHWAY ANTAGONISTS,trimethoprim/sulfamethoxazole
+Enterococcus faecalis,PENICILLINS,penicillin
+Enterococcus faecalis,PENICILLINS,ampicillin
+Enterococcus faecalis,GLYCOPEPTIDES,vancomycin
+Enterococcus faecalis,LIPOGLYCOPEPTIDES,teicoplanin
+Enterococcus faecalis,MACROLIDES,erythromycin
+Enterococcus faecalis,TETRACYCLINES,tetracycline
+Enterococcus faecalis,FLUOROQUINOLONES,ciprofloxacin
+Enterococcus faecalis,FLUOROQUINOLONES,levofloxacin
+Enterococcus faecalis,FLUOROQUINOLONES,norfloxacin
+Enterococcus faecalis,FOSFOMYCINS,fosfomycin
+Enterococcus faecalis,PHENICOLS,chloramphenicol
+Enterococcus faecium,PENICILLINS,penicillin
+Enterococcus faecium,PENICILLINS,ampicillin
+Enterococcus faecium,GLYCOPEPTIDES,vancomycin
+Enterococcus faecium,LIPOGLYCOPEPTIDES,teicoplanin
+Enterococcus faecium,MACROLIDES,erythromycin
+Enterococcus faecium,TETRACYCLINES,tetracycline
+Enterococcus faecium,FLUOROQUINOLONES,ciprofloxacin
+Enterococcus faecium,FLUOROQUINOLONES,levofloxacin
+Enterococcus faecium,FLUOROQUINOLONES,norfloxacin
+Enterococcus faecium,FOSFOMYCINS,fosfomycin
+Enterococcus faecium,PHENICOLS,chloramphenicol
+Pseudomonas aeruginosa,β-LACTAM COMBINATION AGENTS,piperacillin/tazobactam
+Pseudomonas aeruginosa,CEPHEMS,cefepime
+Pseudomonas aeruginosa,CEPHEMS,ceftazidime
+Pseudomonas aeruginosa,CARBAPENEMS,imipenem
+Pseudomonas aeruginosa,CARBAPENEMS,meropenem
+Pseudomonas aeruginosa,LIPOPEPTIDES,colistin
+Pseudomonas aeruginosa,AMINOGLYCOSIDES,amikacin
+Pseudomonas aeruginosa,AMINOGLYCOSIDES,gentamicin
+Pseudomonas aeruginosa,FLUOROQUINOLONES,ciprofloxacin
+Pseudomonas aeruginosa,FLUOROQUINOLONES,levofloxacin
+Staphylococcus aureus,PENICILLINS,oxacillin
+Staphylococcus aureus,PENICILLINS,cefoxitin
+Staphylococcus aureus,GLYCOPEPTIDES ,vancomycin
+Staphylococcus aureus,AMINOGLYCOSIDES,gentamicin
+Staphylococcus aureus,TETRACYCLINES,tetracycline
+Staphylococcus aureus,MACROLIDES,erythromycin
+Staphylococcus aureus,FLUOROQUINOLONES,ciprofloxacin
+Staphylococcus aureus,FLUOROQUINOLONES,levofloxacin
+Staphylococcus aureus,FLUOROQUINOLONES,norfloxacin
+Staphylococcus aureus,LINCOSAMIDES,clindamycin
+Staphylococcus aureus,FOLATE PATHWAY ANTAGONISTS,trimethoprim/sulfamethoxazole
+Staphylococcus aureus,LIPOGLYCOPEPTIDES,Teicoplanin
