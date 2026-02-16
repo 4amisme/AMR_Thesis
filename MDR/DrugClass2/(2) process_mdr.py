@@ -9,7 +9,7 @@ def main():
     input_folder = os.path.join("MDR", "DrugClass1.2")
     input_file_main = os.path.join(input_folder, "AllYears_DrugClass_tested.csv")
     
-    output_path = os.path.join(input_folder, "AllYears_MDR_Pattern.csv")
+    output_path = os.path.join(mapping_folder, "AllYears_MDR_Pattern.csv")
 
     print("--- เริ่มต้นกระบวนการ (เวอร์ชั่นแก้ไขชื่อเชื้อ/คอลัมน์) ---")
 
