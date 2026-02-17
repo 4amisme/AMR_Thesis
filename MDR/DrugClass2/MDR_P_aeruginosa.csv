@@ -1,0 +1,160 @@
+x_year,organism_full,Resistant_Drug_Classes,Count,Total_Samples,Percentage,MDR_id
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",669,12869,5.2,M5-003
+2015,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",264,12869,2.05,M4-023
+2015,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",223,12869,1.73,M3-016
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",193,12869,1.5,M4-001
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",110,12869,0.85,M3-006
+2015,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",86,12869,0.67,M3-019
+2015,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",79,12869,0.61,M3-022
+2015,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",48,12869,0.37,M3-028
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",38,12869,0.3,M4-013
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",28,12869,0.22,M3-002
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",16,12869,0.12,M4-004
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",12,12869,0.09,M3-001
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",11,12869,0.09,M4-007
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",10,12869,0.08,M3-009
+2015,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",4,12869,0.03,M3-005
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1176,17286,6.8,M5-003
+2016,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",334,17286,1.93,M3-016
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",320,17286,1.85,M4-001
+2016,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",278,17286,1.61,M4-023
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",94,17286,0.54,M3-006
+2016,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",77,17286,0.45,M3-019
+2016,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",68,17286,0.39,M3-022
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",57,17286,0.33,M3-002
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",50,17286,0.29,M4-013
+2016,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",39,17286,0.23,M3-028
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",22,17286,0.13,M4-004
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",19,17286,0.11,M3-005
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",15,17286,0.09,M3-001
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",15,17286,0.09,M4-007
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",5,17286,0.03,M3-009
+2016,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",1,17286,0.01,M3-012
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1597,28205,5.66,M5-003
+2017,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",667,28205,2.36,M3-016
+2017,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",510,28205,1.81,M4-023
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",401,28205,1.42,M4-001
+2017,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",192,28205,0.68,M3-019
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",122,28205,0.43,M3-006
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",72,28205,0.26,M3-002
+2017,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",72,28205,0.26,M3-022
+2017,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",58,28205,0.21,M3-028
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",51,28205,0.18,M4-013
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",46,28205,0.16,M4-004
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",35,28205,0.12,M3-001
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",34,28205,0.12,M4-007
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",16,28205,0.06,M3-005
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",8,28205,0.03,M3-012
+2017,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",6,28205,0.02,M3-009
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1438,28923,4.97,M5-003
+2018,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",706,28923,2.44,M3-016
+2018,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",528,28923,1.83,M4-023
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",328,28923,1.13,M4-001
+2018,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",191,28923,0.66,M3-019
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",93,28923,0.32,M3-006
+2018,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",78,28923,0.27,M3-028
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",70,28923,0.24,M4-004
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",62,28923,0.21,M3-002
+2018,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",58,28923,0.2,M3-022
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",40,28923,0.14,M4-013
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",32,28923,0.11,M4-007
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",29,28923,0.1,M3-005
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",28,28923,0.1,M3-001
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",7,28923,0.02,M3-009
+2018,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",3,28923,0.01,M3-012
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1974,31013,6.37,M5-003
+2019,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",685,31013,2.21,M3-016
+2019,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",547,31013,1.76,M4-023
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",382,31013,1.23,M4-001
+2019,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",289,31013,0.93,M3-019
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",114,31013,0.37,M4-004
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",105,31013,0.34,M3-006
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",96,31013,0.31,M3-002
+2019,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",66,31013,0.21,M3-022
+2019,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",60,31013,0.19,M3-028
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",55,31013,0.18,M3-001
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",37,31013,0.12,M4-007
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",34,31013,0.11,M4-013
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",27,31013,0.09,M3-005
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",4,31013,0.01,M3-012
+2019,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",2,31013,0.01,M3-009
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1994,30482,6.54,M5-003
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",686,30482,2.25,M4-001
+2020,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",533,30482,1.75,M4-023
+2020,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",455,30482,1.49,M3-016
+2020,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",274,30482,0.9,M3-019
+2020,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",114,30482,0.37,M3-022
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",98,30482,0.32,M3-002
+2020,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",81,30482,0.27,M3-028
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",72,30482,0.24,M3-006
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",69,30482,0.23,M4-004
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",48,30482,0.16,M4-007
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",40,30482,0.13,M4-013
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",23,30482,0.08,M3-001
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",21,30482,0.07,M3-005
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",10,30482,0.03,M3-009
+2020,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",9,30482,0.03,M3-012
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2559,33249,7.7,M5-003
+2021,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",842,33249,2.53,M4-023
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",509,33249,1.53,M4-001
+2021,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",429,33249,1.29,M3-016
+2021,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",315,33249,0.95,M3-019
+2021,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",263,33249,0.79,M3-022
+2021,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",103,33249,0.31,M3-028
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",101,33249,0.3,M3-002
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",95,33249,0.29,M4-004
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",80,33249,0.24,M3-006
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",62,33249,0.19,M4-007
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",61,33249,0.18,M4-013
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",21,33249,0.06,M3-001
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",17,33249,0.05,M3-012
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",16,33249,0.05,M3-005
+2021,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",11,33249,0.03,M3-009
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",1516,13024,11.64,M5-003
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",434,13024,3.33,M4-001
+2022,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",358,13024,2.75,M4-023
+2022,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",222,13024,1.7,M3-016
+2022,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",143,13024,1.1,M3-019
+2022,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",63,13024,0.48,M3-022
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",53,13024,0.41,M4-004
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",31,13024,0.24,M3-002
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",27,13024,0.21,M3-006
+2022,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",26,13024,0.2,M3-028
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",25,13024,0.19,M4-013
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",16,13024,0.12,M4-007
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",11,13024,0.08,M3-001
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",11,13024,0.08,M3-005
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",5,13024,0.04,M3-009
+2022,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",3,13024,0.02,M3-012
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2413,20161,11.97,M5-003
+2023,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",644,20161,3.19,M4-023
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",410,20161,2.03,M4-001
+2023,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",319,20161,1.58,M3-016
+2023,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",207,20161,1.03,M3-019
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",100,20161,0.5,M4-004
+2023,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",87,20161,0.43,M3-022
+2023,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",35,20161,0.17,M3-028
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",26,20161,0.13,M4-007
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",24,20161,0.12,M3-002
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",22,20161,0.11,M3-001
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",21,20161,0.1,M4-013
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",12,20161,0.06,M3-006
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",10,20161,0.05,M3-005
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",3,20161,0.01,M3-009
+2023,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",1,20161,0.0,M3-012
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",2060,22382,9.2,M5-003
+2024,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones, β-lactam combination agents",706,22382,3.15,M4-023
+2024,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, Fluoroquinolones",240,22382,1.07,M3-016
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, Fluoroquinolones",202,22382,0.9,M4-001
+2024,Pseudomonas aeruginosa,"Carbapenems, Cephalosporins, β-lactam combination agents",177,22382,0.79,M3-019
+2024,Pseudomonas aeruginosa,"Carbapenems, Fluoroquinolones, β-lactam combination agents",95,22382,0.42,M3-022
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins, β-lactam combination agents",60,22382,0.27,M4-004
+2024,Pseudomonas aeruginosa,"Cephalosporins, Fluoroquinolones, β-lactam combination agents",50,22382,0.22,M3-028
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones, β-lactam combination agents",25,22382,0.11,M4-013
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, Fluoroquinolones",20,22382,0.09,M3-006
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones, β-lactam combination agents",19,22382,0.08,M4-007
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Fluoroquinolones",12,22382,0.05,M3-002
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, Cephalosporins",10,22382,0.04,M3-001
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Carbapenems, β-lactam combination agents",8,22382,0.04,M3-005
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Fluoroquinolones, β-lactam combination agents",7,22382,0.03,M3-012
+2024,Pseudomonas aeruginosa,"Aminoglycosides, Cephalosporins, β-lactam combination agents",4,22382,0.02,M3-009
