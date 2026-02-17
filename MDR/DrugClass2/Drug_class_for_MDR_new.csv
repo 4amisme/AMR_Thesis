@@ -1,229 +1,92 @@
 ORGANISM_WHO,Class,Antibiotic
-Acinetobacter baumannii,Aminoglycosides,Amikacin
-Acinetobacter baumannii,Aminoglycosides,Gentamicin
-Acinetobacter baumannii,Carbapenems,Doripenem
-Acinetobacter baumannii,Carbapenems,Ertapenem
-Acinetobacter baumannii,Carbapenems,Imipenem
-Acinetobacter baumannii,Carbapenems,Meropenem
-Acinetobacter baumannii,Cephalosporins,Cefepime
-Acinetobacter baumannii,Cephalosporins,Cefotaxime
-Acinetobacter baumannii,Cephalosporins,Ceftazidime
-Acinetobacter baumannii,Cephalosporins,Ceftriaxone
-Acinetobacter baumannii,Fluoroquinolones,Ciprofloxacin
-Acinetobacter baumannii,Fluoroquinolones,Levofloxacin
-Acinetobacter baumannii,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Acinetobacter baumannii,β-lactam combination agents,Ampicillin/Sulbactam
-Acinetobacter baumannii,β-lactam combination agents,Piperacillin/Tazobactam
-Citrobacter freundii,Aminoglycosides,Amikacin
-Citrobacter freundii,Aminoglycosides,Gentamicin
-Citrobacter freundii,Carbapenems,Doripenem
-Citrobacter freundii,Carbapenems,Ertapenem
-Citrobacter freundii,Carbapenems,Imipenem
-Citrobacter freundii,Carbapenems,Meropenem
-Citrobacter freundii,Cephalosporins,Cefepime
-Citrobacter freundii,Cephalosporins,Cefotaxime
-Citrobacter freundii,Cephalosporins,Cefoxitin
-Citrobacter freundii,Cephalosporins,Ceftazidime
-Citrobacter freundii,Cephalosporins,Ceftriaxone
-Citrobacter freundii,Cephalosporins,Cefuroxime
-Citrobacter freundii,Fluoroquinolones,Ciprofloxacin
-Citrobacter freundii,Fluoroquinolones,Levofloxacin
-Citrobacter freundii,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Citrobacter freundii,Penicillins ,Ampicillin
-Citrobacter freundii,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Citrobacter freundii,β-lactam combination agents,Ampicillin/Sulbactam
-Citrobacter freundii,β-lactam combination agents,Ceftazidime/Avibactam
-Citrobacter freundii,β-lactam combination agents,Ceftolozane/Tazobactam
-Citrobacter freundii,β-lactam combination agents,Piperacillin/Tazobactam
-Enterobacter cloacae,Aminoglycosides,Amikacin
-Enterobacter cloacae,Aminoglycosides,Gentamicin
-Enterobacter cloacae,Carbapenems,Doripenem
-Enterobacter cloacae,Carbapenems,Ertapenem
-Enterobacter cloacae,Carbapenems,Imipenem
-Enterobacter cloacae,Carbapenems,Meropenem
-Enterobacter cloacae,Cephalosporins,Cefepime
-Enterobacter cloacae,Cephalosporins,Cefotaxime
-Enterobacter cloacae,Cephalosporins,Cefoxitin
-Enterobacter cloacae,Cephalosporins,Ceftazidime
-Enterobacter cloacae,Cephalosporins,Ceftriaxone
-Enterobacter cloacae,Cephalosporins,Cefuroxime
-Enterobacter cloacae,Fluoroquinolones,Ciprofloxacin
-Enterobacter cloacae,Fluoroquinolones,Levofloxacin
-Enterobacter cloacae,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Enterobacter cloacae,Penicillins ,Ampicillin
-Enterobacter cloacae,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Enterobacter cloacae,β-lactam combination agents,Ampicillin/Sulbactam
-Enterobacter cloacae,β-lactam combination agents,Ceftazidime/Avibactam
-Enterobacter cloacae,β-lactam combination agents,Ceftolozane/Tazobactam
-Enterobacter cloacae,β-lactam combination agents,Piperacillin/Tazobactam
-Enterobacter spp.,Aminoglycosides,Amikacin
-Enterobacter spp.,Aminoglycosides,Gentamicin
-Enterobacter spp.,Carbapenems,Doripenem
-Enterobacter spp.,Carbapenems,Ertapenem
-Enterobacter spp.,Carbapenems,Imipenem
-Enterobacter spp.,Carbapenems,Meropenem
-Enterobacter spp.,Cephalosporins,Cefepime
-Enterobacter spp.,Cephalosporins,Cefotaxime
-Enterobacter spp.,Cephalosporins,Cefoxitin
-Enterobacter spp.,Cephalosporins,Ceftazidime
-Enterobacter spp.,Cephalosporins,Ceftriaxone
-Enterobacter spp.,Cephalosporins,Cefuroxime
-Enterobacter spp.,Fluoroquinolones,Ciprofloxacin
-Enterobacter spp.,Fluoroquinolones,Levofloxacin
-Enterobacter spp.,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Enterobacter spp.,Penicillins ,Ampicillin
-Enterobacter spp.,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Enterobacter spp.,β-lactam combination agents,Ampicillin/Sulbactam
-Enterobacter spp.,β-lactam combination agents,Ceftazidime/Avibactam
-Enterobacter spp.,β-lactam combination agents,Ceftolozane/Tazobactam
-Enterobacter spp.,β-lactam combination agents,Piperacillin/Tazobactam
-Enterococcus faecalis,Fluoroquinolones,Ciprofloxacin
-Enterococcus faecalis,Fluoroquinolones,Levofloxacin
-Enterococcus faecalis,Glycopeptides,Vancomycin
-Enterococcus faecalis,Macrolides,Erythromycin
-Enterococcus faecalis,Penicillins ,Ampicillin
-Enterococcus faecalis,Penicillins ,Penicillin G
-Enterococcus faecalis,Tetracyclines,Tetracycline
-Enterococcus faecium,Fluoroquinolones,Ciprofloxacin
-Enterococcus faecium,Fluoroquinolones,Levofloxacin
-Enterococcus faecium,Glycopeptides,Vancomycin
-Enterococcus faecium,Macrolides,Erythromycin
-Enterococcus faecium,Penicillins ,Ampicillin
-Enterococcus faecium,Penicillins ,Penicillin G
-Enterococcus faecium,Tetracyclines,Tetracycline
-Escherichia coli,Aminoglycosides,Amikacin
-Escherichia coli,Aminoglycosides,Gentamicin
-Escherichia coli,Carbapenems,Doripenem
-Escherichia coli,Carbapenems,Ertapenem
-Escherichia coli,Carbapenems,Imipenem
-Escherichia coli,Carbapenems,Meropenem
-Escherichia coli,Cephalosporins,Cefepime
-Escherichia coli,Cephalosporins,Cefotaxime
-Escherichia coli,Cephalosporins,Cefoxitin
-Escherichia coli,Cephalosporins,Ceftazidime
-Escherichia coli,Cephalosporins,Ceftriaxone
-Escherichia coli,Cephalosporins,Cefuroxime
-Escherichia coli,Fluoroquinolones,Ciprofloxacin
-Escherichia coli,Fluoroquinolones,Levofloxacin
-Escherichia coli,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Escherichia coli,Penicillins ,Ampicillin
-Escherichia coli,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Escherichia coli,β-lactam combination agents,Ampicillin/Sulbactam
-Escherichia coli,β-lactam combination agents,Ceftazidime/Avibactam
-Escherichia coli,β-lactam combination agents,Ceftolozane/Tazobactam
-Escherichia coli,β-lactam combination agents,Piperacillin/Tazobactam
-Klebsiella pneumoniae,Aminoglycosides,Amikacin
-Klebsiella pneumoniae,Aminoglycosides,Gentamicin
-Klebsiella pneumoniae,Carbapenems,Doripenem
-Klebsiella pneumoniae,Carbapenems,Ertapenem
-Klebsiella pneumoniae,Carbapenems,Imipenem
-Klebsiella pneumoniae,Carbapenems,Meropenem
-Klebsiella pneumoniae,Cephalosporins,Cefepime
-Klebsiella pneumoniae,Cephalosporins,Cefotaxime
-Klebsiella pneumoniae,Cephalosporins,Cefoxitin
-Klebsiella pneumoniae,Cephalosporins,Ceftazidime
-Klebsiella pneumoniae,Cephalosporins,Ceftriaxone
-Klebsiella pneumoniae,Cephalosporins,Cefuroxime
-Klebsiella pneumoniae,Fluoroquinolones,Ciprofloxacin
-Klebsiella pneumoniae,Fluoroquinolones,Levofloxacin
-Klebsiella pneumoniae,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Klebsiella pneumoniae,Penicillins ,Ampicillin
-Klebsiella pneumoniae,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Klebsiella pneumoniae,β-lactam combination agents,Ampicillin/Sulbactam
-Klebsiella pneumoniae,β-lactam combination agents,Ceftazidime/Avibactam
-Klebsiella pneumoniae,β-lactam combination agents,Ceftolozane/Tazobactam
-Klebsiella pneumoniae,β-lactam combination agents,Piperacillin/Tazobactam
-Klebsiella spp.,Aminoglycosides,Amikacin
-Klebsiella spp.,Aminoglycosides,Gentamicin
-Klebsiella spp.,Carbapenems,Doripenem
-Klebsiella spp.,Carbapenems,Ertapenem
-Klebsiella spp.,Carbapenems,Imipenem
-Klebsiella spp.,Carbapenems,Meropenem
-Klebsiella spp.,Cephalosporins,Cefepime
-Klebsiella spp.,Cephalosporins,Cefotaxime
-Klebsiella spp.,Cephalosporins,Cefoxitin
-Klebsiella spp.,Cephalosporins,Ceftazidime
-Klebsiella spp.,Cephalosporins,Ceftriaxone
-Klebsiella spp.,Cephalosporins,Cefuroxime
-Klebsiella spp.,Fluoroquinolones,Ciprofloxacin
-Klebsiella spp.,Fluoroquinolones,Levofloxacin
-Klebsiella spp.,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Klebsiella spp.,Penicillins ,Ampicillin
-Klebsiella spp.,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Klebsiella spp.,β-lactam combination agents,Ampicillin/Sulbactam
-Klebsiella spp.,β-lactam combination agents,Ceftazidime/Avibactam
-Klebsiella spp.,β-lactam combination agents,Ceftolozane/Tazobactam
-Klebsiella spp.,β-lactam combination agents,Piperacillin/Tazobactam
-Proteus mirabilis,Aminoglycosides,Amikacin
-Proteus mirabilis,Aminoglycosides,Gentamicin
-Proteus mirabilis,Carbapenems,Doripenem
-Proteus mirabilis,Carbapenems,Ertapenem
-Proteus mirabilis,Carbapenems,Imipenem
-Proteus mirabilis,Carbapenems,Meropenem
-Proteus mirabilis,Cephalosporins,Cefepime
-Proteus mirabilis,Cephalosporins,Cefotaxime
-Proteus mirabilis,Cephalosporins,Cefoxitin
-Proteus mirabilis,Cephalosporins,Ceftazidime
-Proteus mirabilis,Cephalosporins,Ceftriaxone
-Proteus mirabilis,Cephalosporins,Cefuroxime
-Proteus mirabilis,Fluoroquinolones,Ciprofloxacin
-Proteus mirabilis,Fluoroquinolones,Levofloxacin
-Proteus mirabilis,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Proteus mirabilis,Penicillins ,Ampicillin
-Proteus mirabilis,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Proteus mirabilis,β-lactam combination agents,Ampicillin/Sulbactam
-Proteus mirabilis,β-lactam combination agents,Ceftazidime/Avibactam
-Proteus mirabilis,β-lactam combination agents,Ceftolozane/Tazobactam
-Proteus mirabilis,β-lactam combination agents,Piperacillin/Tazobactam
-Proteus vulgaris,Aminoglycosides,Amikacin
-Proteus vulgaris,Aminoglycosides,Gentamicin
-Proteus vulgaris,Carbapenems,Doripenem
-Proteus vulgaris,Carbapenems,Ertapenem
-Proteus vulgaris,Carbapenems,Imipenem
-Proteus vulgaris,Carbapenems,Meropenem
-Proteus vulgaris,Cephalosporins,Cefepime
-Proteus vulgaris,Cephalosporins,Cefotaxime
-Proteus vulgaris,Cephalosporins,Cefoxitin
-Proteus vulgaris,Cephalosporins,Ceftazidime
-Proteus vulgaris,Cephalosporins,Ceftriaxone
-Proteus vulgaris,Cephalosporins,Cefuroxime
-Proteus vulgaris,Fluoroquinolones,Ciprofloxacin
-Proteus vulgaris,Fluoroquinolones,Levofloxacin
-Proteus vulgaris,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Proteus vulgaris,Penicillins ,Ampicillin
-Proteus vulgaris,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Proteus vulgaris,β-lactam combination agents,Ampicillin/Sulbactam
-Proteus vulgaris,β-lactam combination agents,Ceftazidime/Avibactam
-Proteus vulgaris,β-lactam combination agents,Ceftolozane/Tazobactam
-Proteus vulgaris,β-lactam combination agents,Piperacillin/Tazobactam
-Pseudomonas aeruginosa,Aminoglycosides,Amikacin
-Pseudomonas aeruginosa,Aminoglycosides,Gentamicin
-Pseudomonas aeruginosa,Carbapenems,Doripenem
-Pseudomonas aeruginosa,Carbapenems,Imipenem
-Pseudomonas aeruginosa,Carbapenems,Meropenem
-Pseudomonas aeruginosa,Cephalosporins,Cefepime
-Pseudomonas aeruginosa,Cephalosporins,Ceftazidime
-Pseudomonas aeruginosa,Fluoroquinolones,Ciprofloxacin
-Pseudomonas aeruginosa,Fluoroquinolones,Levofloxacin
-Pseudomonas aeruginosa,β-lactam combination agents,Piperacillin/Tazobactam
-Serratia marcescens,Aminoglycosides,Amikacin
-Serratia marcescens,Aminoglycosides,Gentamicin
-Serratia marcescens,Carbapenems,Doripenem
-Serratia marcescens,Carbapenems,Ertapenem
-Serratia marcescens,Carbapenems,Imipenem
-Serratia marcescens,Carbapenems,Meropenem
-Serratia marcescens,Cephalosporins,Cefepime
-Serratia marcescens,Cephalosporins,Cefotaxime
-Serratia marcescens,Cephalosporins,Cefoxitin
-Serratia marcescens,Cephalosporins,Ceftazidime
-Serratia marcescens,Cephalosporins,Ceftriaxone
-Serratia marcescens,Cephalosporins,Cefuroxime
-Serratia marcescens,Fluoroquinolones,Ciprofloxacin
-Serratia marcescens,Fluoroquinolones,Levofloxacin
-Serratia marcescens,Folate pathway antagonists,Trimethoprim/Sulfamethoxazole
-Serratia marcescens,Penicillins ,Ampicillin
-Serratia marcescens,β-lactam combination agents,Amoxicillin/Clavulanic acid
-Serratia marcescens,β-lactam combination agents,Ampicillin/Sulbactam
-Serratia marcescens,β-lactam combination agents,Ceftazidime/Avibactam
-Serratia marcescens,β-lactam combination agents,Ceftolozane/Tazobactam
-Serratia marcescens,β-lactam combination agents,Piperacillin/Tazobactam
+Acinetobacter baumannii,β-LACTAM COMBINATION AGENTS,ampicillin/sulbactam
+Acinetobacter baumannii,β-LACTAM COMBINATION AGENTS,piperacillin/tazobactam
+Acinetobacter baumannii,CEPHEMS,cefepime
+Acinetobacter baumannii,CEPHEMS,cefotaxime
+Acinetobacter baumannii,CEPHEMS,ceftazidime
+Acinetobacter baumannii,CEPHEMS,ceftriaxone
+Acinetobacter baumannii,CARBAPENEMS,imipenem
+Acinetobacter baumannii,CARBAPENEMS,meropenem
+Acinetobacter baumannii,AMINOGLYCOSIDES,amikacin
+Acinetobacter baumannii,AMINOGLYCOSIDES,gentamicin
+Acinetobacter baumannii,FLUOROQUINOLONES,ciprofloxacin
+Acinetobacter baumannii,FLUOROQUINOLONES,levofloxacin
+Acinetobacter baumannii,FOLATE PATHWAY ANTAGONISTS,trimethoprim/sulfamethoxazole
+Escherichia coli,PENICILLINS,ampicillin
+Escherichia coli,β-LACTAM COMBINATION AGENTS,amoxicillin/clavulanic acid
+Escherichia coli,β-LACTAM COMBINATION AGENTS,ampicillin/sulbactam
+Escherichia coli,β-LACTAM COMBINATION AGENTS,piperacillin/tazobactam
+Escherichia coli,CEPHEMS ,cefepime
+Escherichia coli,CEPHEMS ,ceftazidime
+Escherichia coli,CEPHEMS ,ceftriaxone
+Escherichia coli,CEPHEMS ,cefuroxime
+Escherichia coli,CARBAPENEMS,ertapenem
+Escherichia coli,CARBAPENEMS,imipenem
+Escherichia coli,CARBAPENEMS,meropenem
+Escherichia coli,AMINOGLYCOSIDES,gentamicin
+Escherichia coli,AMINOGLYCOSIDES,amikacin
+Escherichia coli,FLUOROQUINOLONES,ciprofloxacin
+Escherichia coli,FLUOROQUINOLONES,levofloxacin
+Escherichia coli,FLUOROQUINOLONES,norfloxacin
+Escherichia coli,FOLATE PATHWAY ANTAGONISTS,trimethoprim/sulfamethoxazole
+Klebsiella pneumoniae,PENICILLINS,ampicillin
+Klebsiella pneumoniae,β-LACTAM COMBINATION AGENTS,amoxicillin/clavulanic acid
+Klebsiella pneumoniae,β-LACTAM COMBINATION AGENTS,ampicillin/sulbactam
+Klebsiella pneumoniae,β-LACTAM COMBINATION AGENTS,piperacillin/tazobactam
+Klebsiella pneumoniae,CEPHEMS ,cefepime
+Klebsiella pneumoniae,CEPHEMS ,ceftazidime
+Klebsiella pneumoniae,CEPHEMS ,ceftriaxone
+Klebsiella pneumoniae,CEPHEMS ,cefuroxime
+Klebsiella pneumoniae,CARBAPENEMS,ertapenem
+Klebsiella pneumoniae,CARBAPENEMS,imipenem
+Klebsiella pneumoniae,CARBAPENEMS,meropenem
+Klebsiella pneumoniae,AMINOGLYCOSIDES,gentamicin
+Klebsiella pneumoniae,AMINOGLYCOSIDES,amikacin
+Klebsiella pneumoniae,FLUOROQUINOLONES,ciprofloxacin
+Klebsiella pneumoniae,FLUOROQUINOLONES,levofloxacin
+Klebsiella pneumoniae,FLUOROQUINOLONES,norfloxacin
+Klebsiella pneumoniae,FOLATE PATHWAY ANTAGONISTS,trimethoprim/sulfamethoxazole
+Enterococcus faecalis,PENICILLINS,penicillin
+Enterococcus faecalis,PENICILLINS,ampicillin
+Enterococcus faecalis,GLYCOPEPTIDES,vancomycin
+Enterococcus faecalis,LIPOGLYCOPEPTIDES,teicoplanin
+Enterococcus faecalis,MACROLIDES,erythromycin
+Enterococcus faecalis,TETRACYCLINES,tetracycline
+Enterococcus faecalis,FLUOROQUINOLONES,ciprofloxacin
+Enterococcus faecalis,FLUOROQUINOLONES,levofloxacin
+Enterococcus faecalis,FLUOROQUINOLONES,norfloxacin
+Enterococcus faecalis,FOSFOMYCINS,fosfomycin
+Enterococcus faecalis,PHENICOLS,chloramphenicol
+Enterococcus faecium,PENICILLINS,penicillin
+Enterococcus faecium,PENICILLINS,ampicillin
+Enterococcus faecium,GLYCOPEPTIDES,vancomycin
+Enterococcus faecium,LIPOGLYCOPEPTIDES,teicoplanin
+Enterococcus faecium,MACROLIDES,erythromycin
+Enterococcus faecium,TETRACYCLINES,tetracycline
+Enterococcus faecium,FLUOROQUINOLONES,ciprofloxacin
+Enterococcus faecium,FLUOROQUINOLONES,levofloxacin
+Enterococcus faecium,FLUOROQUINOLONES,norfloxacin
+Enterococcus faecium,FOSFOMYCINS,fosfomycin
+Enterococcus faecium,PHENICOLS,chloramphenicol
+Pseudomonas aeruginosa,β-LACTAM COMBINATION AGENTS,piperacillin/tazobactam
+Pseudomonas aeruginosa,CEPHEMS,cefepime
+Pseudomonas aeruginosa,CEPHEMS,ceftazidime
+Pseudomonas aeruginosa,CARBAPENEMS,imipenem
+Pseudomonas aeruginosa,CARBAPENEMS,meropenem
+Pseudomonas aeruginosa,LIPOPEPTIDES,colistin
+Pseudomonas aeruginosa,AMINOGLYCOSIDES,amikacin
+Pseudomonas aeruginosa,AMINOGLYCOSIDES,gentamicin
+Pseudomonas aeruginosa,FLUOROQUINOLONES,ciprofloxacin
+Pseudomonas aeruginosa,FLUOROQUINOLONES,levofloxacin
+Staphylococcus aureus,PENICILLINS,oxacillin
+Staphylococcus aureus,PENICILLINS,cefoxitin
+Staphylococcus aureus,GLYCOPEPTIDES ,vancomycin
+Staphylococcus aureus,AMINOGLYCOSIDES,gentamicin
+Staphylococcus aureus,TETRACYCLINES,tetracycline
+Staphylococcus aureus,MACROLIDES,erythromycin
+Staphylococcus aureus,FLUOROQUINOLONES,ciprofloxacin
+Staphylococcus aureus,FLUOROQUINOLONES,levofloxacin
+Staphylococcus aureus,FLUOROQUINOLONES,norfloxacin
+Staphylococcus aureus,LINCOSAMIDES,clindamycin
+Staphylococcus aureus,FOLATE PATHWAY ANTAGONISTS,trimethoprim/sulfamethoxazole
+Staphylococcus aureus,LIPOGLYCOPEPTIDES,Teicoplanin
