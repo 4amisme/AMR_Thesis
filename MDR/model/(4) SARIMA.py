@@ -3,10 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import os
+import warnings
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from pmdarima import auto_arima
 from sklearn.metrics import mean_squared_error
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
+
+# ปิดแจ้งเตือน Warning เพื่อให้หน้าจอ Output อ่านง่ายขึ้น
+warnings.simplefilter("ignore")
 
 # ==========================================
 # 1. ฟังก์ชันคำนวณ Metrics
@@ -28,10 +32,10 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     print(f"{'='*50}")
 
     # --- [A] การแบ่งข้อมูล (80/20 สำหรับ Validation) ---
-    n = len(series)
-    train_size = int(n * 0.80)
-    train_data = series.iloc[:train_size]
-    test_data = series.iloc[train_size:]
+    n = len(series)                         # 1. นับจำนวนเดือนทั้งหมดที่มีในข้อมูล
+    train_size = int(n * 0.80)              # 2. คำนวณหาจุดตัดที่ 80% ของจำนวนเดือนทั้งหมด
+    train_data = series.iloc[:train_size]   # 3. ตัดเอาข้อมูลตั้งแต่เดือนแรก จนถึงจุดตัด (อดีต)
+    test_data = series.iloc[train_size:]    # 4. ตัดเอาข้อมูลตั้งแต่จุดตัด จนถึงเดือนล่าสุด (ปัจจุบัน)
 
     # --- [B] วิเคราะห์ ACF / PACF ---
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 4))
@@ -44,15 +48,11 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     # --- [C] Parameter Tuning ด้วย auto_arima ---
     print("Finding best SARIMA parameters (Stepwise Search)...")
     
-    # auto_arima จะหาค่า p,d,q และ P,D,Q ที่เหมาะสมที่สุดให้โดยอัตโนมัติ
-    # ส่วนที่ไม่เป็นฤดูกาล:
-    # p: ใช้ค่าในอดีตมาทำนาย
-    # d: จำนวนครั้งที่ต้องลบข้อมูลปัจจุบันด้วยข้อมูลก่อนหน้า เพื่อทำให้กราฟนิ่ง (Stationary) ไม่พุ่งขึ้นหรือลงอย่างไร้ทิศทาง
-    # q: การนำค่าความคลาดเคลื่อน (Error) ในอดีตมาช่วยปรับจูนตัวเลขพยากรณ์
+    # ใช้ train_data ในการหาพารามิเตอร์ เพื่อไม่ให้โมเดลเห็นข้อมูล 20% สุดท้าย
     stepwise_model = auto_arima(
-        series, 
-        start_p=1, start_q=1,    #ลองเริ่มสุุ่มที่ค่า 1
-        max_p=5, max_q=5,        #ค่าสูงสุดที่โมเดลจะลองสุ่ม
+        train_data, 
+        start_p=0, start_q=0,    # ลองเริ่มสุ่มที่ค่า 1
+        max_p=5, max_q=5,        # ค่าสูงสุดที่โมเดลจะลองสุ่ม
         m=12,                    # ข้อมูลรายเดือน (Seasonality = 12), ข้อมูลเราวนลูปทุก 12 เดือน
         start_P=0, 
         seasonal=True,           # เปิดโหมดวิเคราะห์ฤดูกาล
@@ -61,7 +61,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
         trace=True,              # แสดงขั้นตอนการหาค่า
         error_action='ignore',  
         suppress_warnings=True, 
-        stepwise=True            #ให้รันเฉพาะค่าที่มีแนวโน้มว่่าจะดี
+        stepwise=True            # ให้รันเฉพาะค่าที่มีแนวโน้มว่าจะดี
     )
 
     best_order = stepwise_model.order
@@ -73,22 +73,32 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 
     # --- [D] Model Training & Forecasting ---
     
-    # เทรนโมเดลด้วยค่าที่ดีที่สุดที่หามาได้
-    model_sarima = SARIMAX(series, 
-                           order=best_order, 
-                           seasonal_order=best_seasonal,
-                           enforce_stationarity=False,
-                           enforce_invertibility=False).fit(disp=False)
+    print("\n--- 1. Evaluating Model Performance (Train/Test) ---")
+    # เทรนโมเดลสำหรับทดสอบด้วยข้อมูล Train Data (80%) 
+    model_eval = SARIMAX(train_data, 
+                         order=best_order, 
+                         seasonal_order=best_seasonal,
+                         enforce_stationarity=False,
+                         enforce_invertibility=False).fit(disp=False)
     
-    # ทำนายอนาคต (Forecast)
-    forecast_sarima = model_sarima.forecast(steps=forecast_months)
-    
-    # วัดผลกับ Test Set (ย้อนหลังไปทำนายส่วนที่แบ่งไว้เป็น Test)
-    test_pred_sarima = model_sarima.get_prediction(start=test_data.index[0], end=test_data.index[-1]).predicted_mean
+    # ทำนายช่วงเวลาของ Test Data เพื่อวัดความแม่นยำ
+    test_pred_sarima = model_eval.forecast(steps=len(test_data))
     rmse, wape = calculate_metrics(test_data, test_pred_sarima)
-    print(f"\nEvaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
+    print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
+
+    print("\n--- 2. Forecasting Real Future (100% Data) ---")
+    # เทรนโมเดลตัวจริงด้วยข้อมูลทั้งหมด (Series) เพื่อความแม่นยำสูงสุดก่อนทำนายอนาคต
+    final_model = SARIMAX(series, 
+                          order=best_order, 
+                          seasonal_order=best_seasonal,
+                          enforce_stationarity=False,
+                          enforce_invertibility=False).fit(disp=False)
+    
+    # ทำนายอนาคตล่วงหน้า 5 ปี (Forecast)
+    forecast_sarima = final_model.forecast(steps=forecast_months)
 
     # --- [E] การพล็อตแสดงผล ---
+    
     plt.figure(figsize=(12, 6))
     
     # พล็อตข้อมูลจริง
