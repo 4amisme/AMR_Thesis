@@ -2,7 +2,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import warnings
 from statsmodels.tsa.seasonal import STL
+
+# ปิดการแจ้งเตือนกวนใจเวลาพล็อตย่อยๆ
+warnings.simplefilter("ignore")
 
 # 1. ตั้งค่าเส้นทางไฟล์
 file_path = os.path.join("MDR", "model", "acinetobacter_baumannii.csv")
@@ -25,9 +29,12 @@ try:
         'month': all_months.month
     })
 
-    # รวมข้อมูลที่มีเข้ากับ Index ที่สมบูรณ์ และเติมเดือนที่ไม่มีข้อมูลด้วย 0
+    # รวมข้อมูลที่มีเข้ากับ Index ที่สมบูรณ์ 
     final_df = pd.merge(full_index, pivot_df.reset_index(), on=['year', 'month'], how='left')
-    final_df = final_df.fillna(0)
+    
+    # [จุดที่แก้ไข] ใช้วิธี Interpolate (ลากเส้นเชื่อมค่า) แทนการเติม 0 ทื่อๆ เพื่อป้องกันกราฟกระชาก
+    # ส่วนเดือนแรกสุดหรือท้ายสุดที่ไม่มีข้อมูลให้เกาะ จะถูกเติมด้วย 0 ด้วยคำสั่ง .fillna(0) ปิดท้าย
+    final_df = final_df.interpolate(method='linear').fillna(0)
 
     # 5. ฟังก์ชันสำหรับสร้างกราฟวิเคราะห์ฤดูกาล
     def plot_seasonality_analysis(data_df, drug_class_name, date_series):
@@ -46,7 +53,7 @@ try:
         # สร้างพื้นที่วาดกราฟ 3 ช่อง (Actual, Trend, Seasonal)
         fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 10), sharex=True)
         
-        # กราฟ 1: ข้อมูลจริง (Observed)
+        # กราฟ 1: ข้อมูลจริง (Observed) ที่ผ่านการ Interpolate แล้ว
         ax1.plot(date_series, series, color='#1f77b4', linewidth=1.5, label='Observed (Actual %)')
         ax1.set_title(f'Time Series Decomposition: {drug_class_name[:80]}...', fontsize=14, fontweight='bold')
         ax1.legend(loc='upper left')
@@ -67,8 +74,9 @@ try:
         plt.tight_layout()
         plt.show()
 
-    # 6. เริ่มการ Plot สำหรับทุกกลุ่มยาที่มีในไฟล์ (Top 5)
-    drug_classes = pivot_df.columns.tolist()
+    # 6. เริ่มการ Plot สำหรับทุกกลุ่มยาที่มีในไฟล์
+    # ดึงเฉพาะชื่อคอลัมน์ที่เป็นยา (ข้าม year, month)
+    drug_classes = [col for col in final_df.columns if col not in ['year', 'month']]
     
     print(f"พบกลุ่มยาทั้งหมด {len(drug_classes)} กลุ่ม กำลังสร้างกราฟ...")
     
