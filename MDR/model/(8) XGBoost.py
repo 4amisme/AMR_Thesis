@@ -144,7 +144,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
              label='Tuned XGBoost Forecast (Next 5 years)', linewidth=1.5)
 
-    plt.title(f'พยากรณ์อัตราการดื้อยา: {target_drug_name}\n(XGBoost)', fontsize=13, pad=15)
+    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     
@@ -161,7 +161,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model", "a_baumannii_bl.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -175,7 +175,7 @@ if os.path.exists(file_path):
     final_df.index = all_months
 
     # ชื่อกลุ่มยาเป้าหมาย
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, CEPHEMS, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
