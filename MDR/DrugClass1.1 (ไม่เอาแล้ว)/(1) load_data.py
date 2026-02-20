@@ -5,10 +5,10 @@ def load_data():
     # ==========================================
     # ตั้งค่า Path ต้นทาง (Source)
     # ==========================================
-    source_path = r"C:\Users\ucwsh\Downloads\acinetobacter_baumannii.csv"
+    source_path = r"C:\Users\ucwsh\Downloads\DrugClass - New.csv"
     
     # ไฟล์ปลายทาง (Intermediate file) ที่จะส่งต่อให้ขั้นตอนถัดไป
-    destination_file = os.path.join("MDR", "DrugClass2", "acinetobacter_baumannii.csv")
+    destination_file = os.path.join("MDR", "DrugClass", "Drug_class_for_MDR_new.csv")
 
     print(f"[Step 1] กำลังอ่านข้อมูลจาก: {source_path}")
 

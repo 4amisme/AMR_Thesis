@@ -1,106 +1,81 @@
 import pandas as pd
 import os
 
-def main():
-    # --- 1. ตั้งค่า Path ---
+def debug_mdr():
+    # --- ตั้งค่า Path ---
     base_folder = os.path.join("MDR", "DrugClass2")
+    mapping_path = os.path.join(base_folder, "Drug_class_for_MDR_new.csv")
     
-    # Input 1: ไฟล์สรุป MDR ล่าสุด (จากขั้นตอนที่แล้ว)
-    input_summary = os.path.join(base_folder, "summary_MDR_only_by_year.csv")
-    
-    # Input 2: ไฟล์ ID
-    input_id_file = os.path.join(base_folder, "ID.csv")
-    
-    # Output: ไฟล์ผลลัพธ์สุดท้าย
-    output_filename = os.path.join(base_folder, "summary_MDR_final_with_ID.csv")
+    input_folder = os.path.join("MDR", "DrugClass1.2")
+    data_path = os.path.join(input_folder, "AllYears_DrugClass_tested.csv")
 
-    # ตรวจสอบไฟล์
-    print(f"Checking files in: {base_folder}")
-    if not os.path.exists(input_summary):
-        print(f"[Error] ไม่พบไฟล์สรุป: {input_summary}")
-        print("กรุณารัน script สร้าง summary MDR ก่อนครับ")
-        return
-    if not os.path.exists(input_id_file):
-        print(f"[Error] ไม่พบไฟล์ ID: {input_id_file}")
-        return
+    print("--- เริ่มการตรวจสอบ (Debug Mode) ---")
 
-    print("กำลังโหลดข้อมูล...")
+    # 1. โหลดข้อมูล
     try:
-        df_summary = pd.read_csv(input_summary, encoding='utf-8')
-        df_id = pd.read_csv(input_id_file, encoding='utf-8')
+        df = pd.read_csv(data_path, encoding='utf-8')
+        df_map = pd.read_csv(mapping_path, encoding='utf-8')
+        print(f"✅ อ่านไฟล์สำเร็จ")
+        print(f"   - ข้อมูลทั้งหมด: {len(df)} แถว")
     except Exception as e:
-        print(f"[Error] อ่านไฟล์ CSV ไม่สำเร็จ: {e}")
+        print(f"❌ อ่านไฟล์ไม่สำเร็จ: {e}")
         return
 
-    # --- 2. Data Cleaning & Fixing Text ---
-    
-    # ลบช่องว่างชื่อคอลัมน์
-    df_summary.columns = df_summary.columns.str.strip()
-    df_id.columns = df_id.columns.str.strip()
-    
-    # *** แก้ไขคำผิด (Î² -> β) ในไฟล์ ID แบบอัตโนมัติ ***
-    print("ตรวจสอบและแก้ไข Encoding (Î² -> β)...")
-    wrong_text = "Î²-lactam combination agents"
-    correct_text = "β-lactam combination agents"
-    
-    # เช็คและแก้ใน ID.csv (คอลัมน์ std_tested_list)
-    if 'std_tested_list' in df_id.columns:
-        df_id['std_tested_list'] = df_id['std_tested_list'].astype(str).str.replace(wrong_text, correct_text, regex=False)
-
-    # --- 3. Normalization (จัดเรียงชื่อยาให้ตรงกัน) ---
-    print("กำลังจัดรูปแบบข้อมูลเพื่อจับคู่ (Sort & Normalize)...")
-
-    def normalize_drug_list(text):
-        if pd.isna(text) or str(text).strip() == "" or str(text).lower() == "nan":
-            return ""
-        # 1. แยกด้วย comma
-        parts = str(text).split(',')
-        # 2. ตัดช่องว่างหน้าหลัง
-        parts = [p.strip() for p in parts]
-        # 3. เรียงลำดับ A-Z (สำคัญมาก! เพื่อให้ A,B ตรงกับ B,A)
-        parts.sort()
-        # 4. รวมกลับ
-        return ", ".join(parts)
-
-    # สร้างคอลัมน์ใหม่ชื่อ 'join_key' เพื่อใช้เชื่อมข้อมูล
-    df_id['join_key'] = df_id['std_tested_list'].apply(normalize_drug_list)
-    df_summary['join_key'] = df_summary['Resistant_Drug_Classes'].apply(normalize_drug_list)
-
-    # --- 4. Merge Data (Mapping) ---
-    print("กำลังจับคู่ข้อมูล MDR_id...")
-
-    # Left Join: ยึดตาราง Summary เป็นหลัก, เอา MDR_id จาก ID มาแปะ
-    merged_df = pd.merge(
-        df_summary, 
-        df_id[['join_key', 'MDR_id']], 
-        on='join_key', 
-        how='left'
-    )
-
-    # ลบคอลัมน์ช่วย (join_key) ทิ้ง
-    merged_df.drop(columns=['join_key'], inplace=True)
-
-    # --- 5. บันทึกผลลัพธ์ ---
-    try:
-        merged_df.to_csv(output_filename, index=False, encoding='utf-8')
-        print("-" * 60)
-        print(f"✅ เสร็จสมบูรณ์!")
-        print(f"ไฟล์ผลลัพธ์สุดท้าย: {output_filename}")
-        print("-" * 60)
-        
-        # แสดงตัวอย่าง
-        print("\nตัวอย่างผลลัพธ์ (5 แถวแรกที่มี MDR_id):")
-        # กรองให้เห็นเฉพาะตัวที่ map เจอ
-        matched_rows = merged_df[merged_df['MDR_id'].notna()]
-        
-        if not matched_rows.empty:
-            print(matched_rows[['x_year', 'Resistant_Drug_Classes', 'Count', 'MDR_id']].head())
+    # 2. เช็ค Missing_Count
+    target_col = 'Missing_Count' # หรือ 'Missing_count' เช็คให้ดี
+    if target_col in df.columns:
+        zeros = df[df[target_col] == 0]
+        print(f"\n[เช็ค 1] การกรอง {target_col} == 0")
+        print(f"   - จำนวนแถวที่เหลือ: {len(zeros)}")
+        if len(zeros) == 0:
+            print("   🔴 ปัญหาเจอแล้ว! -> ไม่มีแถวไหนเลยที่มี Missing_Count เป็น 0")
+            print("   -> แนะนำ: ลองเช็คไฟล์ CSV ว่าคอลัมน์นี้มีค่าอะไรบ้าง")
+            print(f"   -> ตัวอย่างค่าที่มี: {df[target_col].unique()[:5]}")
+            return # จบการทำงานเพราะไม่มีข้อมูลให้ไปต่อ
         else:
-            print(merged_df[['x_year', 'Resistant_Drug_Classes', 'Count', 'MDR_id']].head())
-            print("\n[Note] ยังไม่พบรายการที่จับคู่เจอ (ลองเช็คชื่อยาใน ID.csv ว่าสะกดตรงกับ Summary หรือไม่)")
+            df = zeros # ใช้ข้อมูลที่กรองแล้วไปเช็คต่อ
+    else:
+        print(f"   ⚠️ ไม่พบคอลัมน์ {target_col} (ข้ามขั้นตอนนี้)")
 
-    except Exception as e:
-        print(f"[Error] บันทึกไฟล์ไม่สำเร็จ: {e}")
+    # 3. เช็คชื่อยา (Mapping Matching)
+    print(f"\n[เช็ค 2] การจับคู่ชื่อยา (Mapping)")
+    # เตรียม Mapping set
+    map_drugs = set(df_map['Antibiotic'].astype(str).str.strip().str.lower().unique())
+    # เตรียม Column set
+    col_drugs = set(x.strip().lower() for x in df.columns)
+    
+    # หาตัวที่ตรงกัน (Intersection)
+    matched = map_drugs.intersection(col_drugs)
+    print(f"   - ชื่อยาใน Mapping มี: {len(map_drugs)} ตัว")
+    print(f"   - ชื่อคอลัมน์ในไฟล์ข้อมูล มี: {len(col_drugs)} ตัว")
+    print(f"   - **จับคู่ชื่อยาตรงกันได้**: {len(matched)} ตัว")
+    
+    if len(matched) == 0:
+        print("   🔴 ปัญหาเจอแล้ว! -> ชื่อยาไม่ตรงกันเลยแม้แต่ตัวเดียว")
+        print("   -> ตัวอย่างใน Mapping: ", list(map_drugs)[:3])
+        print("   -> ตัวอย่างในไฟล์ข้อมูล: ", list(col_drugs)[:3])
+        return
+
+    # 4. เช็คค่า 'R' (Value Check)
+    print(f"\n[เช็ค 3] ค่าความเป็น R ในตาราง")
+    # ลองสุ่มคอลัมน์ยาที่แมพเจอมา 1 ตัว
+    test_drug = list(matched)[0] 
+    
+    # หาชื่อคอลัมน์จริง (Original Case)
+    original_col = [c for c in df.columns if c.strip().lower() == test_drug][0]
+    
+    unique_vals = df[original_col].unique()
+    print(f"   - ลองตรวจสอบคอลัมน์ '{original_col}'")
+    print(f"   - ค่าที่พบในคอลัมน์นี้คือ: {unique_vals}")
+    
+    has_r = any(str(v).strip().lower() == 'r' for v in unique_vals)
+    if not has_r:
+        print(f"   🔴 ปัญหาเจอแล้ว! -> ในคอลัมน์นี้ไม่มีค่า 'r' หรือ 'R' เลย")
+        print("   -> (โปรแกรมอาจเห็นเป็น 'Resistant', '1', หรืออื่นๆ ต้องแก้โค้ด)")
+    else:
+        print(f"   ✅ พบค่าน่าสงสัยว่าเป็น 'R' (Logic ตรงนี้น่าจะผ่าน)")
+
+    print("\n--- จบการตรวจสอบ ---")
 
 if __name__ == "__main__":
-    main()
+    debug_mdr()
