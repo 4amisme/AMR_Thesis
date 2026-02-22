@@ -1,0 +1,3 @@
+organism_full,year,month,region,Resistant_Drug_Classes,pattern_count,total_rows_in_region_month,percentage
+Enterococcus faecium,2020,2,12.0,"FLUOROQUINOLONES, GLYCOPEPTIDES, LIPOGLYCOPEPTIDES, MACROLIDES, PENICILLINS, TETRACYCLINES",1,1,100.0
+Enterococcus faecium,2021,3,12.0,"FLUOROQUINOLONES, GLYCOPEPTIDES, LIPOGLYCOPEPTIDES, MACROLIDES, PENICILLINS, TETRACYCLINES",1,1,100.0

@@ -1,0 +1,5 @@
+organism_full,year,month,region,Resistant_Drug_Classes,pattern_count,total_rows_in_region_month,percentage
+Staphylococcus aureus,2019,10,2.0,"LINCOSAMIDES, MACROLIDES, PENICILLINS, TETRACYCLINES",2,2,100.0
+Staphylococcus aureus,2024,4,2.0,"LINCOSAMIDES, MACROLIDES, PENICILLINS, TETRACYCLINES",1,1,100.0
+Staphylococcus aureus,2024,5,2.0,"LINCOSAMIDES, MACROLIDES, PENICILLINS, TETRACYCLINES",1,1,100.0
+Staphylococcus aureus,2024,6,2.0,"LINCOSAMIDES, MACROLIDES, PENICILLINS, TETRACYCLINES",1,3,33.33
