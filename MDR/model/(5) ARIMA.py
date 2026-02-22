@@ -114,7 +114,7 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model", "a_baumannii_bl.csv") 
+file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -127,7 +127,7 @@ if os.path.exists(file_path):
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left').fillna(0)
     final_df.index = all_months
 
-    target_drug = 'CARBAPENEMS, CEPHEMS, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
