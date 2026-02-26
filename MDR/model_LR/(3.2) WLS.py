@@ -11,15 +11,9 @@ def run_model_and_plot(df, x_col, y_col, weight_col, title, folder, filename, y_
     y = df[y_col]
     w = df[weight_col]
     
-    # ==========================================
-    # 1. รัน OLS (แบบธรรมดา)
-    # ==========================================
     slope_ols, intercept_ols, r_value_ols, p_value_ols, std_err_ols = linregress(x, y)
     
-    # ==========================================
-    # 2. รัน WLS (ถ่วงน้ำหนักด้วย N)
-    # ==========================================
-    X_sm = sm.add_constant(x) # เติมค่าคงที่เพื่อให้สมการสมบูรณ์ (Y = mX + c)
+    X_sm = sm.add_constant(x)
     wls_model = sm.WLS(y, X_sm, weights=w)
     wls_results = wls_model.fit()
     
@@ -27,24 +21,16 @@ def run_model_and_plot(df, x_col, y_col, weight_col, title, folder, filename, y_
     intercept_wls = wls_results.params['const']
     p_value_wls = wls_results.pvalues[x_col]
     r_squared_wls = wls_results.rsquared
-    
-    # ==========================================
-    # 3. วาดกราฟเปรียบเทียบ
-    # ==========================================
+
     plt.figure(figsize=(9, 6))
-    
-    # พล็อต Data Point และเส้นกราฟจริง
     plt.plot(x.to_numpy(), y.to_numpy(), marker='o', linestyle='-', color='#1f77b4', linewidth=2, label='Actual Prevalence (%)')
     
-    # พล็อตเส้น Trendline OLS (สีแดง)
     y_pred_ols = intercept_ols + (slope_ols * x)
     plt.plot(x.to_numpy(), y_pred_ols.to_numpy(), color='red', linestyle='--', linewidth=2, label='OLS Trendline')
     
-    # พล็อตเส้น Trendline WLS (สีเขียว)
     y_pred_wls = intercept_wls + (slope_wls * x)
     plt.plot(x.to_numpy(), y_pred_wls.to_numpy(), color='green', linestyle='-.', linewidth=2, label='WLS Trendline (Weighted by N)')
     
-    # ตกแต่งกราฟให้โชว์ค่าสถิติทั้ง 2 แบบบนหัวกราฟเลย
     sign_ols = "+" if slope_ols > 0 else ""
     sign_wls = "+" if slope_wls > 0 else ""
     
@@ -68,7 +54,6 @@ def run_model_and_plot(df, x_col, y_col, weight_col, title, folder, filename, y_
     plt.savefig(save_path, dpi=300)
     plt.close()
     
-    # คืนค่าสถิติทั้งหมดลงตารางสรุปผล
     return {
         "Category": title, 
         "OLS_Slope": slope_ols, "OLS_P-value": p_value_ols, "OLS_R2": r_value_ols**2,
@@ -76,10 +61,8 @@ def run_model_and_plot(df, x_col, y_col, weight_col, title, folder, filename, y_
     }
 
 def step3_modeling():
-    print("⏳ Step 3: Running OLS vs WLS Regression & Generating Plots...")
     summary_results = []
     
-    # 1. Overall
     df_overall = pd.read_csv(os.path.join(OUTPUT_DIR, 'Prevalence All Data', 'WLS_overall_prevalence.csv'))
     res = run_model_and_plot(df_overall, 'x_year', 'prevalence_%', 'n_total',
                              'Overall A. baumannii Prevalence (2015-2024)', 
@@ -107,12 +90,8 @@ def step3_modeling():
                                  f'Prevalence by Specimen: {s} (2015-2024)', 
                                  'Prevalence By Specimen', f'plot_spec_{safe_filename}_OLS_vs_WLS', y_max=spec_max)
         summary_results.append(res)
-        
-    # บันทึกตารางสรุปที่มี OLS และ WLS คู่กัน
     summary_df = pd.DataFrame(summary_results)
     summary_df.to_csv(os.path.join(OUTPUT_DIR, 'all_models_summary_OLS_vs_WLS.csv'), index=False)
     
-    print("✅ Step 3 Complete: OLS vs WLS models ran successfully!")
-
 if __name__ == "__main__":
     step3_modeling()

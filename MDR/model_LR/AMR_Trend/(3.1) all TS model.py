@@ -10,6 +10,9 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 from statsmodels.tsa.holtwinters import ExponentialSmoothing, SimpleExpSmoothing
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error
+import scipy.stats as stats
+import statsmodels.api as sm
+import seaborn as sns
 
 warnings.filterwarnings("ignore")
 
@@ -18,14 +21,9 @@ BASE_DIR = '/Users/chanokchonkarinrak/Documents/GitHub/AMR_Thesis/MDR/model_LR/A
 def calculate_metrics(y_true, y_pred):
     y_true, y_pred = np.array(y_true), np.array(y_pred)
     
-    # คำนวณ RMSE และ MAE
     rmse = np.sqrt(mean_squared_error(y_true, y_pred))
     mae = mean_absolute_error(y_true, y_pred)
-    
-    # คำนวณ WAPE
     wape = np.sum(np.abs(y_true - y_pred)) / np.sum(y_true) * 100 if np.sum(y_true) != 0 else 0
-    
-    # คำนวณ MAPE (ป้องกัน Error กรณีหารด้วย 0)
     mask = y_true != 0
     mape = np.mean(np.abs((y_true[mask] - y_pred[mask]) / y_true[mask])) * 100 if np.any(mask) else 0
     
@@ -45,9 +43,6 @@ def create_xgb_features(series):
     df = df.dropna()
     return df.drop(columns=[col]), df[col]
 
-# ==========================================
-# 2. ฟังก์ชันหลักสำหรับวิเคราะห์ ทำจูน และทำนาย
-# ==========================================
 def find_best_model(train, test, series):
     all_metrics = {}
     best_params = {}
@@ -93,11 +88,84 @@ def find_best_model(train, test, series):
 
     if not all_metrics: return None, None, None, None
     
-    # 🌟 เปลี่ยนเกณฑ์การตัดสินให้ใช้ RMSE (ค่าน้อยที่สุด) เป็นตัวชี้วัดหลัก
     best_name = min(all_metrics, key=lambda k: all_metrics[k]['RMSE'])
     return best_name, all_metrics[best_name], best_params.get(best_name, {}), all_metrics
 
+def plot_residual_analysis(series, best_model, params, title, save_dir):
+    """
+    ฟังก์ชันวิเคราะห์ Residual Analysis แบบ Robust 
+    เพื่อตรวจสอบความแม่นยำของโมเดลโดยไม่พึ่งพาคำสั่งที่มีปัญหาใน Seaborn
+    """
+    try:
+        # 1. คำนวณ Residuals ตามประเภทของ Best Model
+        if best_model == 'ARIMA':
+            model_fit = sm.tsa.ARIMA(series, order=params['order']).fit()
+            residuals = model_fit.resid
+        elif best_model == 'SARIMA':
+            model_fit = sm.tsa.SARIMAX(series, order=params['order'], 
+                                       seasonal_order=params['seasonal_order']).fit(disp=False)
+            residuals = model_fit.resid
+        elif best_model in ['SES', 'TES']:
+            if best_model == 'SES':
+                model_fit = sm.tsa.SimpleExpSmoothing(series, initialization_method="estimated").fit(optimized=True)
+            else:
+                model_fit = sm.tsa.ExponentialSmoothing(series, trend='add', seasonal='add', 
+                                                       seasonal_periods=12).fit(optimized=True)
+            residuals = series - model_fit.fittedvalues
+        elif best_model == 'XGBoost':
+            X, y = create_xgb_features(series)
+            xgb = XGBRegressor(n_estimators=100, max_depth=3, learning_rate=0.05, random_state=42).fit(X, y)
+            residuals = y - xgb.predict(X)
+        else:
+            return
+    except Exception as e:
+        print(f"⚠️ ไม่สามารถวิเคราะห์ Residual สำหรับ {title}: {e}")
+        return
+
+    # 2. เริ่มขั้นตอนการ Plot
+    fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+    fig.suptitle(f'Residual Analysis: {title} (Model: {best_model})', fontsize=16)
+
+    # ข้อมูลสำหรับการ Plot (ลบค่าว่างออก)
+    res_data = residuals.dropna()
+
+    # --- Plot 1: Residuals over Time ---
+    axes[0, 0].plot(res_data.index, res_data.values, color='gray', alpha=0.7)
+    axes[0, 0].axhline(0, color='red', linestyle='--', linewidth=1)
+    axes[0, 0].set_title('Residuals over Time')
+    axes[0, 0].tick_params(axis='x', rotation=45)
+
+    # --- Plot 2: Distribution (ใช้ Matplotlib + Scipy แทน Seaborn เพื่อเลี่ยง Bug) ---
+    if len(res_data) > 0:
+        # วาด Histogram
+        axes[0, 1].hist(res_data, bins=20, density=True, color='skyblue', edgecolor='black', alpha=0.6)
+        # คำนวณและวาดเส้น KDE
+        try:
+            kde = stats.gaussian_kde(res_data)
+            x_range = np.linspace(res_data.min(), res_data.max(), 100)
+            axes[0, 1].plot(x_range, kde(x_range), color='darkblue', linewidth=2, label='KDE')
+        except:
+            pass
+    axes[0, 1].set_title('Residual Distribution (Histogram & KDE)')
+
+    # --- Plot 3: Q-Q Plot (ตรวจสอบการกระจายตัวแบบปกติ) ---
+    stats.probplot(res_data, dist="norm", plot=axes[1, 0])
+    axes[1, 0].set_title('Normal Q-Q Plot')
+
+    # --- Plot 4: ACF Plot (ตรวจสอบความสัมพันธ์ในตัวเองที่หลงเหลือ) ---
+    sm.graphics.tsa.plot_acf(res_data, lags=min(24, len(res_data)//2), ax=axes[1, 1])
+    axes[1, 1].set_title('Residual Autocorrelation (ACF)')
+
+    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+    
+    # 3. บันทึกรูปภาพ
+    save_path = os.path.join(save_dir, f'Residual_{title.replace("/", "_")}.png')
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"✅ บันทึก Residual Plot สำเร็จ: {save_path}")
+
 def process_forecasting(df, category_folder, group_col=None):
+    df = df.replace([np.inf, -np.inf], np.nan)
     df['date'] = pd.to_datetime(df['date'])
     full_idx = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
     groups = [None] if group_col is None else df[group_col].dropna().unique()
@@ -108,7 +176,7 @@ def process_forecasting(df, category_folder, group_col=None):
         for drug in ['Imipenem', 'Meropenem']:
             name = drug if g is None else f"{g}_{drug}"
             title = f"{category_folder} - {name}"
-            print(f"กำลังหาโมเดล: {title} ...")
+            print(f"​Modeling: {title} ...")
             
             temp = df[df['drug'] == drug.capitalize()]
             if group_col: temp = temp[temp[group_col] == g]
@@ -121,8 +189,13 @@ def process_forecasting(df, category_folder, group_col=None):
             
             best_model, best_metrics, params, all_metrics = find_best_model(train, test, series)
             if best_model is None: continue
+
+            # Residual Plots โดยเฉพาะ
+            residual_dir = os.path.join(BASE_DIR, category_folder, 'Residual_Analysis')
+            os.makedirs(residual_dir, exist_ok=True)
+            plot_residual_analysis(series, best_model, params, name, residual_dir)
             
-            # พยากรณ์ 60 เดือน
+            # 5 years
             pred = []
             if best_model == 'ARIMA':
                 pred = ARIMA(series, order=params['order']).fit().forecast(steps=60).values
@@ -141,7 +214,6 @@ def process_forecasting(df, category_folder, group_col=None):
                     p = max(0, xgb.predict(pd.DataFrame([last_w[::-1] + [dates[i].month]], columns=X.columns))[0])
                     pred.append(p); last_w.append(p); last_w.pop(0)
 
-            # วาดกราฟ
             plt.figure(figsize=(10, 5))
             plt.plot(series.index.to_numpy(), series.values, color='#1f77b4', marker='o', markersize=3, label='Actual (2015-2024)', linewidth=1.5)
             
@@ -151,7 +223,6 @@ def process_forecasting(df, category_folder, group_col=None):
             plt.plot(forecast_idx.to_numpy(), forecast_val, color='#d62728', marker='o', markersize=3, linestyle='--', 
                      label=f'Forecast ({best_model})', linewidth=1.5)
             
-            # 🌟 อัปเดต Title ให้แสดง RMSE (เป็นตัวตัดสิน) คู่กับ WAPE
             best_rmse, best_wape = best_metrics['RMSE'], best_metrics['WAPE']
             plt.title(f'AMR %R Forecast: {title}\nBest Model: {best_model} (RMSE = {best_rmse:.2f} | WAPE = {best_wape:.2f}%)', fontsize=12)
             
@@ -168,7 +239,6 @@ def process_forecasting(df, category_folder, group_col=None):
             plt.savefig(save_path, dpi=300)
             plt.close()
             
-            # 🌟 สร้าง Row ข้อมูลสรุปเก็บเข้า List (ยึดตาม RMSE)
             row_data = {
                 'Category': category_folder,
                 'Group': g if g else 'Overall',
@@ -179,8 +249,6 @@ def process_forecasting(df, category_folder, group_col=None):
                 'MAE': best_metrics['MAE'],
                 'MAPE': best_metrics['MAPE']
             }
-            
-            # เติมค่า 4 Metrics สำหรับทุกๆ โมเดล
             models_list = ['ARIMA', 'SARIMA', 'TES', 'SES', 'XGBoost']
             for m in models_list:
                 m_data = all_metrics.get(m, {'WAPE': np.nan, 'RMSE': np.nan, 'MAE': np.nan, 'MAPE': np.nan})
@@ -194,7 +262,6 @@ def process_forecasting(df, category_folder, group_col=None):
     return forecast_summaries
 
 def step4_run_forecasting():
-    print("⏳ Step 4: Running Auto-ML Forecasting (Ranked by RMSE)...")
     all_results = []
     
     file_all = os.path.join(BASE_DIR, 'All data', 'Data', 'monthly_overall.csv')
@@ -215,7 +282,7 @@ def step4_run_forecasting():
         summary_df = pd.DataFrame(all_results)
         save_csv = os.path.join(BASE_DIR, 'Forecasting_Models_Comprehensive_Evaluation.csv')
         summary_df.to_csv(save_csv, index=False)
-        print(f"\n✅ Step 4 Complete! ตารางเปรียบเทียบเชิงลึกถูกบันทึกไว้ที่:\n   {save_csv}")
+        print(f" \n {save_csv}")
 
 if __name__ == "__main__":
     step4_run_forecasting()

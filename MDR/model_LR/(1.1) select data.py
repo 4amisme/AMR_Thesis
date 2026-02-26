@@ -7,22 +7,18 @@ OUTPUT_DIR = '/Users/chanokchonkarinrak/Documents/GitHub/AMR_Thesis/MDR/model_LR
 
 def step1_extract():
     
-    # 1. โหลดข้อมูลและแปลงชื่อคอลัมน์เป็นตัวพิมพ์เล็ก
     df = pd.read_csv(INPUT_PATH, low_memory=False)
     df.columns = df.columns.str.lower()
     
-    # 2. กรองปี 2015-2024
     df = df[(df['x_year'] >= 2015) & (df['x_year'] <= 2024)].copy()
     
-    # 3. เลือกเฉพาะเชื้อ A. baumannii
+    # เลือกเฉพาะเชื้อ A. baumannii
     df_aba = df[df['organism_full'].str.contains('Acinetobacter baumannii', case=False, na=False)].copy()
     
-    # 4. จัดการ Ward Type (คลีนค่าว่าง และทำเป็นตัวเล็ก)
+
     df_aba['ward_type'] = df_aba['ward_type'].astype(str).str.lower().str.strip()
-    # เปลี่ยนคำว่า 'nan' หรือช่องว่าง ให้กลายเป็น Null (np.nan) จริงๆ เพื่อให้ dropna() ทำงานได้ชัวร์ๆ
     df_aba['ward_type'] = df_aba['ward_type'].replace(['nan', 'none', '', 'null'], np.nan)
     
-    # 5. จัดการ Specimen (Top 3 + Other)
     df_aba['x_spec_ful'] = df_aba['x_spec_ful'].astype(str).str.strip()
     df_aba['x_spec_ful'] = df_aba['x_spec_ful'].replace(['nan', 'none', '', 'null'], np.nan)
     
@@ -34,14 +30,12 @@ def step1_extract():
         lambda x: x if x in top3 else ('other' if pd.notnull(x) else np.nan)
     )
     
-    # 6. เลือกเฉพาะคอลัมน์ที่ใช้งาน 
     cols_to_keep = [
         'organism_full', 'x_year', 'region', 
         'ward_type', 'x_spec_ful', 'spec_group'
     ]
     df_final = df_aba[cols_to_keep]
     
-    # บันทึกไฟล์
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     df_final.to_csv(os.path.join(OUTPUT_DIR, 'a_baumannii_selected.csv'), index=False)
     print("✅ Step 1 Complete: Saved selected data.")

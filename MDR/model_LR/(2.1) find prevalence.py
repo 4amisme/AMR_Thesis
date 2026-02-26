@@ -52,9 +52,6 @@ def step2_calculate():
     for folder in ['Prevalence All Data', 'Prevalence By Ward Type', 'Prevalence By Specimen']:
         os.makedirs(os.path.join(OUTPUT_DIR, folder), exist_ok=True)
         
-    # ==========================================
-    # 1. Overall Prevalence
-    # ==========================================
     total_all = df_all.groupby('x_year').size()
     total_aba = df_aba.groupby('x_year').size()
     
@@ -69,11 +66,9 @@ def step2_calculate():
     
     plot_xy_chart(prev_overall['x_year'], prev_overall['prevalence_%'], 
                   'Overall Prevalence of A. baumannii (2015-2024)', 
-                  'Prevalence All Data', 'line_chart_overall')
+                  'Prevalence All Data', 'line_c
 
-    # ==========================================
     # 2.1 Ward Type Prevalence
-    # ==========================================
     df_ward_valid = df_aba.dropna(subset=['ward_type']).copy()
     ward_denominator = df_ward_valid.groupby('x_year').size()
     ward_counts = df_ward_valid.groupby(['x_year', 'ward_type']).size().unstack(fill_value=0)
@@ -89,21 +84,17 @@ def step2_calculate():
     prev_ward.insert(0, 'organism_full', 'Acinetobacter baumannii')
     prev_ward.to_csv(os.path.join(OUTPUT_DIR, 'Prevalence By Ward Type', 'ward_prevalence.csv'), index=False)
     
-    # พล็อตแยกรูป
     for w in ['icu', 'in', 'out']:
         if w in prev_ward.columns:
             plot_xy_chart(prev_ward['x_year'], prev_ward[w], 
                           f'Prevalence by Ward Type: {w.upper()} (2015-2024)', 
                           'Prevalence By Ward Type', f'line_chart_ward_{w}')
-                          
-    # 🌟 พล็อตรวมรูป (Ward)
+                         
     plot_combined_xy(prev_ward, 'x_year', ['icu', 'in', 'out'], 
                      'Combined Prevalence by Ward Type (2015-2024)', 
                      'Prevalence By Ward Type', 'line_chart_ward_combined')
 
-    # ==========================================
-    # 2.2 Specimen Types
-    # ==========================================
+    # 2.2 Specimen Types Prevalence
     df_spec_valid = df_aba.dropna(subset=['spec_group']).copy()
     spec_denominator = df_spec_valid.groupby('x_year').size()
     spec_counts = df_spec_valid.groupby(['x_year', 'spec_group']).size().unstack(fill_value=0)
@@ -117,14 +108,13 @@ def step2_calculate():
     prev_spec.to_csv(os.path.join(OUTPUT_DIR, 'Prevalence By Specimen', 'specimen_prevalence.csv'), index=False)
     
     spec_cols = [col for col in prev_spec.columns if col not in ['organism_full', 'x_year']]
-    # พล็อตแยกรูป
+
     for s in spec_cols:
         safe_name = str(s).replace('/', '_').replace(' ', '_')
         plot_xy_chart(prev_spec['x_year'], prev_spec[s], 
                       f'Prevalence by Specimen: {s} (2015-2024)', 
                       'Prevalence By Specimen', f'line_chart_spec_{safe_name}')
                       
-    # 🌟 พล็อตรวมรูป (Specimen Top 3 เท่านั้น ไม่เอา other)
     plot_combined_xy(prev_spec, 'x_year', ['Blood', 'Sputum', 'Urine'], 
                      'Combined Prevalence by Specimen (Top 3) (2015-2024)', 
                      'Prevalence By Specimen', 'line_chart_spec_combined_top3')
@@ -135,7 +125,7 @@ def step2_calculate():
     map_2024.insert(0, 'organism_full', 'Acinetobacter baumannii')
     map_2024.to_csv(os.path.join(OUTPUT_DIR, 'Prevalence All Data', 'map_data_region_2024.csv'), index=False)
 
-    print("✅ Step 2 Complete: Individual and Combined charts generated!")
+    print("Step 2 Complete")
 
 if __name__ == "__main__":
     step2_calculate()

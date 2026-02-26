@@ -31,16 +31,13 @@ def step2_calculate():
     for folder in ['Prevalence All Data', 'Prevalence By Ward Type', 'Prevalence By Specimen']:
         os.makedirs(os.path.join(OUTPUT_DIR, folder), exist_ok=True)
         
-    # ==========================================
-    # 1. Overall
-    # ==========================================
     total_all = df_all.groupby('x_year').size()
     total_aba = df_aba.groupby('x_year').size()
     
     prev_overall = pd.DataFrame({
         'organism_full': 'Acinetobacter baumannii',
         'x_year': total_all.index,
-        'n_total': total_all.values,  # <--- ตัวนี้จะเป็น Weight ของภาพรวม
+        'n_total': total_all.values,  # Weight ของ n_total
         'n_aba': total_aba.reindex(total_all.index, fill_value=0).values
     })
     prev_overall['prevalence_%'] = ((prev_overall['n_aba'] / prev_overall['n_total']) * 100).round(3)
@@ -49,16 +46,12 @@ def step2_calculate():
     plot_xy_chart(prev_overall['x_year'], prev_overall['prevalence_%'], 
                   'Overall Prevalence of A. baumannii (2015-2024)', 'Prevalence All Data', 'line_chart_overall')
 
-    # ==========================================
-    # 2.1 Ward Type
-    # ==========================================
     df_ward_valid = df_aba.dropna(subset=['ward_type']).copy()
     ward_denominator = df_ward_valid.groupby('x_year').size()
     ward_counts = df_ward_valid.groupby(['x_year', 'ward_type']).size().unstack(fill_value=0)
     
     prev_ward = pd.DataFrame(index=ward_denominator.index)
     
-    # 🌟 เพิ่มคอลัมน์ n_total_ward เพื่อเอาไปใช้ทำ WLS
     prev_ward['n_total_ward'] = ward_denominator.values 
     
     for w in ['icu', 'in', 'out']:
@@ -71,16 +64,12 @@ def step2_calculate():
     prev_ward.insert(0, 'organism_full', 'Acinetobacter baumannii')
     prev_ward.to_csv(os.path.join(OUTPUT_DIR, 'Prevalence By Ward Type', 'WLS_ward_prevalence.csv'), index=False)
 
-    # ==========================================
-    # 2.2 Specimen Types
-    # ==========================================
     df_spec_valid = df_aba.dropna(subset=['spec_group']).copy()
     spec_denominator = df_spec_valid.groupby('x_year').size()
     spec_counts = df_spec_valid.groupby(['x_year', 'spec_group']).size().unstack(fill_value=0)
     
     prev_spec = pd.DataFrame(index=spec_denominator.index)
     
-    # 🌟 เพิ่มคอลัมน์ n_total_spec เพื่อเอาไปใช้ทำ WLS
     prev_spec['n_total_spec'] = spec_denominator.values
     
     for s in spec_counts.columns:
@@ -90,7 +79,7 @@ def step2_calculate():
     prev_spec.insert(0, 'organism_full', 'Acinetobacter baumannii')
     prev_spec.to_csv(os.path.join(OUTPUT_DIR, 'Prevalence By Specimen', 'WLS_specimen_prevalence.csv'), index=False)
 
-    print("✅ Step 2 Complete: Saved N-total columns for WLS calculation.")
+    print("Saved N-total columns")
 
 if __name__ == "__main__":
     step2_calculate()
