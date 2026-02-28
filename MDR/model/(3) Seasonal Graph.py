@@ -9,7 +9,7 @@ from statsmodels.tsa.seasonal import STL
 warnings.simplefilter("ignore")
 
 # 1. ตั้งค่าเส้นทางไฟล์
-file_path = os.path.join("MDR", "model", "acinetobacter_baumannii.csv")
+file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv")
 
 try:
     # 2. อ่านข้อมูล
