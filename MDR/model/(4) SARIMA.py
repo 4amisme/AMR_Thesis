@@ -114,7 +114,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
              color='#e41a1c', marker='o', markersize=4, linestyle='--', label='Forecast (Next 5 years)', linewidth=1.5)
 
     # ตกแต่งกราฟ
-    plt.title(f'พยากรณ์อัตราการดื้อยา: {target_drug_name}\n(SARIMA {best_order}{best_seasonal})', fontsize=13, pad=15)
+    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -129,7 +129,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # ปรับ Path ตามที่อยู่ไฟล์จริง
-file_path = os.path.join("MDR", "model", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -145,7 +145,7 @@ if os.path.exists(file_path):
     final_df.index = all_months
 
     # 2. เลือกกลุ่มยาที่ต้องการวิเคราะห์ (ตัวอย่างกลุ่มที่ดื้อหลายชนิด)
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
