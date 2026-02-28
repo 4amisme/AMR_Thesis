@@ -9,7 +9,7 @@ import warnings
 warnings.simplefilter("ignore")
 
 # 1. กำหนดเส้นทางไฟล์
-file_path = os.path.join("MDR", "model", "acinetobacter_baumannii.csv")
+file_path = os.path.join("MDR", "model", "a_baumannii_bl.csv")
 
 def calculate_metrics(series):
     """ฟังก์ชันคำนวณ ACF Lag 12 และ Seasonal Strength"""

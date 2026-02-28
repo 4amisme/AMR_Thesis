@@ -24,8 +24,10 @@ def calculate_metrics(y_true, y_pred):
 
 def grid_search_tes(train_data):
     """ทำ Parameter Tuning เพื่อหา Configuration ที่ดีที่สุดด้วยเกณฑ์ AIC"""
-    trend_opts = ['add', None]      # ใช้แบบ Additive เหมาะกับข้อมูลเปอร์เซ็นต์
-    seasonal_opts = ['add', None]   # ใช้ Additive สำหรับฤดูกาล
+    
+    # 📌 จุดที่แก้ไข: บังคับให้ต้องมี Trend และ Seasonal เสมอ (ตัด None ทิ้ง)
+    trend_opts = ['add']      
+    seasonal_opts = ['add']   
     damped_opts = [True, False]     # หางค้าง (ลดความชันเทรนด์ในอนาคต)
     
     best_aic = float('inf')
@@ -35,10 +37,6 @@ def grid_search_tes(train_data):
     configs = list(itertools.product(trend_opts, seasonal_opts, damped_opts))
     
     for t, s, d in configs:
-        # ข้ามลอจิกที่เป็นไปไม่ได้: ถ้าไม่มี Trend จะทำ Damped Trend ไม่ได้
-        if t is None and d is True:
-            continue
-            
         try:
             # เทรนและหาค่า AIC บนชุดข้อมูล Train
             model = ExponentialSmoothing(
@@ -108,6 +106,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
     forecast_tes = final_model.forecast(forecast_months)
 
     # --- [E] การพล็อตแสดงผล ---
+    # [Image of Triple Exponential Smoothing forecast with seasonality and trend]
     plt.figure(figsize=(12, 6))
     
     # ข้อมูลจริง
@@ -122,7 +121,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
              label=f'TES Forecast (Next 5 years)', linewidth=1.5)
 
-    plt.title(f'พยากรณ์อัตราการดื้อยา: {target_drug_name}\n(Holt-Winters / Triple ES)', fontsize=13, pad=15)
+    plt.title(f'MDR Pattern Prediction: {target_drug_name}\n(Forced Triple ES)', fontsize=13, pad=15)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -136,7 +135,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -148,11 +147,11 @@ if os.path.exists(file_path):
     
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
     
-    # กลับมาใช้การเติม 0 ตามที่คุณต้องการ
+    # ใช้การเติม 0 ตามที่คุณต้องการ
     final_df = final_df.fillna(0)
     final_df.index = all_months
 
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         run_mdr_forecasting_tes(final_df[target_drug], "Acinetobacter baumannii")

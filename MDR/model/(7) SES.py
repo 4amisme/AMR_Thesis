@@ -75,7 +75,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
              label=f'SES Forecast (Next 5 years)', linewidth=1.5)
 
-    plt.title(f'พยากรณ์อัตราการดื้อยา: {target_drug_name}\n(Simple Exponential Smoothing | Alpha = {best_alpha_final})', fontsize=13, pad=15)
+    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -89,7 +89,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -105,7 +105,7 @@ if os.path.exists(file_path):
     final_df = final_df.fillna(0)
     final_df.index = all_months
 
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         run_mdr_forecasting_ses(final_df[target_drug], "Acinetobacter baumannii")
