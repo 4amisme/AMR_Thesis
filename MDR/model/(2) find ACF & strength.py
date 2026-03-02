@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
+import glob
 from statsmodels.tsa.stattools import acf
 from statsmodels.tsa.seasonal import STL
 import warnings
@@ -8,25 +9,21 @@ import warnings
 # ปิดการแจ้งเตือนหยุมหยิม
 warnings.simplefilter("ignore")
 
-# 1. กำหนดเส้นทางไฟล์
-file_path = os.path.join("MDR", "model", "a_baumannii_bl.csv")
+# 1. กำหนดโฟลเดอร์ที่มีไฟล์ CSV ทั้งหมด
+folder_path = r"C:\AMR_Thesis\MDR\model\By_specimen"
 
 def calculate_metrics(series):
     """ฟังก์ชันคำนวณ ACF Lag 12 และ Seasonal Strength"""
-    # ตรวจสอบว่ามีข้อมูลเพียงพอหรือไม่ (STL ต้องการอย่างน้อย 2 รอบฤดูกาล คือ 24 จุด)
     if len(series.dropna()) < 24:
         return np.nan, np.nan
     
     # --- ACF at Lag 12 ---
-    # nlags ต้องครอบคลุมถึง 12
     acf_values = acf(series, nlags=12, fft=True)
     acf_lag12 = acf_values[12] if len(acf_values) > 12 else np.nan
     
     # --- Seasonal Strength ---
     try:
-        # ใช้ STL Decomposition (period=12 สำหรับข้อมูลรายเดือน)
         res = STL(series, period=12, robust=True).fit()
-        
         var_resid = np.var(res.resid)
         var_seasonal_resid = np.var(res.seasonal + res.resid)
         
@@ -39,76 +36,99 @@ def calculate_metrics(series):
         
     return acf_lag12, seasonal_strength
 
-try:
-    # 2. อ่านข้อมูล
-    df = pd.read_csv(file_path)
+# 2. ค้นหาไฟล์ CSV ทั้งหมดในโฟลเดอร์
+csv_files = glob.glob(os.path.join(folder_path, "*.csv"))
 
-    # 3. แปลงเป็น Wide Format
-    # เราใช้ pivot เพื่อกาง Resistant_Drug_Classes ออกเป็นคอลัมน์
-    pivot_df = df.pivot_table(
-        index=['year', 'month'], 
-        columns='Resistant_Drug_Classes', 
-        values='percentage'
-    )
+# ลิสต์สำหรับเก็บผลลัพธ์ของทุกเชื้อและทุกประเภทสิ่งส่งตรวจ (Specimen)
+all_results = []
 
-    # 4. สร้าง Time Index ให้ครบทุกเดือน (2015 - 2024)
-    # เพื่อป้องกันปัญหาเวลาคำนวณ ACF แล้วข้อมูลไม่ต่อเนื่อง
-    all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
-    full_index = pd.DataFrame({
-        'year': all_months.year,
-        'month': all_months.month
-    })
+# สร้าง Time Index ปี 2015 - 2024 ไว้รอก่อนเลย
+all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
+full_index = pd.DataFrame({
+    'year': all_months.year,
+    'month': all_months.month
+})
 
-    # รวมข้อมูลที่มีเข้ากับ Index ที่สมบูรณ์
-    final_df = pd.merge(full_index, pivot_df.reset_index(), on=['year', 'month'], how='left')
+# เปลี่ยนชื่อคอลัมน์ตอน Print ให้เป็น Specimen Type
+print(f"{'Bacteria':<20} | {'Specimen Type':<15} | {'Drug Class':<35} | {'ACF Lag12':<10} | {'Seasonal Strength':<15}")
+print("-" * 105)
+
+# 3. วนลูปอ่านแต่ละไฟล์
+for file_path in csv_files:
+    filename = os.path.basename(file_path)
+    bacteria_name = filename.replace('.csv', '').replace('_', ' ').strip().capitalize()
     
-    # [จุดที่แก้ไข] ลากเส้นเชื่อมข้อมูลที่แหว่งหายไป (Interpolate) เพื่อไม่ให้สถิติเพี้ยน
-    # และใช้ fillna(0) ปิดท้ายเฉพาะเดือนแรกสุดที่ไม่มีข้อมูลให้อ้างอิง
-    final_df = final_df.interpolate(method='linear').fillna(0)
+    try:
+        df = pd.read_csv(file_path)
+        
+        # ตรวจหาคอลัมน์ spec_type (รองรับทั้งตัวเล็กตัวใหญ่)
+        spec_col = next((col for col in df.columns if col.lower() == 'spec_type'), None)
+        
+        if not spec_col:
+            print(f"⚠️ ไม่พบคอลัมน์ 'spec_type' ในไฟล์ {filename} ข้ามการทำงานไฟล์นี้")
+            continue
+            
+        # หาประเภทสิ่งส่งตรวจทั้งหมดที่มีในไฟล์นี้และไม่เป็นค่าว่าง
+        unique_specs = df[spec_col].dropna().unique()
+        
+        # วนลูปประมวลผลทีละ Specimen Type
+        for spec in unique_specs:
+            # กรองข้อมูลเอาเฉพาะของ Specimen ปัจจุบัน
+            spec_df = df[df[spec_col] == spec]
+            
+            # 4. แปลงเป็น Wide Format
+            pivot_df = spec_df.pivot_table(
+                index=['year', 'month'], 
+                columns='Resistant_Drug_Classes', 
+                values='percentage'
+            )
+            
+            # รวมข้อมูลเข้ากับ Index สมบูรณ์และจัดการค่าแหว่ง
+            final_df = pd.merge(full_index, pivot_df.reset_index(), on=['year', 'month'], how='left')
+            final_df = final_df.interpolate(method='linear').fillna(0)
+            
+            # ดึงชื่อกลุ่มยาทั้งหมดของเซ็ตนี้
+            drug_classes = [col for col in final_df.columns if col not in ['year', 'month']]
+            
+            # 5. วนลูปคำนวณแต่ละกลุ่มยาในเชื้อและ Specimen นั้นๆ
+            for col in drug_classes:
+                acf_12, s_strength = calculate_metrics(final_df[col])
+                
+                # จัดรูปแบบข้อความสำหรับแสดงผล
+                b_display = (bacteria_name[:17] + '..') if len(bacteria_name) > 20 else bacteria_name
+                sp_display = (str(spec)[:12] + '..') if len(str(spec)) > 15 else str(spec)
+                d_display = (col[:32] + '..') if len(col) > 35 else col
+                
+                acf_display = f"{acf_12:>9.4f}" if not np.isnan(acf_12) else f"{'N/A':>9}"
+                s_display = f"{s_strength:>15.4f}" if not np.isnan(s_strength) else f"{'N/A':>15}"
+                
+                print(f"{b_display:<20} | {sp_display:<15} | {d_display:<35} | {acf_display} | {s_display}")
+                
+                # เก็บผลลัพธ์ใส่ลิสต์รวม (เปลี่ยนชื่อ Key เป็น Spec_Type)
+                all_results.append({
+                    'Bacteria': bacteria_name,
+                    'Spec_Type': spec,
+                    'Resistant_Drug_Classes': col,
+                    'ACF_Lag12': acf_12,
+                    'Seasonal_Strength': s_strength,
+                    'Has_Seasonality_ACF': acf_12 >= 0.5 if not np.isnan(acf_12) else False,
+                    'Has_Seasonality_Strength': s_strength >= 0.3 if not np.isnan(s_strength) else False
+                })
+            
+    except Exception as e:
+        print(f"เกิดข้อผิดพลาดในการประมวลผลไฟล์ {filename}: {e}")
 
-    # 5. วนลูปคำนวณค่าของแต่ละกลุ่มยา (Columns)
-    results = []
+# 6. บันทึกผลสรุปทั้งหมด
+if all_results:
+    summary_df = pd.DataFrame(all_results)
     
-    # ข้ามคอลัมน์ year และ month เพื่อให้เหลือแค่ชื่อกลุ่มยา
-    drug_classes = [col for col in final_df.columns if col not in ['year', 'month']]
-
-    print(f"{'Drug Class':<50} | {'ACF Lag12':<10} | {'Seasonal Strength':<15}")
-    print("-" * 85)
-
-    for col in drug_classes:
-        acf_12, s_strength = calculate_metrics(final_df[col])
-        
-        # ตัดข้อความชื่อกลุ่มยาให้สั้นลงถ้าจำเป็นเพื่อความสวยงามในการแสดงผล
-        display_name = (col[:47] + '..') if len(col) > 50 else col
-        
-        # ป้องกันกรณีคำนวณไม่ได้ (np.nan) ให้แสดงผลสวยๆ
-        acf_display = f"{acf_12:>9.4f}" if not np.isnan(acf_12) else f"{'N/A':>9}"
-        s_display = f"{s_strength:>15.4f}" if not np.isnan(s_strength) else f"{'N/A':>15}"
-        
-        print(f"{display_name:<50} | {acf_display} | {s_display}")
-        
-        # เก็บผลลัพธ์ใส่ list
-        results.append({
-            'Resistant_Drug_Classes': col,
-            'ACF_Lag12': acf_12,
-            'Seasonal_Strength': s_strength,
-            'Has_Seasonality_ACF': acf_12 >= 0.5 if not np.isnan(acf_12) else False,
-            'Has_Seasonality_Strength': s_strength >= 0.3 if not np.isnan(s_strength) else False
-        })
-
-    # 6. บันทึกผลสรุป
-    summary_df = pd.DataFrame(results)
-    summary_file = os.path.join("MDR", "model", "acinetobacter_seasonality_summary.csv")
-    
-    # ตรวจสอบว่ามีโฟลเดอร์ MDR/model หรือยัง ถ้ายังไม่มีให้สร้างก่อน
-    os.makedirs(os.path.dirname(summary_file), exist_ok=True)
+    save_dir = os.path.dirname(folder_path)
+    # เปลี่ยนชื่อไฟล์ผลลัพธ์ให้เป็นคำว่า spec แทน ward
+    summary_file = os.path.join(save_dir, "Spec_type_seasonality_summary.csv")
     
     summary_df.to_csv(summary_file, index=False)
     
-    print("-" * 85)
-    print(f"บันทึกผลสรุปค่าสถิติไว้ที่: {summary_file}")
-
-except FileNotFoundError:
-    print(f"ไม่พบไฟล์: {file_path} กรุณาตรวจสอบ Path อีกครั้ง")
-except Exception as e:
-    print(f"เกิดข้อผิดพลาด: {e}")
+    print("-" * 105)
+    print(f"✅ ประมวลผลเสร็จสิ้น! บันทึกตารางรวมผลลัพธ์ไว้ที่: {summary_file}")
+else:
+    print("ไม่พบข้อมูลให้ประมวลผล โปรดตรวจสอบข้อมูลในไฟล์อีกครั้งครับ")
