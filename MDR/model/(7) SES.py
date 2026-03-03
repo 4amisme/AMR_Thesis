@@ -65,7 +65,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
     
     # ข้อมูลจริง
     plt.plot(series.index, series.values, 
-             color='#377eb8', marker='o', markersize=4, label='Actual Data (2015-2024)', linewidth=1.5)
+             color='#377eb8', marker='o', markersize=4, label='Actual Data (Interpolated)', linewidth=1.5)
     
     # เส้นพยากรณ์อนาคต
     conn_idx = pd.date_range(start=series.index[-1], periods=forecast_months+1, freq='MS')
@@ -89,7 +89,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
+file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -100,15 +100,24 @@ if os.path.exists(file_path):
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
     
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
-    
-    # ใช้การเติม 0 ตามสเปคที่ต้องการ
-    final_df = final_df.fillna(0)
     final_df.index = all_months
 
-    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
+    # --- [จุดแก้ไข]: เปลี่ยนจาก .fillna(0) เป็น .interpolate() ---
+    # ลบคอลัมน์ที่ไม่ใช่ข้อมูลเป้าหมายออกก่อนทำการ interpolate
+    final_df = final_df.drop(columns=['year', 'month'])
+    
+    # ใช้ Linear Interpolation เพื่อประมาณค่าเดือนที่หายไปตามแนวโน้ม
+    final_df = final_df.interpolate(method='linear')
+    
+    # ใช้ bfill และ ffill เพื่อจัดการกรณีค่าว่างที่หัวและท้ายตารางที่ interpolate เข้าไม่ถึง
+    final_df = final_df.bfill().ffill()
+    # --------------------------------------------------------
+
+    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
-        run_mdr_forecasting_ses(final_df[target_drug], "Acinetobacter baumannii")
+        series_data = final_df[target_drug]
+        run_mdr_forecasting_ses(series_data, "Acinetobacter baumannii")
     else:
         print(f"ไม่พบกลุ่มยา: {target_drug}")
 else:
