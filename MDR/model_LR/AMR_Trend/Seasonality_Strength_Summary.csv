@@ -13,16 +13,3 @@ by specimen,Sputum,Imipenem,0.7393,0.823,True,True
 by specimen,Sputum,Meropenem,0.7683,0.815,True,True
 by specimen,Urine,Imipenem,0.4787,0.5913,False,True
 by specimen,Urine,Meropenem,0.4672,0.4389,False,True
-# ใส่ผล acf forecast
-อันไหนไม่มี season ก็เลือกแค่โมเดลพวกนั้น
-linear trend สำหรับพวกเส้นตรง
-ค่าที่ไม่มี interporation เอา ไม่ใช้ 0 ใน data
-plot ค่า fit and predict ออกมาด้วย จะได้รู้ว่า fit และ predict อะไร
-trend data d =1, max_p =  3, max_q = 3
-
-spatio เขตสุขภาพและจังหวัด ทำ 2 แบบ
-- cluster analysis : 
-- hot-spot analysis 
-จะทำใน R หรือ SaTScan ก็ได้
-
-- เพิ่ม season ไทย
