@@ -8,6 +8,11 @@ from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import TimeSeriesSplit, GridSearchCV
 
+# --- [NEW] เพิ่ม Import สำหรับทำ Residual Plot ---
+import statsmodels.api as sm
+import scipy.stats as stats
+from statsmodels.graphics.tsaplots import plot_acf
+
 # ปิดแจ้งเตือนเพื่อความสะอาดของ Output
 warnings.filterwarnings("ignore")
 
@@ -99,6 +104,42 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
     model_final = XGBRegressor(**best_params, objective='reg:squarederror', random_state=42)
     model_final.fit(X, y)
 
+    # --- [NEW] 3. Plotting Residual Diagnostics (Manual for XGBoost) ---
+    print("\n--- 3. Plotting Residual Diagnostics ---")
+    # คำนวณ Residual = ข้อมูลจริง - ค่าที่โมเดลพยากรณ์ได้ (Fitted values)
+    y_pred_all = model_final.predict(X)
+    residuals = y - y_pred_all
+    
+    fig_diag, axes = plt.subplots(2, 2, figsize=(15, 8))
+    fig_diag.suptitle(f'Residual Diagnostics (XGBoost): {target_drug_name}', fontsize=14, y=1.02)
+    
+    # 1. Standardized residual (Top Left)
+    axes[0, 0].plot(residuals.index, residuals.values)
+    axes[0, 0].axhline(0, color='black', linestyle='--', alpha=0.5)
+    axes[0, 0].set_title('Residuals over time')
+    
+    # 2. Histogram plus estimated density (Top Right)
+    axes[0, 1].hist(residuals, density=True, bins=15, color='#377eb8', edgecolor='white', label='Hist')
+    kde = stats.gaussian_kde(residuals.dropna())
+    x_kde = np.linspace(residuals.min(), residuals.max(), 100)
+    axes[0, 1].plot(x_kde, kde(x_kde), color='#ff7f00', label='KDE')
+    mu, std = stats.norm.fit(residuals.dropna())
+    p = stats.norm.pdf(x_kde, mu, std)
+    axes[0, 1].plot(x_kde, p, color='#4daf4a', label='N(0,1)')
+    axes[0, 1].set_title('Histogram plus estimated density')
+    axes[0, 1].legend()
+    
+    # 3. Normal Q-Q (Bottom Left)
+    sm.qqplot(residuals.dropna(), line='s', ax=axes[1, 0])
+    axes[1, 0].set_title('Normal Q-Q')
+    
+    # 4. Correlogram (Bottom Right)
+    plot_acf(residuals.dropna(), lags=24, ax=axes[1, 1])
+    axes[1, 1].set_title('Correlogram')
+    
+    plt.tight_layout()
+    plt.show()
+
     # --- [D] การพยากรณ์อนาคต 5 ปี (Recursive Forecasting) ---
     last_window = series.values[-12:].tolist() 
     future_forecast = []
@@ -115,7 +156,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
         last_window.append(pred)
         last_window.pop(0)
 
-    # --- [E] การพล็อตแสดงผล ---
+    # --- [E] การพล็อตแสดงผลพยากรณ์อนาคต ---
     plt.figure(figsize=(12, 6))
     
     plt.plot(series.index, series.values, 
@@ -155,7 +196,6 @@ if os.path.exists(file_path):
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
     final_df.index = all_months
 
-    # --- [จุดที่แก้ไข]: เปลี่ยนจาก .fillna(0) เป็น .interpolate() ---
     # ลบคอลัมน์ year/month ออกก่อนทำ interpolate เพื่อให้เหลือเฉพาะคอลัมน์เปอร์เซ็นต์
     final_df = final_df.drop(columns=['year', 'month'])
     

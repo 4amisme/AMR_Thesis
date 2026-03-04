@@ -75,6 +75,13 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     final_model = ARIMA(series, order=best_order).fit()
     forecast_arima = final_model.forecast(steps=forecast_months)
 
+    # --- [NEW] Plotting Residual Diagnostics ---
+    print("\n--- 3. Plotting Residual Diagnostics ---")
+    fig_diag = final_model.plot_diagnostics(figsize=(15, 8))
+    fig_diag.suptitle(f'Residual Diagnostics (ARIMA): {target_drug_name}', fontsize=14, y=1.02)
+    plt.tight_layout()
+    plt.show()
+
     # --- [E] การพล็อตแสดงผล ---
     plt.figure(figsize=(12, 6))
     plt.plot(series.index, series.values, 

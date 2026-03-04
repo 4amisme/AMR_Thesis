@@ -93,6 +93,13 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     
     forecast_sarima = final_model.forecast(steps=forecast_months)
 
+    # --- [NEW] Plotting Residual Diagnostics ---
+    print("\n--- 3. Plotting Residual Diagnostics ---")
+    fig_diag = final_model.plot_diagnostics(figsize=(15, 8))
+    fig_diag.suptitle(f'Residual Diagnostics: {target_drug_name}', fontsize=14, y=1.02)
+    plt.tight_layout()
+    plt.show()
+
     # --- [E] การพล็อตแสดงผล ---
     
     plt.figure(figsize=(12, 6))
@@ -143,7 +150,6 @@ if os.path.exists(file_path):
     # ลบคอลัมน์ year/month ที่ใช้ merge ออกเพื่อให้เหลือเฉพาะชื่อยา
     final_df = final_df.drop(columns=['year', 'month'])
 
-    # --- จุดแก้ไขสำคัญ: ใช้ Interpolate แทน Fillna(0) ---
     # เติมค่าว่างด้วยวิธี Linear Interpolation (ลากเส้นตรงระหว่างจุด)
     final_df = final_df.interpolate(method='linear')
     

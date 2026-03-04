@@ -9,6 +9,10 @@ from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from sklearn.metrics import mean_squared_error
 import warnings
 
+# --- [NEW] เพิ่ม Import สำหรับทำ Residual Plot ---
+import statsmodels.api as sm
+import scipy.stats as stats
+
 # ปิดการแจ้งเตือนเพื่อความสะอาดของ Output
 warnings.filterwarnings("ignore")
 
@@ -97,7 +101,41 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
     
     forecast_tes = final_model.forecast(forecast_months)
 
-    # --- [E] การพล็อตแสดงผล ---
+    # --- [NEW] Plotting Residual Diagnostics (Manual for TES) ---
+    print("\n--- 3. Plotting Residual Diagnostics ---")
+    residuals = final_model.resid
+    
+    fig_diag, axes = plt.subplots(2, 2, figsize=(15, 8))
+    fig_diag.suptitle(f'Residual Diagnostics (TES): {target_drug_name}', fontsize=14, y=1.02)
+    
+    # 1. Standardized residual (Top Left)
+    axes[0, 0].plot(residuals.index, residuals.values)
+    axes[0, 0].axhline(0, color='black', linestyle='--', alpha=0.5)
+    axes[0, 0].set_title('Residuals over time')
+    
+    # 2. Histogram plus estimated density (Top Right)
+    axes[0, 1].hist(residuals, density=True, bins=15, color='#377eb8', edgecolor='white', label='Hist')
+    kde = stats.gaussian_kde(residuals.dropna())
+    x_kde = np.linspace(residuals.min(), residuals.max(), 100)
+    axes[0, 1].plot(x_kde, kde(x_kde), color='#ff7f00', label='KDE')
+    mu, std = stats.norm.fit(residuals.dropna())
+    p = stats.norm.pdf(x_kde, mu, std)
+    axes[0, 1].plot(x_kde, p, color='#4daf4a', label='N(0,1)')
+    axes[0, 1].set_title('Histogram plus estimated density')
+    axes[0, 1].legend()
+    
+    # 3. Normal Q-Q (Bottom Left)
+    sm.qqplot(residuals.dropna(), line='s', ax=axes[1, 0])
+    axes[1, 0].set_title('Normal Q-Q')
+    
+    # 4. Correlogram (Bottom Right)
+    plot_acf(residuals.dropna(), lags=24, ax=axes[1, 1])
+    axes[1, 1].set_title('Correlogram')
+    
+    plt.tight_layout()
+    plt.show()
+
+    # --- [E] การพล็อตแสดงผลพยากรณ์ ---
     plt.figure(figsize=(12, 6))
     
     # ข้อมูลจริง
@@ -139,7 +177,6 @@ if os.path.exists(file_path):
     # Merge ข้อมูลเข้ากับช่วงเวลาทั้งหมด
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
     
-    # --- [จุดแก้ไข]: เปลี่ยนจาก .fillna(0) เป็น .interpolate() ---
     # ลบคอลัมน์ year และ month ออกก่อนทำ interpolate เพื่อให้เหลือเฉพาะค่าตัวเลขที่ต้องการ
     final_df.index = all_months
     final_df = final_df.drop(columns=['year', 'month'])
@@ -149,7 +186,6 @@ if os.path.exists(file_path):
     
     # เก็บตกกรณีค่าว่างที่หัวหรือท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
-    # ----------------------------------------------------------
 
     target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
 
