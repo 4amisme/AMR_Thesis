@@ -74,28 +74,31 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     # --- [D] Model Training & Forecasting ---
     
     print("\n--- 1. Evaluating Model Performance (Train/Test) ---")
-    # เทรนโมเดลสำหรับทดสอบด้วยข้อมูล Train Data (80%) 
     model_eval = SARIMAX(train_data, 
                          order=best_order, 
                          seasonal_order=best_seasonal,
                          enforce_stationarity=False,
                          enforce_invertibility=False).fit(disp=False)
     
-    # ทำนายช่วงเวลาของ Test Data เพื่อวัดความแม่นยำ
     test_pred_sarima = model_eval.forecast(steps=len(test_data))
     rmse, wape = calculate_metrics(test_data, test_pred_sarima)
     print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
 
-    print("\n--- 2. Forecasting Real Future (100% Data) ---")
-    # เทรนโมเดลตัวจริงด้วยข้อมูลทั้งหมด (Series) เพื่อความแม่นยำสูงสุดก่อนทำนายอนาคต
+    print("\n--- 2. Forecasting Real Future (Full Data) ---")
     final_model = SARIMAX(series, 
                           order=best_order, 
                           seasonal_order=best_seasonal,
                           enforce_stationarity=False,
                           enforce_invertibility=False).fit(disp=False)
     
-    # ทำนายอนาคตล่วงหน้า 5 ปี (Forecast)
     forecast_sarima = final_model.forecast(steps=forecast_months)
+
+    # --- [NEW] Plotting Residual Diagnostics ---
+    print("\n--- 3. Plotting Residual Diagnostics ---")
+    fig_diag = final_model.plot_diagnostics(figsize=(15, 8))
+    fig_diag.suptitle(f'Residual Diagnostics: {target_drug_name}', fontsize=14, y=1.02)
+    plt.tight_layout()
+    plt.show()
 
     # --- [E] การพล็อตแสดงผล ---
     
@@ -103,10 +106,9 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     
     # พล็อตข้อมูลจริง
     plt.plot(series.index, series.values, 
-             color='#377eb8', marker='o', markersize=4, label='Actual Data', linewidth=1.5)
+             color='#377eb8', marker='o', markersize=4, label='Actual Data (Interpolated)', linewidth=1.5)
     
     # พล็อตเส้นเชื่อมและ Forecast (สีแดง)
-    # รวมจุดสุดท้ายของข้อมูลจริงเข้ากับจุดแรกของ Forecast เพื่อให้เส้นเชื่อมต่อกัน
     forecast_idx = pd.date_range(start=series.index[-1], periods=forecast_months+1, freq='MS')
     forecast_val = np.concatenate([[series.values[-1]], forecast_sarima.values])
     
