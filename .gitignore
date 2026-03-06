@@ -1,5 +1,10 @@
 # data
 data/
+<<<<<<< HEAD
+=======
+
+artifacts/
+>>>>>>> main
 # virtual environments
 .venv/
 .DS_Store
@@ -7,15 +12,55 @@ __pycache__/
 .ipynb_checkpoints/
 MDR/data_for_model/AllYears_MDR_Final.csv
 MDR/data_for_model/AllYears_processed.csv
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+MDR/DrugClass/AllYears_Standard_Checked_Selected.csv
+MDR/DrugClass/AllYears_Checked_Classes.csv
+MDR/DrugClass/AllYears_Standard_Checked_All.csv
+=======
+>>>>>>> main
 MDR/data_some_isolate/AllYears_Checked_Classes.csv
 MDR/DrugClass/AllYears_Standard_Checked_Selected.csv
 MDR/DrugClass/AllYears_Standard_Checked_All.csv
 MDR/DrugClass/AllYears_Checked_Classes.csv
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> Pammy
+=======
+>>>>>>> main
 MDR/DrugClass2/pseudomonas_aeruginosa.csv
 MDR/DrugClass2/klebsiella_pneumoniae.csv
 MDR/DrugClass2/escherichia_coli.csv
 MDR/DrugClass2/acinetobacter_baumannii.csv
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Pammy
+=======
+>>>>>>> origin/main
+>>>>>>> Pammy
+<<<<<<< HEAD
+
+=======
+MDR/DrugClass1.1 (ไม่เอาแล้ว)/AllYears_Checked_Classes.csv
+MDR/DrugClass1.1 (ไม่เอาแล้ว)/AllYears_Standard_Checked_All.csv
+MDR/DrugClass1.2/AllYears_DrugClass_tested.csv
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
+>>>>>>> main
 MDR/DrugClass1.1 (ไม่เอาแล้ว)/AllYears_Checked_Classes.csv
 MDR/DrugClass1.1 (ไม่เอาแล้ว)/AllYears_Standard_Checked_All.csv
 MDR/DrugClass1.2/AllYears_DrugClass_tested.csv
 MDR/DrugClass2/AllYears_MDR_Pattern.csv
+<<<<<<< HEAD
+=======
+>>>>>>> origin/Pammy
+=======
+MDR/DrugClass2/AllYears_MDR_Pattern.csv
+>>>>>>> origin/main
+>>>>>>> main

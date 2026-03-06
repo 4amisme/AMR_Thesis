@@ -7,11 +7,14 @@ from statsmodels.tsa.holtwinters import SimpleExpSmoothing
 from sklearn.metrics import mean_squared_error
 import warnings
 
+<<<<<<< HEAD
 # --- [NEW] เพิ่ม Import สำหรับทำ Residual Plot ---
 import statsmodels.api as sm
 import scipy.stats as stats
 from statsmodels.graphics.tsaplots import plot_acf
 
+=======
+>>>>>>> main
 # ปิดการแจ้งเตือนเพื่อให้ Output สะอาด
 warnings.filterwarnings("ignore")
 
@@ -64,6 +67,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
     # ทำนายล่วงหน้า 5 ปี
     forecast_ses = final_model.forecast(forecast_months)
 
+<<<<<<< HEAD
     # --- [NEW] Plotting Residual Diagnostics (Manual for SES) ---
     print("\n--- 3. Plotting Residual Diagnostics ---")
     residuals = final_model.resid
@@ -98,13 +102,19 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
     plt.tight_layout()
     plt.show()
 
+=======
+>>>>>>> main
     # --- [C] การพล็อตแสดงผล ---
     
     plt.figure(figsize=(12, 6))
     
     # ข้อมูลจริง
     plt.plot(series.index, series.values, 
+<<<<<<< HEAD
              color='#377eb8', marker='o', markersize=4, label='Actual Data (Interpolated)', linewidth=1.5)
+=======
+             color='#377eb8', marker='o', markersize=4, label='Actual Data (2015-2024)', linewidth=1.5)
+>>>>>>> main
     
     # เส้นพยากรณ์อนาคต
     conn_idx = pd.date_range(start=series.index[-1], periods=forecast_months+1, freq='MS')
@@ -114,7 +124,11 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
              label=f'SES Forecast (Next 5 years)', linewidth=1.5)
 
+<<<<<<< HEAD
     plt.title(f'MDR Pattern Prediction: {target_drug_name}\n(Simple Exponential Smoothing)', fontsize=13, pad=15)
+=======
+    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
+>>>>>>> main
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -128,7 +142,11 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
+<<<<<<< HEAD
 file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
+=======
+file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
+>>>>>>> main
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -139,6 +157,7 @@ if os.path.exists(file_path):
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
     
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
+<<<<<<< HEAD
     final_df.index = all_months
 
     # --- [จุดแก้ไข]: เปลี่ยนจาก .fillna(0) เป็น .interpolate() ---
@@ -157,6 +176,17 @@ if os.path.exists(file_path):
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
         run_mdr_forecasting_ses(series_data, "Acinetobacter baumannii")
+=======
+    
+    # ใช้การเติม 0 ตามสเปคที่ต้องการ
+    final_df = final_df.fillna(0)
+    final_df.index = all_months
+
+    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
+
+    if target_drug in final_df.columns:
+        run_mdr_forecasting_ses(final_df[target_drug], "Acinetobacter baumannii")
+>>>>>>> main
     else:
         print(f"ไม่พบกลุ่มยา: {target_drug}")
 else:
