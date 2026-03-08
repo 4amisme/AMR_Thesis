@@ -19,7 +19,9 @@ warnings.simplefilter("ignore")
 def calculate_metrics(y_true, y_pred):
     """คำนวณ RMSE และ WAPE สำหรับวัดประสิทธิภาพ"""
     rmse = np.sqrt(mean_squared_error(y_true, y_pred))
-    wape = np.sum(np.abs(y_true - y_pred)) / np.sum(y_true) * 100 if np.sum(y_true) != 0 else 0
+    # ป้องกันการหารด้วยศูนย์
+    sum_true = np.sum(y_true)
+    wape = (np.sum(np.abs(y_true - y_pred)) / sum_true * 100) if sum_true != 0 else 0
     return round(rmse, 4), round(wape, 4)
 
 # ==========================================
@@ -32,10 +34,10 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     print(f"{'='*50}")
 
     # --- [A] การแบ่งข้อมูล (80/20 สำหรับ Validation) ---
-    n = len(series)                         # 1. นับจำนวนเดือนทั้งหมดที่มีในข้อมูล
-    train_size = int(n * 0.80)              # 2. คำนวณหาจุดตัดที่ 80% ของจำนวนเดือนทั้งหมด
-    train_data = series.iloc[:train_size]   # 3. ตัดเอาข้อมูลตั้งแต่เดือนแรก จนถึงจุดตัด (อดีต)
-    test_data = series.iloc[train_size:]    # 4. ตัดเอาข้อมูลตั้งแต่จุดตัด จนถึงเดือนล่าสุด (ปัจจุบัน)
+    n = len(series)
+    train_size = int(n * 0.80)
+    train_data = series.iloc[:train_size]
+    test_data = series.iloc[train_size:]
 
     # --- [B] วิเคราะห์ ACF / PACF ---
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 4))
@@ -48,20 +50,18 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     # --- [C] Parameter Tuning ด้วย auto_arima ---
     print("Finding best SARIMA parameters (Stepwise Search)...")
     
-    # ใช้ train_data ในการหาพารามิเตอร์ เพื่อไม่ให้โมเดลเห็นข้อมูล 20% สุดท้าย
     stepwise_model = auto_arima(
         train_data, 
-        start_p=0, start_q=0,    # ลองเริ่มสุ่มที่ค่า 1
-        max_p=5, max_q=5,        # ค่าสูงสุดที่โมเดลจะลองสุ่ม
-        m=12,                    # ข้อมูลรายเดือน (Seasonality = 12), ข้อมูลเราวนลูปทุก 12 เดือน
-        start_P=0, 
-        seasonal=True,           # เปิดโหมดวิเคราะห์ฤดูกาล
-        d=None,                  # ให้โมเดลหาค่า d (differencing) ที่เหมาะสมเอง
+        start_p=0, start_q=0,
+        max_p=5, max_q=5,
+        m=12,                    # ข้อมูลรายเดือน (Seasonality = 12)
+        seasonal=True,
+        d=None,                  # ให้โมเดลหาค่า differencing ที่เหมาะสมเอง
         D=1, 
-        trace=True,              # แสดงขั้นตอนการหาค่า
-        error_action='ignore',  
-        suppress_warnings=True, 
-        stepwise=True            # ให้รันเฉพาะค่าที่มีแนวโน้มว่าจะดี
+        trace=True,
+        error_action='ignore',
+        suppress_warnings=True,
+        stepwise=True
     )
 
     best_order = stepwise_model.order
@@ -74,28 +74,31 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     # --- [D] Model Training & Forecasting ---
     
     print("\n--- 1. Evaluating Model Performance (Train/Test) ---")
-    # เทรนโมเดลสำหรับทดสอบด้วยข้อมูล Train Data (80%) 
     model_eval = SARIMAX(train_data, 
                          order=best_order, 
                          seasonal_order=best_seasonal,
                          enforce_stationarity=False,
                          enforce_invertibility=False).fit(disp=False)
     
-    # ทำนายช่วงเวลาของ Test Data เพื่อวัดความแม่นยำ
     test_pred_sarima = model_eval.forecast(steps=len(test_data))
     rmse, wape = calculate_metrics(test_data, test_pred_sarima)
     print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
 
-    print("\n--- 2. Forecasting Real Future (100% Data) ---")
-    # เทรนโมเดลตัวจริงด้วยข้อมูลทั้งหมด (Series) เพื่อความแม่นยำสูงสุดก่อนทำนายอนาคต
+    print("\n--- 2. Forecasting Real Future (Full Data) ---")
     final_model = SARIMAX(series, 
                           order=best_order, 
                           seasonal_order=best_seasonal,
                           enforce_stationarity=False,
                           enforce_invertibility=False).fit(disp=False)
     
-    # ทำนายอนาคตล่วงหน้า 5 ปี (Forecast)
     forecast_sarima = final_model.forecast(steps=forecast_months)
+
+    # --- [NEW] Plotting Residual Diagnostics ---
+    print("\n--- 3. Plotting Residual Diagnostics ---")
+    fig_diag = final_model.plot_diagnostics(figsize=(15, 8))
+    fig_diag.suptitle(f'Residual Diagnostics: {target_drug_name}', fontsize=14, y=1.02)
+    plt.tight_layout()
+    plt.show()
 
     # --- [E] การพล็อตแสดงผล ---
     
@@ -103,10 +106,9 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     
     # พล็อตข้อมูลจริง
     plt.plot(series.index, series.values, 
-             color='#377eb8', marker='o', markersize=4, label='Actual Data', linewidth=1.5)
+             color='#377eb8', marker='o', markersize=4, label='Actual Data (Interpolated)', linewidth=1.5)
     
     # พล็อตเส้นเชื่อมและ Forecast (สีแดง)
-    # รวมจุดสุดท้ายของข้อมูลจริงเข้ากับจุดแรกของ Forecast เพื่อให้เส้นเชื่อมต่อกัน
     forecast_idx = pd.date_range(start=series.index[-1], periods=forecast_months+1, freq='MS')
     forecast_val = np.concatenate([[series.values[-1]], forecast_sarima.values])
     
@@ -125,11 +127,11 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     plt.show()
 
 # ==========================================
-# 3. ส่วนการรันข้อมูล
+# 3. ส่วนการรันข้อมูล (Data Preprocessing)
 # ==========================================
 
 # ปรับ Path ตามที่อยู่ไฟล์จริง
-file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
+file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -141,11 +143,21 @@ if os.path.exists(file_path):
     all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
     
-    final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left').fillna(0)
+    # Merge ข้อมูลเข้ากับตารางวันที่หลัก (เดือนไหนไม่มีข้อมูลจะเป็น NaN)
+    final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
     final_df.index = all_months
 
-    # 2. เลือกกลุ่มยาที่ต้องการวิเคราะห์ (ตัวอย่างกลุ่มที่ดื้อหลายชนิด)
-    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
+    # ลบคอลัมน์ year/month ที่ใช้ merge ออกเพื่อให้เหลือเฉพาะชื่อยา
+    final_df = final_df.drop(columns=['year', 'month'])
+
+    # เติมค่าว่างด้วยวิธี Linear Interpolation (ลากเส้นตรงระหว่างจุด)
+    final_df = final_df.interpolate(method='linear')
+    
+    # เติมค่ากรณีมีช่องว่างที่หัว/ท้ายตาราง (ที่ interpolate เข้าไม่ถึง)
+    final_df = final_df.bfill().ffill() 
+
+    # 2. เลือกกลุ่มยาที่ต้องการวิเคราะห์
+    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]

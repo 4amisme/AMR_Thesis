@@ -7,6 +7,11 @@ from statsmodels.tsa.holtwinters import SimpleExpSmoothing
 from sklearn.metrics import mean_squared_error
 import warnings
 
+# --- [NEW] เพิ่ม Import สำหรับทำ Residual Plot ---
+import statsmodels.api as sm
+import scipy.stats as stats
+from statsmodels.graphics.tsaplots import plot_acf
+
 # ปิดการแจ้งเตือนเพื่อให้ Output สะอาด
 warnings.filterwarnings("ignore")
 
@@ -59,13 +64,47 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
     # ทำนายล่วงหน้า 5 ปี
     forecast_ses = final_model.forecast(forecast_months)
 
+    # --- [NEW] Plotting Residual Diagnostics (Manual for SES) ---
+    print("\n--- 3. Plotting Residual Diagnostics ---")
+    residuals = final_model.resid
+    
+    fig_diag, axes = plt.subplots(2, 2, figsize=(15, 8))
+    fig_diag.suptitle(f'Residual Diagnostics (SES): {target_drug_name}', fontsize=14, y=1.02)
+    
+    # 1. Standardized residual (Top Left)
+    axes[0, 0].plot(residuals.index, residuals.values)
+    axes[0, 0].axhline(0, color='black', linestyle='--', alpha=0.5)
+    axes[0, 0].set_title('Residuals over time')
+    
+    # 2. Histogram plus estimated density (Top Right)
+    axes[0, 1].hist(residuals, density=True, bins=15, color='#377eb8', edgecolor='white', label='Hist')
+    kde = stats.gaussian_kde(residuals.dropna())
+    x_kde = np.linspace(residuals.min(), residuals.max(), 100)
+    axes[0, 1].plot(x_kde, kde(x_kde), color='#ff7f00', label='KDE')
+    mu, std = stats.norm.fit(residuals.dropna())
+    p = stats.norm.pdf(x_kde, mu, std)
+    axes[0, 1].plot(x_kde, p, color='#4daf4a', label='N(0,1)')
+    axes[0, 1].set_title('Histogram plus estimated density')
+    axes[0, 1].legend()
+    
+    # 3. Normal Q-Q (Bottom Left)
+    sm.qqplot(residuals.dropna(), line='s', ax=axes[1, 0])
+    axes[1, 0].set_title('Normal Q-Q')
+    
+    # 4. Correlogram (Bottom Right)
+    plot_acf(residuals.dropna(), lags=24, ax=axes[1, 1])
+    axes[1, 1].set_title('Correlogram')
+    
+    plt.tight_layout()
+    plt.show()
+
     # --- [C] การพล็อตแสดงผล ---
     
     plt.figure(figsize=(12, 6))
     
     # ข้อมูลจริง
     plt.plot(series.index, series.values, 
-             color='#377eb8', marker='o', markersize=4, label='Actual Data (2015-2024)', linewidth=1.5)
+             color='#377eb8', marker='o', markersize=4, label='Actual Data (Interpolated)', linewidth=1.5)
     
     # เส้นพยากรณ์อนาคต
     conn_idx = pd.date_range(start=series.index[-1], periods=forecast_months+1, freq='MS')
@@ -75,7 +114,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
              label=f'SES Forecast (Next 5 years)', linewidth=1.5)
 
-    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
+    plt.title(f'MDR Pattern Prediction: {target_drug_name}\n(Simple Exponential Smoothing)', fontsize=13, pad=15)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -89,7 +128,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
+file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -100,15 +139,24 @@ if os.path.exists(file_path):
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
     
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
-    
-    # ใช้การเติม 0 ตามสเปคที่ต้องการ
-    final_df = final_df.fillna(0)
     final_df.index = all_months
 
-    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
+    # --- [จุดแก้ไข]: เปลี่ยนจาก .fillna(0) เป็น .interpolate() ---
+    # ลบคอลัมน์ที่ไม่ใช่ข้อมูลเป้าหมายออกก่อนทำการ interpolate
+    final_df = final_df.drop(columns=['year', 'month'])
+    
+    # ใช้ Linear Interpolation เพื่อประมาณค่าเดือนที่หายไปตามแนวโน้ม
+    final_df = final_df.interpolate(method='linear')
+    
+    # ใช้ bfill และ ffill เพื่อจัดการกรณีค่าว่างที่หัวและท้ายตารางที่ interpolate เข้าไม่ถึง
+    final_df = final_df.bfill().ffill()
+    # --------------------------------------------------------
+
+    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
-        run_mdr_forecasting_ses(final_df[target_drug], "Acinetobacter baumannii")
+        series_data = final_df[target_drug]
+        run_mdr_forecasting_ses(series_data, "Acinetobacter baumannii")
     else:
         print(f"ไม่พบกลุ่มยา: {target_drug}")
 else:
