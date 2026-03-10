@@ -134,7 +134,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # ปรับ Path ตามที่อยู่ไฟล์จริง
-file_path = os.path.join("MDR", "model","By ward type", "e_coli_in.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "e_coli_sp.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)

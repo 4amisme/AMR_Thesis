@@ -188,7 +188,7 @@ def run_model_showdown(series, target_drug_name):
 # 3. โหลดข้อมูลและรัน Showdown
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By ward type", "e_coli_in.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "e_coli_sp.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -203,7 +203,7 @@ if os.path.exists(file_path):
     final_df = final_df.interpolate(method='linear')
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'AMINOGLYCOSIDES, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
