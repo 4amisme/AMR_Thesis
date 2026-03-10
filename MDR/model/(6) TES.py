@@ -148,9 +148,12 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
     
     plt.plot(conn_idx, conn_val, 
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
-             label=f'TES Forecast (Next 5 years)', linewidth=1.5)
+             label=f'Forecast (Next 5 years)', linewidth=1.5)
 
-    plt.title(f'MDR Pattern Prediction: {target_drug_name}\n(TES with Linear Interpolation)', fontsize=13, pad=15)
+    plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
+              fontsize=14, fontweight='bold', pad=30) 
+    plt.text(0.5, 1.03, f'Model: TES | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
+             fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())

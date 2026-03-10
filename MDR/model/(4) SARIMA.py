@@ -116,7 +116,10 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
              color='#e41a1c', marker='o', markersize=4, linestyle='--', label='Forecast (Next 5 years)', linewidth=1.5)
 
     # ตกแต่งกราฟ
-    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
+    plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
+              fontsize=14, fontweight='bold', pad=30) 
+    plt.text(0.5, 1.03, f'Model: SARIMA | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
+             fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
