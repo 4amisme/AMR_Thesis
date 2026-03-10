@@ -134,7 +134,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # ปรับ Path ตามที่อยู่ไฟล์จริง
-file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model","All Data", "escherichia_coli.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -160,7 +160,7 @@ if os.path.exists(file_path):
     final_df = final_df.bfill().ffill() 
 
     # 2. เลือกกลุ่มยาที่ต้องการวิเคราะห์
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'AMINOGLYCOSIDES, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]

@@ -167,7 +167,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model","All Data", "escherichia_coli.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -190,7 +190,7 @@ if os.path.exists(file_path):
     # เก็บตกกรณีค่าว่างที่หัวหรือท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'AMINOGLYCOSIDES, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS'
 
     if target_drug in final_df.columns:
         run_mdr_forecasting_tes(final_df[target_drug], "Acinetobacter baumannii")
