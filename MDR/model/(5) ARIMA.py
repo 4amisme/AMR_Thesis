@@ -51,7 +51,8 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     stepwise_model = auto_arima(
         train_data, 
         start_p=0, start_q=0,
-        max_p=5, max_q=3, 
+        max_p=5, max_q=3,
+        d=None, 
         seasonal=False, 
         stepwise=False, 
         suppress_warnings=True, 
