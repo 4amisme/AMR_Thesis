@@ -1,0 +1,15 @@
+Category,Group,Drug,ACF_Lag12,Seasonal_Strength,Has_Seasonality_ACF,Has_Seasonality_Strength
+All data,Overall,Imipenem,0.7762,0.868,True,True
+All data,Overall,Meropenem,0.7883,0.8908,True,True
+by ward,icu,Imipenem,0.3924,0.4581,False,True
+by ward,icu,Meropenem,0.5789,0.6403,True,True
+by ward,in,Imipenem,0.7353,0.8456,True,True
+by ward,in,Meropenem,0.7425,0.8605,True,True
+by ward,out,Imipenem,0.366,0.521,False,True
+by ward,out,Meropenem,0.4204,0.3497,False,True
+by specimen,Blood,Imipenem,0.659,0.6778,True,True
+by specimen,Blood,Meropenem,0.6861,0.6273,True,True
+by specimen,Sputum,Imipenem,0.7393,0.823,True,True
+by specimen,Sputum,Meropenem,0.7683,0.815,True,True
+by specimen,Urine,Imipenem,0.4787,0.5913,False,True
+by specimen,Urine,Meropenem,0.4672,0.4389,False,True

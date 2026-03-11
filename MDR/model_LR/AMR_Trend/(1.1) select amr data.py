@@ -12,7 +12,7 @@ def step1_extract():
     
     df = df[(df['x_year'] >= 2015) & (df['x_year'] <= 2024)].copy()
     
-    df_aba = df[df['organism_full'].str.contains('Acinetobacter baumannii', case=False, na=False)].copy()
+    df_aba = df[df['organism_full'].str.contains('Enterococcus faecalis', case=False, na=False)].copy()
     
     df_aba['ward_type'] = df_aba['ward_type'].astype(str).str.lower().str.strip()
     df_aba['ward_type'] = df_aba['ward_type'].replace(['nan', 'none', '', 'null'], np.nan)
@@ -28,13 +28,13 @@ def step1_extract():
     desired_cols = [
         'organism_full', 'x_year', 'region', 
         'ward_type', 'x_spec_ful', 'spec_group',
-        'spec_date', 'x_month', 'imipenem', 'meropenem'
+        'spec_date', 'x_month', 'vancomycin'
     ]
     cols_to_keep = [col for col in desired_cols if col in df_aba.columns]
     df_final = df_aba[cols_to_keep]
     
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    save_path = os.path.join(OUTPUT_DIR, 'amr-a_baumannii_selected.csv')
+    save_path = os.path.join(OUTPUT_DIR, 'amr-enterococcus_faecalis_selected.csv')
     df_final.to_csv(save_path, index=False)
     print(f"Saved selected data to {save_path}")
 
