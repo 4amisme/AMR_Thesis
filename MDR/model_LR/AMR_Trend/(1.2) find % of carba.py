@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import numpy as np
 
-INPUT_PATH = '/Users/chanokchonkarinrak/Documents/GitHub/AMR_Thesis/MDR/model_LR/AMR_Trend/amr-a_baumannii_selected.csv'
+INPUT_PATH = '/Users/chanokchonkarinrak/Documents/GitHub/AMR_Thesis/MDR/model_LR/AMR_Trend/amr-enterococcus_faecalis_selected.csv'
 BASE_DIR = '/Users/chanokchonkarinrak/Documents/GitHub/AMR_Thesis/MDR/model_LR/AMR_Trend'
 
 def step2_prepare_monthly():    
@@ -23,10 +23,10 @@ def step2_prepare_monthly():
     df['x_month'] = df['spec_date'].dt.month
     df['date'] = pd.to_datetime(df['x_year'].astype(str) + '-' + df['x_month'].astype(str).str.zfill(2) + '-01')
 
-    # %R ของ Imipenem และ Meropenem
+    # %R ของ vancomycin
     def calculate_percent_r(data, group_cols):
         results = []
-        for drug in ['imipenem', 'meropenem']:
+        for drug in ['vancomycin']:
             if drug not in data.columns:
                 continue
             
@@ -46,17 +46,17 @@ def step2_prepare_monthly():
         return pd.DataFrame()
     
     overall_df = calculate_percent_r(df, ['date'])
-    overall_df.to_csv(os.path.join(BASE_DIR, 'All data', 'Data', 'monthly_overall.csv'), index=False)
+    overall_df.to_csv(os.path.join(BASE_DIR, 'All data', 'Data', 'efa_monthly_overall.csv'), index=False)
     print("All data/Data/monthly_overall.csv")
     
     df_ward = df[df['ward_type'].isin(['icu', 'in', 'out'])].copy()
     ward_df = calculate_percent_r(df_ward, ['date', 'ward_type'])
-    ward_df.to_csv(os.path.join(BASE_DIR, 'by ward', 'Data', 'monthly_ward.csv'), index=False)
+    ward_df.to_csv(os.path.join(BASE_DIR, 'by ward', 'Data', 'efa_monthly_ward.csv'), index=False)
     print("by ward/Data/monthly_ward.csv")
     
     df_spec = df.dropna(subset=['spec_group']).copy()
     spec_df = calculate_percent_r(df_spec, ['date', 'spec_group'])
-    spec_df.to_csv(os.path.join(BASE_DIR, 'by specimen', 'Data', 'monthly_specimen.csv'), index=False)
+    spec_df.to_csv(os.path.join(BASE_DIR, 'by specimen', 'Data', 'efa_monthly_specimen.csv'), index=False)
     print("by specimen/Data/monthly_specimen.csv")
 
 if __name__ == "__main__":

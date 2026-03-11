@@ -96,6 +96,13 @@ def plot_residual_analysis(series, best_model, params, title, save_dir):
     ฟังก์ชันวิเคราะห์ Residual Analysis แบบ Robust 
     เพื่อตรวจสอบความแม่นยำของโมเดลโดยไม่พึ่งพาคำสั่งที่มีปัญหาใน Seaborn
     """
+    import numpy as np
+    import scipy.stats as stats
+    import statsmodels.api as sm
+    import matplotlib.pyplot as plt
+    import os
+    from xgboost import XGBRegressor # ตรวจสอบให้แน่ใจว่าได้ import ไว้ด้านบนของไฟล์แล้ว
+
     try:
         # 1. คำนวณ Residuals ตามประเภทของ Best Model
         if best_model == 'ARIMA':
@@ -128,32 +135,35 @@ def plot_residual_analysis(series, best_model, params, title, save_dir):
 
     # ข้อมูลสำหรับการ Plot (ลบค่าว่างออก)
     res_data = residuals.dropna()
+    
+    # 🌟 จุดที่แก้ไข: แปลง Index และ Values ให้เป็น Numpy Array ก่อนนำไปพล็อต
+    x_vals = res_data.index.to_numpy()
+    y_vals = res_data.to_numpy()
 
     # --- Plot 1: Residuals over Time ---
-    axes[0, 0].plot(res_data.index, res_data.values, color='gray', alpha=0.7)
+    axes[0, 0].plot(x_vals, y_vals, color='gray', alpha=0.7)
     axes[0, 0].axhline(0, color='red', linestyle='--', linewidth=1)
     axes[0, 0].set_title('Residuals over Time')
     axes[0, 0].tick_params(axis='x', rotation=45)
 
-    # --- Plot 2: Distribution (ใช้ Matplotlib + Scipy แทน Seaborn เพื่อเลี่ยง Bug) ---
-    if len(res_data) > 0:
-        # วาด Histogram
-        axes[0, 1].hist(res_data, bins=20, density=True, color='skyblue', edgecolor='black', alpha=0.6)
+    if len(y_vals) > 0:
+        # วาด Histogram (ใช้ y_vals ที่เป็น Numpy แล้วเพื่อความปลอดภัย)
+        axes[0, 1].hist(y_vals, bins=20, density=True, color='skyblue', edgecolor='black', alpha=0.6)
         # คำนวณและวาดเส้น KDE
         try:
-            kde = stats.gaussian_kde(res_data)
-            x_range = np.linspace(res_data.min(), res_data.max(), 100)
+            kde = stats.gaussian_kde(y_vals)
+            x_range = np.linspace(y_vals.min(), y_vals.max(), 100)
             axes[0, 1].plot(x_range, kde(x_range), color='darkblue', linewidth=2, label='KDE')
         except:
             pass
     axes[0, 1].set_title('Residual Distribution (Histogram & KDE)')
 
     # --- Plot 3: Q-Q Plot (ตรวจสอบการกระจายตัวแบบปกติ) ---
-    stats.probplot(res_data, dist="norm", plot=axes[1, 0])
+    stats.probplot(y_vals, dist="norm", plot=axes[1, 0])
     axes[1, 0].set_title('Normal Q-Q Plot')
 
     # --- Plot 4: ACF Plot (ตรวจสอบความสัมพันธ์ในตัวเองที่หลงเหลือ) ---
-    sm.graphics.tsa.plot_acf(res_data, lags=min(24, len(res_data)//2), ax=axes[1, 1])
+    sm.graphics.tsa.plot_acf(y_vals, lags=min(24, len(y_vals)//2), ax=axes[1, 1])
     axes[1, 1].set_title('Residual Autocorrelation (ACF)')
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
@@ -173,7 +183,7 @@ def process_forecasting(df, category_folder, group_col=None):
     forecast_summaries = []
     
     for g in groups:
-        for drug in ['Imipenem', 'Meropenem']:
+        for drug in ['vancomycin']:
             name = drug if g is None else f"{g}_{drug}"
             title = f"{category_folder} - {name}"
             print(f"​Modeling: {title} ...")
@@ -264,7 +274,7 @@ def process_forecasting(df, category_folder, group_col=None):
 def step4_run_forecasting():
     all_results = []
     
-    file_all = os.path.join(BASE_DIR, 'All data', 'Data', 'monthly_overall.csv')
+    file_all = os.path.join(BASE_DIR, 'All data', 'Data', 'efa_monthly_overall.csv')
     if os.path.exists(file_all):
         all_results.extend(process_forecasting(pd.read_csv(file_all), 'All data', None))
         
@@ -272,7 +282,7 @@ def step4_run_forecasting():
     if os.path.exists(file_ward):
         all_results.extend(process_forecasting(pd.read_csv(file_ward), 'by ward', 'ward_type'))
         
-    file_spec = os.path.join(BASE_DIR, 'by specimen', 'Data', 'monthly_specimen.csv')
+    file_spec = os.path.join(BASE_DIR, 'by specimen', 'Data', 'efa_monthly_specimen.csv')
     if os.path.exists(file_spec):
         df_spec = pd.read_csv(file_spec)
         df_spec = df_spec[df_spec['spec_group'] != 'other']
@@ -280,7 +290,7 @@ def step4_run_forecasting():
 
     if all_results:
         summary_df = pd.DataFrame(all_results)
-        save_csv = os.path.join(BASE_DIR, 'Forecasting_Models_Comprehensive_Evaluation.csv')
+        save_csv = os.path.join(BASE_DIR, 'efa_Forecasting_Models_Comprehensive_Evaluation.csv')
         summary_df.to_csv(save_csv, index=False)
         print(f" \n {save_csv}")
 

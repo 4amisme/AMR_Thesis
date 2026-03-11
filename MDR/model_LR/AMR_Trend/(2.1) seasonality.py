@@ -43,7 +43,7 @@ def process_seasonality(df, category_folder, group_col=None):
     summary_results = []
     
     for g in groups:
-        for drug in ['Imipenem', 'Meropenem']:
+        for drug in ['vancomycin']:
             temp = df[df['drug'] == drug.capitalize()]
             if group_col: 
                 temp = temp[temp[group_col] == g]
@@ -71,17 +71,17 @@ def process_seasonality(df, category_folder, group_col=None):
 def step3_check_seasonality():
     all_summaries = []
     
-    file_all = os.path.join(BASE_DIR, 'All data', 'Data', 'monthly_overall.csv')
+    file_all = os.path.join(BASE_DIR, 'All data', 'Data', 'efa_monthly_overall.csv')
     if os.path.exists(file_all):
         df_all = pd.read_csv(file_all)
         all_summaries.extend(process_seasonality(df_all, 'All data', None))
     
-    file_ward = os.path.join(BASE_DIR,'by ward', 'Data', 'monthly_ward.csv')
+    file_ward = os.path.join(BASE_DIR,'by ward', 'Data', 'efa_monthly_ward.csv')
     if os.path.exists(file_ward):
         df_ward = pd.read_csv(file_ward)
         all_summaries.extend(process_seasonality(df_ward, 'by ward', 'ward_type'))
     
-    file_spec = os.path.join(BASE_DIR, 'by specimen', 'Data', 'monthly_specimen.csv')
+    file_spec = os.path.join(BASE_DIR, 'by specimen', 'Data', 'efa_monthly_specimen.csv')
     if os.path.exists(file_spec):
         df_spec = pd.read_csv(file_spec)
         df_spec = df_spec[df_spec['spec_group'] != 'other']
@@ -90,7 +90,7 @@ def step3_check_seasonality():
     # Seasonality Strength
     if all_summaries:
         summary_df = pd.DataFrame(all_summaries)
-        save_csv_path = os.path.join(BASE_DIR, 'Seasonality_Strength_Summary.csv')
+        save_csv_path = os.path.join(BASE_DIR, 'efa_Seasonality_Strength_Summary.csv')
         summary_df.to_csv(save_csv_path, index=False)
         
         print(f" save ไฟล์ที่:\n   {save_csv_path}")
