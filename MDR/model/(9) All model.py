@@ -13,7 +13,7 @@ from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.holtwinters import ExponentialSmoothing, SimpleExpSmoothing
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import TimeSeriesSplit, GridSearchCV
+from sklearn.model_selection import TimeSeriesSplit, RandomizedSearchCV # <--- อัปเดตเพิ่ม RandomizedSearchCV
 
 # ปิดการแจ้งเตือน
 warnings.filterwarnings("ignore")
@@ -38,18 +38,51 @@ def create_xgb_features(series, lags=12):
     return df.drop(columns=[col]), df[col]
 
 def grid_search_tes(train_data):
-    trend_opts, seasonal_opts, damped_opts = ['add'], ['add'], [True, False]
-    best_aic, best_config = float('inf'), None
+    """[อัปเดต] ค้นหาพารามิเตอร์ TES ด้วย AICc"""
+    trend_opts = ['add']
+    seasonal_opts = ['add', None] # ป้องกัน Error เวลาข้อมูลเป็น 0
+    damped_opts = [True, False]
+    
+    best_aicc = float('inf')
+    best_config = None
+    
     for t, s, d in itertools.product(trend_opts, seasonal_opts, damped_opts):
         try:
-            model = ExponentialSmoothing(train_data, trend=t, seasonal=s, seasonal_periods=12, damped_trend=d).fit(optimized=True)
-            if model.aic < best_aic:
-                best_aic, best_config = model.aic, (t, s, d)
-        except: continue
+            sp = 12 if s is not None else None
+            model = ExponentialSmoothing(train_data, trend=t, seasonal=s, seasonal_periods=sp, damped_trend=d, initialization_method="estimated").fit(optimized=True)
+            current_metric = getattr(model, 'aicc', model.aic)
+            if current_metric < best_aicc:
+                best_aicc = current_metric
+                best_config = (t, s, d)
+        except:
+            continue
     return best_config if best_config else ('add', 'add', False)
 
+def grid_search_ses(train_data):
+    """[เพิ่มใหม่] ค้นหาพารามิเตอร์ Alpha และ Init ของ SES ด้วย AICc"""
+    best_aicc = float('inf')
+    best_alpha, best_init = None, None
+    alphas = np.arange(0.01, 1.0, 0.05)
+    
+    for init in ['estimated', 'heuristic']:
+        for alpha in alphas:
+            try:
+                model = SimpleExpSmoothing(train_data, initialization_method=init).fit(smoothing_level=alpha, optimized=False)
+                current_aicc = getattr(model, 'aicc', model.aic)
+                if current_aicc < best_aicc:
+                    best_aicc, best_alpha, best_init = current_aicc, alpha, init
+            except: continue
+        try:
+            model_opt = SimpleExpSmoothing(train_data, initialization_method=init).fit(optimized=True)
+            current_aicc = getattr(model_opt, 'aicc', model_opt.aic)
+            if current_aicc < best_aicc:
+                best_aicc, best_alpha, best_init = current_aicc, model_opt.params['smoothing_level'], init
+        except: continue
+        
+    return best_alpha if best_alpha else 0.5, best_init if best_init else 'estimated'
+
 # ==========================================
-# 2. ฟังก์ชันหลัก: ศึกประชัน 5 โมเดล (โหมดเหมือนเป๊ะ)
+# 2. ฟังก์ชันหลัก: ศึกประชัน 5 โมเดล (Full Option)
 # ==========================================
 
 def run_model_showdown(series, target_drug_name):
@@ -67,12 +100,14 @@ def run_model_showdown(series, target_drug_name):
     predictions = {} 
 
     # ------------------------------------------------
-    # 1. SARIMA (ขั้นตอนเดียวกับรันเดี่ยว)
-    print("[1/5] Training SARIMA (Stepwise Search + Re-fit)...")
+    # 1. SARIMA (Full Grid Search + AICc)
+    print("[1/5] Training SARIMA (Full Grid Search)...")
     sarima_auto = auto_arima(
-        train_data_std, start_p=0, start_q=0, max_p=5, max_q=5, m=12,
-        seasonal=True, d=None, D=1, trace=False, error_action='ignore',
-        suppress_warnings=True, stepwise=True
+        train_data_std, start_p=0, start_q=0, max_p=5, max_q=5,
+        start_P=0, start_Q=0, max_P=3, max_Q=3, m=12,
+        seasonal=True, d=None, max_d=2, D=None, max_D=1,
+        trace=False, error_action='ignore', suppress_warnings=True,
+        stepwise=False, n_jobs=-1, information_criterion='aicc'
     )
     sarima_eval = SARIMAX(train_data_std, order=sarima_auto.order, seasonal_order=sarima_auto.seasonal_order,
                           enforce_stationarity=False, enforce_invertibility=False).fit(disp=False)
@@ -82,12 +117,13 @@ def run_model_showdown(series, target_drug_name):
     predictions['SARIMA'] = pred_sarima
 
     # ------------------------------------------------
-    # 2. ARIMA (ขั้นตอนเดียวกับรันเดี่ยว)
-    print("[2/5] Training ARIMA (Grid Search + Re-fit)...")
+    # 2. ARIMA (Full Grid Search + AICc)
+    print("[2/5] Training ARIMA (Full Grid Search)...")
     arima_auto = auto_arima(
-        train_data_std, start_p=0, start_q=0, max_p=5, max_q=3,
-        seasonal=False, stepwise=False, suppress_warnings=True,
-        error_action='ignore', trace=False
+        train_data_std, start_p=0, start_q=0, max_p=5, max_q=5,
+        seasonal=False, d=None, max_d=2, test='adf',
+        stepwise=False, suppress_warnings=True, error_action='ignore',
+        trace=False, n_jobs=-1, information_criterion='aicc'
     )
     arima_eval = ARIMA(train_data_std, order=arima_auto.order).fit()
     pred_arima = arima_eval.forecast(steps=len(test_data_std))
@@ -96,27 +132,29 @@ def run_model_showdown(series, target_drug_name):
     predictions['ARIMA'] = pred_arima
 
     # ------------------------------------------------
-    # 3. TES (Holt-Winters)
+    # 3. TES (Holt-Winters - Custom AICc Search)
     print("[3/5] Training TES (Holt-Winters)...")
     best_t, best_s, best_d = grid_search_tes(train_data_std)
-    tes_eval = ExponentialSmoothing(train_data_std, trend=best_t, seasonal=best_s, seasonal_periods=12, damped_trend=best_d).fit(optimized=True)
+    sp = 12 if best_s is not None else None
+    tes_eval = ExponentialSmoothing(train_data_std, trend=best_t, seasonal=best_s, seasonal_periods=sp, damped_trend=best_d, initialization_method="estimated").fit(optimized=True)
     pred_tes = tes_eval.forecast(len(test_data_std))
     rmse, wape = calculate_metrics(test_data_std, pred_tes)
     results.append({'Model': 'TES', 'RMSE': rmse, 'WAPE (%)': wape})
     predictions['TES'] = pred_tes
 
     # ------------------------------------------------
-    # 4. SES (Simple Exponential Smoothing)
+    # 4. SES (Simple Exponential Smoothing - Custom Search)
     print("[4/5] Training SES...")
-    ses_eval = SimpleExpSmoothing(train_data_std, initialization_method="estimated").fit(optimized=True)
+    best_alpha, best_init = grid_search_ses(train_data_std)
+    ses_eval = SimpleExpSmoothing(train_data_std, initialization_method=best_init).fit(smoothing_level=best_alpha, optimized=False)
     pred_ses = ses_eval.forecast(len(test_data_std))
     rmse, wape = calculate_metrics(test_data_std, pred_ses)
     results.append({'Model': 'SES', 'RMSE': rmse, 'WAPE (%)': wape})
     predictions['SES'] = pred_ses
 
     # ------------------------------------------------
-    # 5. XGBoost (การแบ่งข้อมูลแยกเฉพาะให้ตรงกับรันเดี่ยวเป๊ะๆ)
-    print("[5/5] Training XGBoost (Full Grid Search)...")
+    # 5. XGBoost (RandomizedSearchCV + Regularization)
+    print("[5/5] Training XGBoost (RandomizedSearchCV)...")
     X, y = create_xgb_features(series, lags=12)
     n_xgb = len(X)
     train_size_xgb = int(n_xgb * 0.80)
@@ -124,22 +162,27 @@ def run_model_showdown(series, target_drug_name):
     X_test, y_test = X.iloc[train_size_xgb:], y.iloc[train_size_xgb:]
 
     tscv = TimeSeriesSplit(n_splits=3)
-    param_grid = {
-        'n_estimators': [100, 300, 500],
-        'max_depth': [3, 5],
-        'learning_rate': [0.01, 0.05, 0.1],
-        'subsample': [0.8],
-        'colsample_bytree': [0.8]
+    param_distributions = {
+        'n_estimators': [100, 300, 500, 800],
+        'max_depth': [2, 3, 4, 5],
+        'learning_rate': [0.01, 0.05, 0.1, 0.2],
+        'subsample': [0.7, 0.8, 0.9],
+        'colsample_bytree': [0.7, 0.8, 0.9],
+        'gamma': [0, 0.1, 0.5, 1],
+        'reg_alpha': [0, 0.1, 1, 5],
+        'reg_lambda': [0.1, 1, 5, 10]
     }
+    
     xgb_base = XGBRegressor(objective='reg:squarederror', random_state=42)
-    grid_search = GridSearchCV(
-        estimator=xgb_base, param_grid=param_grid, cv=tscv,
-        scoring='neg_mean_squared_error', n_jobs=-1, verbose=0
+    random_search = RandomizedSearchCV(
+        estimator=xgb_base, param_distributions=param_distributions, 
+        n_iter=50, cv=tscv, scoring='neg_mean_squared_error', 
+        n_jobs=-1, verbose=0, random_state=42
     )
-    grid_search.fit(X_train, y_train)
-    best_params = grid_search.best_params_
+    random_search.fit(X_train, y_train)
+    best_params_xgb = random_search.best_params_
 
-    xgb_eval = XGBRegressor(**best_params, objective='reg:squarederror', random_state=42)
+    xgb_eval = XGBRegressor(**best_params_xgb, objective='reg:squarederror', random_state=42)
     xgb_eval.fit(X_train, y_train)
     
     pred_xgb_raw = xgb_eval.predict(X_test)
@@ -155,7 +198,6 @@ def run_model_showdown(series, target_drug_name):
     results_df = results_df.sort_values(by='WAPE (%)', ascending=True).reset_index(drop=True)
     
     print("\n🏆 --- MODEL LEADERBOARD --- 🏆")
-    # ใช้ to_string แทน to_markdown เพื่อไม่ให้ติด error tabulate
     print(results_df.to_string(index=False)) 
     
     best_model_name = results_df.iloc[0]['Model']
@@ -188,7 +230,7 @@ def run_model_showdown(series, target_drug_name):
 # 3. โหลดข้อมูลและรัน Showdown
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_ps.csv") 
+file_path = os.path.join("MDR", "model","By ward type", "p_aeruginosa_out.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -203,7 +245,7 @@ if os.path.exists(file_path):
     final_df = final_df.interpolate(method='linear')
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]

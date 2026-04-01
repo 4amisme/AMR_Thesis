@@ -16,14 +16,52 @@ from statsmodels.graphics.tsaplots import plot_acf
 warnings.filterwarnings("ignore")
 
 # ==========================================
-# 1. ฟังก์ชันคำนวณ Metrics
+# 1. ฟังก์ชันคำนวณ Metrics และ Tuning
 # ==========================================
 
 def calculate_metrics(y_true, y_pred):
     """คำนวณ RMSE และ WAPE สำหรับวัดประสิทธิภาพ"""
     rmse = np.sqrt(mean_squared_error(y_true, y_pred))
-    wape = np.sum(np.abs(y_true - y_pred)) / np.sum(y_true) * 100 if np.sum(y_true) != 0 else 0
+    sum_true = np.sum(y_true)
+    wape = np.sum(np.abs(y_true - y_pred)) / sum_true * 100 if sum_true != 0 else 0
     return round(rmse, 4), round(wape, 4)
+
+def grid_search_ses(train_data):
+    """ทำ Parameter Tuning เพื่อหาค่า Alpha และ Initialization ที่ดีที่สุดด้วย AICc"""
+    best_aicc = float('inf')
+    best_alpha = None
+    best_init = None
+    
+    # ทดสอบค่า Alpha ตั้งแต่โมเดลที่ตอบสนองช้า (0.01) ไปจนถึงไวมาก (0.99)
+    alphas = np.arange(0.01, 1.0, 0.05)
+    init_methods = ['estimated', 'heuristic']
+    
+    for init in init_methods:
+        # 1. ลองบังคับค่า Alpha ทีละสเตป
+        for alpha in alphas:
+            try:
+                model = SimpleExpSmoothing(train_data, initialization_method=init).fit(smoothing_level=alpha, optimized=False)
+                current_aicc = getattr(model, 'aicc', model.aic)
+                
+                if current_aicc < best_aicc:
+                    best_aicc = current_aicc
+                    best_alpha = alpha
+                    best_init = init
+            except:
+                continue
+                
+        # 2. ลองให้ระบบ Optimize หาค่าที่ดีที่สุดในวิถีของมันด้วย
+        try:
+            model_opt = SimpleExpSmoothing(train_data, initialization_method=init).fit(optimized=True)
+            current_aicc = getattr(model_opt, 'aicc', model_opt.aic)
+            if current_aicc < best_aicc:
+                best_aicc = current_aicc
+                best_alpha = model_opt.params['smoothing_level']
+                best_init = init
+        except:
+            continue
+            
+    return best_alpha, best_init
 
 # ==========================================
 # 2. ฟังก์ชันหลักสำหรับวิเคราะห์และทำนาย (SES)
@@ -40,28 +78,24 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
     train_data = series.iloc[:train_size]
     test_data = series.iloc[train_size:]
 
-    # --- [B] Model Training & Forecasting (กระบวนการ 2 ขั้นตอน) ---
-    
+    # --- [B] Parameter Tuning & Model Training ---
+    print("\n[กำลังค้นหาค่า Alpha และวิธี Initialization ที่ดีที่สุดด้วย AICc...]")
+    best_alpha, best_init = grid_search_ses(train_data)
+    print(f">>> Best Alpha: {best_alpha:.4f}")
+    print(f">>> Best Init Method: {best_init}")
+
     print("\n--- 1. Evaluating Model Performance (Train/Test) ---")
-    # เทรนและหาค่า Alpha ที่ดีที่สุดอัตโนมัติด้วย Train Data (80%)
-    model_eval = SimpleExpSmoothing(train_data, initialization_method="estimated").fit(optimized=True)
+    model_eval = SimpleExpSmoothing(train_data, initialization_method=best_init).fit(smoothing_level=best_alpha, optimized=False)
     
-    best_alpha_eval = round(model_eval.params['smoothing_level'], 4)
-    print(f">>> Optimized Alpha (Train): {best_alpha_eval}")
-    
-    # ทำนายช่วง Test Data และวัดผล
     test_pred_ses = model_eval.forecast(len(test_data))
     rmse, wape = calculate_metrics(test_data, test_pred_ses)
     print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
 
     print("\n--- 2. Forecasting Real Future (100% Data) ---")
-    # เทรนโมเดลตัวจริงด้วยข้อมูลทั้งหมด (100%) เพื่อหา Alpha ที่อัปเดตที่สุดก่อนทำนายอนาคต
-    final_model = SimpleExpSmoothing(series, initialization_method="estimated").fit(optimized=True)
+    # นำ Alpha และ Init ที่ดีที่สุดมาเทรนกับข้อมูล 100%
+    final_model = SimpleExpSmoothing(series, initialization_method=best_init).fit(smoothing_level=best_alpha, optimized=False)
     
-    best_alpha_final = round(final_model.params['smoothing_level'], 4)
-    print(f">>> Optimized Alpha (100% Data): {best_alpha_final}")
-    
-    # ทำนายล่วงหน้า 5 ปี
+    # ทำนายล่วงหน้า 5 ปี (หมายเหตุ: SES จะพยากรณ์เป็นเส้นตรงเสมอเนื่องจากไม่มี Trend)
     forecast_ses = final_model.forecast(forecast_months)
 
     # --- [NEW] Plotting Residual Diagnostics (Manual for SES) ---
@@ -131,7 +165,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_ps.csv") 
+file_path = os.path.join("MDR", "model","By ward type", "p_aeruginosa_out.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -144,7 +178,6 @@ if os.path.exists(file_path):
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
     final_df.index = all_months
 
-    # --- [จุดแก้ไข]: เปลี่ยนจาก .fillna(0) เป็น .interpolate() ---
     # ลบคอลัมน์ที่ไม่ใช่ข้อมูลเป้าหมายออกก่อนทำการ interpolate
     final_df = final_df.drop(columns=['year', 'month'])
     
@@ -153,12 +186,12 @@ if os.path.exists(file_path):
     
     # ใช้ bfill และ ffill เพื่อจัดการกรณีค่าว่างที่หัวและท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
-    # --------------------------------------------------------
 
-    target_drug = 'CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS'
+    target_drug = 'CARBAPENEMS, CEPHEMS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
+        # [แก้ชื่อให้ตรงกับไฟล์]: เปลี่ยนเป็น Klebsiella pneumoniae
         run_mdr_forecasting_ses(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยา: {target_drug}")

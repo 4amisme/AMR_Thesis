@@ -19,7 +19,8 @@ warnings.simplefilter("ignore")
 def calculate_metrics(y_true, y_pred):
     """คำนวณ RMSE และ WAPE สำหรับวัดประสิทธิภาพ"""
     rmse = np.sqrt(mean_squared_error(y_true, y_pred))
-    wape = np.sum(np.abs(y_true - y_pred)) / np.sum(y_true) * 100 if np.sum(y_true) != 0 else 0
+    sum_true = np.sum(y_true)
+    wape = (np.sum(np.abs(y_true - y_pred)) / sum_true * 100) if sum_true != 0 else 0
     return round(rmse, 4), round(wape, 4)
 
 # ==========================================
@@ -45,16 +46,20 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     ax2.set_title(f'PACF: {target_drug_name}')
     plt.show()
 
-    # --- [C] Auto-ARIMA Parameter Tuning ---
-    print("\n[กำลังค้นหาค่า Parameter ที่ดีที่สุด (p, d, q)...]")
+    # --- [C] Auto-ARIMA Parameter Tuning (อัปเดตใหม่) ---
+    print("\n[กำลังค้นหาค่า Parameter ที่ดีที่สุด (Full Grid Search)...]")
     
+    # ปรับจูน auto_arima เพื่อลด RMSE/WAPE สำหรับข้อมูลขนาดเล็ก
     stepwise_model = auto_arima(
         train_data, 
         start_p=0, start_q=0,
-        max_p=5, max_q=3,
-        d=None, 
-        seasonal=False, 
-        stepwise=False, 
+        max_p=5, max_q=5,              # ขยาย max_q ให้ค้นหาได้กว้างขึ้น
+        d=None, max_d=2,               # ปล่อยให้ระบบหาค่า d โดยจำกัดไม่ให้เกิน 2
+        test='adf',                    # ใช้ Augmented Dickey-Fuller test เพื่อหาค่า d ที่เหมาะสม
+        seasonal=False,                # ไม่ใช้ Seasonality (ARIMA ปกติ)
+        stepwise=False,                # ปิด Stepwise เพื่อค้นหาทุกรูปแบบ
+        information_criterion='aicc',  # [สำคัญ] ใช้ AICc เหมาะกับข้อมูล Time Series ที่มีแถวน้อย
+        n_jobs=-1,                     # ดึงพลัง CPU ทั้งหมดมาช่วยรันให้เร็วขึ้น
         suppress_warnings=True, 
         error_action='ignore', 
         trace=True
@@ -62,7 +67,7 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
 
     best_order = stepwise_model.order
     print(f"\n>>> Best ARIMA Order: {best_order}")
-    print(f">>> Best AIC: {stepwise_model.aic():.2f}")
+    print(f">>> Best AICc: {stepwise_model.aic():.2f}")
 
     # --- [D] Model Training & Forecasting ---
     
@@ -112,7 +117,7 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_bl.csv") 
+file_path = os.path.join("MDR", "model","By ward type", "p_aeruginosa_out.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -128,7 +133,6 @@ if os.path.exists(file_path):
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
     final_df.index = all_months
 
-    # --- [จุดแก้ไข]: เปลี่ยนจาก .fillna(0) เป็น .interpolate() ---
     # ลบคอลัมน์ year, month ออกเพื่อให้เหลือแค่ค่าตัวเลขที่ต้องการ interpolate
     final_df = final_df.drop(columns=['year', 'month'])
     
@@ -137,12 +141,12 @@ if os.path.exists(file_path):
     
     # ใช้ bfill และ ffill ในกรณีที่ค่าหัวตารางหรือท้ายตารางว่าง (ซึ่ง interpolate ทำไม่ได้)
     final_df = final_df.bfill().ffill()
-    # --------------------------------------------------------
 
-    target_drug = 'CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
+        # เปลี่ยนชื่อใน Title กราฟจาก Pseudomonas aeruginosa เป็น Klebsiella pneumoniae ให้ตรงกับไฟล์
         run_mdr_forecasting_arima(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")

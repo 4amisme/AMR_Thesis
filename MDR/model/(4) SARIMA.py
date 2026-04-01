@@ -47,21 +47,28 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     ax2.set_title(f'PACF: {target_drug_name}')
     plt.show()
 
-    # --- [C] Parameter Tuning ด้วย auto_arima ---
-    print("Finding best SARIMA parameters (Stepwise Search)...")
+    # --- [C] Parameter Tuning ด้วย auto_arima (อัปเดตใหม่) ---
+    print("Finding best SARIMA parameters (Full Grid Search)...")
     
+    # ปรับจูน auto_arima เพื่อลด RMSE/WAPE
     stepwise_model = auto_arima(
         train_data, 
         start_p=0, start_q=0,
         max_p=5, max_q=5,
-        m=12,                    # ข้อมูลรายเดือน (Seasonality = 12)
+        start_P=0, start_Q=0,
+        max_P=3, max_Q=3,          # เพิ่มขอบเขตการค้นหาฝั่ง Seasonality
+        m=12,                      # ข้อมูลรายเดือน (Seasonality = 12)
         seasonal=True,
-        d=None,                  # ให้โมเดลหาค่า differencing ที่เหมาะสมเอง
-        D=1, 
+        d=None,                    # ให้ระบบหาค่า d เอง (0 ถึง 2)
+        max_d=2,
+        D=None,                    # ให้ระบบหาค่า D เอง (สำคัญมาก ช่วยลด Over-differencing)
+        max_D=1,
         trace=True,
         error_action='ignore',
         suppress_warnings=True,
-        stepwise=True
+        stepwise=False,            # [สำคัญ] ปิด Stepwise เพื่อบังคับให้หาทุกรูปแบบ (ใช้เวลาเพิ่มขึ้นแต่มักได้ผลลัพธ์ดีกว่า)
+        n_jobs=-1,                 # ใช้ทุก Core ของ CPU เพื่อให้ค้นหาเร็วขึ้น
+        information_criterion='aicc' # ใช้ AICc ซึ่งเหมาะกับข้อมูล Time Series ขนาดเล็ก-กลาง มากกว่า AIC ปกติ
     )
 
     best_order = stepwise_model.order
@@ -69,7 +76,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
     
     print(f"\n>>> Best Order: {best_order}")
     print(f">>> Best Seasonal Order: {best_seasonal}")
-    print(f">>> Best AIC: {stepwise_model.aic():.2f}")
+    print(f">>> Best AICc: {stepwise_model.aic():.2f}")
 
     # --- [D] Model Training & Forecasting ---
     
@@ -134,7 +141,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # ปรับ Path ตามที่อยู่ไฟล์จริง
-file_path = os.path.join("MDR", "model","By ward type", "k_pneumoniae_in.csv") 
+file_path = os.path.join("MDR", "model","All Data", "pseudomonas_aeruginosa_.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -160,7 +167,7 @@ if os.path.exists(file_path):
     final_df = final_df.bfill().ffill() 
 
     # 2. เลือกกลุ่มยาที่ต้องการวิเคราะห์
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]

@@ -9,7 +9,7 @@ from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from sklearn.metrics import mean_squared_error
 import warnings
 
-# --- [NEW] เพิ่ม Import สำหรับทำ Residual Plot ---
+# --- เพิ่ม Import สำหรับทำ Residual Plot ---
 import statsmodels.api as sm
 import scipy.stats as stats
 
@@ -23,32 +23,50 @@ warnings.filterwarnings("ignore")
 def calculate_metrics(y_true, y_pred):
     """คำนวณ RMSE และ WAPE สำหรับวัดประสิทธิภาพ"""
     rmse = np.sqrt(mean_squared_error(y_true, y_pred))
-    wape = np.sum(np.abs(y_true - y_pred)) / np.sum(y_true) * 100 if np.sum(y_true) != 0 else 0
+    sum_true = np.sum(y_true)
+    wape = np.sum(np.abs(y_true - y_pred)) / sum_true * 100 if sum_true != 0 else 0
     return round(rmse, 4), round(wape, 4)
 
 def grid_search_tes(train_data):
-    """ทำ Parameter Tuning เพื่อหา Configuration ที่ดีที่สุดด้วยเกณฑ์ AIC"""
-    trend_opts = ['add']      
-    seasonal_opts = ['add']   
+    """ทำ Parameter Tuning เพื่อหา Configuration ที่ดีที่สุดด้วยเกณฑ์ AICc"""
+    # [UPDATE] ล็อก Trend เป็น 'add' ตามที่ต้องการ
+    trend_opts = ['add']           
+    # ตัด 'mul' ออกจาก Seasonal เพื่อป้องกัน Mathematical Error เมื่อข้อมูลเป็น 0
+    seasonal_opts = ['add', None]  
     damped_opts = [True, False]     
     
-    best_aic = float('inf')
+    best_aicc = float('inf')
     best_config = None
     
-    configs = list(itertools.product(trend_opts, seasonal_opts, damped_opts))
-    
-    for t, s, d in configs:
-        try:
-            model = ExponentialSmoothing(
-                train_data, trend=t, seasonal=s, seasonal_periods=12, damped_trend=d
-            ).fit(optimized=True)
-            
-            if model.aic < best_aic:
-                best_aic = model.aic
-                best_config = (t, s, d)
-        except:
-            continue
-            
+    for t in trend_opts:
+        for s in seasonal_opts:
+            for d in damped_opts:
+                try:
+                    # ใส่ค่า seasonal_periods เฉพาะเมื่อมี seasonal เท่านั้น
+                    sp = 12 if s is not None else None
+                    
+                    model = ExponentialSmoothing(
+                        train_data, 
+                        trend=t, 
+                        seasonal=s, 
+                        seasonal_periods=sp, 
+                        damped_trend=d,
+                        initialization_method="estimated" # ใช้สมการประเมินจุดเริ่มต้นที่ดีที่สุด
+                    ).fit(optimized=True)
+                    
+                    # ดึงค่า AICc มาใช้แทน AIC สำหรับข้อมูลขนาดเล็ก
+                    current_metric = getattr(model, 'aicc', model.aic)
+                    
+                    if current_metric < best_aicc:
+                        best_aicc = current_metric
+                        best_config = (t, s, d)
+                except:
+                    continue
+                    
+    # Fallback เผื่อหาไม่เจอเลยจริงๆ
+    if best_config is None:
+        return ('add', 'add', False) 
+        
     return best_config
 
 # ==========================================
@@ -84,10 +102,11 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
     print(f"    - Damped Trend: {best_d}")
 
     # --- [D] Model Training & Forecasting ---
+    sp = 12 if best_s is not None else None
     
     print("\n--- 1. Evaluating Model Performance (Train/Test) ---")
     model_eval = ExponentialSmoothing(
-        train_data, trend=best_t, seasonal=best_s, seasonal_periods=12, damped_trend=best_d
+        train_data, trend=best_t, seasonal=best_s, seasonal_periods=sp, damped_trend=best_d, initialization_method="estimated"
     ).fit(optimized=True)
     
     test_pred_tes = model_eval.forecast(len(test_data))
@@ -96,7 +115,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
 
     print("\n--- 2. Forecasting Real Future (100% Data) ---")
     final_model = ExponentialSmoothing(
-        series, trend=best_t, seasonal=best_s, seasonal_periods=12, damped_trend=best_d
+        series, trend=best_t, seasonal=best_s, seasonal_periods=sp, damped_trend=best_d, initialization_method="estimated"
     ).fit(optimized=True)
     
     forecast_tes = final_model.forecast(forecast_months)
@@ -167,7 +186,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_ur.csv") 
+file_path = os.path.join("MDR", "model","All Data", "pseudomonas_aeruginosa_.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -190,7 +209,7 @@ if os.path.exists(file_path):
     # เก็บตกกรณีค่าว่างที่หัวหรือท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         run_mdr_forecasting_tes(final_df[target_drug], "Pseudomonas aeruginosa")
