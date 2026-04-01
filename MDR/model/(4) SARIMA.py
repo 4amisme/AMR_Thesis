@@ -116,7 +116,10 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
              color='#e41a1c', marker='o', markersize=4, linestyle='--', label='Forecast (Next 5 years)', linewidth=1.5)
 
     # ตกแต่งกราฟ
-    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
+    plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
+              fontsize=14, fontweight='bold', pad=30) 
+    plt.text(0.5, 1.03, f'Model: SARIMA | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
+             fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -131,7 +134,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # ปรับ Path ตามที่อยู่ไฟล์จริง
-file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model","By ward type", "k_pneumoniae_in.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -157,11 +160,11 @@ if os.path.exists(file_path):
     final_df = final_df.bfill().ffill() 
 
     # 2. เลือกกลุ่มยาที่ต้องการวิเคราะห์
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting(series_data, "Acinetobacter baumannii")
+        run_mdr_forecasting(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
         print("กลุ่มยาที่มีในไฟล์คือ:", final_df.columns.tolist())

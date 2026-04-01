@@ -148,9 +148,12 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
     
     plt.plot(conn_idx, conn_val, 
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
-             label=f'TES Forecast (Next 5 years)', linewidth=1.5)
+             label=f'Forecast (Next 5 years)', linewidth=1.5)
 
-    plt.title(f'MDR Pattern Prediction: {target_drug_name}\n(TES with Linear Interpolation)', fontsize=13, pad=15)
+    plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
+              fontsize=14, fontweight='bold', pad=30) 
+    plt.text(0.5, 1.03, f'Model: TES | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
+             fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -164,7 +167,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_ur.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -187,10 +190,10 @@ if os.path.exists(file_path):
     # เก็บตกกรณีค่าว่างที่หัวหรือท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
-        run_mdr_forecasting_tes(final_df[target_drug], "Acinetobacter baumannii")
+        run_mdr_forecasting_tes(final_df[target_drug], "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:

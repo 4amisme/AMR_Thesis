@@ -51,7 +51,8 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     stepwise_model = auto_arima(
         train_data, 
         start_p=0, start_q=0,
-        max_p=5, max_q=3, 
+        max_p=5, max_q=3,
+        d=None, 
         seasonal=False, 
         stepwise=False, 
         suppress_warnings=True, 
@@ -92,9 +93,12 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     
     plt.plot(forecast_idx, forecast_val, 
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
-             label=f'ARIMA {best_order} Forecast', linewidth=1.5)
+             label=f'Forecast (Next 5 years)', linewidth=1.5)
 
-    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
+    plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
+              fontsize=14, fontweight='bold', pad=30) 
+    plt.text(0.5, 1.03, f'Model: ARIMA | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
+             fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -108,7 +112,7 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_bl.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -135,11 +139,11 @@ if os.path.exists(file_path):
     final_df = final_df.bfill().ffill()
     # --------------------------------------------------------
 
-    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting_arima(series_data, "Acinetobacter baumannii")
+        run_mdr_forecasting_arima(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:
