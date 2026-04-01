@@ -131,7 +131,7 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By_specimen", "e_coli_sp.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_ps.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -159,7 +159,7 @@ if os.path.exists(file_path):
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting_ses(series_data, "Escherichia coli")
+        run_mdr_forecasting_ses(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยา: {target_drug}")
 else:

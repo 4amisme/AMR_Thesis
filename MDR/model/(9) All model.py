@@ -188,7 +188,7 @@ def run_model_showdown(series, target_drug_name):
 # 3. โหลดข้อมูลและรัน Showdown
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By_specimen", "e_coli_sp.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_ps.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -203,11 +203,11 @@ if os.path.exists(file_path):
     final_df = final_df.interpolate(method='linear')
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS'
+    target_drug = 'CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_model_showdown(series_data, "Escherichia coli")
+        run_model_showdown(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:

@@ -134,7 +134,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # ปรับ Path ตามที่อยู่ไฟล์จริง
-file_path = os.path.join("MDR", "model","By_specimen", "e_coli_sp.csv") 
+file_path = os.path.join("MDR", "model","By ward type", "k_pneumoniae_in.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -160,11 +160,11 @@ if os.path.exists(file_path):
     final_df = final_df.bfill().ffill() 
 
     # 2. เลือกกลุ่มยาที่ต้องการวิเคราะห์
-    target_drug = 'AMINOGLYCOSIDES, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS'
+    target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting(series_data, "Escherichia coli")
+        run_mdr_forecasting(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
         print("กลุ่มยาที่มีในไฟล์คือ:", final_df.columns.tolist())

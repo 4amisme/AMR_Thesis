@@ -6,9 +6,9 @@ import os
 import warnings
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import TimeSeriesSplit, GridSearchCV
+# --- [UPDATE] เปลี่ยนจาก GridSearchCV เป็น RandomizedSearchCV ---
+from sklearn.model_selection import TimeSeriesSplit, RandomizedSearchCV 
 
-# --- [NEW] เพิ่ม Import สำหรับทำ Residual Plot ---
 import statsmodels.api as sm
 import scipy.stats as stats
 from statsmodels.graphics.tsaplots import plot_acf
@@ -63,31 +63,38 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
     X_test, y_test = X.iloc[train_size:], y.iloc[train_size:]
 
     # --- [B] ขั้นตอน Parameter Tuning (ใช้แค่ Train Data) ---
-    print("\n[กำลังค้นหา Hyperparameters ที่ดีที่สุดด้วย TimeSeriesSplit...]")
+    print("\n[กำลังค้นหา Hyperparameters ที่ดีที่สุดด้วย RandomizedSearchCV...]")
     
     tscv = TimeSeriesSplit(n_splits=3) 
     
-    param_grid = {
-        'n_estimators': [100, 300, 500],
-        'max_depth': [3, 5],
-        'learning_rate': [0.01, 0.05, 0.1],
-        'subsample': [0.8],
-        'colsample_bytree': [0.8]
+    # --- [UPDATE] เพิ่มขอบเขต Parameter และกลุ่ม Regularization ---
+    param_distributions = {
+        'n_estimators': [100, 300, 500, 800, 1000],
+        'max_depth': [2, 3, 4, 5, 6],
+        'learning_rate': [0.005, 0.01, 0.05, 0.1, 0.2],
+        'subsample': [0.6, 0.7, 0.8, 0.9, 1.0],
+        'colsample_bytree': [0.6, 0.7, 0.8, 0.9, 1.0],
+        'gamma': [0, 0.1, 0.5, 1, 2],
+        'reg_alpha': [0, 0.1, 1, 5, 10],
+        'reg_lambda': [0.1, 1, 5, 10, 50]
     }
 
     xgb_base = XGBRegressor(objective='reg:squarederror', random_state=42)
     
-    grid_search = GridSearchCV(
+    # ใช้ RandomizedSearchCV เพื่อให้รันได้เร็วและครอบคลุม
+    random_search = RandomizedSearchCV(
         estimator=xgb_base,
-        param_grid=param_grid,
+        param_distributions=param_distributions,
+        n_iter=100,           # สุ่มหา 100 รูปแบบ
         cv=tscv,
         scoring='neg_mean_squared_error',
         n_jobs=-1,
-        verbose=0
+        verbose=1,
+        random_state=42
     )
     
-    grid_search.fit(X_train, y_train)
-    best_params = grid_search.best_params_
+    random_search.fit(X_train, y_train)
+    best_params = random_search.best_params_
     print(f">>> Best Parameters: {best_params}")
 
     # --- [C] Model Training & Forecasting ---
@@ -104,9 +111,8 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
     model_final = XGBRegressor(**best_params, objective='reg:squarederror', random_state=42)
     model_final.fit(X, y)
 
-    # --- [NEW] 3. Plotting Residual Diagnostics (Manual for XGBoost) ---
+    # --- 3. Plotting Residual Diagnostics ---
     print("\n--- 3. Plotting Residual Diagnostics ---")
-    # คำนวณ Residual = ข้อมูลจริง - ค่าที่โมเดลพยากรณ์ได้ (Fitted values)
     y_pred_all = model_final.predict(X)
     residuals = y - y_pred_all
     
@@ -187,7 +193,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการโหลดข้อมูลและการจัดการ Missing Values
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By_specimen", "e_coli_sp.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_ps.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -209,11 +215,11 @@ if os.path.exists(file_path):
     # ใช้ bfill และ ffill สำหรับข้อมูลที่ว่างที่หัวหรือท้ายตาราง (ซึ่ง interpolate ทำไม่ได้)
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS'
+    target_drug = 'CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting_xgb(series_data, "Escherichia coli")
+        run_mdr_forecasting_xgb(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:

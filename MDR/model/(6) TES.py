@@ -167,7 +167,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By_specimen", "e_coli_sp.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_ur.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -190,10 +190,10 @@ if os.path.exists(file_path):
     # เก็บตกกรณีค่าว่างที่หัวหรือท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'AMINOGLYCOSIDES, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS'
+    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
-        run_mdr_forecasting_tes(final_df[target_drug], "Escherichia coli")
+        run_mdr_forecasting_tes(final_df[target_drug], "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:
