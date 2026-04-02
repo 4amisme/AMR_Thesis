@@ -219,7 +219,7 @@ if os.path.exists(file_path):
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting_xgb(series_data, "Pseudomonas aeruginosa")
+        run_mdr_forecasting_xgb(series_data, "Staphylococcus aureus")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:

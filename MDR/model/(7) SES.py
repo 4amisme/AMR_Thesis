@@ -192,7 +192,7 @@ if os.path.exists(file_path):
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
         # [แก้ชื่อให้ตรงกับไฟล์]: เปลี่ยนเป็น Klebsiella pneumoniae
-        run_mdr_forecasting_ses(series_data, "Pseudomonas aeruginosa")
+        run_mdr_forecasting_ses(series_data, "Staphylococcus aureus")
     else:
         print(f"ไม่พบกลุ่มยา: {target_drug}")
 else:
