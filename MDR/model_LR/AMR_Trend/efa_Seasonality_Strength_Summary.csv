@@ -1,0 +1,8 @@
+Category,Group,Drug,ACF_Lag12,Seasonal_Strength,Has_Seasonality_ACF,Has_Seasonality_Strength
+All data,Overall,vancomycin,-0.0851,0.0113,False,False
+by ward,icu,vancomycin,0.0146,0.1103,False,False
+by ward,in,vancomycin,-0.1591,0.0233,False,False
+by ward,out,vancomycin,-0.0967,0.0,False,False
+by specimen,Blood,vancomycin,-0.0796,0.0,False,False
+by specimen,Pus,vancomycin,-0.0746,0.0574,False,False
+by specimen,Urine,vancomycin,-0.0663,0.0243,False,False
