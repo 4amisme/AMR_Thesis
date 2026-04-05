@@ -230,7 +230,7 @@ def run_model_showdown(series, target_drug_name):
 # 3. โหลดข้อมูลและรัน Showdown
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By ward type", "s_aureus_out.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "s_aureus_bl.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)

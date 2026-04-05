@@ -193,7 +193,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการโหลดข้อมูลและการจัดการ Missing Values
 # ==========================================
 
-file_path = os.path.join("MDR", "model","By ward type", "s_aureus_out.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "s_aureus_bl.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
