@@ -147,7 +147,7 @@ if os.path.exists(file_path):
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
         # เปลี่ยนชื่อใน Title กราฟจาก Pseudomonas aeruginosa เป็น Klebsiella pneumoniae ให้ตรงกับไฟล์
-        run_mdr_forecasting_arima(series_data, "Staphylococcus aureus")
+        run_mdr_forecasting_arima(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:

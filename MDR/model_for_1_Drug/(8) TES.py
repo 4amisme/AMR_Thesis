@@ -212,7 +212,7 @@ if os.path.exists(file_path):
     target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
-        run_mdr_forecasting_tes(final_df[target_drug], "Staphylococcus aureus")
+        run_mdr_forecasting_tes(final_df[target_drug], "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:

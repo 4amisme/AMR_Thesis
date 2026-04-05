@@ -141,7 +141,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # ปรับ Path ตามที่อยู่ไฟล์จริง
-file_path = os.path.join("MDR", "model","All Data", "pseudomonas_aeruginosa_.csv") 
+file_path = os.path.join("MDR", "model_1Class","All Data", "pseudomonas_aeruginosa_.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -171,7 +171,7 @@ if os.path.exists(file_path):
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting(series_data, "Staphylococcus aureus")
+        run_mdr_forecasting(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
         print("กลุ่มยาที่มีในไฟล์คือ:", final_df.columns.tolist())

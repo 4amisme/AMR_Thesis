@@ -1,0 +1,58 @@
+﻿Category,File_Name,Row_Count
+By Specimen,a_baumannii_bl.csv,424
+By Specimen,a_baumannii_ot.csv,102
+By Specimen,a_baumannii_ps.csv,301
+By Specimen,a_baumannii_sp.csv,575
+By Specimen,a_baumannii_ur.csv,336
+By Specimen,e_coli_bl.csv,496
+By Specimen,e_coli_ps.csv,346
+By Specimen,e_coli_sp.csv,359
+By Specimen,e_coli_uc.csv,228
+By Specimen,e_coli_ur.csv,540
+By Specimen,e_faecalis_ps.csv,1
+By Specimen,e_faecalis_ur.csv,11
+By Specimen,e_faecium_di.csv,1
+By Specimen,k_pneumoniae_bl.csv,120
+By Specimen,k_pneumoniae_ps.csv,120
+By Specimen,k_pneumoniae_sp.csv,120
+By Specimen,k_pneumoniae_tr.csv,68
+By Specimen,k_pneumoniae_ur.csv,120
+By Specimen,p_aeruginosa_bl.csv,148
+By Specimen,p_aeruginosa_ot.csv,99
+By Specimen,p_aeruginosa_ps.csv,219
+By Specimen,p_aeruginosa_sp.csv,331
+By Specimen,p_aeruginosa_ur.csv,219
+By Specimen,Specimen_Seasonality_Analysis.csv,110
+By Specimen,Specimen_seasonality_summary.csv,110
+By Specimen,s_aureus_bl.csv,204
+By Specimen,s_aureus_ot.csv,92
+By Specimen,s_aureus_ps.csv,207
+By Specimen,s_aureus_sp.csv,220
+By Specimen,s_aureus_ur.csv,95
+All Data,acinetobacter_baumannii.csv,705
+All Data,Bacteria_Seasonality_Summary.csv,33
+All Data,enterococcus_faecalis.csv,11
+All Data,enterococcus_faecium.csv,1
+All Data,escherichia_coli.csv,705
+All Data,klebsiella_pneumoniae.csv,120
+All Data,pseudomonas_aeruginosa.csv,421
+All Data,staphylococcus_aureus.csv,426
+By Ward Type,a_baumannii_icu.csv,515
+By Ward Type,a_baumannii_in.csv,681
+By Ward Type,a_baumannii_out.csv,440
+By Ward Type,e_coli_icu.csv,366
+By Ward Type,e_coli_in.csv,624
+By Ward Type,e_coli_out.csv,554
+By Ward Type,e_faecalis_icu.csv,1
+By Ward Type,e_faecalis_in.csv,5
+By Ward Type,e_faecalis_out.csv,2
+By Ward Type,k_pneumoniae_icu.csv,120
+By Ward Type,k_pneumoniae_in.csv,120
+By Ward Type,k_pneumoniae_out.csv,120
+By Ward Type,p_aeruginosa_icu.csv,237
+By Ward Type,p_aeruginosa_in.csv,356
+By Ward Type,p_aeruginosa_out.csv,221
+By Ward Type,s_aureus_icu.csv,143
+By Ward Type,s_aureus_in.csv,343
+By Ward Type,s_aureus_out.csv,213
+By Ward Type,Ward_seasonality_summary.csv,90
