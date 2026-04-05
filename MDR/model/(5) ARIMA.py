@@ -31,7 +31,7 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     print(f"Analyzing (ARIMA): {target_drug_name}")
     print(f"{'='*50}")
 
-    # --- [A] การแบ่งข้อมูล (80/20) ปรับให้เหมือน SARIMA ---
+    # --- [A] การแบ่งข้อมูล (80/20) ---
     n = len(series)
     train_size = int(n * 0.80) 
     train_data = series.iloc[:train_size]
@@ -45,16 +45,15 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     ax2.set_title(f'PACF: {target_drug_name}')
     plt.show()
 
-    # --- [C] Auto-ARIMA Parameter Tuning (ใช้แค่ Train Data) ---
+    # --- [C] Auto-ARIMA Parameter Tuning ---
     print("\n[กำลังค้นหาค่า Parameter ที่ดีที่สุด (p, d, q)...]")
     
-    # สำหรับ ARIMA ปกติ เราจะปิด seasonal=False และไม่ใช้ P, D, Q, m
     stepwise_model = auto_arima(
-        train_data,                 # ⚠️ ใช้แค่ train_data ป้องกัน Data Leakage
+        train_data, 
         start_p=0, start_q=0,
-        max_p=5, max_q=3, 
-        d=1,                     # ให้โมเดลหาค่า d อัตโนมัติ
-        seasonal=False,             # ⚠️ จุดสำคัญ: ปิดโหมดฤดูกาลสำหรับ ARIMA
+        max_p=5, max_q=3,
+        d=None, 
+        seasonal=False, 
         stepwise=False, 
         suppress_warnings=True, 
         error_action='ignore', 
@@ -65,42 +64,41 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     print(f"\n>>> Best ARIMA Order: {best_order}")
     print(f">>> Best AIC: {stepwise_model.aic():.2f}")
 
-    # --- [D] Model Training & Forecasting (กระบวนการ 2 ขั้นตอน) ---
+    # --- [D] Model Training & Forecasting ---
     
     print("\n--- 1. Evaluating Model Performance (Train/Test) ---")
-    # เทรนเพื่อวัดผลด้วย Train Data
     model_eval = ARIMA(train_data, order=best_order).fit()
-    
-    # ทำนายช่วง Test Data
     test_pred_arima = model_eval.forecast(steps=len(test_data))
     rmse, wape = calculate_metrics(test_data, test_pred_arima)
     print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
 
     print("\n--- 2. Forecasting Real Future (100% Data) ---")
-    # เทรนโมเดลตัวจริงด้วยข้อมูลทั้งหมด (100%) เพื่อทำนายอนาคต
     final_model = ARIMA(series, order=best_order).fit()
-    
-    # ทำนายล่วงหน้า 5 ปี
     forecast_arima = final_model.forecast(steps=forecast_months)
 
+    # --- [NEW] Plotting Residual Diagnostics ---
+    print("\n--- 3. Plotting Residual Diagnostics ---")
+    fig_diag = final_model.plot_diagnostics(figsize=(15, 8))
+    fig_diag.suptitle(f'Residual Diagnostics (ARIMA): {target_drug_name}', fontsize=14, y=1.02)
+    plt.tight_layout()
+    plt.show()
+
     # --- [E] การพล็อตแสดงผล ---
-    
     plt.figure(figsize=(12, 6))
-    
-    # พล็อตข้อมูลจริง
     plt.plot(series.index, series.values, 
-             color='#377eb8', marker='o', markersize=4, label='Actual Data (2015-2024)', linewidth=1.5)
+             color='#377eb8', marker='o', markersize=4, label='Actual Data (Interpolated)', linewidth=1.5)
     
-    # สร้างเส้นพยากรณ์อนาคตให้เชื่อมต่อกันสนิท
     forecast_idx = pd.date_range(start=series.index[-1], periods=forecast_months+1, freq='MS')
     forecast_val = np.concatenate([[series.values[-1]], forecast_arima.values])
     
     plt.plot(forecast_idx, forecast_val, 
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
-             label=f'ARIMA {best_order} Forecast (Next 5 years)', linewidth=1.5)
+             label=f'Forecast (Next 5 years)', linewidth=1.5)
 
-    # ตกแต่งกราฟ
-    plt.title(f'MDR Pattern Prediction: {target_drug_name}', fontsize=13, pad=15)
+    plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
+              fontsize=14, fontweight='bold', pad=30) 
+    plt.text(0.5, 1.03, f'Model: ARIMA | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
+             fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
@@ -114,24 +112,38 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model", "a_baumannii_ur.csv") 
+file_path = os.path.join("MDR", "model","By_specimen", "k_pneumoniae_bl.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
     
+    # 1. เตรียมข้อมูล Wide Format
     pivot_df = df.pivot_table(index=['year', 'month'], columns='Resistant_Drug_Classes', values='percentage')
     
+    # สร้าง Index วันที่ให้สมบูรณ์
     all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
     
-    final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left').fillna(0)
+    # Merge ข้อมูล
+    final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
     final_df.index = all_months
 
-    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
+    # --- [จุดแก้ไข]: เปลี่ยนจาก .fillna(0) เป็น .interpolate() ---
+    # ลบคอลัมน์ year, month ออกเพื่อให้เหลือแค่ค่าตัวเลขที่ต้องการ interpolate
+    final_df = final_df.drop(columns=['year', 'month'])
+    
+    # ทำ Linear Interpolation เพื่อเติมค่าระหว่างจุด
+    final_df = final_df.interpolate(method='linear')
+    
+    # ใช้ bfill และ ffill ในกรณีที่ค่าหัวตารางหรือท้ายตารางว่าง (ซึ่ง interpolate ทำไม่ได้)
+    final_df = final_df.bfill().ffill()
+    # --------------------------------------------------------
+
+    target_drug = 'CEPHEMS, FLUOROQUINOLONES, FOLATE PATHWAY ANTAGONISTS, PENICILLINS, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting_arima(series_data, "Acinetobacter baumannii")
+        run_mdr_forecasting_arima(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
 else:
