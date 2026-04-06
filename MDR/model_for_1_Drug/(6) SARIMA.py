@@ -144,7 +144,7 @@ def run_mdr_forecasting(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # [UPDATE] ปรับ Path ให้ตรงกับไฟล์ S. aureus ของคุณ
-file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "k_pneumoniae_out.csv") 
+file_path = os.path.join("MDR", "model_for_1_Drug", "Specimen", "e_coli_sp.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -175,12 +175,12 @@ if os.path.exists(file_path):
     final_df = final_df.bfill().ffill() 
 
     # [UPDATE] ระบุชื่อยาที่ต้องการวิเคราะห์
-    target_drug = 'imipenem'
+    target_drug = 'cefepime'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
         # [UPDATE] เปลี่ยนชื่อให้สื่อความหมายตรงกับไฟล์ข้อมูล S. aureus
-        run_mdr_forecasting(series_data, f"Klebsiella pneumoniae to {target_drug}")
+        run_mdr_forecasting(series_data, f"Escherichia coli to {target_drug}")
     else:
         print(f"❌ ไม่พบชื่อยา '{target_drug}' ในข้อมูล")
         print(f"รายชื่อยาที่มีทั้งหมดในไฟล์คือ: {list(final_df.columns)}")

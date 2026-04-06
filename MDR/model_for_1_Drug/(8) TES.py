@@ -189,7 +189,7 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
 # ==========================================
 
 # [UPDATE] เปลี่ยน Path ให้ตรงกับไฟล์ S. aureus
-file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "k_pneumoniae_out.csv") 
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_icu.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -219,11 +219,11 @@ if os.path.exists(file_path):
     final_df = final_df.bfill().ffill()
 
     # [UPDATE] ระบุชื่อยาที่ต้องการวิเคราะห์
-    target_drug = 'cefuroxime'
+    target_drug = 'cefepime'
 
     if target_drug in final_df.columns:
         # [UPDATE] ปรับชื่อ Title ในกราฟ
-        run_mdr_forecasting_tes(final_df[target_drug], f"Klebsiella pneumoniae to {target_drug}")
+        run_mdr_forecasting_tes(final_df[target_drug], f"Escherichia coli to {target_drug}")
     else:
         print(f"❌ ไม่พบชื่อยา '{target_drug}' ในข้อมูล")
         print(f"รายชื่อยาที่มีทั้งหมด: {list(final_df.columns)}")

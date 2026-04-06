@@ -230,7 +230,7 @@ def run_model_showdown(series, target_title):
 # 3. โหลดข้อมูลและรัน Showdown สำหรับรายชื่อยา
 # ==========================================
 
-file_path = os.path.join("MDR", "model_for_1_Drug", "Specimen", "e_coli_bl.csv") 
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_out.csv") 
 
 if os.path.exists(file_path):
 
@@ -258,7 +258,7 @@ if os.path.exists(file_path):
     # ==========================================
     # 📌 ระบุชื่อยาที่ต้องการวิเคราะห์ตรงนี้
     # ==========================================
-    target_drug = 'ceftriaxone' # สามารถเปลี่ยนเป็น 'Oxacillin', 'Clindamycin' ฯลฯ
+    target_drug = 'cefuroxime' # สามารถเปลี่ยนเป็น 'Oxacillin', 'Clindamycin' ฯลฯ
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]

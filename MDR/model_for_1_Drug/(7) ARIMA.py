@@ -121,7 +121,7 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
-file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "k_pneumoniae_in.csv") 
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_icu.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -157,7 +157,7 @@ if os.path.exists(file_path):
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
         # [UPDATE] ปรับชื่อใน Title กราฟให้ตรงกับไฟล์ S. aureus
-        run_mdr_forecasting_arima(series_data, f"Klebsiella pneumoniae to {target_drug}")
+        run_mdr_forecasting_arima(series_data, f"Escherichia coli to {target_drug}")
     else:
         print(f"❌ ไม่พบชื่อยา '{target_drug}' ในข้อมูล")
         print(f"รายชื่อยาที่มีทั้งหมด: {list(final_df.columns)}")

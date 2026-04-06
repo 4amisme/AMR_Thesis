@@ -195,7 +195,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการโหลดข้อมูลและการจัดการ Missing Values
 # ==========================================
 
-file_path = os.path.join("MDR", "model_for_1_Drug", "Specimen", "e_coli_bl.csv") 
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_out.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -223,7 +223,7 @@ if os.path.exists(file_path):
     final_df = final_df.bfill().ffill()
 
     # [UPDATE] เปลี่ยนเป็นชื่อยาที่คุณมีใน Dataset
-    target_drug = 'ceftriaxone' # สามารถแก้เป็นชื่อยาอื่นได้ เช่น 'Oxacillin', 'Vancomycin'
+    target_drug = 'cefuroxime' # สามารถแก้เป็นชื่อยาอื่นได้ เช่น 'Oxacillin', 'Vancomycin'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
