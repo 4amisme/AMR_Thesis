@@ -46,7 +46,11 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     ax2.set_title(f'PACF: {target_drug_name}')
     plt.show()
 
+<<<<<<< HEAD
     # --- [C] Auto-ARIMA Parameter Tuning (อัปเดตใหม่) ---
+=======
+    # --- [C] Auto-ARIMA Parameter Tuning ---
+>>>>>>> Pammy
     print("\n[กำลังค้นหาค่า Parameter ที่ดีที่สุด (Full Grid Search)...]")
     
     # ปรับจูน auto_arima เพื่อลด RMSE/WAPE สำหรับข้อมูลขนาดเล็ก
@@ -73,13 +77,25 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     
     print("\n--- 1. Evaluating Model Performance (Train/Test) ---")
     model_eval = ARIMA(train_data, order=best_order).fit()
+<<<<<<< HEAD
     test_pred_arima = model_eval.forecast(steps=len(test_data))
+=======
+    
+    # [UPDATE] ล็อกค่าพยากรณ์ไม่ให้เกิน 0-100%
+    test_pred_arima = model_eval.forecast(steps=len(test_data)).clip(0, 100)
+>>>>>>> Pammy
     rmse, wape = calculate_metrics(test_data, test_pred_arima)
     print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
 
     print("\n--- 2. Forecasting Real Future (100% Data) ---")
     final_model = ARIMA(series, order=best_order).fit()
+<<<<<<< HEAD
     forecast_arima = final_model.forecast(steps=forecast_months)
+=======
+    
+    # [UPDATE] ล็อกค่าพยากรณ์อนาคตไม่ให้เกิน 0-100%
+    forecast_arima = final_model.forecast(steps=forecast_months).clip(0, 100)
+>>>>>>> Pammy
 
     # --- [NEW] Plotting Residual Diagnostics ---
     print("\n--- 3. Plotting Residual Diagnostics ---")
@@ -98,14 +114,24 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
     
     plt.plot(forecast_idx, forecast_val, 
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
+<<<<<<< HEAD
              label=f'Forecast (Next 5 years)', linewidth=1.5)
 
     plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
               fontsize=14, fontweight='bold', pad=30) 
+=======
+             label=f'Forecast (Next {forecast_months//12} years)', linewidth=1.5)
+
+    plt.title(f'{target_drug_name} Forecast', fontsize=14, fontweight='bold', pad=30) 
+>>>>>>> Pammy
     plt.text(0.5, 1.03, f'Model: ARIMA | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
              fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
+<<<<<<< HEAD
+=======
+    plt.ylim(0, max(100, series.max() + 5)) # [UPDATE] ล็อกแกน Y ให้ครอบคลุมสเกลเปอร์เซ็นต์
+>>>>>>> Pammy
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
     plt.legend(loc='upper left')
@@ -117,13 +143,27 @@ def run_mdr_forecasting_arima(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
+<<<<<<< HEAD
 file_path = os.path.join("MDR", "model","By_specimen", "s_aureus_bl.csv") 
+=======
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_icu.csv") 
+>>>>>>> Pammy
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
     
+<<<<<<< HEAD
     # 1. เตรียมข้อมูล Wide Format
     pivot_df = df.pivot_table(index=['year', 'month'], columns='Resistant_Drug_Classes', values='percentage')
+=======
+    # [UPDATE] เปลี่ยนเป็น resistant_drug_name และใช้ aggfunc='mean'
+    pivot_df = df.pivot_table(
+        index=['year', 'month'], 
+        columns='resistant_drug_name', 
+        values='percentage',
+        aggfunc='mean'
+    )
+>>>>>>> Pammy
     
     # สร้าง Index วันที่ให้สมบูรณ์
     all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
@@ -139,6 +179,7 @@ if os.path.exists(file_path):
     # ทำ Linear Interpolation เพื่อเติมค่าระหว่างจุด
     final_df = final_df.interpolate(method='linear')
     
+<<<<<<< HEAD
     # ใช้ bfill และ ffill ในกรณีที่ค่าหัวตารางหรือท้ายตารางว่าง (ซึ่ง interpolate ทำไม่ได้)
     final_df = final_df.bfill().ffill()
 
@@ -150,5 +191,20 @@ if os.path.exists(file_path):
         run_mdr_forecasting_arima(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
+=======
+    # ใช้ bfill และ ffill ในกรณีที่ค่าหัวตารางหรือท้ายตารางว่าง
+    final_df = final_df.bfill().ffill()
+
+    # [UPDATE] ระบุชื่อยาที่ต้องการวิเคราะห์ให้ตรงกับข้อมูลที่มี
+    target_drug = 'cefuroxime' 
+
+    if target_drug in final_df.columns:
+        series_data = final_df[target_drug]
+        # [UPDATE] ปรับชื่อใน Title กราฟให้ตรงกับไฟล์ S. aureus
+        run_mdr_forecasting_arima(series_data, f"Escherichia coli to {target_drug}")
+    else:
+        print(f"❌ ไม่พบชื่อยา '{target_drug}' ในข้อมูล")
+        print(f"รายชื่อยาที่มีทั้งหมด: {list(final_df.columns)}")
+>>>>>>> Pammy
 else:
     print(f"ไม่พบไฟล์ข้อมูลที่: {file_path}")

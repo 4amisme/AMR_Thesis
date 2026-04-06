@@ -13,7 +13,11 @@ from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.holtwinters import ExponentialSmoothing, SimpleExpSmoothing
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error
+<<<<<<< HEAD
 from sklearn.model_selection import TimeSeriesSplit, RandomizedSearchCV # <--- อัปเดตเพิ่ม RandomizedSearchCV
+=======
+from sklearn.model_selection import TimeSeriesSplit, RandomizedSearchCV
+>>>>>>> Pammy
 
 # ปิดการแจ้งเตือน
 warnings.filterwarnings("ignore")
@@ -38,9 +42,14 @@ def create_xgb_features(series, lags=12):
     return df.drop(columns=[col]), df[col]
 
 def grid_search_tes(train_data):
+<<<<<<< HEAD
     """[อัปเดต] ค้นหาพารามิเตอร์ TES ด้วย AICc"""
     trend_opts = ['add']
     seasonal_opts = ['add', None] # ป้องกัน Error เวลาข้อมูลเป็น 0
+=======
+    trend_opts = ['add']
+    seasonal_opts = ['add', None]
+>>>>>>> Pammy
     damped_opts = [True, False]
     
     best_aicc = float('inf')
@@ -59,7 +68,10 @@ def grid_search_tes(train_data):
     return best_config if best_config else ('add', 'add', False)
 
 def grid_search_ses(train_data):
+<<<<<<< HEAD
     """[เพิ่มใหม่] ค้นหาพารามิเตอร์ Alpha และ Init ของ SES ด้วย AICc"""
+=======
+>>>>>>> Pammy
     best_aicc = float('inf')
     best_alpha, best_init = None, None
     alphas = np.arange(0.01, 1.0, 0.05)
@@ -85,9 +97,15 @@ def grid_search_ses(train_data):
 # 2. ฟังก์ชันหลัก: ศึกประชัน 5 โมเดล (Full Option)
 # ==========================================
 
+<<<<<<< HEAD
 def run_model_showdown(series, target_drug_name):
     print(f"\n{'='*60}")
     print(f"🚀 MODEL SHOWDOWN (Full Option): {target_drug_name}")
+=======
+def run_model_showdown(series, target_title):
+    print(f"\n{'='*60}")
+    print(f"🚀 MODEL SHOWDOWN (Full Option): {target_title}")
+>>>>>>> Pammy
     print(f"{'='*60}\n")
 
     # --- การแบ่งข้อมูลมาตรฐาน สำหรับ 4 โมเดลแรก ---
@@ -111,7 +129,12 @@ def run_model_showdown(series, target_drug_name):
     )
     sarima_eval = SARIMAX(train_data_std, order=sarima_auto.order, seasonal_order=sarima_auto.seasonal_order,
                           enforce_stationarity=False, enforce_invertibility=False).fit(disp=False)
+<<<<<<< HEAD
     pred_sarima = sarima_eval.forecast(steps=len(test_data_std))
+=======
+    # Clip ผลลัพธ์ให้อยู่ในช่วง 0-100%
+    pred_sarima = sarima_eval.forecast(steps=len(test_data_std)).clip(0, 100)
+>>>>>>> Pammy
     rmse, wape = calculate_metrics(test_data_std, pred_sarima)
     results.append({'Model': 'SARIMA', 'RMSE': rmse, 'WAPE (%)': wape})
     predictions['SARIMA'] = pred_sarima
@@ -126,7 +149,11 @@ def run_model_showdown(series, target_drug_name):
         trace=False, n_jobs=-1, information_criterion='aicc'
     )
     arima_eval = ARIMA(train_data_std, order=arima_auto.order).fit()
+<<<<<<< HEAD
     pred_arima = arima_eval.forecast(steps=len(test_data_std))
+=======
+    pred_arima = arima_eval.forecast(steps=len(test_data_std)).clip(0, 100)
+>>>>>>> Pammy
     rmse, wape = calculate_metrics(test_data_std, pred_arima)
     results.append({'Model': 'ARIMA', 'RMSE': rmse, 'WAPE (%)': wape})
     predictions['ARIMA'] = pred_arima
@@ -137,7 +164,11 @@ def run_model_showdown(series, target_drug_name):
     best_t, best_s, best_d = grid_search_tes(train_data_std)
     sp = 12 if best_s is not None else None
     tes_eval = ExponentialSmoothing(train_data_std, trend=best_t, seasonal=best_s, seasonal_periods=sp, damped_trend=best_d, initialization_method="estimated").fit(optimized=True)
+<<<<<<< HEAD
     pred_tes = tes_eval.forecast(len(test_data_std))
+=======
+    pred_tes = tes_eval.forecast(len(test_data_std)).clip(0, 100)
+>>>>>>> Pammy
     rmse, wape = calculate_metrics(test_data_std, pred_tes)
     results.append({'Model': 'TES', 'RMSE': rmse, 'WAPE (%)': wape})
     predictions['TES'] = pred_tes
@@ -147,7 +178,11 @@ def run_model_showdown(series, target_drug_name):
     print("[4/5] Training SES...")
     best_alpha, best_init = grid_search_ses(train_data_std)
     ses_eval = SimpleExpSmoothing(train_data_std, initialization_method=best_init).fit(smoothing_level=best_alpha, optimized=False)
+<<<<<<< HEAD
     pred_ses = ses_eval.forecast(len(test_data_std))
+=======
+    pred_ses = ses_eval.forecast(len(test_data_std)).clip(0, 100)
+>>>>>>> Pammy
     rmse, wape = calculate_metrics(test_data_std, pred_ses)
     results.append({'Model': 'SES', 'RMSE': rmse, 'WAPE (%)': wape})
     predictions['SES'] = pred_ses
@@ -186,7 +221,11 @@ def run_model_showdown(series, target_drug_name):
     xgb_eval.fit(X_train, y_train)
     
     pred_xgb_raw = xgb_eval.predict(X_test)
+<<<<<<< HEAD
     pred_xgb = pd.Series(pred_xgb_raw, index=X_test.index)
+=======
+    pred_xgb = pd.Series(pred_xgb_raw, index=X_test.index).clip(0, 100)
+>>>>>>> Pammy
     rmse, wape = calculate_metrics(y_test, pred_xgb)
     results.append({'Model': 'XGBoost', 'RMSE': rmse, 'WAPE (%)': wape})
     predictions['XGBoost'] = pred_xgb
@@ -218,15 +257,23 @@ def run_model_showdown(series, target_drug_name):
 
     plt.axvline(x=test_data_std.index[0], color='gray', linestyle='--', alpha=0.5, label='Train/Test Split')
     
+<<<<<<< HEAD
     plt.title(f'Test Set Forecasting Comparison: {target_drug_name}', fontsize=14, pad=15)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
+=======
+    plt.title(f'Test Set Forecasting Comparison: {target_title}', fontsize=14, pad=15)
+    plt.xlabel('Year')
+    plt.ylabel('Resistance Percentage (%R)')
+    plt.ylim(0, max(100, series.max() + 5)) # กำหนดแกน Y ให้ครอบคลุม 0-100 อย่างสวยงาม
+>>>>>>> Pammy
     plt.legend(loc='upper left', bbox_to_anchor=(1.02, 1), borderaxespad=0.)
     plt.grid(True, which='both', linestyle='-', alpha=0.3)
     plt.tight_layout()
     plt.show()
 
 # ==========================================
+<<<<<<< HEAD
 # 3. โหลดข้อมูลและรัน Showdown
 # ==========================================
 
@@ -235,6 +282,25 @@ file_path = os.path.join("MDR", "model_for_1_Drug","All Data", "pseudomonas_aeru
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
     pivot_df = df.pivot_table(index=['year', 'month'], columns='Resistant_Drug_Classes', values='percentage')
+=======
+# 3. โหลดข้อมูลและรัน Showdown สำหรับรายชื่อยา
+# ==========================================
+
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_out.csv") 
+
+if os.path.exists(file_path):
+
+    df = pd.read_csv(file_path)
+    
+    # [อัปเดต] ใช้ resistant_drug_name และหาค่าเฉลี่ยหากมีหลายรายการในเดือนเดียวกัน
+    pivot_df = df.pivot_table(
+        index=['year', 'month'], 
+        columns='resistant_drug_name', 
+        values='percentage',
+        aggfunc='mean'
+    )
+    
+>>>>>>> Pammy
     all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
     
@@ -242,6 +308,7 @@ if os.path.exists(file_path):
     final_df.index = all_months
     final_df = final_df.drop(columns=['year', 'month'])
     
+<<<<<<< HEAD
     final_df = final_df.interpolate(method='linear')
     final_df = final_df.bfill().ffill()
 
@@ -252,5 +319,23 @@ if os.path.exists(file_path):
         run_model_showdown(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
+=======
+    # จัดการ Missing Values
+    final_df = final_df.interpolate(method='linear')
+    final_df = final_df.bfill().ffill()
+
+    # ==========================================
+    # 📌 ระบุชื่อยาที่ต้องการวิเคราะห์ตรงนี้
+    # ==========================================
+    target_drug = 'cefuroxime' # สามารถเปลี่ยนเป็น 'Oxacillin', 'Clindamycin' ฯลฯ
+
+    if target_drug in final_df.columns:
+        series_data = final_df[target_drug]
+        # รันโมเดลพร้อมตั้งชื่อกราฟให้สื่อความหมาย
+        run_model_showdown(series_data, f"Escherichia coli {target_drug}")
+    else:
+        print(f"❌ ไม่พบชื่อยา '{target_drug}' ในข้อมูล")
+        print(f"รายชื่อยาที่มีทั้งหมดในไฟล์: {list(final_df.columns)}")
+>>>>>>> Pammy
 else:
     print(f"ไม่พบไฟล์ข้อมูลที่: {file_path}")

@@ -7,7 +7,11 @@ from statsmodels.tsa.holtwinters import SimpleExpSmoothing
 from sklearn.metrics import mean_squared_error
 import warnings
 
+<<<<<<< HEAD
 # --- [NEW] เพิ่ม Import สำหรับทำ Residual Plot ---
+=======
+# --- เพิ่ม Import สำหรับทำ Residual Plot ---
+>>>>>>> Pammy
 import statsmodels.api as sm
 import scipy.stats as stats
 from statsmodels.graphics.tsaplots import plot_acf
@@ -87,7 +91,12 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
     print("\n--- 1. Evaluating Model Performance (Train/Test) ---")
     model_eval = SimpleExpSmoothing(train_data, initialization_method=best_init).fit(smoothing_level=best_alpha, optimized=False)
     
+<<<<<<< HEAD
     test_pred_ses = model_eval.forecast(len(test_data))
+=======
+    # [UPDATE] ล็อกค่าพยากรณ์ 0-100%
+    test_pred_ses = model_eval.forecast(len(test_data)).clip(0, 100)
+>>>>>>> Pammy
     rmse, wape = calculate_metrics(test_data, test_pred_ses)
     print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
 
@@ -96,7 +105,12 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
     final_model = SimpleExpSmoothing(series, initialization_method=best_init).fit(smoothing_level=best_alpha, optimized=False)
     
     # ทำนายล่วงหน้า 5 ปี (หมายเหตุ: SES จะพยากรณ์เป็นเส้นตรงเสมอเนื่องจากไม่มี Trend)
+<<<<<<< HEAD
     forecast_ses = final_model.forecast(forecast_months)
+=======
+    # [UPDATE] ล็อกค่าพยากรณ์ 0-100%
+    forecast_ses = final_model.forecast(forecast_months).clip(0, 100)
+>>>>>>> Pammy
 
     # --- [NEW] Plotting Residual Diagnostics (Manual for SES) ---
     print("\n--- 3. Plotting Residual Diagnostics ---")
@@ -146,14 +160,24 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
     
     plt.plot(conn_idx, conn_val, 
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
+<<<<<<< HEAD
              label=f'Forecast (Next 5 years)', linewidth=1.5)
 
     plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
               fontsize=14, fontweight='bold', pad=30) 
+=======
+             label=f'Forecast (Next {forecast_months//12} years)', linewidth=1.5)
+
+    plt.title(f'{target_drug_name} Forecast', fontsize=14, fontweight='bold', pad=30) 
+>>>>>>> Pammy
     plt.text(0.5, 1.03, f'Model: SES | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
              fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
+<<<<<<< HEAD
+=======
+    plt.ylim(0, max(100, series.max() + 5)) # [UPDATE] ล็อกแกน Y ให้อยู่ในสเกลที่สวยงาม
+>>>>>>> Pammy
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
     plt.legend(loc='upper left')
@@ -165,12 +189,26 @@ def run_mdr_forecasting_ses(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
+<<<<<<< HEAD
 file_path = os.path.join("MDR", "model","By_specimen", "s_aureus_bl.csv") 
+=======
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_in.csv") 
+>>>>>>> Pammy
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
     
+<<<<<<< HEAD
     pivot_df = df.pivot_table(index=['year', 'month'], columns='Resistant_Drug_Classes', values='percentage')
+=======
+    # [UPDATE] ใช้ resistant_drug_name และหาค่าเฉลี่ย
+    pivot_df = df.pivot_table(
+        index=['year', 'month'], 
+        columns='resistant_drug_name', 
+        values='percentage',
+        aggfunc='mean'
+    )
+>>>>>>> Pammy
     
     all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
@@ -183,6 +221,7 @@ if os.path.exists(file_path):
     
     # ใช้ Linear Interpolation เพื่อประมาณค่าเดือนที่หายไปตามแนวโน้ม
     final_df = final_df.interpolate(method='linear')
+<<<<<<< HEAD
     
     # ใช้ bfill และ ffill เพื่อจัดการกรณีค่าว่างที่หัวและท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
@@ -195,5 +234,19 @@ if os.path.exists(file_path):
         run_mdr_forecasting_ses(series_data, "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยา: {target_drug}")
+=======
+    final_df = final_df.bfill().ffill()
+
+    # [UPDATE] กำหนดชื่อยาที่ต้องการวิเคราะห์
+    target_drug = 'cefuroxime' 
+
+    if target_drug in final_df.columns:
+        series_data = final_df[target_drug]
+        # [UPDATE] ปรับชื่อให้ตรงกับไฟล์เชื้อ
+        run_mdr_forecasting_ses(series_data, f"Escherichia coli to {target_drug}")
+    else:
+        print(f"❌ ไม่พบชื่อยา: '{target_drug}' ในข้อมูล")
+        print(f"รายชื่อยาที่มี: {list(final_df.columns)}")
+>>>>>>> Pammy
 else:
     print(f"ไม่พบไฟล์ข้อมูลที่: {file_path}")

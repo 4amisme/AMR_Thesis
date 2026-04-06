@@ -88,8 +88,14 @@ MDR/DrugClass2/AllYears_MDR_Pattern.csv
 >>>>>>> origin/main
 >>>>>>> main
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2e4d58131f943cd815c6cd28b314a1937f0270df
 >>>>>>> 6621f73a336dc3ca83256de3a5bb330d93fbb61c
+=======
+MDR/model_for_1_Drug/AllYears_DrugClass_Exploded.csv
+MDR/DrugClass2/AllYears_DrugClass_tested.csv
+MDR/DrugClass2/AllYears_SingleClass_Pattern.csv
+>>>>>>> Pammy
 =======
 MDR/model_for_1_Drug/AllYears_DrugClass_Exploded.csv
 MDR/DrugClass2/AllYears_DrugClass_tested.csv

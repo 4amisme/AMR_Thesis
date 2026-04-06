@@ -29,7 +29,11 @@ def calculate_metrics(y_true, y_pred):
 
 def grid_search_tes(train_data):
     """ทำ Parameter Tuning เพื่อหา Configuration ที่ดีที่สุดด้วยเกณฑ์ AICc"""
+<<<<<<< HEAD
     # [UPDATE] ล็อก Trend เป็น 'add' ตามที่ต้องการ
+=======
+    # ล็อก Trend เป็น 'add'
+>>>>>>> Pammy
     trend_opts = ['add']           
     # ตัด 'mul' ออกจาก Seasonal เพื่อป้องกัน Mathematical Error เมื่อข้อมูลเป็น 0
     seasonal_opts = ['add', None]  
@@ -109,7 +113,12 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
         train_data, trend=best_t, seasonal=best_s, seasonal_periods=sp, damped_trend=best_d, initialization_method="estimated"
     ).fit(optimized=True)
     
+<<<<<<< HEAD
     test_pred_tes = model_eval.forecast(len(test_data))
+=======
+    # [UPDATE] ล็อกค่าพยากรณ์ไม่ให้เกิน 0-100%
+    test_pred_tes = model_eval.forecast(len(test_data)).clip(0, 100)
+>>>>>>> Pammy
     rmse, wape = calculate_metrics(test_data, test_pred_tes)
     print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
 
@@ -118,7 +127,12 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
         series, trend=best_t, seasonal=best_s, seasonal_periods=sp, damped_trend=best_d, initialization_method="estimated"
     ).fit(optimized=True)
     
+<<<<<<< HEAD
     forecast_tes = final_model.forecast(forecast_months)
+=======
+    # [UPDATE] ล็อกค่าพยากรณ์อนาคตไม่ให้เกิน 0-100%
+    forecast_tes = final_model.forecast(forecast_months).clip(0, 100)
+>>>>>>> Pammy
 
     # --- [NEW] Plotting Residual Diagnostics (Manual for TES) ---
     print("\n--- 3. Plotting Residual Diagnostics ---")
@@ -167,14 +181,24 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
     
     plt.plot(conn_idx, conn_val, 
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
+<<<<<<< HEAD
              label=f'Forecast (Next 5 years)', linewidth=1.5)
 
     plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
               fontsize=14, fontweight='bold', pad=30) 
+=======
+             label=f'Forecast (Next {forecast_months//12} years)', linewidth=1.5)
+
+    plt.title(f'{target_drug_name} Forecast', fontsize=14, fontweight='bold', pad=30) 
+>>>>>>> Pammy
     plt.text(0.5, 1.03, f'Model: TES | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
              fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
+<<<<<<< HEAD
+=======
+    plt.ylim(0, max(100, series.max() + 5)) # [UPDATE] ล็อกแกน Y ให้ครอบคลุมสเกลเปอร์เซ็นต์
+>>>>>>> Pammy
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
     plt.legend(loc='upper left')
@@ -186,12 +210,27 @@ def run_mdr_forecasting_tes(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการรันข้อมูล
 # ==========================================
 
+<<<<<<< HEAD
 file_path = os.path.join("MDR", "model","All Data", "pseudomonas_aeruginosa_.csv") 
+=======
+# [UPDATE] เปลี่ยน Path ให้ตรงกับไฟล์ S. aureus
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_icu.csv") 
+>>>>>>> Pammy
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
     
+<<<<<<< HEAD
     pivot_df = df.pivot_table(index=['year', 'month'], columns='Resistant_Drug_Classes', values='percentage')
+=======
+    # [UPDATE] ใช้ resistant_drug_name และหาค่าเฉลี่ย
+    pivot_df = df.pivot_table(
+        index=['year', 'month'], 
+        columns='resistant_drug_name', 
+        values='percentage',
+        aggfunc='mean'
+    )
+>>>>>>> Pammy
     
     all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
@@ -209,11 +248,23 @@ if os.path.exists(file_path):
     # เก็บตกกรณีค่าว่างที่หัวหรือท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
 
+<<<<<<< HEAD
     target_drug = 'AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         run_mdr_forecasting_tes(final_df[target_drug], "Pseudomonas aeruginosa")
     else:
         print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
+=======
+    # [UPDATE] ระบุชื่อยาที่ต้องการวิเคราะห์
+    target_drug = 'cefepime'
+
+    if target_drug in final_df.columns:
+        # [UPDATE] ปรับชื่อ Title ในกราฟ
+        run_mdr_forecasting_tes(final_df[target_drug], f"Escherichia coli to {target_drug}")
+    else:
+        print(f"❌ ไม่พบชื่อยา '{target_drug}' ในข้อมูล")
+        print(f"รายชื่อยาที่มีทั้งหมด: {list(final_df.columns)}")
+>>>>>>> Pammy
 else:
     print(f"ไม่พบไฟล์ข้อมูลที่: {file_path}")
