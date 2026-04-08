@@ -6,7 +6,6 @@ import os
 import warnings
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error
-# --- [UPDATE] เปลี่ยนจาก GridSearchCV เป็น RandomizedSearchCV ---
 from sklearn.model_selection import TimeSeriesSplit, RandomizedSearchCV 
 
 import statsmodels.api as sm
@@ -67,7 +66,6 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
     
     tscv = TimeSeriesSplit(n_splits=3) 
     
-    # --- [UPDATE] เพิ่มขอบเขต Parameter และกลุ่ม Regularization ---
     param_distributions = {
         'n_estimators': [100, 300, 500, 800, 1000],
         'max_depth': [2, 3, 4, 5, 6],
@@ -103,7 +101,8 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
     model_eval = XGBRegressor(**best_params, objective='reg:squarederror', random_state=42)
     model_eval.fit(X_train, y_train)
     
-    test_pred = model_eval.predict(X_test)
+    # [UPDATE] ล็อกค่าพยากรณ์ไม่ให้เกิน 0-100%
+    test_pred = np.clip(model_eval.predict(X_test), 0, 100)
     rmse, wape = calculate_metrics(y_test, test_pred)
     print(f"Evaluation on Test Set -> RMSE: {rmse}, WAPE: {wape}%")
 
@@ -113,7 +112,8 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
 
     # --- 3. Plotting Residual Diagnostics ---
     print("\n--- 3. Plotting Residual Diagnostics ---")
-    y_pred_all = model_final.predict(X)
+    # [UPDATE] ล็อกค่าพยากรณ์ไม่ให้เกิน 0-100% สำหรับการคำนวณ Residuals
+    y_pred_all = np.clip(model_final.predict(X), 0, 100)
     residuals = y - y_pred_all
     
     fig_diag, axes = plt.subplots(2, 2, figsize=(15, 8))
@@ -146,7 +146,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
     plt.tight_layout()
     plt.show()
 
-    # --- [D] การพยากรณ์อนาคต 5 ปี (Recursive Forecasting) ---
+    # --- [D] การพยากรณ์อนาคต (Recursive Forecasting) ---
     last_window = series.values[-12:].tolist() 
     future_forecast = []
     
@@ -156,8 +156,10 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
     for i in range(forecast_months):
         feature_values = last_window[::-1] + [forecast_dates[i].month]
         input_df = pd.DataFrame([feature_values], columns=X.columns)
-        pred = model_final.predict(input_df)[0]
-        pred = max(0, pred) # ป้องกันค่าติดลบ
+        
+        # [UPDATE] ล็อกค่าให้อยู่ระหว่าง 0 ถึง 100% เท่านั้น
+        pred = np.clip(model_final.predict(input_df)[0], 0, 100)
+        
         future_forecast.append(pred)
         last_window.append(pred)
         last_window.pop(0)
@@ -173,15 +175,15 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
     
     plt.plot(conn_idx, conn_val, 
              color='#e41a1c', marker='o', markersize=4, linestyle='--', 
-             label='Forecast (Next 5 years)', linewidth=1.5)
+             label=f'Forecast (Next {forecast_months//12} years)', linewidth=1.5)
     
-    plt.title(f'{target_drug_name} Multidrug-Resistant Forecast', 
-              fontsize=14, fontweight='bold', pad=30) 
+    plt.title(f'{target_drug_name} Forecast', fontsize=14, fontweight='bold', pad=30) 
     plt.text(0.5, 1.03, f'Model: XGBoost | Evaluation: (RMSE: {rmse:.2f}, WAPE: {wape:.2f}%)', 
              fontsize=11, ha='center', va='bottom', transform=plt.gca().transAxes)
     
     plt.xlabel('Year')
     plt.ylabel('Resistance Percentage (%R)')
+    plt.ylim(0, max(100, series.max() + 5)) # กำหนดสเกลแกน Y ให้ครอบคลุมอย่างน้อย 100%
     plt.gca().xaxis.set_major_locator(mdates.YearLocator())
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
     plt.legend(loc='upper left')
@@ -193,16 +195,19 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการโหลดข้อมูลและการจัดการ Missing Values
 # ==========================================
 
-<<<<<<< HEAD
-file_path = os.path.join("MDR", "model","By_specimen", "p_aeruginosa_ur.csv") 
-=======
-file_path = os.path.join("MDR", "model","By_specimen", "s_aureus_bl.csv") 
->>>>>>> 65e6c0133cac1c278f570e351ddd14ff3f03ed29
+file_path = os.path.join("MDR", "model_for_1_Drug", "Ward", "e_coli_out.csv") 
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
     
-    pivot_df = df.pivot_table(index=['year', 'month'], columns='Resistant_Drug_Classes', values='percentage')
+    # [UPDATE] เปลี่ยนเป็น resistant_drug_name และใช้ aggfunc='mean'
+    pivot_df = df.pivot_table(
+        index=['year', 'month'], 
+        columns='resistant_drug_name', 
+        values='percentage',
+        aggfunc='mean'
+    )
+    
     all_months = pd.date_range(start='2015-01-01', end='2024-12-01', freq='MS')
     full_idx = pd.DataFrame({'year': all_months.year, 'month': all_months.month})
     
@@ -210,25 +215,22 @@ if os.path.exists(file_path):
     final_df = pd.merge(full_idx, pivot_df.reset_index(), on=['year', 'month'], how='left')
     final_df.index = all_months
 
-    # ลบคอลัมน์ year/month ออกก่อนทำ interpolate เพื่อให้เหลือเฉพาะคอลัมน์เปอร์เซ็นต์
+    # ลบคอลัมน์ year/month ออกก่อนทำ interpolate
     final_df = final_df.drop(columns=['year', 'month'])
     
-    # ใช้ Linear Interpolation เติมค่าว่างตามแนวโน้มจุดก่อนหน้าและถัดไป
+    # ใช้ Linear Interpolation และ bfill/ffill จัดการค่าว่าง
     final_df = final_df.interpolate(method='linear')
-    
-    # ใช้ bfill และ ffill สำหรับข้อมูลที่ว่างที่หัวหรือท้ายตาราง (ซึ่ง interpolate ทำไม่ได้)
     final_df = final_df.bfill().ffill()
 
-<<<<<<< HEAD
-    target_drug = 'CARBAPENEMS, CEPHEMS, β-LACTAM COMBINATION AGENTS'
-=======
-    target_drug = 'LINCOSAMIDES, MACROLIDES, TETRACYCLINES'
->>>>>>> 65e6c0133cac1c278f570e351ddd14ff3f03ed29
+    # [UPDATE] เปลี่ยนเป็นชื่อยาที่คุณมีใน Dataset
+    target_drug = 'cefuroxime' # สามารถแก้เป็นชื่อยาอื่นได้ เช่น 'Oxacillin', 'Vancomycin'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
-        run_mdr_forecasting_xgb(series_data, "Staphylococcus aureus")
+        # [UPDATE] ปรับชื่อ Title ให้ตรงกับสายพันธุ์ P. aeruginosa
+        run_mdr_forecasting_xgb(series_data, f"Escherichia coli to {target_drug}")
     else:
-        print(f"ไม่พบกลุ่มยาในข้อมูล: {target_drug}")
+        print(f"❌ ไม่พบชื่อยา '{target_drug}' ในข้อมูล")
+        print(f"รายชื่อยาที่มีทั้งหมด: {list(final_df.columns)}")
 else:
     print(f"ไม่พบไฟล์ข้อมูลที่: {file_path}")

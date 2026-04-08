@@ -10,7 +10,7 @@ import warnings
 warnings.simplefilter("ignore")
 
 # 1. กำหนดโฟลเดอร์ที่มีไฟล์ CSV ทั้งหมด
-folder_path = r"C:\AMR_Thesis\MDR\model\By_specimen"
+folder_path = r"C:\AMR_Thesis\MDR\model_1Class\By specimen"
 
 def calculate_metrics(series):
     """ฟังก์ชันคำนวณ ACF Lag 12 และ Seasonal Strength"""

@@ -1,0 +1,16 @@
+﻿organism_full,year,month,spec_type,resistant_drug_name,drug_count,total_rows_in_spec_month,percentage
+Enterococcus faecalis,2020,1,ps,chloramphenicol,2,12,16.67
+Enterococcus faecalis,2020,1,ps,ciprofloxacin,2,12,16.67
+Enterococcus faecalis,2020,1,ps,erythromycin,2,12,16.67
+Enterococcus faecalis,2020,1,ps,levofloxacin,2,12,16.67
+Enterococcus faecalis,2020,1,ps,norfloxacin,2,12,16.67
+Enterococcus faecalis,2020,1,ps,tetracycline,2,12,16.67
+Enterococcus faecalis,2020,2,ps,tetracycline,4,6,66.67
+Enterococcus faecalis,2020,2,ps,,2,6,33.33
+Enterococcus faecalis,2020,3,ps,chloramphenicol,4,26,15.38
+Enterococcus faecalis,2020,3,ps,ciprofloxacin,4,26,15.38
+Enterococcus faecalis,2020,3,ps,erythromycin,4,26,15.38
+Enterococcus faecalis,2020,3,ps,levofloxacin,4,26,15.38
+Enterococcus faecalis,2020,3,ps,norfloxacin,4,26,15.38
+Enterococcus faecalis,2020,3,ps,tetracycline,4,26,15.38
+Enterococcus faecalis,2020,3,ps,penicillin,2,26,7.69
