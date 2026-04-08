@@ -245,7 +245,7 @@ if os.path.exists(file_path):
     final_df = final_df.interpolate(method='linear')
     final_df = final_df.bfill().ffill()
 
-    target_drug = 'CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
+    target_drug = 'CARBAPENEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
