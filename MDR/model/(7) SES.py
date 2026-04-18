@@ -187,11 +187,7 @@ if os.path.exists(file_path):
     # ใช้ bfill และ ffill เพื่อจัดการกรณีค่าว่างที่หัวและท้ายตารางที่ interpolate เข้าไม่ถึง
     final_df = final_df.bfill().ffill()
 
-<<<<<<< HEAD
     target_drug = 'CARBAPENEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS'
-=======
-    target_drug = 'LINCOSAMIDES, MACROLIDES, TETRACYCLINES'
->>>>>>> 65e6c0133cac1c278f570e351ddd14ff3f03ed29
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]

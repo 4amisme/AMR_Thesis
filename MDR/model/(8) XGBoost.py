@@ -193,11 +193,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
 # 3. ส่วนการโหลดข้อมูลและการจัดการ Missing Values
 # ==========================================
 
-<<<<<<< HEAD
 file_path = os.path.join("MDR", "model","By_specimen", "p_aeruginosa_ur.csv") 
-=======
-file_path = os.path.join("MDR", "model","By_specimen", "s_aureus_bl.csv") 
->>>>>>> 65e6c0133cac1c278f570e351ddd14ff3f03ed29
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
@@ -219,11 +215,7 @@ if os.path.exists(file_path):
     # ใช้ bfill และ ffill สำหรับข้อมูลที่ว่างที่หัวหรือท้ายตาราง (ซึ่ง interpolate ทำไม่ได้)
     final_df = final_df.bfill().ffill()
 
-<<<<<<< HEAD
     target_drug = 'CARBAPENEMS, CEPHEMS, β-LACTAM COMBINATION AGENTS'
-=======
-    target_drug = 'LINCOSAMIDES, MACROLIDES, TETRACYCLINES'
->>>>>>> 65e6c0133cac1c278f570e351ddd14ff3f03ed29
 
     if target_drug in final_df.columns:
         series_data = final_df[target_drug]
