@@ -68,3 +68,4 @@ MDR/model_for_1_Drug/AllYears_DrugClass_Exploded.csv
 MDR/DrugClass2/AllYears_DrugClass_tested.csv
 MDR/DrugClass2/AllYears_SingleClass_Pattern.csv
 Correlation/AllYears_Resistance_Full_Analysis.csv
+Correlation/MDR_for_correlation.csv
