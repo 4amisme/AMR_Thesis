@@ -1,0 +1,15 @@
+Category,Factor,Crude OR (cOR),95% CI Lower,95% CI Upper,P-value
+Sex (Ref: F),sex_new_M,1.224,1.213,1.234,< 0.001
+Ward (Ref: OUT),ward_type_new_ICU,1.808,1.783,1.833,< 0.001
+Ward (Ref: OUT),ward_type_new_IN,1.295,1.283,1.306,< 0.001
+Ward (Ref: OUT),ward_type_new_OTH,0.847,0.829,0.865,< 0.001
+Age Group (Ref: 15-24),age_group_<1,0.875,0.825,0.927,< 0.001
+Age Group (Ref: 15-24),age_group_1-4,0.803,0.761,0.847,< 0.001
+Age Group (Ref: 15-24),age_group_5-14,0.782,0.754,0.811,< 0.001
+Age Group (Ref: 15-24),age_group_25-34,1.026,1.002,1.05,0.032
+Age Group (Ref: 15-24),age_group_35-44,1.106,1.084,1.127,< 0.001
+Age Group (Ref: 15-24),age_group_45-54,1.168,1.149,1.188,< 0.001
+Age Group (Ref: 15-24),age_group_55-64,1.231,1.212,1.25,< 0.001
+Age Group (Ref: 15-24),age_group_65-74,1.315,1.296,1.335,< 0.001
+Age Group (Ref: 15-24),age_group_75-84,1.334,1.314,1.355,< 0.001
+Age Group (Ref: 15-24),age_group_85+,1.25,1.227,1.273,< 0.001
