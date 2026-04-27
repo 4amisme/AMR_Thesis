@@ -280,7 +280,7 @@ def run_mdr_forecasting_xgb(series, target_drug_name, forecast_months=60):
 
 if __name__ == "__main__":
     # ปรับ Path ชุดข้อมูลที่จะใช้เปรียบเทียบ (ใช้ชุดเดียวสำหรับทดสอบทุกโมเดล)
-    file_path = os.path.join("MDR", "model","All Data", "staphylococcus_aureus.csv") 
+    file_path = os.path.join("MDR", "model","All Data", "acinetobacter_baumannii.csv") 
     
     if os.path.exists(file_path):
         df = pd.read_csv(file_path)
@@ -296,7 +296,7 @@ if __name__ == "__main__":
         final_df = final_df.interpolate(method='linear')
         final_df = final_df.bfill().ffill()
 
-        target_drug = 'AMINOGLYCOSIDES, FLUOROQUINOLONES, LINCOSAMIDES, MACROLIDES, PENICILLINS'
+        target_drug = 'CARBAPENEMS, CEPHEMS, FOLATE PATHWAY ANTAGONISTS, β-LACTAM COMBINATION AGENTS'
 
         if target_drug in final_df.columns:
             series_data = final_df[target_drug]
