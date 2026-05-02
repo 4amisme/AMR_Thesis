@@ -1,0 +1,4 @@
+organism_full,year,month,spec_type,Resistant_Drug_Classes,pattern_count,total_rows_in_spec_month,percentage
+Enterococcus faecalis,2015,5,bl,"MACROLIDES, PHENICOLS, TETRACYCLINES",1,1,100.0
+Enterococcus faecalis,2020,1,bl,"FLUOROQUINOLONES, MACROLIDES, PHENICOLS, TETRACYCLINES",4,4,100.0
+Enterococcus faecalis,2021,4,bl,"FLUOROQUINOLONES, MACROLIDES, PENICILLINS, TETRACYCLINES",1,1,100.0
