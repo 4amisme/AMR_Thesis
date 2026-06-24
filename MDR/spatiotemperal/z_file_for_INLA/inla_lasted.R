@@ -1,0 +1,516 @@
+library(sf)
+library(dplyr)
+library(spdep)
+library(INLA)
+library(ggplot2)
+library(readr)
+library(stringr)
+
+cat("Loading and preparing spatial map...\n")
+TH <- st_read("Regions_no_province_boundaries.json", quiet = TRUE) %>% 
+  st_transform(., crs = st_crs(24047)) 
+
+health_regions_sf <- TH %>%
+  rename(region_id = HealthRegion) %>% 
+  group_by(region_id) %>%
+  summarize(geometry = st_union(geometry))
+
+thailand_nb <- poly2nb(health_regions_sf, queen = TRUE)
+nb2INLA("thailand_regions.graph", thailand_nb)
+cat("Map prepared successfully!\n\n")
+
+ec <- read_csv("kpn_all_region_spatiotemporal_prepared.csv")
+
+# =======================================================
+# Model 1
+# =======================================================
+amr_formula <- pattern_count ~ 1 + 
+  sin_month + cos_month + 
+  f(region_id, model = "bym", graph = "thailand_regions.graph") + 
+  f(time_id, model = "rw1")
+
+amr_model <- inla(
+  formula = amr_formula,
+  family = "binomial",
+  data = ec, 
+  Ntrials = ec$total_rows_in_region_month, 
+  control.predictor = list(compute = TRUE, link = 1), 
+  control.compute = list(dic = TRUE, waic = TRUE)     
+)
+
+summary(amr_model)
+
+# =======================================================
+# Model 2
+# =======================================================
+amr_formula2 <- pattern_count ~ 1 + 
+  f(region_id, model = "bym", graph = "thailand_regions.graph") + 
+  f(time_id, model = "rw1")
+
+amr_model2 <- inla(
+  formula = amr_formula2,
+  family = "binomial",
+  data = ec, 
+  Ntrials = ec$total_rows_in_region_month, 
+  control.predictor = list(compute = TRUE, link = 1), 
+  control.compute = list(dic = TRUE, waic = TRUE)     
+)
+
+summary(amr_model2)
+
+# =======================================================
+# Plotting the Temporal Trend Line (RW1)
+# =======================================================
+temporal_data <- amr_model$summary.random$time_id
+
+ggplot(temporal_data, aes(x = ID, y = mean)) +
+  geom_ribbon(aes(ymin = `0.025quant`, ymax = `0.975quant`), fill = "blue", alpha = 0.2) +
+  geom_line(color = "darkblue", linewidth = 1) +
+  theme_minimal() +
+  labs(
+    title = "Underlying Temporal Trend of AMR Prevalence (RW1)",
+    subtitle = "Accounting for baseline and seasonal variations",
+    x = "Time ID (Months)",
+    y = "Log-Odds of AMR"
+  )
+
+# =======================================================
+# Plotting the Spatial Risk Map (BYM)
+# =======================================================
+spatial_effect <- amr_model$summary.random$region_id[1:13, ]
+spatial_effect$Relative_Risk <- exp(spatial_effect$mean)
+
+map_data <- left_join(health_regions_sf, spatial_effect, by = c("region_id" = "ID"))
+
+ggplot(data = map_data) +
+  geom_sf(aes(fill = Relative_Risk), color = "white", linewidth = 0.2) +
+  scale_fill_gradient2(
+    low = "blue", mid = "white", high = "red", 
+    midpoint = 1, 
+    name = "Relative Risk"
+  ) +
+  theme_void() +
+  labs(
+    title = "Spatial Distribution of AMR Risk in Thailand",
+    subtitle = "BYM Spatial Random Effect (Red = Higher than national average)"
+  )
+
+# =======================================================
+# Update the formula to include the drug combinations (Model 3)
+# =======================================================
+ec %>% count(Resistant_Drug_Classes, sort = TRUE)
+
+mdr_formula3 <- pattern_count ~ 1 + Resistant_Drug_Classes + 
+  sin_month + cos_month + 
+  f(region_id, model = "bym", graph = "thailand_regions.graph") + 
+  f(time_id, model = "rw1")
+
+mdr_model3 <- inla(
+  formula = mdr_formula3,
+  family = "binomial",
+  data = ec,
+  Ntrials = ec$total_rows_in_region_month,
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute = list(dic = TRUE, waic = TRUE)
+)
+
+summary(mdr_model3)
+
+drug_effects <- mdr_model3$summary.fixed
+drug_effects$OR <- exp(drug_effects$mean)
+
+ggplot(drug_effects[-1, ], aes(x = reorder(rownames(drug_effects[-1, ]), OR), y = OR)) +
+  geom_pointrange(aes(ymin = exp(`0.025quant`), ymax = exp(`0.975quant`))) +
+  coord_flip() +
+  theme_minimal() +
+  labs(
+    title = "Relative Prevalence of MDR Drug Combinations",
+    x = "Drug Combination",
+    y = "Odds Ratio (Relative to Baseline)"
+  )
+
+# =======================================================
+# Stratified Model (Model 4)
+# =======================================================
+ec$drug_group <- as.integer(as.factor(ec$Resistant_Drug_Classes))
+n_groups <- length(unique(ec$drug_group))
+
+stratified_formula <- pattern_count ~ 1 + sin_month + cos_month + 
+  f(region_id, model = "bym", graph = "thailand_regions.graph", 
+    group = drug_group, control.group = list(model = "exchangeable")) + 
+  f(time_id, model = "rw1")
+
+stratified_model <- inla(
+  formula = stratified_formula,
+  family = "binomial",
+  data = ec,
+  Ntrials = total_rows_in_region_month,
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute = list(dic = TRUE, waic = TRUE)
+)
+
+res_spatial <- stratified_model$summary.random$region_id[1:(13 * n_groups), ]
+res_spatial$region_id <- rep(1:13, times = n_groups)
+res_spatial$drug_group <- rep(1:n_groups, each = 13)
+
+drug_names <- data.frame(
+  drug_group = 1:n_groups,
+  Drug_Name = levels(as.factor(ec$Resistant_Drug_Classes))
+)
+
+map_stratified <- left_join(health_regions_sf, res_spatial, by = "region_id") %>%
+  left_join(drug_names, by = "drug_group")
+
+m <- ggplot(data = map_stratified) +
+  geom_sf(aes(fill = exp(mean)), color = "white", linewidth = 0.1) +
+  facet_wrap(~Drug_Name, ncol = 3, labeller = label_wrap_gen(width = 40)) + 
+  scale_fill_gradient2(low = "blue", mid = "white", high = "red", midpoint = 1) +
+  theme_void() +
+  labs(title = "Stratified Spatial Risk by MDR Drug Combination", fill = "Relative Risk")
+print(m)
+
+# =======================================================
+# Forecasting (Model 5)
+# =======================================================
+n_forecast <- 60
+last_time <- max(ec$time_id)
+future_times <- (last_time + 1):(last_time + n_forecast)
+
+forecast_df <- expand.grid(time_id = future_times, region_id = 1:13) %>%
+  mutate(
+    pattern_count = NA,
+    total_rows_in_region_month = mean(ec$total_rows_in_region_month, na.rm = TRUE),
+    month_numeric = ((time_id - 1) %% 12) + 1,
+    sin_month = sin(2 * pi * month_numeric / 12),
+    cos_month = cos(2 * pi * month_numeric / 12)
+  )
+
+full_df_forecast <- bind_rows(ec, forecast_df)
+
+forecast_formula <- pattern_count ~ 1 + sin_month + cos_month + 
+  f(region_id, model = "bym", graph = "thailand_regions.graph") + 
+  f(time_id, model = "rw2") 
+
+res_forecast <- inla(
+  formula = forecast_formula,
+  family = "binomial",
+  data = full_df_forecast,
+  Ntrials = total_rows_in_region_month,
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute = list(dic = TRUE, waic = TRUE)
+)
+
+forecast_trend <- res_forecast$summary.random$time_id
+
+ggplot(forecast_trend, aes(x = ID, y = mean)) +
+  geom_ribbon(aes(ymin = `0.025quant`, ymax = `0.975quant`), fill = "red", alpha = 0.15) +
+  geom_line(color = "darkred", linewidth = 1) +
+  geom_vline(xintercept = last_time, linetype = "dashed", color = "black") +
+  annotate("text", x = last_time - 5, y = 0.1, label = "Historical", hjust = 1) +
+  annotate("text", x = last_time + 5, y = 0.1, label = "Forecast", hjust = 0) +
+  theme_minimal() +
+  labs(title = "15-Year AMR Trend Projection (2015-2029)", x = "Time ID (Months)", y = "Log-Odds of AMR")
+
+# =======================================================
+# For each drug combination (Model 6: Stratified Forecast)
+# =======================================================
+forecast_stratified_df <- expand.grid(
+  time_id = future_times,
+  region_id = 1:13,
+  Resistant_Drug_Classes = unique(ec$Resistant_Drug_Classes)
+) %>%
+  mutate(
+    pattern_count = NA,
+    total_rows_in_region_month = mean(ec$total_rows_in_region_month, na.rm = TRUE),
+    month_numeric = ((time_id - 1) %% 12) + 1,
+    sin_month = sin(2 * pi * month_numeric / 12),
+    cos_month = cos(2 * pi * month_numeric / 12),
+    drug_group = as.integer(as.factor(Resistant_Drug_Classes))
+  )
+
+full_stratified_df <- bind_rows(ec, forecast_stratified_df)
+
+strat_forecast_formula <- pattern_count ~ 1 + Resistant_Drug_Classes + sin_month + cos_month + 
+  f(region_id, model = "bym", graph = "thailand_regions.graph") + 
+  f(time_id, model = "rw2", group = drug_group, control.group = list(model = "exchangeable"))
+
+res_strat_forecast <- inla(
+  formula = strat_forecast_formula,
+  family = "binomial",
+  data = full_stratified_df,
+  Ntrials = total_rows_in_region_month,
+  control.predictor = list(compute = TRUE, link = 1),
+  control.compute = list(dic = TRUE, waic = TRUE) # <--- เพิ่มเพื่อให้คำนวณ DIC/WAIC
+)
+
+# -------------------------------------------------------
+# ⭐ เพิ่มส่วนนี้: เซฟตารางผลการพยากรณ์เพื่อนำไปเขียนแปลผล
+# -------------------------------------------------------
+forecast_export_df <- drug_forecast_panel %>%
+  mutate(
+    Predicted_Percent = mean * 100, # แปลงจากความน่าจะเป็น (0-1) เป็นเปอร์เซ็นต์
+    Pathogen = "Klebsiella pneumoniae",
+    MDR_Pattern = target_drug_name
+  ) %>%
+  # เลือกเฉพาะคอลัมน์ที่จำเป็นไปทำตาราง
+  select(Pathogen, MDR_Pattern, region_id, Year, Predicted_Percent, pct_change, label_text) %>%
+  arrange(region_id, Year) # เรียงลำดับตามเขตสุขภาพและปีให้ดูง่ายๆ
+
+# เซฟเป็นไฟล์ CSV
+write.csv(forecast_export_df, "KPN_3Year_Forecast_Map_Data.csv", row.names = FALSE)
+cat("✅ บันทึกตารางตัวเลขผลการพยากรณ์ลงไฟล์ ABA_3Year_Forecast_Map_Data.csv เรียบร้อย!\n")
+# -------------------------------------------------------
+
+# =======================================================
+# Spatial Prediction for MDR combination 
+# =======================================================
+target_drug_name <- "AMINOGLYCOSIDES, CARBAPENEMS, CEPHEMS, FLUOROQUINOLONES, β-LACTAM COMBINATION AGENTS"
+target_id <- which(levels(as.factor(ec$Resistant_Drug_Classes)) == target_drug_name)
+
+target_months <- c(last_time + 12, last_time + 24, last_time + 36)
+
+drug_forecast_panel <- res_strat_forecast$summary.fitted.values %>%
+  mutate(
+    time_id = full_stratified_df$time_id,
+    region_id = full_stratified_df$region_id,
+    drug_group = full_stratified_df$drug_group
+  ) %>%
+  filter(time_id %in% target_months, drug_group == target_id) %>%
+  mutate(Year = case_when(
+    time_id == target_months[1] ~ "2025 Prediction",
+    time_id == target_months[2] ~ "2026 Prediction",
+    time_id == target_months[3] ~ "2027 Prediction"
+  )) %>%
+  group_by(region_id) %>%
+  mutate(
+    pct_change = (mean - first(mean)) * 100,
+    label_text = sprintf("%+.2f%%", pct_change)
+  )
+
+map_drug_panel <- left_join(health_regions_sf, drug_forecast_panel, by = "region_id")
+
+p_final_drug <- ggplot(data = map_drug_panel) +
+  geom_sf(aes(fill = mean), color = "white", linewidth = 0.1) + 
+  stat_sf_coordinates(aes(label = label_text), 
+                      geom = "text", color = "white", fontface = "bold", size = 2.7) +
+  facet_wrap(~Year, ncol = 3) +
+  scale_fill_viridis_c(
+    option = "plasma", 
+    labels = scales::percent, 
+    name = "MDR Chance",
+    limits = NULL 
+  ) +
+  theme_void() +
+  theme(
+    strip.text = element_text(size = 12, face = "bold"),
+    plot.title = element_text(face = "bold", hjust = 0.5, size = 14) 
+  ) +
+  labs(
+    title = "3-Year Forecast of Acinetobacter baumannii Resistant for MDR Combination"
+  )
+
+print(p_final_drug)
+
+
+#------------------------------- LOOP 5 ORG -----------------------------------#
+
+
+
+library(sf)
+library(dplyr)
+library(spdep)
+library(INLA)
+library(readr)
+library(stringr)
+
+# =======================================================
+# 1. โหลดแผนที่ (ทำครั้งเดียว)
+# =======================================================
+cat("Loading and preparing spatial map...\n")
+TH <- st_read("Regions_no_province_boundaries.json", quiet = TRUE) %>% 
+  st_transform(., crs = st_crs(24047)) 
+
+health_regions_sf <- TH %>%
+  rename(region_id = HealthRegion) %>% 
+  group_by(region_id) %>%
+  summarize(geometry = st_union(geometry))
+
+thailand_nb <- poly2nb(health_regions_sf, queen = TRUE)
+nb2INLA("thailand_regions.graph", thailand_nb)
+cat("Map prepared successfully!\n\n")
+
+# =======================================================
+# 2. กำหนดชื่อยาทั้ง 5 รูปแบบของแต่ละเชื้อ
+# =======================================================
+target_patterns_list <- list(
+  "aba" = list(
+    full_name = "Acinetobacter baumannii",
+    patterns = toupper(c(
+      "Aminoglycosides, Carbapenems, Cephems, Fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",
+      "Aminoglycosides, Carbapenems, Cephems, Fluoroquinolones, β-lactam combination agents",
+      "Carbapenems, Cephems, fluoroquinolones, Folate pathway antagonists, β-lactam combination agents",
+      "Carbapenems, Cephems, Fluoroquinolones, β-lactam combination agents",
+      "Carbapenems, Cephems, Folate pathway antagonists, β-lactam combination agents"
+    ))
+  ),
+  "eco" = list(
+    full_name = "Escherichia coli",
+    patterns = toupper(c(
+      "Cephems, Fluoroquinolones, Folate Pathway Antagonists, Penicillins",
+      "Aminoglycosides, Cephems, Fluoroquinolones, Folate Pathway Antagonists, Penicillins",
+      "Fluoroquinolones, Folate Pathway Antagonists, Penicillins",
+      "Aminoglycosides, Cephems, Fluoroquinolones, Folate Pathway Antagonists, Penicillins, β-Lactam Combination Agents",
+      "Aminoglycosides, Fluoroquinolones, Folate Pathway Antagonists, Penicillins"
+    ))
+  ),
+  "kpn" = list(
+    full_name = "Klebsiella pneumoniae",
+    patterns = toupper(c(
+      "Aminoglycosides, Carbapenems, Cephems, Fluoroquinolones, Folate Pathway Antagonists, Penicillins, β-Lactam Combination Agents",
+      "Cephems, Fluoroquinolones, Folate Pathway Antagonists, Penicillins, β-Lactam Combination Agents",
+      "Aminoglycosides, Cephems, Fluoroquinolones, Folate Pathway Antagonists, Penicillins, β-Lactam Combination Agents",
+      "Carbapenems, Cephems, Fluoroquinolones, Folate Pathway Antagonists, Penicillins, β-Lactam Combination Agents",
+      "Cephems, Fluoroquinolones, Folate Pathway Antagonists, Penicillins"
+    ))
+  ),
+  "pae" = list(
+    full_name = "Pseudomonas aeruginosa",
+    patterns = toupper(c(
+      "Aminoglycosides, Carbapenems, Cephems, Fluoroquinolones, β-Lactam Combination Agents",
+      "Carbapenems, Cephems, Fluoroquinolones, β-Lactam Combination Agents",
+      "Aminoglycosides, Carbapenems, Cephems, Fluoroquinolones",
+      "Carbapenems, Cephems, β-Lactam Combination Agents",
+      "Carbapenems, Fluoroquinolones, β-Lactam Combination Agents"
+    ))
+  ),
+  "sau" = list(
+    full_name = "Staphylococcus aureus",
+    patterns = toupper(c(
+      "Lincosamides, Macrolides, Penicillins, Tetracyclines",
+      "Fluoroquinolones, Lincosamides, Macrolides, Penicillins",
+      "Lincosamides, Macrolides, Tetracyclines",
+      "Aminoglycosides, Fluoroquinolones, Lincosamides, Macrolides, Penicillins, Tetracyclines",
+      "Aminoglycosides, Fluoroquinolones, Lincosamides, Macrolides, Penicillins"
+    ))
+  )
+)
+
+# =======================================================
+# 3. เริ่มลูปพยากรณ์และดึงข้อมูลทีละเชื้อ
+# =======================================================
+for (pathogen_code in names(target_patterns_list)) {
+  
+  full_name <- target_patterns_list[[pathogen_code]]$full_name
+  target_drugs <- target_patterns_list[[pathogen_code]]$patterns
+  
+  cat(sprintf("\n========== เริ่มประมวลผลเชื้อ: %s (%s) ==========\n", toupper(pathogen_code), full_name))
+  
+  # อ่านไฟล์ข้อมูล
+  file_name <- sprintf("%s_all_region_spatiotemporal_prepared.csv", pathogen_code)
+  if(!file.exists(file_name)) {
+    cat(sprintf("⚠️ ไม่พบไฟล์ %s ข้ามไปวิเคราะห์เชื้อถัดไป\n", file_name))
+    next
+  }
+  
+  ec <- read_csv(file_name, show_col_types = FALSE)
+  ec$Resistant_Drug_Classes <- toupper(str_trim(as.character(ec$Resistant_Drug_Classes)))
+  
+  # กรองเฉพาะ 5 Pattern
+  df_filtered <- ec %>% filter(Resistant_Drug_Classes %in% target_drugs)
+  if(nrow(df_filtered) == 0) {
+    cat("⚠️ ไม่พบข้อมูล 5 Pattern ในไฟล์ ข้ามเชื้อนี้\n")
+    next
+  }
+  
+  df_filtered$drug_group <- as.integer(as.factor(df_filtered$Resistant_Drug_Classes))
+  n_groups <- length(unique(df_filtered$drug_group))
+  
+  # สร้างอนาคต 60 เดือน
+  n_forecast <- 60
+  last_time <- max(df_filtered$time_id, na.rm = TRUE)
+  future_times <- (last_time + 1):(last_time + n_forecast)
+  
+  forecast_stratified_df <- expand.grid(
+    time_id = future_times,
+    region_id = 1:13,
+    Resistant_Drug_Classes = unique(df_filtered$Resistant_Drug_Classes)
+  ) %>%
+    mutate(
+      pattern_count = NA,
+      total_rows_in_region_month = mean(df_filtered$total_rows_in_region_month, na.rm = TRUE),
+      month_numeric = ((time_id - 1) %% 12) + 1,
+      sin_month = sin(2 * pi * month_numeric / 12),
+      cos_month = cos(2 * pi * month_numeric / 12),
+      drug_group = as.integer(as.factor(Resistant_Drug_Classes))
+    )
+  
+  full_stratified_df <- bind_rows(df_filtered, forecast_stratified_df)
+  
+  # รันโมเดล (Model 6)
+  cat("กำลังรัน INLA พยากรณ์อนาคต 5 ปี...\n")
+  strat_forecast_formula <- pattern_count ~ 1 + Resistant_Drug_Classes + sin_month + cos_month + 
+    f(region_id, model = "bym", graph = "thailand_regions.graph") + 
+    f(time_id, model = "rw2", group = drug_group, control.group = list(model = "exchangeable"))
+  
+  res_strat_forecast <- inla(
+    formula = strat_forecast_formula,
+    family = "binomial",
+    data = full_stratified_df,
+    Ntrials = total_rows_in_region_month,
+    control.predictor = list(compute = TRUE, link = 1)
+  )
+  
+  # =======================================================
+  # 4. สกัดข้อมูลพยากรณ์ของทั้ง 5 รูปแบบ มารวมในไฟล์เดียว
+  # =======================================================
+  cat("กำลังดึงข้อมูลพยากรณ์ของทั้ง 5 Pattern...\n")
+  
+  target_months <- c(last_time + 12, last_time + 24, last_time + 36)
+  all_patterns_forecast_list <- list() # สร้าง list ว่างๆ มารอเก็บข้อมูล
+  
+  for (drug in target_drugs) {
+    # หา ID ของยานั้นๆ
+    target_id <- which(levels(as.factor(full_stratified_df$Resistant_Drug_Classes)) == drug)
+    
+    if (length(target_id) > 0) {
+      drug_forecast_panel <- res_strat_forecast$summary.fitted.values %>%
+        mutate(
+          time_id = full_stratified_df$time_id,
+          region_id = full_stratified_df$region_id,
+          drug_group = full_stratified_df$drug_group
+        ) %>%
+        filter(time_id %in% target_months, drug_group == target_id) %>%
+        mutate(Year = case_when(
+          time_id == target_months[1] ~ "2025 Prediction",
+          time_id == target_months[2] ~ "2026 Prediction",
+          time_id == target_months[3] ~ "2027 Prediction"
+        )) %>%
+        group_by(region_id) %>%
+        arrange(time_id) %>% # ต้องมั่นใจว่าเรียงปีถูกต้องเพื่อเทียบกับค่าแรก (2025)
+        mutate(
+          pct_change = (mean - first(mean)) * 100,
+          label_text = sprintf("%+.2f%%", pct_change)
+        ) %>%
+        ungroup() %>%
+        mutate(
+          Predicted_Percent = mean * 100,
+          Pathogen = full_name,
+          MDR_Pattern = drug
+        ) %>%
+        select(Pathogen, MDR_Pattern, region_id, Year, Predicted_Percent, pct_change, label_text)
+      
+      # เอาข้อมูลของยานี้เก็บลง List
+      all_patterns_forecast_list[[drug]] <- drug_forecast_panel
+    }
+  }
+  
+  # นำตารางของยาทั้ง 5 ชนิดมารวมกันเป็นตารางเดียว (bind_rows)
+  final_pathogen_forecast_df <- bind_rows(all_patterns_forecast_list) %>%
+    arrange(MDR_Pattern, region_id, Year) # เรียงให้ดูง่าย
+  
+  # เซฟเป็นไฟล์เดียวต่อเชื้อ 1 ตัว
+  output_filename <- sprintf("%s_3Year_Forecast_Map_Data.csv", toupper(pathogen_code))
+  write.csv(final_pathogen_forecast_df, output_filename, row.names = FALSE)
+  
+  cat(sprintf("✅ เสร็จสิ้น! บันทึกไฟล์ %s เรียบร้อยแล้ว (รวม %d Patterns)\n", output_filename, length(all_patterns_forecast_list)))
+}

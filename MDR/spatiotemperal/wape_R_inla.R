@@ -5,7 +5,7 @@ library(INLA)
 library(dplyr)
 
 cat("กำลังโหลดข้อมูลเพื่อทำ Validation...\n")
-df_master <- read.csv("aba_all_region_spatiotemporal_prepared.csv")
+df_master <- read.csv("eco_all_region_spatiotemporal_prepared.csv")
 
 # 1. เตรียมข้อมูล Logit Transformation ให้พร้อมทั้งหมดก่อน
 df_master <- df_master %>%
@@ -13,17 +13,16 @@ df_master <- df_master %>%
     # สร้าง region_year ไว้เผื่อใช้
     region_year = as.numeric(as.factor(paste(region_id, year, sep="_"))),
     
-    # ปรับสัดส่วน 0-1 (ตัดขอบกัน Error ให้อยู่ที่ 0.001 - 0.999)
+    # ปรับสัดส่วน 0 - 0.999)
     R_scaled = percentage / 100,
     R_scaled = pmin(pmax(R_scaled, 0.001), 0.999),
     
     # แปลงเป็น Logit ให้กลายเป็น Gaussian
     R_logit = log(R_scaled / (1 - R_scaled)),
     
-    # แบ่ง Train/Test (สมมติซ่อนปี 2023-2024 เป็น Test)
+    # แบ่ง Train/Test (ซ่อนปี 2023-2024 เป็น Test)
     set = ifelse(year %in% 2023:2024, "test", "train"),
     
-    # แอบจดข้อสอบไว้ตรวจ
     actual_count = pattern_count,
     actual_percent = percentage,
     
@@ -31,13 +30,13 @@ df_master <- df_master %>%
     R_logit = ifelse(set == "test", NA, R_logit)
   )
 
-# รายชื่อ Pattern ทั้งหมด (สมมติว่ามี 5 แบบ)
+# รายชื่อ Pattern ทั้ง แบบ)
 all_patterns <- sort(unique(df_master$mdr_id_numeric))
 
 # สร้าง Data Frame เปล่าๆ ไว้เก็บผลลัพธ์
 results_wape <- data.frame(Pattern_ID = integer(), WAPE = numeric())
 
-# 2. เริ่มลูป! แยกทำทีละ Pattern
+# 2. ป! แยกทำทีละ Pattern
 for (p_id in all_patterns) {
   
   cat(sprintf("\n\n>>> กำลังวิเคราะห์ Pattern ที่ %d <<<\n", p_id))
@@ -46,15 +45,14 @@ for (p_id in all_patterns) {
   df_sub <- df_master %>% filter(mdr_id_numeric == p_id)
   
   # ----------------------------------------------------
-  # รัน INLA (สมการจะเบาลงมาก เพราะไม่ต้องมี f(mdr_id_numeric) แล้ว)
+  # รัน INLA
   # ----------------------------------------------------
   # ใช้ BYM2 สำหรับพื้นที่ และ RW1 สำหรับเวลา
   formula_sub <- R_logit ~ 1 + sin_month + cos_month + 
     f(region_id, model = "bym2", graph = "map.graph", scale.model = TRUE) + 
     f(time_id, model = "rw1", scale.model = TRUE) 
-  # (ลองเติม f(region_year, model="iid") ได้ถ้าข้อมูลใน Pattern นี้มีเยอะพอ)
   
-  # รันโมเดล (ปรับ strategy="gaussian" กันเหนียวไว้ก่อน)
+  # รันโมเดล
   model_sub <- inla(formula_sub, 
                     family = "gaussian", 
                     data = df_sub,
@@ -69,7 +67,6 @@ for (p_id in all_patterns) {
   df_sub$predicted_scaled <- exp(df_sub$predicted_logit) / (1 + exp(df_sub$predicted_logit))
   df_sub$predicted_percent <- df_sub$predicted_scaled * 100
   
-  # ตัดมาตรวจข้อสอบเฉพาะ Test Set
   df_test_sub <- df_sub %>% filter(set == "test")
   
   df_test_sub$predicted_cases <- (df_test_sub$predicted_percent / 100) * df_test_sub$total_rows_in_region_month
@@ -100,8 +97,6 @@ print(results_wape)
 # หา Overall WAPE (เฉลี่ยจากทุก Pattern แบบคร่าวๆ)
 cat(sprintf("\n🌟 ค่า WAPE เฉลี่ยรวม: %.2f%%\n", mean(results_wape$WAPE, na.rm = TRUE)))
 
-
-
 # ==========================================
 # สเต็ป 2: Future Forecasting (แยกทำทีละ Pattern)
 # ==========================================
@@ -109,7 +104,7 @@ cat(sprintf("\n🌟 ค่า WAPE เฉลี่ยรวม: %.2f%%\n", mean(
 cat("กำลังเตรียมข้อมูลเพื่อทำนายอนาคต (2025-2029)...\n")
 
 # 1. โหลดข้อมูลจริง (Historical Data)
-df_historical <- read.csv("aba_all_region_spatiotemporal_prepared.csv")
+df_historical <- read.csv("eco_all_region_spatiotemporal_prepared.csv")
 
 # 2. สร้างข้อมูลอนาคต 5 ปี (60 เดือน) แบบตาราง Grid
 max_time_id <- max(df_historical$time_id)
@@ -161,7 +156,7 @@ df_master_forecast <- df_master_forecast %>%
 df_final_results <- data.frame()
 
 # ----------------------------------------------------
-# 4. เริ่มลูปพยากรณ์! (แยกทำทีละ Pattern)
+# 4. (แยกทำทีละ Pattern)
 # ----------------------------------------------------
 for (p_id in all_patterns) {
   
@@ -187,7 +182,7 @@ for (p_id in all_patterns) {
   df_sub$predicted_scaled <- exp(df_sub$predicted_logit) / (1 + exp(df_sub$predicted_logit))
   df_sub$predicted_percent <- df_sub$predicted_scaled * 100
   
-  # ดึงช่วงความเชื่อมั่น 95% (95% Credible Interval) มาด้วย เผื่อทำกราฟ Error bar
+  # ดึงช่วงความเชื่อมั่น 95% (95% Credible Interval) 
   df_sub$predicted_lower_CI <- (exp(model_forecast$summary.fitted.values$`0.025quant`) / (1 + exp(model_forecast$summary.fitted.values$`0.025quant`))) * 100
   df_sub$predicted_upper_CI <- (exp(model_forecast$summary.fitted.values$`0.975quant`) / (1 + exp(model_forecast$summary.fitted.values$`0.975quant`))) * 100
   
@@ -204,6 +199,6 @@ cat("\n===================================\n")
 cat("กำลังบันทึกไฟล์ผลลัพธ์พยากรณ์ทั้งหมด...\n")
 
 # บันทึกเป็น CSV เพื่อเอาไปวาดกราฟ/ทำแผนที่ต่อใน Python
-write.csv(df_final_results, "Forecast_5Years_All_Patterns_LogitGaussian.csv", row.names = FALSE)
+write.csv(df_final_results, "eco_Forecast_5Years_All_Patterns_LogitGaussian.csv", row.names = FALSE)
 
-cat("✅ สำเร็จ! ไฟล์ 'Forecast_5Years_All_Patterns_LogitGaussian.csv' พร้อมใช้งานครับ!\n")
+cat("ไฟล์ 'eco_Forecast_5Years_All_Patterns_LogitGaussian.csv' \n")
