@@ -1,0 +1,9 @@
+Category,Slope,P-value,R-squared
+Overall Enterococcus faecium Prevalence Trend,0.17173939393939397,0.00022861624685918742,0.8329919783930906
+Prevalence by Ward Type: ICU (Enterococcus faecium),0.5501636363636364,0.0565891554173695,0.3826261350344376
+Prevalence by Ward Type: IN (Enterococcus faecium),-0.8822424242424243,0.014006885949982523,0.5505462358821577
+Prevalence by Ward Type: OUT (Enterococcus faecium),0.2922666666666667,0.002100581288410675,0.7135189526014797
+Prevalence by Specimen: Blood (Enterococcus faecium),0.17027272727272721,0.0355459418480153,0.4434497256619344
+Prevalence by Specimen: Urine (Enterococcus faecium),2.223448484848485,0.0038873429322160372,0.6679327822407891
+"Prevalence by Specimen: Urine, catheter (Enterococcus faecium)",-2.919018181818182,0.0035392049618094895,0.6752978254146761
+Prevalence by Specimen: other (Enterococcus faecium),0.5251818181818182,0.031215636987463744,0.4595655788809403

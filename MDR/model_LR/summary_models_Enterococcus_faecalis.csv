@@ -1,0 +1,9 @@
+Category,Slope,P-value,R-squared
+Overall Enterococcus faecalis Prevalence Trend,0.2276,0.0037961795006106877,0.6698102821937794
+Prevalence by Ward Type: ICU (Enterococcus faecalis),0.3168060606060607,0.09261582839490719,0.31305909544231675
+Prevalence by Ward Type: IN (Enterococcus faecalis),-0.9285878787878791,0.003798929990533873,0.6697531270614427
+Prevalence by Ward Type: OUT (Enterococcus faecalis),0.4689212121212122,0.001780080477447074,0.7247276649985568
+Prevalence by Specimen: Blood (Enterococcus faecalis),-0.021575757575757547,0.6646992462686774,0.024680599131280838
+Prevalence by Specimen: Pus (Enterococcus faecalis),0.40019999999999994,0.026466215176442848,0.4794858563846159
+Prevalence by Specimen: Urine (Enterococcus faecalis),1.671169696969697,0.006911275387535759,0.6192426009329199
+Prevalence by Specimen: other (Enterococcus faecalis),-2.0498363636363637,0.009164971036046991,0.5930271690578476

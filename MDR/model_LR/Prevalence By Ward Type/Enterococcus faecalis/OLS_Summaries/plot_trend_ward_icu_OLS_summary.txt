@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    icu   R-squared:                       0.313
+Model:                            OLS   Adj. R-squared:                  0.227
+Method:                 Least Squares   F-statistic:                     3.646
+Date:                Tue, 07 Apr 2026   Prob (F-statistic):             0.0926
+Time:                        02:26:18   Log-Likelihood:                -17.175
+No. Observations:                  10   AIC:                             38.35
+Df Residuals:                       8   BIC:                             38.96
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       -630.9903    335.073     -1.883      0.096   -1403.670     141.689
+x_year         0.3168      0.166      1.909      0.093      -0.066       0.699
+==============================================================================
+Omnibus:                        8.604   Durbin-Watson:                   2.373
+Prob(Omnibus):                  0.014   Jarque-Bera (JB):                3.516
+Skew:                           1.311   Prob(JB):                        0.172
+Kurtosis:                       4.251   Cond. No.                     1.42e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.42e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.

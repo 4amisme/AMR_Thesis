@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  Blood   R-squared:                       0.443
+Model:                            OLS   Adj. R-squared:                  0.374
+Method:                 Least Squares   F-statistic:                     6.374
+Date:                Tue, 07 Apr 2026   Prob (F-statistic):             0.0355
+Time:                        02:26:25   Log-Likelihood:                -8.1728
+No. Observations:                  10   AIC:                             20.35
+Df Residuals:                       8   BIC:                             20.95
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       -334.7897    136.199     -2.458      0.039    -648.865     -20.714
+x_year         0.1703      0.067      2.525      0.036       0.015       0.326
+==============================================================================
+Omnibus:                        1.753   Durbin-Watson:                   1.593
+Prob(Omnibus):                  0.416   Jarque-Bera (JB):                0.810
+Skew:                           0.683   Prob(JB):                        0.667
+Kurtosis:                       2.725   Cond. No.                     1.42e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.42e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.
