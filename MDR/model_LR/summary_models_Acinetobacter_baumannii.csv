@@ -1,0 +1,9 @@
+Category,Slope,P-value,R-squared
+Overall Acinetobacter baumannii Prevalence Trend,0.08458787878787888,0.40135429020154045,0.0893963818741613
+Prevalence by Ward Type: ICU (Acinetobacter baumannii),0.9749151515151516,0.023222358150839627,0.49482713541937506
+Prevalence by Ward Type: IN (Acinetobacter baumannii),-1.379921212121211,0.006871117278191931,0.6197672031092523
+Prevalence by Ward Type: OUT (Acinetobacter baumannii),0.18501212121212118,0.004305528265828504,0.659734286628834
+Prevalence by Specimen: Blood (Acinetobacter baumannii),0.3470060606060606,0.0001759832342140968,0.8433783226446637
+Prevalence by Specimen: Sputum (Acinetobacter baumannii),-1.237551515151515,0.01276820371172491,0.56014421032994
+Prevalence by Specimen: Urine (Acinetobacter baumannii),0.18068484848484848,0.006365866165803644,0.626581560163994
+Prevalence by Specimen: other (Acinetobacter baumannii),0.7099333333333335,0.06449947689464063,0.3646447685314787

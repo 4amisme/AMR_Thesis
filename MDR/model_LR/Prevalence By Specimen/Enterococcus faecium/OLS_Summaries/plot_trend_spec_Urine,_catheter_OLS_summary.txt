@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        Urine, catheter   R-squared:                       0.675
+Model:                            OLS   Adj. R-squared:                  0.635
+Method:                 Least Squares   F-statistic:                     16.64
+Date:                Tue, 07 Apr 2026   Prob (F-statistic):            0.00354
+Time:                        02:26:26   Log-Likelihood:                -31.792
+No. Observations:                  10   AIC:                             67.58
+Df Residuals:                       8   BIC:                             68.19
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       5906.0852   1445.210      4.087      0.004    2573.424    9238.746
+x_year        -2.9190      0.716     -4.079      0.004      -4.569      -1.269
+==============================================================================
+Omnibus:                        1.584   Durbin-Watson:                   1.084
+Prob(Omnibus):                  0.453   Jarque-Bera (JB):                1.057
+Skew:                          -0.570   Prob(JB):                        0.590
+Kurtosis:                       1.887   Cond. No.                     1.42e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.42e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.

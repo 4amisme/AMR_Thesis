@@ -1,0 +1,9 @@
+Category,Slope,P-value,R-squared
+Overall Staphylococcus aureus Prevalence Trend,-0.15034545454545453,0.0005179596450172876,0.7960025267459775
+Prevalence by Ward Type: ICU (Staphylococcus aureus),0.3016060606060606,0.023806157759896855,0.49194376695359643
+Prevalence by Ward Type: IN (Staphylococcus aureus),-1.5992666666666666,0.002702165316741904,0.6956328977492179
+Prevalence by Ward Type: OUT (Staphylococcus aureus),0.8242242424242425,0.010619309397942507,0.5787040173686427
+Prevalence by Specimen: Blood (Staphylococcus aureus),-0.2948000000000002,0.0923292730991307,0.31351192186731264
+Prevalence by Specimen: Pus (Staphylococcus aureus),0.7492363636363637,0.08663573420168565,0.32277255190114884
+Prevalence by Specimen: Sputum (Staphylococcus aureus),-1.0570909090909089,0.017145078446808768,0.5289440385334316
+Prevalence by Specimen: other (Staphylococcus aureus),0.6025454545454546,0.005592541667164359,0.6378800085604248

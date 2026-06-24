@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 Sputum   R-squared:                       0.544
+Model:                            OLS   Adj. R-squared:                  0.488
+Method:                 Least Squares   F-statistic:                     9.562
+Date:                Tue, 07 Apr 2026   Prob (F-statistic):             0.0148
+Time:                        02:26:30   Log-Likelihood:                -9.1930
+No. Observations:                  10   AIC:                             22.39
+Df Residuals:                       8   BIC:                             22.99
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        474.2395    150.829      3.144      0.014     126.428     822.051
+x_year        -0.2310      0.075     -3.092      0.015      -0.403      -0.059
+==============================================================================
+Omnibus:                        3.846   Durbin-Watson:                   1.085
+Prob(Omnibus):                  0.146   Jarque-Bera (JB):                1.457
+Skew:                          -0.927   Prob(JB):                        0.483
+Kurtosis:                       3.249   Cond. No.                     1.42e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.42e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.

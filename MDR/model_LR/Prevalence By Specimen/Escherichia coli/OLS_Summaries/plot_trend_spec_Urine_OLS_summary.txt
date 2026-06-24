@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  Urine   R-squared:                       0.729
+Model:                            OLS   Adj. R-squared:                  0.695
+Method:                 Least Squares   F-statistic:                     21.52
+Date:                Tue, 07 Apr 2026   Prob (F-statistic):            0.00167
+Time:                        02:26:30   Log-Likelihood:                -19.866
+No. Observations:                  10   AIC:                             43.73
+Df Residuals:                       8   BIC:                             44.34
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const      -1983.7557    438.547     -4.523      0.002   -2995.046    -972.465
+x_year         1.0073      0.217      4.639      0.002       0.507       1.508
+==============================================================================
+Omnibus:                        2.089   Durbin-Watson:                   1.391
+Prob(Omnibus):                  0.352   Jarque-Bera (JB):                1.029
+Skew:                           0.771   Prob(JB):                        0.598
+Kurtosis:                       2.695   Cond. No.                     1.42e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.42e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.

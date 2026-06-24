@@ -1,0 +1,9 @@
+Category,Slope,P-value,R-squared
+Overall Klebsiella pneumoniae  Prevalence Trend,0.16640606060606067,0.01398472305749778,0.5507119360885249
+Prevalence by Ward Type: ICU (Klebsiella pneumoniae ),0.6747393939393941,0.02036707008496649,0.50983232642601
+Prevalence by Ward Type: IN (Klebsiella pneumoniae ),-1.6259575757575764,0.0013943187670686762,0.7405029195200643
+Prevalence by Ward Type: OUT (Klebsiella pneumoniae ),0.6838969696969698,0.0010771994972644493,0.7562262676947643
+Prevalence by Specimen: Blood (Klebsiella pneumoniae ),-0.00826666666666664,0.8437463718533672,0.005155128099154385
+Prevalence by Specimen: Sputum (Klebsiella pneumoniae ),-0.8278484848484851,0.017544568168864086,0.5264259275121953
+Prevalence by Specimen: Urine (Klebsiella pneumoniae ),0.5332727272727275,0.006217395808506867,0.6286642163651246
+Prevalence by Specimen: other (Klebsiella pneumoniae ),0.30286060606060605,0.07791217086150484,0.33803840958733994

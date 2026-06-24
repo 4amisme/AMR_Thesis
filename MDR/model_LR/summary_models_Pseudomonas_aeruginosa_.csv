@@ -1,0 +1,9 @@
+Category,Slope,P-value,R-squared
+Overall Pseudomonas aeruginosa  Prevalence Trend,-0.170660606060606,0.0003776340001198353,0.8111532227884952
+Prevalence by Ward Type: ICU (Pseudomonas aeruginosa ),0.5995757575757578,0.03462519672322019,0.44673657376791226
+Prevalence by Ward Type: IN (Pseudomonas aeruginosa ),-1.4473151515151514,0.004104296255459423,0.6635983529391931
+Prevalence by Ward Type: OUT (Pseudomonas aeruginosa ),0.5827575757575757,0.0015025755742831739,0.7357677864794553
+Prevalence by Specimen: Pus (Pseudomonas aeruginosa ),0.30104242424242417,0.19823933398976817,0.19744599770371218
+Prevalence by Specimen: Sputum (Pseudomonas aeruginosa ),-1.3389151515151516,0.0029997970749535384,0.687905580126166
+Prevalence by Specimen: Urine (Pseudomonas aeruginosa ),0.6646666666666667,0.00012101212288607901,0.8571510113034507
+Prevalence by Specimen: other (Pseudomonas aeruginosa ),0.3732606060606062,0.017431261954703164,0.5271354445381967
