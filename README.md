@@ -292,20 +292,10 @@ cd AMR_Thesis
 
 ### 2. Create a Virtual Environment
 
-For Windows:
-
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
-
-For macOS/Linux:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
 ---
 
 ### 3. Install Python Dependencies
