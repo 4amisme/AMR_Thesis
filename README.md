@@ -3,10 +3,15 @@
 ## Project Information
 
 **Project Name:** SPATIOTEMPORAL AND TIME SERIES ANALYSIS OF MULTIDRUG-RESISTANT BACTERIA USING NATIONAL SURVEILLANCE DATA FROM NARST
+
 **Project Number:** G40-HDS
+
 **Student Name:** นางสาวชนกชนม์ กรินรักษ์, นางสาวศิรประภา สุริยะศรี
+
 **Program/Department:** Health Data Science/Computer Engineering
+
 **Advisor:** รศ.ดร.พีรพล ศิริพงศ์วุฒิกร, ผศ.ดร.จิรพันธ์ เปรมสุริยา, น.สพ.ดร.พีรวัส ชินตระกูลชัย
+
 **GitHub Repository:** ใส่ URL GitHub ถ้ามี
 
 ---
